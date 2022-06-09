@@ -218,7 +218,7 @@ install_basic_packages () {
         inxi most ttfautohint v4l2loopback-dkms ffmpeg \
         ranger libxext-dev ripgrep python3-pynvim xclip libnotify-bin \
         libfontconfig1-dev libfreetype-dev jq pixz hashdeep liblxc-dev \
-        screenkey mypaint
+        screenkey mypaint rofi liferea hexchat gimp blender imagemagick
     install_neovim
     install_with_pip ueberzug
     install_with_pip neovim-remote
@@ -395,12 +395,6 @@ install_obs_studio () {
 install_extra_packages () {
     msg="INSTALLING EXTRA PACKAGES ..."
     print_yellow "${msg}"
-    install_with_aptitude rofi
-    install_with_aptitude liferea
-    install_with_aptitude hexchat
-    install_with_aptitude gimp
-    install_with_aptitude blender
-    install_with_aptitude imagemagick
     if $(cat /etc/os-release | head -n 1 | grep "Pop" > /dev/null 2>&1); then
         msg="Distro is Pop!_OS"
         print_cyan "${msg}"
