@@ -464,6 +464,7 @@ install_fd
 setup_fonts
 
 source ${ME}/.bashrc
+curl -sS https://starship.rs/install.sh | sh
 sudo updatedb
 
 msg="CONFIG COMPLETE"
