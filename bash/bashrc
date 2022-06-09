@@ -71,7 +71,7 @@ if [ -f $ME/.cargo/bin/exa ]; then
     alias la='exa -bghHlSa --git'
 else
     alias ll='ls -hl --color=auto'
-    alias ls='ls -hlA --color=auto'
+    alias la='ls -hlA --color=auto'
 fi
 
 alias l='ls -CF'
