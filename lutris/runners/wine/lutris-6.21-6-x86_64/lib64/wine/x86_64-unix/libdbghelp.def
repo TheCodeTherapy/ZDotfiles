@@ -1,0 +1,203 @@
+; File generated automatically from /home/ubuntu/buildbot/runners/wine/wine-src/dlls/dbghelp/dbghelp.spec; do not edit!
+
+LIBRARY dbghelp.dll
+
+EXPORTS
+  DbgHelpCreateUserDump @1 PRIVATE
+  DbgHelpCreateUserDumpW @2 PRIVATE
+  EnumDirTree @3
+  EnumDirTreeW @4
+  EnumerateLoadedModules @5
+  EnumerateLoadedModules64 @6
+  EnumerateLoadedModulesEx=EnumerateLoadedModules64 @7
+  EnumerateLoadedModulesExW=EnumerateLoadedModulesW64 @8
+  EnumerateLoadedModulesW64 @9
+  ExtensionApiVersion @10
+  FindDebugInfoFile @11
+  FindDebugInfoFileEx @12
+  FindDebugInfoFileExW @13 PRIVATE
+  FindExecutableImage @14
+  FindExecutableImageEx @15
+  FindExecutableImageExW @16
+  FindFileInPath @17 PRIVATE
+  FindFileInSearchPath @18 PRIVATE
+  GetTimestampForLoadedLibrary @19
+  ImageDirectoryEntryToData @20
+  ImageDirectoryEntryToDataEx @21
+  ImageNtHeader=RtlImageNtHeader @22
+  ImageRvaToSection=RtlImageRvaToSection @23
+  ImageRvaToVa=RtlImageRvaToVa @24
+  ImagehlpApiVersion @25
+  ImagehlpApiVersionEx @26
+  MakeSureDirectoryPathExists @27
+  MiniDumpReadDumpStream @28
+  MiniDumpWriteDump @29
+  SearchTreeForFile @30
+  SearchTreeForFileW @31
+  StackWalk @32
+  StackWalk64 @33
+  StackWalkEx @34
+  SymAddSourceStream @35 PRIVATE
+  SymAddSourceStreamA @36 PRIVATE
+  SymAddSourceStreamW @37 PRIVATE
+  SymAddSymbol @38
+  SymAddSymbolW @39
+  SymAddrIncludeInlineTrace @40 PRIVATE
+  SymCleanup @41
+  SymCompareInlineTrace @42 PRIVATE
+  SymDeleteSymbol @43 PRIVATE
+  SymDeleteSymbolW @44 PRIVATE
+  SymEnumLines @45
+  SymEnumLinesW @46 PRIVATE
+  SymEnumProcesses @47 PRIVATE
+  SymEnumSourceFileTokens @48 PRIVATE
+  SymEnumSourceFiles @49
+  SymEnumSourceFilesW @50
+  SymEnumSourceLines @51
+  SymEnumSourceLinesW @52
+  SymEnumSym @53 PRIVATE
+  SymEnumSymbols @54
+  SymEnumSymbolsForAddr @55 PRIVATE
+  SymEnumSymbolsForAddrW @56 PRIVATE
+  SymEnumSymbolsW @57
+  SymEnumTypes @58
+  SymEnumTypesByName @59 PRIVATE
+  SymEnumTypesByNameW @60 PRIVATE
+  SymEnumTypesW @61
+  SymEnumerateModules @62
+  SymEnumerateModules64 @63
+  SymEnumerateModulesW64 @64
+  SymEnumerateSymbols @65
+  SymEnumerateSymbols64 @66
+  SymEnumerateSymbolsW @67 PRIVATE
+  SymEnumerateSymbolsW64 @68 PRIVATE
+  SymFindDebugInfoFile @69 PRIVATE
+  SymFindDebugInfoFileW @70 PRIVATE
+  SymFindExecutableImage @71 PRIVATE
+  SymFindExecutableImageW @72 PRIVATE
+  SymFindFileInPath @73
+  SymFindFileInPathW @74
+  SymFromAddr @75
+  SymFromAddrW @76
+  SymFromIndex @77
+  SymFromIndexW @78
+  SymFromInlineContext @79
+  SymFromInlineContextW @80
+  SymFromName @81
+  SymFromNameW @82
+  SymFromToken @83 PRIVATE
+  SymFromTokenW @84 PRIVATE
+  SymFunctionTableAccess @85
+  SymFunctionTableAccess64 @86
+  SymGetFileLineOffsets64 @87 PRIVATE
+  SymGetHomeDirectory @88 PRIVATE
+  SymGetHomeDirectoryW @89 PRIVATE
+  SymGetExtendedOption @90
+  SymGetLineFromAddr @91
+  SymGetLineFromAddr64 @92
+  SymGetLineFromAddrW64 @93
+  SymGetLineFromInlineContext @94
+  SymGetLineFromInlineContextW @95
+  SymGetLineFromName @96
+  SymGetLineFromName64 @97
+  SymGetLineFromNameW64 @98
+  SymGetLineNext @99
+  SymGetLineNext64 @100
+  SymGetLineNextW64 @101
+  SymGetLinePrev @102
+  SymGetLinePrev64 @103
+  SymGetLinePrevW64 @104
+  SymGetModuleBase @105
+  SymGetModuleBase64 @106
+  SymGetModuleInfo @107
+  SymGetModuleInfo64 @108
+  SymGetModuleInfoW @109
+  SymGetModuleInfoW64 @110
+  SymGetOmapBlockBase @111 PRIVATE
+  SymGetOptions @112
+  SymGetScope @113 PRIVATE
+  SymGetScopeW @114 PRIVATE
+  SymGetSearchPath @115
+  SymGetSearchPathW @116
+  SymGetSourceFile @117 PRIVATE
+  SymGetSourceFileFromToken @118 PRIVATE
+  SymGetSourceFileFromTokenW @119 PRIVATE
+  SymGetSourceFileToken @120
+  SymGetSourceFileTokenW @121
+  SymGetSourceFileW @122 PRIVATE
+  SymGetSourceVarFromToken @123 PRIVATE
+  SymGetSourceVarFromTokenW @124 PRIVATE
+  SymGetSymFromAddr @125
+  SymGetSymFromAddr64 @126
+  SymGetSymFromName @127
+  SymGetSymFromName64 @128
+  SymGetSymNext @129
+  SymGetSymNext64 @130
+  SymGetSymPrev @131
+  SymGetSymPrev64 @132
+  SymGetSymbolFile @133 PRIVATE
+  SymGetSymbolFileW @134 PRIVATE
+  SymGetTypeFromName @135
+  SymGetTypeFromNameW @136 PRIVATE
+  SymGetTypeInfo @137
+  SymGetTypeInfoEx @138 PRIVATE
+  SymGetUnwindInfo @139 PRIVATE
+  SymInitialize @140
+  SymInitializeW @141
+  SymLoadModule @142
+  SymLoadModule64 @143
+  SymLoadModuleEx @144
+  SymLoadModuleExW @145
+  SymMatchFileName @146
+  SymMatchFileNameW @147
+  SymMatchString=SymMatchStringA @148
+  SymMatchStringA @149
+  SymMatchStringW @150
+  SymNext @151 PRIVATE
+  SymNextW @152 PRIVATE
+  SymPrev @153 PRIVATE
+  SymPrevW @154 PRIVATE
+  SymQueryInlineTrace @155 PRIVATE
+  SymRefreshModuleList @156
+  SymRegisterCallback @157
+  SymRegisterCallback64 @158
+  SymRegisterCallbackW64 @159
+  SymRegisterFunctionEntryCallback @160
+  SymRegisterFunctionEntryCallback64 @161
+  SymSearch @162
+  SymSearchW @163
+  SymSetContext @164
+  SymSetExtendedOption @165
+  SymSetHomeDirectory @166
+  SymSetHomeDirectoryW @167
+  SymSetOptions @168
+  SymSetParentWindow @169
+  SymSetScopeFromAddr @170
+  SymSetScopeFromIndex @171
+  SymSetScopeFromInlineContext @172
+  SymSetSearchPath @173
+  SymSetSearchPathW @174
+  SymSrvDeltaName @175 PRIVATE
+  SymSrvDeltaNameW @176 PRIVATE
+  SymSrvGetFileIndexInfo @177 PRIVATE
+  SymSrvGetFileIndexInfoW @178 PRIVATE
+  SymSrvGetFileIndexString @179 PRIVATE
+  SymSrvGetFileIndexStringW @180 PRIVATE
+  SymSrvGetFileIndexes @181 PRIVATE
+  SymSrvGetFileIndexesW @182 PRIVATE
+  SymSrvGetSupplement @183 PRIVATE
+  SymSrvGetSupplementW @184 PRIVATE
+  SymSrvIsStore @185 PRIVATE
+  SymSrvIsStoreW @186 PRIVATE
+  SymSrvStoreFile @187 PRIVATE
+  SymSrvStoreFileW @188 PRIVATE
+  SymSrvStoreSupplement @189 PRIVATE
+  SymSrvStoreSupplementW @190 PRIVATE
+  SymSetSymWithAddr64 @191 PRIVATE
+  SymUnDName @192
+  SymUnDName64 @193
+  SymUnloadModule @194
+  SymUnloadModule64 @195
+  UnDecorateSymbolName @196
+  UnDecorateSymbolNameW @197
+  WinDbgExtensionDllInit @198

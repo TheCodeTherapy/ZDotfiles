@@ -1,0 +1,26 @@
+#!/bin/bash
+set -eu
+
+sleep 2
+ME="/home/$(whoami)"
+DOTDIR="${ME}/ZDotfiles"
+CONKYDIR="${DOTDIR}/conky"
+
+set -o allexport
+source $CONKYDIR/.env
+set +o allexport
+
+APIPREFIX="api.openweathermap.org/data/2.5/"
+
+APPID="appid=${APIKEY}"
+ID="&id=${CITYID}"
+UNITS="&units=$1"
+LANG="&lang=$2"
+
+FORECAST="${CONKYDIR}/forecast.json"
+WEATHER="${CONKYDIR}/weather.json"
+
+# mkdir -p ~/".cache/harmattan-conky"
+
+curl -s "${APIPREFIX}forecast?${APPID}${ID}${UNITS}${LANG}" -o "$FORECAST"
+curl -s "${APIPREFIX}weather?${APPID}${ID}${UNITS}${LANG}" -o "$WEATHER"

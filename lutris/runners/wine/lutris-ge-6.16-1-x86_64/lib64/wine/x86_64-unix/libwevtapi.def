@@ -1,0 +1,51 @@
+; File generated automatically from /home/ubuntu/buildbot/runners/wine/wine-src/dlls/wevtapi/wevtapi.spec; do not edit!
+
+LIBRARY wevtapi.dll
+
+EXPORTS
+  EvtArchiveExportedLog @1 PRIVATE
+  EvtCancel @2 PRIVATE
+  EvtClearLog @3 PRIVATE
+  EvtClose @4
+  EvtCreateBookmark @5 PRIVATE
+  EvtCreateRenderContext @6 PRIVATE
+  EvtExportLog @7
+  EvtFormatMessage @8 PRIVATE
+  EvtGetChannelConfigProperty @9
+  EvtGetEventInfo @10 PRIVATE
+  EvtGetEventMetadataProperty @11 PRIVATE
+  EvtGetExtendedStatus @12 PRIVATE
+  EvtGetLogInfo @13 PRIVATE
+  EvtGetObjectArrayProperty @14 PRIVATE
+  EvtGetObjectArraySize @15 PRIVATE
+  EvtGetPublisherMetadataProperty @16 PRIVATE
+  EvtGetQueryInfo @17 PRIVATE
+  EvtIntAssertConfig @18 PRIVATE
+  EvtIntCreateBinXMLFromCustomXML @19 PRIVATE
+  EvtIntCreateLocalLogfile @20 PRIVATE
+  EvtIntGetClassicLogDisplayName @21 PRIVATE
+  EvtIntRenderResourceEventTemplate @22 PRIVATE
+  EvtIntReportAuthzEventAndSourceAsync @23 PRIVATE
+  EvtIntReportEventAndSourceAsync @24 PRIVATE
+  EvtIntRetractConfig @25 PRIVATE
+  EvtIntSysprepCleanup @26 PRIVATE
+  EvtIntWriteXmlEventToLocalLogfile @27 PRIVATE
+  EvtNext @28
+  EvtNextChannelPath @29
+  EvtNextEventMetadata @30 PRIVATE
+  EvtNextPublisherId @31 PRIVATE
+  EvtOpenChannelConfig @32
+  EvtOpenChannelEnum @33
+  EvtOpenEventMetadataEnum @34 PRIVATE
+  EvtOpenLog @35
+  EvtOpenPublisherEnum @36 PRIVATE
+  EvtOpenPublisherMetadata @37 PRIVATE
+  EvtOpenSession @38
+  EvtQuery @39
+  EvtRender @40 PRIVATE
+  EvtSaveChannelConfig @41
+  EvtSeek @42 PRIVATE
+  EvtSetChannelConfigProperty @43
+  EvtSetObjectArrayProperty @44 PRIVATE
+  EvtSubscribe @45
+  EvtUpdateBookmark @46 PRIVATE

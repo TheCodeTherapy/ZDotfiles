@@ -1,0 +1,31 @@
+; File generated automatically from /home/ubuntu/buildbot/runners/wine/wine-src/dlls/nsi/nsi.spec; do not edit!
+
+LIBRARY nsi.dll
+
+EXPORTS
+  NsiAllocateAndGetPersistentDataWithMaskTable@0 @1 PRIVATE
+  NsiAllocateAndGetTable@52 @2
+  NsiCancelChangeNotification@0 @3 PRIVATE
+  NsiDeregisterChangeNotification@0 @4 PRIVATE
+  NsiDeregisterChangeNotificationEx@0 @5 PRIVATE
+  NsiEnumerateObjectsAllParameters@52 @6
+  NsiEnumerateObjectsAllParametersEx@4 @7
+  NsiEnumerateObjectsAllPersistentParametersWithMask@0 @8 PRIVATE
+  NsiFreePersistentDataWithMaskTable@0 @9 PRIVATE
+  NsiFreeTable@16 @10
+  NsiGetAllParameters@44 @11
+  NsiGetAllParametersEx@4 @12
+  NsiGetAllPersistentParametersWithMask@0 @13 PRIVATE
+  NsiObjectSecurity@0 @14 PRIVATE
+  NsiGetParameter@36 @15
+  NsiGetParameterEx@4 @16
+  NsiRegisterChangeNotification@0 @17 PRIVATE
+  NsiRegisterChangeNotificationEx@0 @18 PRIVATE
+  NsiRequestChangeNotification@0 @19 PRIVATE
+  NsiRequestChangeNotificationEx@0 @20 PRIVATE
+  NsiSetAllParameters@0 @21 PRIVATE
+  NsiSetAllParametersEx@0 @22 PRIVATE
+  NsiSetAllPersistentParametersWithMask@0 @23 PRIVATE
+  NsiSetObjectSecurity@0 @24 PRIVATE
+  NsiSetParameter@0 @25 PRIVATE
+  NsiSetParameterEx@0 @26 PRIVATE

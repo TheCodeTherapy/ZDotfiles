@@ -1,0 +1,50 @@
+; File generated automatically from /home/ubuntu/buildbot/runners/wine/wine-src/dlls/amd_ags_x64/amd_ags_x64.spec; do not edit!
+
+LIBRARY amd_ags_x64.dll
+
+EXPORTS
+  agsDeInit @1
+  agsDeInitialize @2
+  agsCheckDriverVersion @3
+  agsDriverExtensionsDX11_BeginUAVOverlap @4 PRIVATE
+  agsDriverExtensionsDX11_CreateBuffer @5 PRIVATE
+  agsDriverExtensionsDX11_CreateDevice @6 PRIVATE
+  agsDriverExtensionsDX11_CreateFromDevice @7 PRIVATE
+  agsDriverExtensionsDX11_CreateTexture1D @8 PRIVATE
+  agsDriverExtensionsDX11_CreateTexture2D @9 PRIVATE
+  agsDriverExtensionsDX11_CreateTexture3D @10 PRIVATE
+  agsDriverExtensionsDX11_DeInit @11 PRIVATE
+  agsDriverExtensionsDX11_Destroy @12 PRIVATE
+  agsDriverExtensionsDX11_DestroyDevice @13 PRIVATE
+  agsDriverExtensionsDX11_EndUAVOverlap @14 PRIVATE
+  agsDriverExtensionsDX11_GetMaxClipRects @15 PRIVATE
+  agsDriverExtensionsDX11_IASetPrimitiveTopology @16 PRIVATE
+  agsDriverExtensionsDX11_Init @17
+  agsDriverExtensionsDX11_MultiDrawIndexedInstancedIndirect @18 PRIVATE
+  agsDriverExtensionsDX11_MultiDrawIndexedInstancedIndirectCountIndirect @19 PRIVATE
+  agsDriverExtensionsDX11_MultiDrawInstancedIndirect @20 PRIVATE
+  agsDriverExtensionsDX11_MultiDrawInstancedIndirectCountIndirect @21 PRIVATE
+  agsDriverExtensionsDX11_NotifyResourceBeginAllAccess @22 PRIVATE
+  agsDriverExtensionsDX11_NotifyResourceEndAllAccess @23 PRIVATE
+  agsDriverExtensionsDX11_NotifyResourceEndWrites @24 PRIVATE
+  agsDriverExtensionsDX11_NumPendingAsyncCompileJobs @25 PRIVATE
+  agsDriverExtensionsDX11_SetClipRects @26 PRIVATE
+  agsDriverExtensionsDX11_SetDepthBounds @27 PRIVATE
+  agsDriverExtensionsDX11_SetDiskShaderCacheEnabled @28 PRIVATE
+  agsDriverExtensionsDX11_SetMaxAsyncCompileThreadCount @29 PRIVATE
+  agsDriverExtensionsDX11_SetViewBroadcastMasks @30 PRIVATE
+  agsDriverExtensionsDX11_WriteBreadcrumb @31 PRIVATE
+  agsDriverExtensionsDX12_CreateDevice @32
+  agsDriverExtensionsDX12_CreateFromDevice @33 PRIVATE
+  agsDriverExtensionsDX12_DeInit @34 PRIVATE
+  agsDriverExtensionsDX12_Destroy @35 PRIVATE
+  agsDriverExtensionsDX12_DestroyDevice @36
+  agsDriverExtensionsDX12_Init @37 PRIVATE
+  agsDriverExtensionsDX12_PopMarker @38 PRIVATE
+  agsDriverExtensionsDX12_PushMarker @39 PRIVATE
+  agsDriverExtensionsDX12_SetMarker @40 PRIVATE
+  agsGetCrossfireGPUCount @41
+  agsGetVersionNumber @42
+  agsInit @43
+  agsInitialize @44
+  agsSetDisplayMode @45 PRIVATE

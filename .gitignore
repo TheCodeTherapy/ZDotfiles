@@ -1,0 +1,11 @@
+neovide/
+neovide
+attract/
+obs-studio/
+obs-assets/
+temps/
+.env
+forecast.json
+weather.json
+weather*.png
+ncmpcpp/error.log

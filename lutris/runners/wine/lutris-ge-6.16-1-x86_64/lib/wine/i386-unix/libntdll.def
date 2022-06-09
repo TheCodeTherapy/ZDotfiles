@@ -1,0 +1,1330 @@
+; File generated automatically from /home/ubuntu/buildbot/runners/wine/wine-src/dlls/ntdll/ntdll.spec; do not edit!
+
+LIBRARY ntdll.dll
+
+EXPORTS
+  A_SHAFinal@8 @1
+  A_SHAInit@4 @2
+  A_SHAUpdate@12 @3
+  ApiSetQueryApiSetPresence@8 @4
+  CsrAllocateCaptureBuffer@0 @5 PRIVATE
+  CsrAllocateCapturePointer@0 @6 PRIVATE
+  CsrAllocateMessagePointer@0 @7 PRIVATE
+  CsrCaptureMessageBuffer@0 @8 PRIVATE
+  CsrCaptureMessageString@0 @9 PRIVATE
+  CsrCaptureTimeout@0 @10 PRIVATE
+  CsrClientCallServer@0 @11 PRIVATE
+  CsrClientConnectToServer@0 @12 PRIVATE
+  CsrClientMaxMessage@0 @13 PRIVATE
+  CsrClientSendMessage@0 @14 PRIVATE
+  CsrClientThreadConnect@0 @15 PRIVATE
+  CsrFreeCaptureBuffer@0 @16 PRIVATE
+  CsrIdentifyAlertableThread@0 @17 PRIVATE
+  CsrNewThread@0 @18 PRIVATE
+  CsrProbeForRead@0 @19 PRIVATE
+  CsrProbeForWrite@0 @20 PRIVATE
+  CsrSetPriorityClass@0 @21 PRIVATE
+  CsrpProcessCallbackRequest@0 @22 PRIVATE
+  DbgBreakPoint@0 @23
+  DbgPrint @24
+  DbgPrintEx @25
+  DbgPrompt@0 @26 PRIVATE
+  DbgUiConnectToDbg@0 @27
+  DbgUiContinue@8 @28
+  DbgUiConvertStateChangeStructure@8 @29
+  DbgUiDebugActiveProcess@4 @30
+  DbgUiGetThreadDebugObject@0 @31
+  DbgUiIssueRemoteBreakin@4 @32
+  DbgUiRemoteBreakin@4 @33
+  DbgUiSetThreadDebugObject@4 @34
+  DbgUiStopDebugging@4 @35
+  DbgUiWaitStateChange@8 @36
+  DbgUserBreakPoint@0 @37
+  EtwEventActivityIdControl@8 @38
+  EtwEventEnabled@12 @39
+  EtwEventProviderEnabled@20 @40
+  EtwEventRegister@16 @41
+  EtwEventSetInformation@20 @42
+  EtwEventUnregister@8 @43
+  EtwEventWrite@20 @44
+  EtwEventWriteString@24 @45
+  EtwEventWriteTransfer@28 @46
+  EtwGetTraceEnableFlags@8 @47
+  EtwGetTraceEnableLevel@8 @48
+  EtwGetTraceLoggerHandle@4 @49
+  EtwLogTraceEvent@12 @50
+  EtwRegisterTraceGuidsA@32 @51
+  EtwRegisterTraceGuidsW@32 @52
+  EtwTraceMessage @53
+  EtwTraceMessageVa@24 @54
+  EtwUnregisterTraceGuids@8 @55
+  KiRaiseUserExceptionDispatcher@0 @56
+  KiUserApcDispatcher@20 @57
+  KiUserCallbackDispatcher@12 @58
+  KiUserExceptionDispatcher@8 @59
+  LdrAccessResource@16 @60
+  LdrAddDllDirectory@8 @61
+  LdrAddRefDll@8 @62
+  LdrDisableThreadCalloutsForDll@4 @63
+  LdrEnumResources@0 @64 PRIVATE
+  LdrEnumerateLoadedModules@12 @65
+  LdrFindEntryForAddress@8 @66
+  LdrFindResourceDirectory_U@16 @67
+  LdrFindResource_U@16 @68
+  LdrFlushAlternateResourceModules@0 @69 PRIVATE
+  LdrGetDllDirectory@4 @70
+  LdrGetDllHandle@16 @71
+  LdrGetDllPath@16 @72
+  LdrGetProcedureAddress@16 @73
+  LdrInitShimEngineDynamic@0 @74 PRIVATE
+  LdrInitializeThunk@16 @75
+  LdrLoadAlternateResourceModule@0 @76 PRIVATE
+  LdrLoadDll@16 @77
+  LdrLockLoaderLock@12 @78
+  LdrProcessRelocationBlock@16 @79
+  LdrQueryImageFileExecutionOptions@24 @80
+  LdrQueryProcessModuleInformation@12 @81
+  LdrRegisterDllNotification@16 @82
+  LdrRemoveDllDirectory@4 @83
+  LdrResolveDelayLoadedAPI@24 @84
+  LdrSetAppCompatDllRedirectionCallback@0 @85 PRIVATE
+  LdrSetDefaultDllDirectories@4 @86
+  LdrSetDllDirectory@4 @87
+  LdrSetDllManifestProber@0 @88 PRIVATE
+  LdrShutdownProcess@0 @89
+  LdrShutdownThread@0 @90
+  LdrSystemDllInitBlock @91 DATA
+  LdrUnloadAlternateResourceModule@0 @92 PRIVATE
+  LdrUnloadDll@4 @93
+  LdrUnlockLoaderLock@8 @94
+  LdrUnregisterDllNotification@4 @95
+  LdrVerifyImageMatchesChecksum@0 @96 PRIVATE
+  MD4Final@4 @97
+  MD4Init@4 @98
+  MD4Update@12 @99
+  MD5Final@4 @100
+  MD5Init@4 @101
+  MD5Update@12 @102
+  NlsAnsiCodePage @103 DATA
+  NlsMbCodePageTag @104 DATA
+  NlsMbOemCodePageTag @105 DATA
+  NtAcceptConnectPort@24 @106
+  NtAccessCheck@32 @107
+  NtAccessCheckAndAuditAlarm@44 @108
+  NtAddAtom@12 @109
+  NtAdjustGroupsToken@24 @110
+  NtAdjustPrivilegesToken@24 @111
+  NtAlertResumeThread@8 @112
+  NtAlertThread@4 @113
+  NtAllocateLocallyUniqueId@4 @114
+  NtAllocateUuids@16 @115
+  NtAllocateVirtualMemory@24 @116
+  NtAllocateVirtualMemoryEx@28 @117
+  NtAreMappedFilesTheSame@8 @118
+  NtAssignProcessToJobObject@8 @119
+  NtCallbackReturn@12 @120
+  NtCancelIoFile@8 @121
+  NtCancelIoFileEx@12 @122
+  NtCancelTimer@8 @123
+  NtClearEvent@4 @124
+  NtClearPowerRequest@8 @125
+  NtClose@4 @126
+  NtCompleteConnectPort@4 @127
+  NtConnectPort@32 @128
+  NtContinue@8 @129
+  NtCreateDebugObject@16 @130
+  NtCreateDirectoryObject@12 @131
+  NtCreateEvent@20 @132
+  NtCreateFile@44 @133
+  NtCreateIoCompletion@16 @134
+  NtCreateJobObject@12 @135
+  NtCreateKey@28 @136
+  NtCreateKeyTransacted@32 @137
+  NtCreateKeyedEvent@16 @138
+  NtCreateLowBoxToken@36 @139
+  NtCreateMailslotFile@32 @140
+  NtCreateMutant@16 @141
+  NtCreateNamedPipeFile@56 @142
+  NtCreatePagingFile@16 @143
+  NtCreatePort@20 @144
+  NtCreatePowerRequest@8 @145
+  NtCreateSection@28 @146
+  NtCreateSemaphore@20 @147
+  NtCreateSymbolicLinkObject@16 @148
+  NtCreateThread@32 @149
+  NtCreateThreadEx@44 @150
+  NtCreateTimer@16 @151
+  NtCreateUserProcess@44 @152
+  NtCurrentTeb@0 @153
+  NtDebugActiveProcess@8 @154
+  NtDebugContinue@12 @155
+  NtDelayExecution@8 @156
+  NtDeleteAtom@4 @157
+  NtDeleteFile@4 @158
+  NtDeleteKey@4 @159
+  NtDeleteValueKey@8 @160
+  NtDeviceIoControlFile@40 @161
+  NtDisplayString@4 @162
+  NtDuplicateObject@28 @163
+  NtDuplicateToken@24 @164
+  NtEnumerateKey@24 @165
+  NtEnumerateValueKey@24 @166
+  NtFilterToken@24 @167
+  NtFindAtom@12 @168
+  NtFlushBuffersFile@8 @169
+  NtFlushInstructionCache@12 @170
+  NtFlushKey@4 @171
+  NtFlushProcessWriteBuffers@0 @172
+  NtFlushVirtualMemory@16 @173
+  NtFreeVirtualMemory@16 @174
+  NtFsControlFile@40 @175
+  NtGetContextThread@8 @176
+  NtGetCurrentProcessorNumber@0 @177
+  NtGetNextThread@24 @178
+  NtGetNlsSectionPtr@20 @179
+  NtGetTickCount@0 @180
+  NtGetWriteWatch@28 @181
+  NtImpersonateAnonymousToken@4 @182
+  NtInitiatePowerAction@16 @183
+  NtIsProcessInJob@8 @184
+  NtListenPort@8 @185
+  NtLoadDriver@4 @186
+  NtLoadKey2@12 @187
+  NtLoadKey@8 @188
+  NtLockFile@40 @189
+  NtLockVirtualMemory@16 @190
+  NtMakeTemporaryObject@4 @191
+  NtMapViewOfSection@40 @192
+  NtNotifyChangeDirectoryFile@36 @193
+  NtNotifyChangeKey@40 @194
+  NtNotifyChangeMultipleKeys@48 @195
+  NtOpenDirectoryObject@12 @196
+  NtOpenEvent@12 @197
+  NtOpenFile@24 @198
+  NtOpenIoCompletion@12 @199
+  NtOpenJobObject@12 @200
+  NtOpenKey@12 @201
+  NtOpenKeyEx@16 @202
+  NtOpenKeyTransacted@16 @203
+  NtOpenKeyTransactedEx@20 @204
+  NtOpenKeyedEvent@12 @205
+  NtOpenMutant@12 @206
+  NtOpenProcess@16 @207
+  NtOpenProcessToken@12 @208
+  NtOpenProcessTokenEx@16 @209
+  NtOpenSection@12 @210
+  NtOpenSemaphore@12 @211
+  NtOpenSymbolicLinkObject@12 @212
+  NtOpenThread@16 @213
+  NtOpenThreadToken@16 @214
+  NtOpenThreadTokenEx@20 @215
+  NtOpenTimer@12 @216
+  NtPowerInformation@20 @217
+  NtPrivilegeCheck@12 @218
+  NtProtectVirtualMemory@20 @219
+  NtPulseEvent@8 @220
+  NtQueryAttributesFile@8 @221
+  NtQueryDefaultLocale@8 @222
+  NtQueryDefaultUILanguage@4 @223
+  NtQueryDirectoryFile@44 @224
+  NtQueryDirectoryObject@28 @225
+  NtQueryEaFile@36 @226
+  NtQueryEvent@20 @227
+  NtQueryFullAttributesFile@8 @228
+  NtQueryInformationAtom@20 @229
+  NtQueryInformationFile@20 @230
+  NtQueryInformationJobObject@20 @231
+  NtQueryInformationProcess@20 @232
+  NtQueryInformationThread@20 @233
+  NtQueryInformationToken@20 @234
+  NtQueryInstallUILanguage@4 @235
+  NtQueryIoCompletion@20 @236
+  NtQueryKey@20 @237
+  NtQueryLicenseValue@20 @238
+  NtQueryMultipleValueKey@24 @239
+  NtQueryMutant@20 @240
+  NtQueryObject@20 @241
+  NtQueryPerformanceCounter@8 @242
+  NtQuerySection@20 @243
+  NtQuerySecurityObject@20 @244
+  NtQuerySemaphore@20 @245
+  NtQuerySymbolicLinkObject@12 @246
+  NtQuerySystemEnvironmentValue@16 @247
+  NtQuerySystemEnvironmentValueEx@20 @248
+  NtQuerySystemInformation@16 @249
+  NtQuerySystemInformationEx@24 @250
+  NtQuerySystemTime@4 @251
+  NtQueryTimer@20 @252
+  NtQueryTimerResolution@12 @253
+  NtQueryValueKey@24 @254
+  NtQueryVirtualMemory@24 @255
+  NtQueryVolumeInformationFile@20 @256
+  NtQueueApcThread@20 @257
+  NtRaiseException@12 @258
+  NtRaiseHardError@24 @259
+  NtReadFile@36 @260
+  NtReadFileScatter@36 @261
+  NtReadVirtualMemory@20 @262
+  NtRegisterThreadTerminatePort@4 @263
+  NtReleaseKeyedEvent@16 @264
+  NtReleaseMutant@8 @265
+  NtReleaseSemaphore@12 @266
+  NtRemoveIoCompletion@20 @267
+  NtRemoveIoCompletionEx@24 @268
+  NtRemoveProcessDebug@8 @269
+  NtRenameKey@8 @270
+  NtReplaceKey@12 @271
+  NtReplyWaitReceivePort@16 @272
+  NtRequestWaitReplyPort@12 @273
+  NtResetEvent@8 @274
+  NtResetWriteWatch@12 @275
+  NtRestoreKey@12 @276
+  NtResumeProcess@4 @277
+  NtResumeThread@8 @278
+  NtSaveKey@8 @279
+  NtSecureConnectPort@36 @280
+  NtSetContextThread@8 @281
+  NtSetDefaultLocale@8 @282
+  NtSetDefaultUILanguage@4 @283
+  NtSetEaFile@16 @284
+  NtSetEvent@8 @285
+  NtSetInformationDebugObject@20 @286
+  NtSetInformationFile@20 @287
+  NtSetInformationJobObject@16 @288
+  NtSetInformationKey@16 @289
+  NtSetInformationObject@16 @290
+  NtSetInformationProcess@16 @291
+  NtSetInformationThread@16 @292
+  NtSetInformationToken@16 @293
+  NtSetIntervalProfile@8 @294
+  NtSetIoCompletion@20 @295
+  NtSetLdtEntries@24 @296
+  NtSetPowerRequest@8 @297
+  NtSetSecurityObject@12 @298
+  NtSetSystemInformation@12 @299
+  NtSetSystemTime@8 @300
+  NtSetThreadExecutionState@8 @301
+  NtSetTimer@28 @302
+  NtSetTimerResolution@12 @303
+  NtSetValueKey@24 @304
+  NtSetVolumeInformationFile@20 @305
+  NtShutdownSystem@4 @306
+  NtSignalAndWaitForSingleObject@16 @307
+  NtSuspendProcess@4 @308
+  NtSuspendThread@8 @309
+  NtSystemDebugControl@24 @310
+  NtTerminateJobObject@8 @311
+  NtTerminateProcess@8 @312
+  NtTerminateThread@8 @313
+  NtTestAlert@0 @314
+  NtTraceControl@24 @315
+  NtUnloadDriver@4 @316
+  NtUnloadKey@4 @317
+  NtUnlockFile@20 @318
+  NtUnlockVirtualMemory@16 @319
+  NtUnmapViewOfSection@8 @320
+  NtWaitForDebugEvent@16 @321
+  NtWaitForKeyedEvent@16 @322
+  NtWaitForMultipleObjects@20 @323
+  NtWaitForSingleObject@12 @324
+  NtWow64AllocateVirtualMemory64@28 @325
+  NtWow64GetNativeSystemInformation@16 @326
+  NtWow64ReadVirtualMemory64@28 @327
+  NtWow64WriteVirtualMemory64@28 @328
+  NtWriteFile@36 @329
+  NtWriteFileGather@36 @330
+  NtWriteVirtualMemory@20 @331
+  NtYieldExecution@0 @332
+  PfxFindPrefix@0 @333 PRIVATE
+  PfxInitialize@0 @334 PRIVATE
+  PfxInsertPrefix@0 @335 PRIVATE
+  PfxRemovePrefix@0 @336 PRIVATE
+  RtlAbortRXact@0 @337 PRIVATE
+  RtlAbsoluteToSelfRelativeSD@12 @338
+  RtlAcquirePebLock@0 @339
+  RtlAcquireResourceExclusive@8 @340
+  RtlAcquireResourceShared@8 @341
+  RtlAcquireSRWLockExclusive@4 @342
+  RtlAcquireSRWLockShared@4 @343
+  RtlActivateActivationContext@12 @344
+  RtlActivateActivationContextEx@16 @345
+  RtlActivateActivationContextUnsafeFast@0 @346 PRIVATE
+  RtlAddAccessAllowedAce@16 @347
+  RtlAddAccessAllowedAceEx@20 @348
+  RtlAddAccessAllowedObjectAce@28 @349
+  RtlAddAccessDeniedAce@16 @350
+  RtlAddAccessDeniedAceEx@20 @351
+  RtlAddAccessDeniedObjectAce@28 @352
+  RtlAddAce@20 @353
+  RtlAddActionToRXact@0 @354 PRIVATE
+  RtlAddAtomToAtomTable@12 @355
+  RtlAddAttributeActionToRXact@0 @356 PRIVATE
+  RtlAddAuditAccessAce@24 @357
+  RtlAddAuditAccessAceEx@28 @358
+  RtlAddAuditAccessObjectAce@36 @359
+  RtlAddMandatoryAce@24 @360
+  RtlAddRefActivationContext@4 @361
+  RtlAddVectoredContinueHandler@8 @362
+  RtlAddVectoredExceptionHandler@8 @363
+  RtlAdjustPrivilege@16 @364
+  RtlAllocateAndInitializeSid@44 @365
+  RtlAllocateHandle@8 @366
+  RtlAllocateHeap@12 @367
+  RtlAnsiCharToUnicodeChar@4 @368
+  RtlAnsiStringToUnicodeSize@4 @369
+  RtlAnsiStringToUnicodeString@12 @370
+  RtlAppendAsciizToString@8 @371
+  RtlAppendStringToString@8 @372
+  RtlAppendUnicodeStringToString@8 @373
+  RtlAppendUnicodeToString@8 @374
+  RtlApplyRXact@0 @375 PRIVATE
+  RtlApplyRXactNoFlush@0 @376 PRIVATE
+  RtlAreAllAccessesGranted@8 @377
+  RtlAreAnyAccessesGranted@8 @378
+  RtlAreBitsClear@12 @379
+  RtlAreBitsSet@12 @380
+  RtlAssert@16 @381
+  RtlCaptureContext@4 @382
+  RtlCaptureStackBackTrace@16 @383
+  RtlCharToInteger@12 @384
+  RtlCheckRegistryKey@8 @385
+  RtlClearAllBits@4 @386
+  RtlClearBits@12 @387
+  RtlClosePropertySet@0 @388 PRIVATE
+  RtlCompactHeap@8 @389
+  RtlCompareMemory@12 @390
+  RtlCompareMemoryUlong@12 @391
+  RtlCompareString@12 @392
+  RtlCompareUnicodeString@12 @393
+  RtlCompareUnicodeStrings@20 @394
+  RtlCompressBuffer@32 @395
+  RtlComputeCrc32@12 @396
+  RtlConsoleMultiByteToUnicodeN@0 @397 PRIVATE
+  RtlConvertExclusiveToShared@0 @398 PRIVATE
+  RtlConvertLongToLargeInteger@4 @399
+  RtlConvertSharedToExclusive@0 @400 PRIVATE
+  RtlConvertSidToUnicodeString@12 @401
+  RtlConvertToAutoInheritSecurityObject@24 @402
+  RtlConvertUiListToApiList@0 @403 PRIVATE
+  RtlConvertUlongToLargeInteger@4 @404
+  RtlCopyContext@12 @405
+  RtlCopyExtendedContext@12 @406
+  RtlCopyLuid@8 @407
+  RtlCopyLuidAndAttributesArray@12 @408
+  RtlCopySecurityDescriptor@8 @409
+  RtlCopySid@12 @410
+  RtlCopySidAndAttributesArray@0 @411 PRIVATE
+  RtlCopyString@8 @412
+  RtlCopyUnicodeString@8 @413
+  RtlCreateAcl@12 @414
+  RtlCreateActivationContext@8 @415
+  RtlCreateAndSetSD@0 @416 PRIVATE
+  RtlCreateAtomTable@8 @417
+  RtlCreateEnvironment@8 @418
+  RtlCreateHeap@24 @419
+  RtlCreateProcessParameters@40 @420
+  RtlCreateProcessParametersEx@44 @421
+  RtlCreatePropertySet@0 @422 PRIVATE
+  RtlCreateQueryDebugBuffer@8 @423
+  RtlCreateRegistryKey@8 @424
+  RtlCreateSecurityDescriptor@8 @425
+  RtlCreateTagHeap@0 @426 PRIVATE
+  RtlCreateTimer@28 @427
+  RtlCreateTimerQueue@4 @428
+  RtlCreateUnicodeString@8 @429
+  RtlCreateUnicodeStringFromAsciiz@8 @430
+  RtlCreateUserProcess@40 @431
+  RtlCreateUserSecurityObject@0 @432 PRIVATE
+  RtlCreateUserStack@24 @433
+  RtlCreateUserThread@40 @434
+  RtlCustomCPToUnicodeN@24 @435
+  RtlCutoverTimeToSystemTime@0 @436 PRIVATE
+  RtlDeNormalizeProcessParams@4 @437
+  RtlDeactivateActivationContext@8 @438
+  RtlDeactivateActivationContextUnsafeFast@0 @439 PRIVATE
+  RtlDebugPrintTimes@0 @440 PRIVATE
+  RtlDecodePointer@4 @441
+  RtlDecodeSystemPointer@4=RtlDecodePointer @442
+  RtlDecompressBuffer@24 @443
+  RtlDecompressFragment@32 @444
+  RtlDefaultNpAcl@4 @445
+  RtlDelete@0 @446 PRIVATE
+  RtlDeleteAce@8 @447
+  RtlDeleteAtomFromAtomTable@8 @448
+  RtlDeleteCriticalSection@4 @449
+  RtlDeleteElementGenericTable@0 @450 PRIVATE
+  RtlDeleteElementGenericTableAvl@0 @451 PRIVATE
+  RtlDeleteNoSplay@0 @452 PRIVATE
+  RtlDeleteOwnersRanges@0 @453 PRIVATE
+  RtlDeleteRange@0 @454 PRIVATE
+  RtlDeleteRegistryValue@12 @455
+  RtlDeleteResource@4 @456
+  RtlDeleteSecurityObject@4 @457
+  RtlDeleteTimer@12 @458
+  RtlDeleteTimerQueueEx@8 @459
+  RtlDeregisterWait@4 @460
+  RtlDeregisterWaitEx@8 @461
+  RtlDestroyAtomTable@4 @462
+  RtlDestroyEnvironment@4 @463
+  RtlDestroyHandleTable@4 @464
+  RtlDestroyHeap@4 @465
+  RtlDestroyProcessParameters@4 @466
+  RtlDestroyQueryDebugBuffer@4 @467
+  RtlDetermineDosPathNameType_U@4 @468
+  RtlDllShutdownInProgress@0 @469
+  RtlDoesFileExists_U@4 @470
+  RtlDosPathNameToNtPathName_U@16 @471
+  RtlDosPathNameToNtPathName_U_WithStatus@16 @472
+  RtlDosPathNameToRelativeNtPathName_U_WithStatus@16 @473
+  RtlDosSearchPath_U@24 @474
+  RtlDowncaseUnicodeChar@4 @475
+  RtlDowncaseUnicodeString@12 @476
+  RtlDumpResource@4 @477
+  RtlDuplicateUnicodeString@12 @478
+  RtlEmptyAtomTable@8 @479
+  RtlEncodePointer@4 @480
+  RtlEncodeSystemPointer@4=RtlEncodePointer @481
+  RtlEnlargedIntegerMultiply@8 @482
+  RtlEnlargedUnsignedDivide@16 @483
+  RtlEnlargedUnsignedMultiply@8 @484
+  RtlEnterCriticalSection@4 @485
+  RtlEnumProcessHeaps@0 @486 PRIVATE
+  RtlEnumerateGenericTable@0 @487 PRIVATE
+  RtlEnumerateGenericTableWithoutSplaying@8 @488
+  RtlEnumerateProperties@0 @489 PRIVATE
+  RtlEqualComputerName@8 @490
+  RtlEqualDomainName@8 @491
+  RtlEqualLuid@8 @492
+  RtlEqualPrefixSid@8 @493
+  RtlEqualSid@8 @494
+  RtlEqualString@12 @495
+  RtlEqualUnicodeString@12 @496
+  RtlEraseUnicodeString@4 @497
+  RtlExitUserProcess@4 @498
+  RtlExitUserThread@4 @499
+  RtlExpandEnvironmentStrings@24 @500
+  RtlExpandEnvironmentStrings_U@16 @501
+  RtlExtendHeap@0 @502 PRIVATE
+  RtlExtendedIntegerMultiply@12 @503
+  RtlExtendedLargeIntegerDivide@16 @504
+  RtlExtendedMagicDivide@20 @505
+  RtlFillMemory@12 @506
+  RtlFillMemoryUlong@12 @507
+  RtlFinalReleaseOutOfProcessMemoryStream@0 @508 PRIVATE
+  RtlFindActivationContextSectionGuid@20 @509
+  RtlFindActivationContextSectionString@20 @510
+  RtlFindCharInUnicodeString@16 @511
+  RtlFindClearBits@12 @512
+  RtlFindClearBitsAndSet@12 @513
+  RtlFindClearRuns@16 @514
+  RtlFindExportedRoutineByName@8 @515
+  RtlFindLastBackwardRunClear@12 @516
+  RtlFindLastBackwardRunSet@12 @517
+  RtlFindLeastSignificantBit@8 @518
+  RtlFindLongestRunClear@8 @519
+  RtlFindLongestRunSet@8 @520
+  RtlFindMessage@20 @521
+  RtlFindMostSignificantBit@8 @522
+  RtlFindNextForwardRunClear@12 @523
+  RtlFindNextForwardRunSet@12 @524
+  RtlFindRange@0 @525 PRIVATE
+  RtlFindSetBits@12 @526
+  RtlFindSetBitsAndClear@12 @527
+  RtlFindSetRuns@16 @528
+  RtlFirstEntrySList@4 @529
+  RtlFirstFreeAce@8 @530
+  RtlFlsAlloc@8 @531
+  RtlFlsFree@4 @532
+  RtlFlsGetValue@8 @533
+  RtlFlsSetValue@8 @534
+  RtlFlushPropertySet@0 @535 PRIVATE
+  RtlFormatCurrentUserKeyPath@4 @536
+  RtlFormatMessage@36 @537
+  RtlFormatMessageEx@40 @538
+  RtlFreeAnsiString@4 @539
+  RtlFreeHandle@8 @540
+  RtlFreeHeap@12 @541
+  RtlFreeOemString@4 @542
+  RtlFreeSid@4 @543
+  RtlFreeThreadActivationContextStack@0 @544
+  RtlFreeUnicodeString@4 @545
+  RtlFreeUserStack@4 @546
+  RtlGUIDFromString@8 @547
+  RtlGenerate8dot3Name@0 @548 PRIVATE
+  RtlGetAce@12 @549
+  RtlGetActiveActivationContext@4 @550
+  RtlGetCallersAddress@0 @551 PRIVATE
+  RtlGetCompressionWorkSpaceSize@12 @552
+  RtlGetControlSecurityDescriptor@12 @553
+  RtlGetCurrentDirectory_U@8 @554
+  RtlGetCurrentPeb@0 @555
+  RtlGetCurrentProcessorNumberEx@4 @556
+  RtlGetCurrentTransaction@0 @557
+  RtlGetDaclSecurityDescriptor@16 @558
+  RtlGetElementGenericTable@0 @559 PRIVATE
+  RtlGetEnabledExtendedFeatures@8 @560
+  RtlGetExePath@8 @561
+  RtlGetExtendedContextLength@8 @562
+  RtlGetExtendedContextLength2@16 @563
+  RtlGetExtendedFeaturesMask@4 @564
+  RtlGetFrame@0 @565
+  RtlGetFullPathName_U@16 @566
+  RtlGetGroupSecurityDescriptor@12 @567
+  RtlGetLastNtStatus@0 @568
+  RtlGetLastWin32Error@0 @569
+  RtlGetLongestNtPathLength@0 @570
+  RtlGetNativeSystemInformation@16=NtWow64GetNativeSystemInformation @571
+  RtlGetNtGlobalFlags@0 @572
+  RtlGetNtProductType@4 @573
+  RtlGetNtVersionNumbers@12 @574
+  RtlGetOwnerSecurityDescriptor@12 @575
+  RtlGetProductInfo@20 @576
+  RtlGetProcessHeaps@8 @577
+  RtlGetProcessPreferredUILanguages@16 @578
+  RtlGetSaclSecurityDescriptor@16 @579
+  RtlGetSearchPath@4 @580
+  RtlGetSystemPreferredUILanguages@20 @581
+  RtlGetSystemTimePrecise@0 @582
+  RtlGetThreadErrorMode@0 @583
+  RtlGetThreadPreferredUILanguages@16 @584
+  RtlGetUnloadEventTrace@0 @585
+  RtlGetUnloadEventTraceEx@12 @586
+  RtlGetUserInfoHeap@0 @587 PRIVATE
+  RtlGetUserPreferredUILanguages@20 @588
+  RtlGetVersion@4 @589
+  RtlGuidToPropertySetName@0 @590 PRIVATE
+  RtlHashUnicodeString@16 @591
+  RtlIdentifierAuthoritySid@4 @592
+  RtlIdnToAscii@20 @593
+  RtlIdnToNameprepUnicode@20 @594
+  RtlIdnToUnicode@20 @595
+  RtlImageDirectoryEntryToData@16 @596
+  RtlImageNtHeader@4 @597
+  RtlImageRvaToSection@12 @598
+  RtlImageRvaToVa@16 @599
+  RtlImpersonateSelf@4 @600
+  RtlInitAnsiString@8 @601
+  RtlInitAnsiStringEx@8 @602
+  RtlInitCodePageTable@8 @603
+  RtlInitNlsTables@16 @604
+  RtlInitString@8 @605
+  RtlInitUnicodeString@8 @606
+  RtlInitUnicodeStringEx@8 @607
+  RtlInitializeBitMap@12 @608
+  RtlInitializeConditionVariable@4 @609
+  RtlInitializeContext@0 @610 PRIVATE
+  RtlInitializeCriticalSection@4 @611
+  RtlInitializeCriticalSectionAndSpinCount@8 @612
+  RtlInitializeCriticalSectionEx@12 @613
+  RtlInitializeExtendedContext@12 @614
+  RtlInitializeExtendedContext2@20 @615
+  RtlInitializeGenericTable@20 @616
+  RtlInitializeGenericTableAvl@20 @617
+  RtlInitializeHandleTable@12 @618
+  RtlInitializeRXact@0 @619 PRIVATE
+  RtlInitializeResource@4 @620
+  RtlInitializeSListHead@4 @621
+  RtlInitializeSRWLock@4 @622
+  RtlInitializeSid@12 @623
+  RtlInsertElementGenericTable@0 @624 PRIVATE
+  RtlInsertElementGenericTableAvl@16 @625
+  RtlInt64ToUnicodeString@16 @626
+  RtlIntegerToChar@16 @627
+  RtlIntegerToUnicodeString@12 @628
+  RtlInterlockedCompareExchange64@20 @629
+  RtlInterlockedFlushSList@4 @630
+  RtlInterlockedPopEntrySList@4 @631
+  RtlInterlockedPushEntrySList@8 @632
+  RtlInterlockedPushListSList@16 @633
+  RtlInterlockedPushListSListEx@16 @634
+  RtlIpv4AddressToStringA@8 @635
+  RtlIpv4AddressToStringExA@16 @636
+  RtlIpv4AddressToStringExW@16 @637
+  RtlIpv4AddressToStringW@8 @638
+  RtlIpv4StringToAddressA@16 @639
+  RtlIpv4StringToAddressExA@16 @640
+  RtlIpv4StringToAddressExW@16 @641
+  RtlIpv4StringToAddressW@16 @642
+  RtlIpv6AddressToStringA@8 @643
+  RtlIpv6AddressToStringExA@20 @644
+  RtlIpv6AddressToStringExW@20 @645
+  RtlIpv6AddressToStringW@8 @646
+  RtlIpv6StringToAddressA@12 @647
+  RtlIpv6StringToAddressExA@16 @648
+  RtlIpv6StringToAddressExW@16 @649
+  RtlIpv6StringToAddressW@12 @650
+  RtlIsActivationContextActive@4 @651
+  RtlIsCriticalSectionLocked@4 @652
+  RtlIsCriticalSectionLockedByThread@4 @653
+  RtlIsDosDeviceName_U@4 @654
+  RtlIsGenericTableEmpty@0 @655 PRIVATE
+  RtlIsNameLegalDOS8Dot3@12 @656
+  RtlIsNormalizedString@16 @657
+  RtlIsProcessorFeaturePresent@4 @658
+  RtlIsTextUnicode@12 @659
+  RtlIsValidHandle@8 @660
+  RtlIsValidIndexHandle@12 @661
+  RtlLargeIntegerAdd@16 @662
+  RtlLargeIntegerArithmeticShift@12 @663
+  RtlLargeIntegerDivide@20 @664
+  RtlLargeIntegerNegate@8 @665
+  RtlLargeIntegerShiftLeft@12 @666
+  RtlLargeIntegerShiftRight@12 @667
+  RtlLargeIntegerSubtract@16 @668
+  RtlLargeIntegerToChar@16 @669
+  RtlLeaveCriticalSection@4 @670
+  RtlLengthRequiredSid@4 @671
+  RtlLengthSecurityDescriptor@4 @672
+  RtlLengthSid@4 @673
+  RtlLocalTimeToSystemTime@8 @674
+  RtlLocaleNameToLcid@12 @675
+  RtlLocateExtendedFeature@12 @676
+  RtlLocateExtendedFeature2@16 @677
+  RtlLocateLegacyContext@8 @678
+  RtlLockHeap@4 @679
+  RtlLookupAtomInAtomTable@12 @680
+  RtlLookupElementGenericTable@0 @681 PRIVATE
+  RtlMakeSelfRelativeSD@12 @682
+  RtlMapGenericMask@8 @683
+  RtlMoveMemory@12 @684
+  RtlMultiByteToUnicodeN@20 @685
+  RtlMultiByteToUnicodeSize@12 @686
+  RtlNewInstanceSecurityObject@0 @687 PRIVATE
+  RtlNewSecurityGrantedAccess@0 @688 PRIVATE
+  RtlNewSecurityObject@24 @689
+  RtlNormalizeProcessParams@4 @690
+  RtlNormalizeString@20 @691
+  RtlNtStatusToDosError@4 @692
+  RtlNtStatusToDosErrorNoTeb@4 @693
+  RtlNumberGenericTableElements@4 @694
+  RtlNumberOfClearBits@4 @695
+  RtlNumberOfSetBits@4 @696
+  RtlOemStringToUnicodeSize@4 @697
+  RtlOemStringToUnicodeString@12 @698
+  RtlOemToUnicodeN@20 @699
+  RtlOpenCurrentUser@8 @700
+  RtlPcToFileHeader@8 @701
+  RtlPinAtomInAtomTable@8 @702
+  RtlPopFrame@4 @703
+  RtlPrefixString@12 @704
+  RtlPrefixUnicodeString@12 @705
+  RtlProcessFlsData@8 @706
+  RtlPropertySetNameToGuid@0 @707 PRIVATE
+  RtlProtectHeap@0 @708 PRIVATE
+  RtlPushFrame@4 @709
+  RtlQueryActivationContextApplicationSettings@28 @710
+  RtlQueryAtomInAtomTable@24 @711
+  RtlQueryDepthSList@4 @712
+  RtlQueryDynamicTimeZoneInformation@4 @713
+  RtlQueryEnvironmentVariable_U@12 @714
+  RtlQueryEnvironmentVariable@24 @715
+  RtlQueryHeapInformation@20 @716
+  RtlQueryInformationAcl@16 @717
+  RtlQueryInformationActivationContext@28 @718
+  RtlQueryInformationActiveActivationContext@0 @719 PRIVATE
+  RtlQueryInterfaceMemoryStream@0 @720 PRIVATE
+  RtlQueryPackageIdentity@24 @721
+  RtlQueryPerformanceCounter@4 @722
+  RtlQueryPerformanceFrequency@4 @723
+  RtlQueryProcessBackTraceInformation@0 @724 PRIVATE
+  RtlQueryProcessDebugInformation@12 @725
+  RtlQueryProcessHeapInformation@0 @726 PRIVATE
+  RtlQueryProcessLockInformation@0 @727 PRIVATE
+  RtlQueryProcessPlaceholderCompatibilityMode@0 @728
+  RtlQueryProperties@0 @729 PRIVATE
+  RtlQueryPropertyNames@0 @730 PRIVATE
+  RtlQueryPropertySet@0 @731 PRIVATE
+  RtlQueryRegistryValues@20 @732
+  RtlQueryRegistryValuesEx@20=RtlQueryRegistryValues @733
+  RtlQuerySecurityObject@0 @734 PRIVATE
+  RtlQueryTagHeap@0 @735 PRIVATE
+  RtlQueryTimeZoneInformation@4 @736
+  RtlQueryUnbiasedInterruptTime@4 @737
+  RtlQueueApcWow64Thread@0 @738 PRIVATE
+  RtlQueueWorkItem@12 @739
+  RtlRaiseException@4 @740
+  RtlRaiseStatus@4 @741
+  RtlRandom@4 @742
+  RtlRandomEx@4 @743
+  RtlReAllocateHeap@16 @744
+  RtlReadMemoryStream@0 @745 PRIVATE
+  RtlReadOutOfProcessMemoryStream@0 @746 PRIVATE
+  RtlRealPredecessor@0 @747 PRIVATE
+  RtlRealSuccessor@0 @748 PRIVATE
+  RtlRegisterSecureMemoryCacheCallback@0 @749 PRIVATE
+  RtlRegisterWait@24 @750
+  RtlReleaseActivationContext@4 @751
+  RtlReleaseMemoryStream@0 @752 PRIVATE
+  RtlReleasePath@4 @753
+  RtlReleasePebLock@0 @754
+  RtlReleaseRelativeName@4 @755
+  RtlReleaseResource@4 @756
+  RtlReleaseSRWLockExclusive@4 @757
+  RtlReleaseSRWLockShared@4 @758
+  RtlRemoteCall@0 @759 PRIVATE
+  RtlRemoveVectoredContinueHandler@4 @760
+  RtlRemoveVectoredExceptionHandler@4 @761
+  RtlResetRtlTranslations@4 @762
+  RtlRestoreLastWin32Error@4=RtlSetLastWin32Error @763
+  RtlRevertMemoryStream@0 @764 PRIVATE
+  RtlRunDecodeUnicodeString@0 @765 PRIVATE
+  RtlRunEncodeUnicodeString@0 @766 PRIVATE
+  RtlRunOnceBeginInitialize@12 @767
+  RtlRunOnceComplete@12 @768
+  RtlRunOnceExecuteOnce@16 @769
+  RtlRunOnceInitialize@4 @770
+  RtlSecondsSince1970ToTime@8 @771
+  RtlSecondsSince1980ToTime@8 @772
+  RtlSelfRelativeToAbsoluteSD@44 @773
+  RtlSetAllBits@4 @774
+  RtlSetBits@12 @775
+  RtlSetControlSecurityDescriptor@12 @776
+  RtlSetCriticalSectionSpinCount@8 @777
+  RtlSetCurrentDirectory_U@4 @778
+  RtlSetCurrentEnvironment@8 @779
+  RtlSetCurrentTransaction@4 @780
+  RtlSetDaclSecurityDescriptor@16 @781
+  RtlSetEnvironmentVariable@12 @782
+  RtlSetExtendedFeaturesMask@12 @783
+  RtlSetGroupSecurityDescriptor@12 @784
+  RtlSetHeapInformation@16 @785
+  RtlSetInformationAcl@0 @786 PRIVATE
+  RtlSetIoCompletionCallback@12 @787
+  RtlSetLastWin32Error@4 @788
+  RtlSetLastWin32ErrorAndNtStatusFromNtStatus@4 @789
+  RtlSetOwnerSecurityDescriptor@12 @790
+  RtlSetProcessPreferredUILanguages@12 @791
+  RtlSetProperties@0 @792 PRIVATE
+  RtlSetPropertyClassId@0 @793 PRIVATE
+  RtlSetPropertyNames@0 @794 PRIVATE
+  RtlSetPropertySetClassId@0 @795 PRIVATE
+  RtlSetSaclSecurityDescriptor@16 @796
+  RtlSetSearchPathMode@4 @797
+  RtlSetSecurityObject@0 @798 PRIVATE
+  RtlSetThreadErrorMode@8 @799
+  RtlSetThreadPreferredUILanguages@12 @800
+  RtlSetTimeZoneInformation@4 @801
+  RtlSetUnhandledExceptionFilter@4 @802
+  RtlSetUnicodeCallouts@0 @803 PRIVATE
+  RtlSetUserFlagsHeap@0 @804 PRIVATE
+  RtlSetUserValueHeap@0 @805 PRIVATE
+  RtlSizeHeap@12 @806
+  RtlSleepConditionVariableCS@12 @807
+  RtlSleepConditionVariableSRW@16 @808
+  RtlSplay@0 @809 PRIVATE
+  RtlStartRXact@0 @810 PRIVATE
+  RtlStringFromGUID@8 @811
+  RtlSubAuthorityCountSid@4 @812
+  RtlSubAuthoritySid@8 @813
+  RtlSubtreePredecessor@0 @814 PRIVATE
+  RtlSubtreeSuccessor@0 @815 PRIVATE
+  RtlSystemTimeToLocalTime@8 @816
+  RtlTimeFieldsToTime@8 @817
+  RtlTimeToElapsedTimeFields@8 @818
+  RtlTimeToSecondsSince1970@8 @819
+  RtlTimeToSecondsSince1980@8 @820
+  RtlTimeToTimeFields@8 @821
+  RtlTryAcquireSRWLockExclusive@4 @822
+  RtlTryAcquireSRWLockShared@4 @823
+  RtlTryEnterCriticalSection@4 @824
+  RtlUTF8ToUnicodeN@20 @825
+  RtlUlongByteSwap=NTDLL_RtlUlongByteSwap @826
+  RtlUlonglongByteSwap @827
+  RtlUnicodeStringToAnsiSize@4 @828
+  RtlUnicodeStringToAnsiString@12 @829
+  RtlUnicodeStringToCountedOemString@0 @830 PRIVATE
+  RtlUnicodeStringToInteger@12 @831
+  RtlUnicodeStringToOemSize@4 @832
+  RtlUnicodeStringToOemString@12 @833
+  RtlUnicodeToCustomCPN@24 @834
+  RtlUnicodeToMultiByteN@20 @835
+  RtlUnicodeToMultiByteSize@12 @836
+  RtlUnicodeToOemN@20 @837
+  RtlUnicodeToUTF8N@20 @838
+  RtlUniform@4 @839
+  RtlUnlockHeap@4 @840
+  RtlUnwind@16 @841
+  RtlUpcaseUnicodeChar@4 @842
+  RtlUpcaseUnicodeString@12 @843
+  RtlUpcaseUnicodeStringToAnsiString@12 @844
+  RtlUpcaseUnicodeStringToCountedOemString@12 @845
+  RtlUpcaseUnicodeStringToOemString@12 @846
+  RtlUpcaseUnicodeToCustomCPN@24 @847
+  RtlUpcaseUnicodeToMultiByteN@20 @848
+  RtlUpcaseUnicodeToOemN@20 @849
+  RtlUpdateTimer@16 @850
+  RtlUpperChar@4 @851
+  RtlUpperString@8 @852
+  RtlUsageHeap@0 @853 PRIVATE
+  RtlUserThreadStart@8 @854
+  RtlUshortByteSwap=NTDLL_RtlUshortByteSwap @855
+  RtlValidAcl@4 @856
+  RtlValidRelativeSecurityDescriptor@12 @857
+  RtlValidSecurityDescriptor@4 @858
+  RtlValidSid@4 @859
+  RtlValidateHeap@12 @860
+  RtlValidateProcessHeaps@0 @861 PRIVATE
+  RtlVerifyVersionInfo@16 @862
+  RtlWaitOnAddress@16 @863
+  RtlWakeAddressAll@4 @864
+  RtlWakeAddressSingle@4 @865
+  RtlWakeAllConditionVariable@4 @866
+  RtlWakeConditionVariable@4 @867
+  RtlWalkFrameChain@0 @868 PRIVATE
+  RtlWalkHeap@8 @869
+  RtlWow64EnableFsRedirection@4 @870
+  RtlWow64EnableFsRedirectionEx@8 @871
+  RtlWow64GetCurrentMachine@0 @872
+  RtlWow64GetProcessMachines@12 @873
+  RtlWow64IsWowGuestMachineSupported@8 @874
+  RtlWriteMemoryStream@0 @875 PRIVATE
+  RtlWriteRegistryValue@24 @876
+  RtlZeroHeap@0 @877 PRIVATE
+  RtlZeroMemory@8 @878
+  RtlZombifyActivationContext@4 @879
+  RtlpNtCreateKey@28 @880
+  RtlpNtEnumerateSubKey@12 @881
+  RtlpNtMakeTemporaryKey@4 @882
+  RtlpNtOpenKey@12 @883
+  RtlpNtQueryValueKey@20 @884
+  RtlpNtSetValueKey@16 @885
+  RtlpUnWaitCriticalSection@4 @886
+  RtlpWaitForCriticalSection@4 @887
+  RtlxAnsiStringToUnicodeSize@4=RtlAnsiStringToUnicodeSize @888
+  RtlxOemStringToUnicodeSize@4=RtlOemStringToUnicodeSize @889
+  RtlxUnicodeStringToAnsiSize@4=RtlUnicodeStringToAnsiSize @890
+  RtlxUnicodeStringToOemSize@4=RtlUnicodeStringToOemSize @891
+  TpAllocCleanupGroup@4 @892
+  TpAllocIoCompletion@20 @893
+  TpAllocPool@8 @894
+  TpAllocTimer@16 @895
+  TpAllocWait@16 @896
+  TpAllocWork@16 @897
+  TpCallbackLeaveCriticalSectionOnCompletion@8 @898
+  TpCallbackMayRunLong@4 @899
+  TpCallbackReleaseMutexOnCompletion@8 @900
+  TpCallbackReleaseSemaphoreOnCompletion@12 @901
+  TpCallbackSetEventOnCompletion@8 @902
+  TpCallbackUnloadDllOnCompletion@8 @903
+  TpCancelAsyncIoOperation@4 @904
+  TpDisassociateCallback@4 @905
+  TpIsTimerSet@4 @906
+  TpPostWork@4 @907
+  TpQueryPoolStackInformation@8 @908
+  TpReleaseCleanupGroup@4 @909
+  TpReleaseCleanupGroupMembers@12 @910
+  TpReleaseIoCompletion@4 @911
+  TpReleasePool@4 @912
+  TpReleaseTimer@4 @913
+  TpReleaseWait@4 @914
+  TpReleaseWork@4 @915
+  TpSetPoolMaxThreads@8 @916
+  TpSetPoolMinThreads@8 @917
+  TpSetPoolStackInformation@8 @918
+  TpSetTimer@16 @919
+  TpSetWait@12 @920
+  TpSimpleTryPost@12 @921
+  TpStartAsyncIoOperation@4 @922
+  TpWaitForIoCompletion@8 @923
+  TpWaitForTimer@8 @924
+  TpWaitForWait@8 @925
+  TpWaitForWork@8 @926
+  VerSetConditionMask@16 @927
+  WinSqmEndSession@4 @928
+  WinSqmIncrementDWORD@12 @929
+  WinSqmIsOptedIn@0 @930
+  WinSqmSetDWORD@12 @931
+  WinSqmStartSession@12 @932
+  Wow64Transition @933 DATA
+  ZwAcceptConnectPort@24=NtAcceptConnectPort @934 PRIVATE
+  ZwAccessCheck@32=NtAccessCheck @935 PRIVATE
+  ZwAccessCheckAndAuditAlarm@44=NtAccessCheckAndAuditAlarm @936 PRIVATE
+  ZwAddAtom@12=NtAddAtom @937 PRIVATE
+  ZwAdjustGroupsToken@24=NtAdjustGroupsToken @938 PRIVATE
+  ZwAdjustPrivilegesToken@24=NtAdjustPrivilegesToken @939 PRIVATE
+  ZwAlertResumeThread@8=NtAlertResumeThread @940 PRIVATE
+  ZwAlertThread@4=NtAlertThread @941 PRIVATE
+  ZwAllocateLocallyUniqueId@4=NtAllocateLocallyUniqueId @942 PRIVATE
+  ZwAllocateUuids@16=NtAllocateUuids @943 PRIVATE
+  ZwAllocateVirtualMemory@24=NtAllocateVirtualMemory @944 PRIVATE
+  ZwAllocateVirtualMemoryEx@28=NtAllocateVirtualMemoryEx @945 PRIVATE
+  ZwAreMappedFilesTheSame@8=NtAreMappedFilesTheSame @946 PRIVATE
+  ZwAssignProcessToJobObject@8=NtAssignProcessToJobObject @947 PRIVATE
+  ZwCancelIoFile@8=NtCancelIoFile @948 PRIVATE
+  ZwCancelIoFileEx@12=NtCancelIoFileEx @949 PRIVATE
+  ZwCancelTimer@8=NtCancelTimer @950 PRIVATE
+  ZwClearEvent@4=NtClearEvent @951 PRIVATE
+  ZwClearPowerRequest@8=NtClearPowerRequest @952 PRIVATE
+  ZwClose@4=NtClose @953 PRIVATE
+  ZwCompleteConnectPort@4=NtCompleteConnectPort @954 PRIVATE
+  ZwConnectPort@32=NtConnectPort @955 PRIVATE
+  ZwContinue@8=NtContinue @956 PRIVATE
+  ZwCreateDirectoryObject@12=NtCreateDirectoryObject @957 PRIVATE
+  ZwCreateEvent@20=NtCreateEvent @958 PRIVATE
+  ZwCreateFile@44=NtCreateFile @959 PRIVATE
+  ZwCreateIoCompletion@16=NtCreateIoCompletion @960 PRIVATE
+  ZwCreateJobObject@12=NtCreateJobObject @961 PRIVATE
+  ZwCreateKey@28=NtCreateKey @962 PRIVATE
+  ZwCreateKeyTransacted@32=NtCreateKeyTransacted @963 PRIVATE
+  ZwCreateKeyedEvent@16=NtCreateKeyedEvent @964 PRIVATE
+  ZwCreateLowBoxToken@36=NtCreateLowBoxToken @965 PRIVATE
+  ZwCreateMailslotFile@32=NtCreateMailslotFile @966 PRIVATE
+  ZwCreateMutant@16=NtCreateMutant @967 PRIVATE
+  ZwCreateNamedPipeFile@56=NtCreateNamedPipeFile @968 PRIVATE
+  ZwCreatePagingFile@16=NtCreatePagingFile @969 PRIVATE
+  ZwCreatePort@20=NtCreatePort @970 PRIVATE
+  ZwCreatePowerRequest@8=NtCreatePowerRequest @971 PRIVATE
+  ZwCreateSection@28=NtCreateSection @972 PRIVATE
+  ZwCreateSemaphore@20=NtCreateSemaphore @973 PRIVATE
+  ZwCreateSymbolicLinkObject@16=NtCreateSymbolicLinkObject @974 PRIVATE
+  ZwCreateThread@32=NtCreateThread @975 PRIVATE
+  ZwCreateThreadEx@44=NtCreateThreadEx @976 PRIVATE
+  ZwCreateTimer@16=NtCreateTimer @977 PRIVATE
+  ZwCreateUserProcess@44=NtCreateUserProcess @978 PRIVATE
+  ZwDebugActiveProcess@8=NtDebugActiveProcess @979 PRIVATE
+  ZwDebugContinue@12=NtDebugContinue @980 PRIVATE
+  ZwDelayExecution@8=NtDelayExecution @981 PRIVATE
+  ZwDeleteAtom@4=NtDeleteAtom @982 PRIVATE
+  ZwDeleteFile@4=NtDeleteFile @983 PRIVATE
+  ZwDeleteKey@4=NtDeleteKey @984 PRIVATE
+  ZwDeleteValueKey@8=NtDeleteValueKey @985 PRIVATE
+  ZwDeviceIoControlFile@40=NtDeviceIoControlFile @986 PRIVATE
+  ZwDisplayString@4=NtDisplayString @987 PRIVATE
+  ZwDuplicateObject@28=NtDuplicateObject @988 PRIVATE
+  ZwDuplicateToken@24=NtDuplicateToken @989 PRIVATE
+  ZwEnumerateKey@24=NtEnumerateKey @990 PRIVATE
+  ZwEnumerateValueKey@24=NtEnumerateValueKey @991 PRIVATE
+  ZwFilterToken@24=NtFilterToken @992 PRIVATE
+  ZwFindAtom@12=NtFindAtom @993 PRIVATE
+  ZwFlushBuffersFile@8=NtFlushBuffersFile @994 PRIVATE
+  ZwFlushInstructionCache@12=NtFlushInstructionCache @995 PRIVATE
+  ZwFlushKey@4=NtFlushKey @996 PRIVATE
+  ZwFlushProcessWriteBuffers@0=NtFlushProcessWriteBuffers @997 PRIVATE
+  ZwFlushVirtualMemory@16=NtFlushVirtualMemory @998 PRIVATE
+  ZwFreeVirtualMemory@16=NtFreeVirtualMemory @999 PRIVATE
+  ZwFsControlFile@40=NtFsControlFile @1000 PRIVATE
+  ZwGetContextThread@8=NtGetContextThread @1001 PRIVATE
+  ZwGetCurrentProcessorNumber@0=NtGetCurrentProcessorNumber @1002 PRIVATE
+  ZwGetNlsSectionPtr@20=NtGetNlsSectionPtr @1003 PRIVATE
+  ZwGetTickCount@0=NtGetTickCount @1004 PRIVATE
+  ZwGetWriteWatch@28=NtGetWriteWatch @1005 PRIVATE
+  ZwImpersonateAnonymousToken@4=NtImpersonateAnonymousToken @1006 PRIVATE
+  ZwInitiatePowerAction@16=NtInitiatePowerAction @1007 PRIVATE
+  ZwIsProcessInJob@8=NtIsProcessInJob @1008 PRIVATE
+  ZwListenPort@8=NtListenPort @1009 PRIVATE
+  ZwLoadDriver@4=NtLoadDriver @1010 PRIVATE
+  ZwLoadKey2@12=NtLoadKey2 @1011 PRIVATE
+  ZwLoadKey@8=NtLoadKey @1012 PRIVATE
+  ZwLockFile@40=NtLockFile @1013 PRIVATE
+  ZwLockVirtualMemory@16=NtLockVirtualMemory @1014 PRIVATE
+  ZwMakeTemporaryObject@4=NtMakeTemporaryObject @1015 PRIVATE
+  ZwMapViewOfSection@40=NtMapViewOfSection @1016 PRIVATE
+  ZwNotifyChangeDirectoryFile@36=NtNotifyChangeDirectoryFile @1017 PRIVATE
+  ZwNotifyChangeKey@40=NtNotifyChangeKey @1018 PRIVATE
+  ZwNotifyChangeMultipleKeys@48=NtNotifyChangeMultipleKeys @1019 PRIVATE
+  ZwOpenDirectoryObject@12=NtOpenDirectoryObject @1020 PRIVATE
+  ZwOpenEvent@12=NtOpenEvent @1021 PRIVATE
+  ZwOpenFile@24=NtOpenFile @1022 PRIVATE
+  ZwOpenIoCompletion@12=NtOpenIoCompletion @1023 PRIVATE
+  ZwOpenJobObject@12=NtOpenJobObject @1024 PRIVATE
+  ZwOpenKey@12=NtOpenKey @1025 PRIVATE
+  ZwOpenKeyEx@16=NtOpenKeyEx @1026 PRIVATE
+  ZwOpenKeyTransacted@16=NtOpenKeyTransacted @1027 PRIVATE
+  ZwOpenKeyTransactedEx@20=NtOpenKeyTransactedEx @1028 PRIVATE
+  ZwOpenKeyedEvent@12=NtOpenKeyedEvent @1029 PRIVATE
+  ZwOpenMutant@12=NtOpenMutant @1030 PRIVATE
+  ZwOpenProcess@16=NtOpenProcess @1031 PRIVATE
+  ZwOpenProcessToken@12=NtOpenProcessToken @1032 PRIVATE
+  ZwOpenProcessTokenEx@16=NtOpenProcessTokenEx @1033 PRIVATE
+  ZwOpenSection@12=NtOpenSection @1034 PRIVATE
+  ZwOpenSemaphore@12=NtOpenSemaphore @1035 PRIVATE
+  ZwOpenSymbolicLinkObject@12=NtOpenSymbolicLinkObject @1036 PRIVATE
+  ZwOpenThread@16=NtOpenThread @1037 PRIVATE
+  ZwOpenThreadToken@16=NtOpenThreadToken @1038 PRIVATE
+  ZwOpenThreadTokenEx@20=NtOpenThreadTokenEx @1039 PRIVATE
+  ZwOpenTimer@12=NtOpenTimer @1040 PRIVATE
+  ZwPowerInformation@20=NtPowerInformation @1041 PRIVATE
+  ZwPrivilegeCheck@12=NtPrivilegeCheck @1042 PRIVATE
+  ZwProtectVirtualMemory@20=NtProtectVirtualMemory @1043 PRIVATE
+  ZwPulseEvent@8=NtPulseEvent @1044 PRIVATE
+  ZwQueryAttributesFile@8=NtQueryAttributesFile @1045 PRIVATE
+  ZwQueryDefaultLocale@8=NtQueryDefaultLocale @1046 PRIVATE
+  ZwQueryDefaultUILanguage@4=NtQueryDefaultUILanguage @1047 PRIVATE
+  ZwQueryDirectoryFile@44=NtQueryDirectoryFile @1048 PRIVATE
+  ZwQueryDirectoryObject@28=NtQueryDirectoryObject @1049 PRIVATE
+  ZwQueryEaFile@36=NtQueryEaFile @1050 PRIVATE
+  ZwQueryEvent@20=NtQueryEvent @1051 PRIVATE
+  ZwQueryFullAttributesFile@8=NtQueryFullAttributesFile @1052 PRIVATE
+  ZwQueryInformationAtom@20=NtQueryInformationAtom @1053 PRIVATE
+  ZwQueryInformationFile@20=NtQueryInformationFile @1054 PRIVATE
+  ZwQueryInformationJobObject@20=NtQueryInformationJobObject @1055 PRIVATE
+  ZwQueryInformationProcess@20=NtQueryInformationProcess @1056 PRIVATE
+  ZwQueryInformationThread@20=NtQueryInformationThread @1057 PRIVATE
+  ZwQueryInformationToken@20=NtQueryInformationToken @1058 PRIVATE
+  ZwQueryInstallUILanguage@4=NtQueryInstallUILanguage @1059 PRIVATE
+  ZwQueryIoCompletion@20=NtQueryIoCompletion @1060 PRIVATE
+  ZwQueryKey@20=NtQueryKey @1061 PRIVATE
+  ZwQueryLicenseValue@20=NtQueryLicenseValue @1062 PRIVATE
+  ZwQueryMultipleValueKey@24=NtQueryMultipleValueKey @1063 PRIVATE
+  ZwQueryMutant@20=NtQueryMutant @1064 PRIVATE
+  ZwQueryObject@20=NtQueryObject @1065 PRIVATE
+  ZwQueryPerformanceCounter@8=NtQueryPerformanceCounter @1066 PRIVATE
+  ZwQuerySection@20=NtQuerySection @1067 PRIVATE
+  ZwQuerySecurityObject@20=NtQuerySecurityObject @1068 PRIVATE
+  ZwQuerySemaphore@20=NtQuerySemaphore @1069 PRIVATE
+  ZwQuerySymbolicLinkObject@12=NtQuerySymbolicLinkObject @1070 PRIVATE
+  ZwQuerySystemEnvironmentValue@16=NtQuerySystemEnvironmentValue @1071 PRIVATE
+  ZwQuerySystemEnvironmentValueEx@20=NtQuerySystemEnvironmentValueEx @1072 PRIVATE
+  ZwQuerySystemInformation@16=NtQuerySystemInformation @1073 PRIVATE
+  ZwQuerySystemInformationEx@24=NtQuerySystemInformationEx @1074 PRIVATE
+  ZwQuerySystemTime@4=NtQuerySystemTime @1075 PRIVATE
+  ZwQueryTimer@20=NtQueryTimer @1076 PRIVATE
+  ZwQueryTimerResolution@12=NtQueryTimerResolution @1077 PRIVATE
+  ZwQueryValueKey@24=NtQueryValueKey @1078 PRIVATE
+  ZwQueryVirtualMemory@24=NtQueryVirtualMemory @1079 PRIVATE
+  ZwQueryVolumeInformationFile@20=NtQueryVolumeInformationFile @1080 PRIVATE
+  ZwQueueApcThread@20=NtQueueApcThread @1081 PRIVATE
+  ZwRaiseException@12=NtRaiseException @1082 PRIVATE
+  ZwRaiseHardError@24=NtRaiseHardError @1083 PRIVATE
+  ZwReadFile@36=NtReadFile @1084 PRIVATE
+  ZwReadFileScatter@36=NtReadFileScatter @1085 PRIVATE
+  ZwReadVirtualMemory@20=NtReadVirtualMemory @1086 PRIVATE
+  ZwRegisterThreadTerminatePort@4=NtRegisterThreadTerminatePort @1087 PRIVATE
+  ZwReleaseKeyedEvent@16=NtReleaseKeyedEvent @1088 PRIVATE
+  ZwReleaseMutant@8=NtReleaseMutant @1089 PRIVATE
+  ZwReleaseSemaphore@12=NtReleaseSemaphore @1090 PRIVATE
+  ZwRemoveIoCompletion@20=NtRemoveIoCompletion @1091 PRIVATE
+  ZwRemoveIoCompletionEx@24=NtRemoveIoCompletionEx @1092 PRIVATE
+  ZwRemoveProcessDebug@8=NtRemoveProcessDebug @1093 PRIVATE
+  ZwRenameKey@8=NtRenameKey @1094 PRIVATE
+  ZwReplaceKey@12=NtReplaceKey @1095 PRIVATE
+  ZwReplyWaitReceivePort@16=NtReplyWaitReceivePort @1096 PRIVATE
+  ZwRequestWaitReplyPort@12=NtRequestWaitReplyPort @1097 PRIVATE
+  ZwResetEvent@8=NtResetEvent @1098 PRIVATE
+  ZwResetWriteWatch@12=NtResetWriteWatch @1099 PRIVATE
+  ZwRestoreKey@12=NtRestoreKey @1100 PRIVATE
+  ZwResumeProcess@4=NtResumeProcess @1101 PRIVATE
+  ZwResumeThread@8=NtResumeThread @1102 PRIVATE
+  ZwSaveKey@8=NtSaveKey @1103 PRIVATE
+  ZwSecureConnectPort@36=NtSecureConnectPort @1104 PRIVATE
+  ZwSetContextThread@8=NtSetContextThread @1105 PRIVATE
+  ZwSetDefaultLocale@8=NtSetDefaultLocale @1106 PRIVATE
+  ZwSetDefaultUILanguage@4=NtSetDefaultUILanguage @1107 PRIVATE
+  ZwSetEaFile@16=NtSetEaFile @1108 PRIVATE
+  ZwSetEvent@8=NtSetEvent @1109 PRIVATE
+  ZwSetInformationDebugObject@20=NtSetInformationDebugObject @1110 PRIVATE
+  ZwSetInformationFile@20=NtSetInformationFile @1111 PRIVATE
+  ZwSetInformationJobObject@16=NtSetInformationJobObject @1112 PRIVATE
+  ZwSetInformationKey@16=NtSetInformationKey @1113 PRIVATE
+  ZwSetInformationObject@16=NtSetInformationObject @1114 PRIVATE
+  ZwSetInformationProcess@16=NtSetInformationProcess @1115 PRIVATE
+  ZwSetInformationThread@16=NtSetInformationThread @1116 PRIVATE
+  ZwSetInformationToken@16=NtSetInformationToken @1117 PRIVATE
+  ZwSetIntervalProfile@8=NtSetIntervalProfile @1118 PRIVATE
+  ZwSetIoCompletion@20=NtSetIoCompletion @1119 PRIVATE
+  ZwSetLdtEntries@24=NtSetLdtEntries @1120 PRIVATE
+  ZwSetPowerRequest@8=NtSetPowerRequest @1121 PRIVATE
+  ZwSetSecurityObject@12=NtSetSecurityObject @1122 PRIVATE
+  ZwSetSystemInformation@12=NtSetSystemInformation @1123 PRIVATE
+  ZwSetSystemTime@8=NtSetSystemTime @1124 PRIVATE
+  ZwSetThreadExecutionState@8=NtSetThreadExecutionState @1125 PRIVATE
+  ZwSetTimer@28=NtSetTimer @1126 PRIVATE
+  ZwSetTimerResolution@12=NtSetTimerResolution @1127 PRIVATE
+  ZwSetValueKey@24=NtSetValueKey @1128 PRIVATE
+  ZwSetVolumeInformationFile@20=NtSetVolumeInformationFile @1129 PRIVATE
+  ZwShutdownSystem@4=NtShutdownSystem @1130 PRIVATE
+  ZwSignalAndWaitForSingleObject@16=NtSignalAndWaitForSingleObject @1131 PRIVATE
+  ZwSuspendProcess@4=NtSuspendProcess @1132 PRIVATE
+  ZwSuspendThread@8=NtSuspendThread @1133 PRIVATE
+  ZwSystemDebugControl@24=NtSystemDebugControl @1134 PRIVATE
+  ZwTerminateJobObject@8=NtTerminateJobObject @1135 PRIVATE
+  ZwTerminateProcess@8=NtTerminateProcess @1136 PRIVATE
+  ZwTerminateThread@8=NtTerminateThread @1137 PRIVATE
+  ZwTestAlert@0=NtTestAlert @1138 PRIVATE
+  ZwTraceControl@24=NtTraceControl @1139 PRIVATE
+  ZwUnloadDriver@4=NtUnloadDriver @1140 PRIVATE
+  ZwUnloadKey@4=NtUnloadKey @1141 PRIVATE
+  ZwUnlockFile@20=NtUnlockFile @1142 PRIVATE
+  ZwUnlockVirtualMemory@16=NtUnlockVirtualMemory @1143 PRIVATE
+  ZwUnmapViewOfSection@8=NtUnmapViewOfSection @1144 PRIVATE
+  ZwWaitForDebugEvent@16=NtWaitForDebugEvent @1145 PRIVATE
+  ZwWaitForKeyedEvent@16=NtWaitForKeyedEvent @1146 PRIVATE
+  ZwWaitForMultipleObjects@20=NtWaitForMultipleObjects @1147 PRIVATE
+  ZwWaitForSingleObject@12=NtWaitForSingleObject @1148 PRIVATE
+  ZwWow64AllocateVirtualMemory64@28=NtWow64AllocateVirtualMemory64 @1149
+  ZwWow64GetNativeSystemInformation@16=NtWow64GetNativeSystemInformation @1150
+  ZwWow64ReadVirtualMemory64@28=NtWow64ReadVirtualMemory64 @1151
+  ZwWow64WriteVirtualMemory64@28=NtWow64WriteVirtualMemory64 @1152
+  ZwWriteFile@36=NtWriteFile @1153 PRIVATE
+  ZwWriteFileGather@36=NtWriteFileGather @1154 PRIVATE
+  ZwWriteVirtualMemory@20=NtWriteVirtualMemory @1155 PRIVATE
+  ZwYieldExecution@0=NtYieldExecution @1156 PRIVATE
+  _CIcos @1157 PRIVATE
+  _CIlog @1158 PRIVATE
+  _CIpow @1159 PRIVATE
+  _CIsin @1160 PRIVATE
+  _CIsqrt @1161 PRIVATE
+  __isascii @1162
+  __iscsym @1163
+  __iscsymf @1164
+  __toascii @1165
+  _alldiv @1166
+  _alldvrm @1167
+  _allmul @1168
+  _alloca_probe @1169
+  _allrem @1170
+  _allshl@12 @1171
+  _allshr@12 @1172
+  _atoi64 @1173
+  _aulldiv @1174
+  _aulldvrm @1175
+  _aullrem @1176
+  _aullshr@12 @1177
+  _chkstk @1178
+  _fltused@0 @1179 PRIVATE
+  _ftol @1180
+  _i64toa @1181
+  _i64tow @1182
+  _itoa @1183
+  _itow @1184
+  _lfind @1185
+  _ltoa @1186
+  _ltow @1187
+  _memccpy @1188
+  _memicmp @1189
+  _snprintf=NTDLL__snprintf @1190
+  _snprintf_s @1191
+  _snwprintf @1192
+  _snwprintf_s @1193
+  _swprintf=NTDLL_swprintf @1194
+  _splitpath @1195
+  _strcmpi=_stricmp @1196
+  _stricmp @1197
+  _strlwr @1198
+  _strnicmp @1199
+  _strupr @1200
+  _tolower @1201
+  _toupper @1202
+  _ui64toa @1203
+  _ui64tow @1204
+  _ultoa @1205
+  _ultow @1206
+  _vsnprintf @1207
+  _vsnprintf_s @1208
+  _vsnwprintf @1209
+  _vsnwprintf_s @1210
+  _vswprintf @1211
+  _wcsicmp @1212
+  _wcslwr @1213
+  _wcsnicmp @1214
+  _wcsupr @1215
+  _wtoi @1216
+  _wtoi64 @1217
+  _wtol @1218
+  abs @1219
+  atan @1220
+  atoi @1221
+  atol @1222
+  bsearch @1223
+  ceil @1224
+  cos @1225
+  fabs @1226
+  floor @1227
+  isalnum @1228
+  isalpha @1229
+  iscntrl @1230
+  isdigit @1231
+  isgraph @1232
+  islower @1233
+  isprint @1234
+  ispunct @1235
+  isspace @1236
+  isupper @1237
+  iswalpha @1238
+  iswctype @1239
+  iswdigit @1240
+  iswlower @1241
+  iswspace @1242
+  iswxdigit @1243
+  isxdigit @1244
+  labs=abs @1245
+  log @1246
+  mbstowcs @1247
+  memchr @1248
+  memcmp @1249
+  memcpy @1250
+  memmove @1251
+  memset @1252
+  pow @1253
+  qsort @1254
+  sin @1255
+  sprintf=NTDLL_sprintf @1256
+  sprintf_s @1257
+  sqrt @1258
+  sscanf @1259
+  strcat @1260
+  strchr @1261
+  strcmp @1262
+  strcpy @1263
+  strcspn @1264
+  strlen @1265
+  strncat @1266
+  strncmp @1267
+  strncpy @1268
+  strnlen @1269
+  strpbrk @1270
+  strrchr @1271
+  strspn @1272
+  strstr @1273
+  strtol @1274
+  strtoul @1275
+  swprintf=NTDLL_swprintf @1276
+  swprintf_s @1277
+  tan @1278
+  tolower @1279
+  toupper @1280
+  towlower @1281
+  towupper @1282
+  vDbgPrintEx@16 @1283
+  vDbgPrintExWithPrefix@20 @1284
+  vsprintf @1285
+  vsprintf_s @1286
+  vswprintf_s @1287
+  wcscat @1288
+  wcschr @1289
+  wcscmp @1290
+  wcscpy @1291
+  wcscspn @1292
+  wcslen @1293
+  wcsncat @1294
+  wcsncmp @1295
+  wcsncpy @1296
+  wcspbrk @1297
+  wcsrchr @1298
+  wcsspn @1299
+  wcsstr @1300
+  wcstok @1301
+  wcstol @1302
+  wcstombs @1303
+  wcstoul @1304
+  wine_server_call @1305
+  wine_server_fd_to_handle @1306
+  wine_server_handle_to_fd @1307
+  __wine_unix_call@16 @1308
+  __wine_set_unix_funcs @1309
+  __wine_init_unix_lib @1310
+  __wine_ctrl_routine@4 @1311
+  __wine_syscall_dispatcher @1312 DATA
+  __wine_ldt_copy @1313 DATA
+  __wine_dbg_write@8 @1314
+  __wine_dbg_get_channel_flags @1315
+  __wine_dbg_header @1316
+  __wine_dbg_output @1317
+  __wine_dbg_strdup @1318
+  __wine_needs_override_large_address_aware @1319
+  wine_get_version @1320
+  wine_get_build_id @1321
+  wine_get_host_version @1322
+  wine_nt_to_unix_file_name@16 @1323
+  wine_unix_to_nt_file_name@12 @1324
+  IsTransgaming @1325

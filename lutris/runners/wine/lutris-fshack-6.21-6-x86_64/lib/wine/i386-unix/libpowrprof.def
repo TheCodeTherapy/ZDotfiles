@@ -1,0 +1,33 @@
+; File generated automatically from /home/ubuntu/buildbot/runners/wine/wine-src/dlls/powrprof/powrprof.spec; do not edit!
+
+LIBRARY powrprof.dll
+
+EXPORTS
+  CallNtPowerInformation@20 @1
+  CanUserWritePwrScheme@0 @2
+  DeletePwrScheme@4 @3
+  EnumPwrSchemes@8 @4
+  GetActivePwrScheme@4 @5
+  GetCurrentPowerPolicies@8 @6
+  GetPwrCapabilities@4 @7
+  GetPwrDiskSpindownRange@8 @8
+  IsAdminOverrideActive@4 @9
+  IsPwrHibernateAllowed@0 @10
+  IsPwrShutdownAllowed@0 @11
+  IsPwrSuspendAllowed@0 @12
+  PowerDeterminePlatformRole@0 @13
+  PowerDeterminePlatformRoleEx@4 @14
+  PowerEnumerate@28 @15
+  PowerGetActiveScheme@8 @16
+  PowerSetActiveScheme@8 @17
+  PowerReadDCValue@28 @18
+  PowerReadFriendlyName@24 @19
+  PowerRegisterSuspendResumeNotification@12 @20
+  ReadGlobalPwrPolicy@4 @21
+  ReadProcessorPwrScheme@8 @22
+  ReadPwrScheme@8 @23
+  SetActivePwrScheme@12 @24
+  SetSuspendState@12 @25
+  WriteGlobalPwrPolicy@4 @26
+  WriteProcessorPwrScheme@8 @27
+  WritePwrScheme@16 @28

@@ -1,0 +1,1337 @@
+; File generated automatically from /home/ubuntu/buildbot/runners/wine/wine-src/dlls/win32u/win32u.spec; do not edit!
+
+LIBRARY win32u.dll
+
+EXPORTS
+  Wow64Transition=__wine_syscall_dispatcher @1 DATA
+  NtBindCompositionSurface@0 @2 PRIVATE
+  NtCloseCompositionInputSink@0 @3 PRIVATE
+  NtCompositionInputThread@0 @4 PRIVATE
+  NtCompositionSetDropTarget@0 @5 PRIVATE
+  NtCompositorNotifyExitWindows@0 @6 PRIVATE
+  NtCompositorNotifyForegroundChanged@0 @7 PRIVATE
+  NtCompositorUpdateLastInputTime@0 @8 PRIVATE
+  NtConfigureInputSpace@0 @9 PRIVATE
+  NtCreateCompositionInputSink@0 @10 PRIVATE
+  NtCreateCompositionSurfaceHandle@0 @11 PRIVATE
+  NtCreateImplicitCompositionInputSink@0 @12 PRIVATE
+  NtDCompositionAddCrossDeviceVisualChild@0 @13 PRIVATE
+  NtDCompositionBeginFrame@0 @14 PRIVATE
+  NtDCompositionCommitChannel@0 @15 PRIVATE
+  NtDCompositionCommitSynchronizationObject@0 @16 PRIVATE
+  NtDCompositionConfirmFrame@0 @17 PRIVATE
+  NtDCompositionConnectPipe@0 @18 PRIVATE
+  NtDCompositionCreateAndBindSharedSection@0 @19 PRIVATE
+  NtDCompositionCreateChannel@0 @20 PRIVATE
+  NtDCompositionCreateConnection@0 @21 PRIVATE
+  NtDCompositionCreateDwmChannel@0 @22 PRIVATE
+  NtDCompositionCreateSharedResourceHandle@0 @23 PRIVATE
+  NtDCompositionCreateSynchronizationObject@0 @24 PRIVATE
+  NtDCompositionDestroyChannel@0 @25 PRIVATE
+  NtDCompositionDestroyConnection@0 @26 PRIVATE
+  NtDCompositionDiscardFrame@0 @27 PRIVATE
+  NtDCompositionDuplicateHandleToProcess@0 @28 PRIVATE
+  NtDCompositionDuplicateSwapchainHandleToDwm@0 @29 PRIVATE
+  NtDCompositionEnableMMCSS@0 @30 PRIVATE
+  NtDCompositionGetBatchId@0 @31 PRIVATE
+  NtDCompositionGetChannels@0 @32 PRIVATE
+  NtDCompositionGetConnectionBatch@0 @33 PRIVATE
+  NtDCompositionGetDeletedResources@0 @34 PRIVATE
+  NtDCompositionGetFrameLegacyTokens@0 @35 PRIVATE
+  NtDCompositionGetFrameStatistics@0 @36 PRIVATE
+  NtDCompositionGetFrameSurfaceUpdates@0 @37 PRIVATE
+  NtDCompositionGetMaterialProperty@0 @38 PRIVATE
+  NtDCompositionProcessChannelBatchBuffer@0 @39 PRIVATE
+  NtDCompositionReferenceSharedResourceOnDwmChannel@0 @40 PRIVATE
+  NtDCompositionRegisterThumbnailVisual@0 @41 PRIVATE
+  NtDCompositionRegisterVirtualDesktopVisual@0 @42 PRIVATE
+  NtDCompositionReleaseAllResources@0 @43 PRIVATE
+  NtDCompositionRemoveCrossDeviceVisualChild@0 @44 PRIVATE
+  NtDCompositionRetireFrame@0 @45 PRIVATE
+  NtDCompositionSetChannelCommitCompletionEvent@0 @46 PRIVATE
+  NtDCompositionSetChannelConnectionId@0 @47 PRIVATE
+  NtDCompositionSetChildRootVisual@0 @48 PRIVATE
+  NtDCompositionSetDebugCounter@0 @49 PRIVATE
+  NtDCompositionSetMaterialProperty@0 @50 PRIVATE
+  NtDCompositionSubmitDWMBatch@0 @51 PRIVATE
+  NtDCompositionSuspendAnimations@0 @52 PRIVATE
+  NtDCompositionSynchronize@0 @53 PRIVATE
+  NtDCompositionTelemetryAnimationScenarioBegin@0 @54 PRIVATE
+  NtDCompositionTelemetryAnimationScenarioReference@0 @55 PRIVATE
+  NtDCompositionTelemetryAnimationScenarioUnreference@0 @56 PRIVATE
+  NtDCompositionTelemetrySetApplicationId@0 @57 PRIVATE
+  NtDCompositionTelemetryTouchInteractionBegin@0 @58 PRIVATE
+  NtDCompositionTelemetryTouchInteractionEnd@0 @59 PRIVATE
+  NtDCompositionTelemetryTouchInteractionUpdate@0 @60 PRIVATE
+  NtDCompositionUpdatePointerCapture@0 @61 PRIVATE
+  NtDCompositionWaitForChannel@0 @62 PRIVATE
+  NtDesktopCaptureBits@0 @63 PRIVATE
+  NtDuplicateCompositionInputSink@0 @64 PRIVATE
+  NtDxgkCreateTrackedWorkload@0 @65 PRIVATE
+  NtDxgkDestroyTrackedWorkload@0 @66 PRIVATE
+  NtDxgkDispMgrOperation@0 @67 PRIVATE
+  NtDxgkDisplayPortOperation@0 @68 PRIVATE
+  NtDxgkDuplicateHandle@0 @69 PRIVATE
+  NtDxgkEnumAdapters3@0 @70 PRIVATE
+  NtDxgkGetAvailableTrackedWorkloadIndex@0 @71 PRIVATE
+  NtDxgkGetProcessList@0 @72 PRIVATE
+  NtDxgkGetTrackedWorkloadStatistics@0 @73 PRIVATE
+  NtDxgkOutputDuplPresentToHwQueue@0 @74 PRIVATE
+  NtDxgkPinResources@0 @75 PRIVATE
+  NtDxgkRegisterVailProcess@0 @76 PRIVATE
+  NtDxgkResetTrackedWorkloadStatistics@0 @77 PRIVATE
+  NtDxgkSubmitPresentBltToHwQueue@0 @78 PRIVATE
+  NtDxgkSubmitPresentToHwQueue@0 @79 PRIVATE
+  NtDxgkUnpinResources@0 @80 PRIVATE
+  NtDxgkUpdateTrackedWorkload@0 @81 PRIVATE
+  NtDxgkVailConnect@0 @82 PRIVATE
+  NtDxgkVailDisconnect@0 @83 PRIVATE
+  NtDxgkVailPromoteCompositionSurface@0 @84 PRIVATE
+  NtEnableOneCoreTransformMode@0 @85 PRIVATE
+  NtFlipObjectAddContent@0 @86 PRIVATE
+  NtFlipObjectAddPoolBuffer@0 @87 PRIVATE
+  NtFlipObjectConsumerAcquirePresent@0 @88 PRIVATE
+  NtFlipObjectConsumerAdjustUsageReference@0 @89 PRIVATE
+  NtFlipObjectConsumerBeginProcessPresent@0 @90 PRIVATE
+  NtFlipObjectConsumerEndProcessPresent@0 @91 PRIVATE
+  NtFlipObjectConsumerPostMessage@0 @92 PRIVATE
+  NtFlipObjectConsumerQueryBufferInfo@0 @93 PRIVATE
+  NtFlipObjectCreate@0 @94 PRIVATE
+  NtFlipObjectDisconnectEndpoint@0 @95 PRIVATE
+  NtFlipObjectEnablePresentStatisticsType@0 @96 PRIVATE
+  NtFlipObjectOpen@0 @97 PRIVATE
+  NtFlipObjectPresentCancel@0 @98 PRIVATE
+  NtFlipObjectQueryBufferAvailableEvent@0 @99 PRIVATE
+  NtFlipObjectQueryEndpointConnected@0 @100 PRIVATE
+  NtFlipObjectQueryNextMessageToProducer@0 @101 PRIVATE
+  NtFlipObjectReadNextMessageToProducer@0 @102 PRIVATE
+  NtFlipObjectRemoveContent@0 @103 PRIVATE
+  NtFlipObjectRemovePoolBuffer@0 @104 PRIVATE
+  NtFlipObjectSetContent@0 @105 PRIVATE
+  NtFlipObjectSetMaximumBackchannelQueueDepth@0 @106 PRIVATE
+  NtGdiAbortDoc@4 @107
+  NtGdiAbortPath@4 @108
+  NtGdiAddEmbFontToDC@0 @109 PRIVATE
+  NtGdiAddFontMemResourceEx@20 @110
+  NtGdiAddFontResourceW@24 @111
+  NtGdiAddInitialFonts@0 @112 PRIVATE
+  NtGdiAddRemoteFontToDC@0 @113 PRIVATE
+  NtGdiAddRemoteMMInstanceToDC@0 @114 PRIVATE
+  NtGdiAlphaBlend@48 @115
+  NtGdiAngleArc@24 @116
+  NtGdiAnyLinkedFonts@0 @117 PRIVATE
+  NtGdiArcInternal@40 @118
+  NtGdiBRUSHOBJ_DeleteRbrush@0 @119 PRIVATE
+  NtGdiBRUSHOBJ_hGetColorTransform@0 @120 PRIVATE
+  NtGdiBRUSHOBJ_pvAllocRbrush@0 @121 PRIVATE
+  NtGdiBRUSHOBJ_pvGetRbrush@0 @122 PRIVATE
+  NtGdiBRUSHOBJ_ulGetBrushColor@0 @123 PRIVATE
+  NtGdiBeginGdiRendering@0 @124 PRIVATE
+  NtGdiBeginPath@4 @125
+  NtGdiBitBlt@44 @126
+  NtGdiCLIPOBJ_bEnum@0 @127 PRIVATE
+  NtGdiCLIPOBJ_cEnumStart@0 @128 PRIVATE
+  NtGdiCLIPOBJ_ppoGetPath@0 @129 PRIVATE
+  NtGdiCancelDC@0 @130 PRIVATE
+  NtGdiChangeGhostFont@0 @131 PRIVATE
+  NtGdiCheckBitmapBits@0 @132 PRIVATE
+  NtGdiClearBitmapAttributes@0 @133 PRIVATE
+  NtGdiClearBrushAttributes@0 @134 PRIVATE
+  NtGdiCloseFigure@4 @135
+  NtGdiColorCorrectPalette@0 @136 PRIVATE
+  NtGdiCombineRgn@16 @137
+  NtGdiCombineTransform@0 @138 PRIVATE
+  NtGdiComputeXformCoefficients@4 @139
+  NtGdiConfigureOPMProtectedOutput@0 @140 PRIVATE
+  NtGdiConvertMetafileRect@0 @141 PRIVATE
+  NtGdiCreateBitmap@20 @142
+  NtGdiCreateBitmapFromDxSurface@0 @143 PRIVATE
+  NtGdiCreateBitmapFromDxSurface2@0 @144 PRIVATE
+  NtGdiCreateClientObj@4 @145
+  NtGdiCreateColorSpace@0 @146 PRIVATE
+  NtGdiCreateColorTransform@0 @147 PRIVATE
+  NtGdiCreateCompatibleBitmap@12 @148
+  NtGdiCreateCompatibleDC@4 @149
+  NtGdiCreateDIBBrush@24 @150
+  NtGdiCreateDIBSection@36 @151
+  NtGdiCreateDIBitmapInternal@44 @152
+  NtGdiCreateEllipticRgn@16 @153
+  NtGdiCreateHalftonePalette@4 @154
+  NtGdiCreateHatchBrushInternal@12 @155
+  NtGdiCreateMetafileDC@4 @156
+  NtGdiCreateOPMProtectedOutput@0 @157 PRIVATE
+  NtGdiCreateOPMProtectedOutputs@0 @158 PRIVATE
+  NtGdiCreatePaletteInternal@8 @159
+  NtGdiCreatePatternBrushInternal@12 @160
+  NtGdiCreatePen@16 @161
+  NtGdiCreateRectRgn@16 @162
+  NtGdiCreateRoundRectRgn@24 @163
+  NtGdiCreateServerMetaFile@0 @164 PRIVATE
+  NtGdiCreateSessionMappedDIBSection@0 @165 PRIVATE
+  NtGdiCreateSolidBrush@8 @166
+  NtGdiDDCCIGetCapabilitiesString@0 @167 PRIVATE
+  NtGdiDDCCIGetCapabilitiesStringLength@0 @168 PRIVATE
+  NtGdiDDCCIGetTimingReport@0 @169 PRIVATE
+  NtGdiDDCCIGetVCPFeature@0 @170 PRIVATE
+  NtGdiDDCCISaveCurrentSettings@0 @171 PRIVATE
+  NtGdiDDCCISetVCPFeature@0 @172 PRIVATE
+  NtGdiDdCreateFullscreenSprite@0 @173 PRIVATE
+  NtGdiDdDDIAbandonSwapChain@0 @174 PRIVATE
+  NtGdiDdDDIAcquireKeyedMutex@0 @175 PRIVATE
+  NtGdiDdDDIAcquireKeyedMutex2@0 @176 PRIVATE
+  NtGdiDdDDIAcquireSwapChain@0 @177 PRIVATE
+  NtGdiDdDDIAddSurfaceToSwapChain@0 @178 PRIVATE
+  NtGdiDdDDIAdjustFullscreenGamma@0 @179 PRIVATE
+  NtGdiDdDDICacheHybridQueryValue@0 @180 PRIVATE
+  NtGdiDdDDIChangeVideoMemoryReservation@0 @181 PRIVATE
+  NtGdiDdDDICheckExclusiveOwnership@0 @182 PRIVATE
+  NtGdiDdDDICheckMonitorPowerState@0 @183 PRIVATE
+  NtGdiDdDDICheckMultiPlaneOverlaySupport@0 @184 PRIVATE
+  NtGdiDdDDICheckMultiPlaneOverlaySupport2@0 @185 PRIVATE
+  NtGdiDdDDICheckMultiPlaneOverlaySupport3@0 @186 PRIVATE
+  NtGdiDdDDICheckOcclusion@0 @187 PRIVATE
+  NtGdiDdDDICheckSharedResourceAccess@0 @188 PRIVATE
+  NtGdiDdDDICheckVidPnExclusiveOwnership@4 @189
+  NtGdiDdDDICloseAdapter@4 @190
+  NtGdiDdDDIConfigureSharedResource@0 @191 PRIVATE
+  NtGdiDdDDICreateAllocation@0 @192 PRIVATE
+  NtGdiDdDDICreateBundleObject@0 @193 PRIVATE
+  NtGdiDdDDICreateContext@0 @194 PRIVATE
+  NtGdiDdDDICreateContextVirtual@0 @195 PRIVATE
+  NtGdiDdDDICreateDCFromMemory@4 @196
+  NtGdiDdDDICreateDevice@4 @197
+  NtGdiDdDDICreateHwContext@0 @198 PRIVATE
+  NtGdiDdDDICreateHwQueue@0 @199 PRIVATE
+  NtGdiDdDDICreateKeyedMutex@0 @200 PRIVATE
+  NtGdiDdDDICreateKeyedMutex2@0 @201 PRIVATE
+  NtGdiDdDDICreateOutputDupl@0 @202 PRIVATE
+  NtGdiDdDDICreateOverlay@0 @203 PRIVATE
+  NtGdiDdDDICreatePagingQueue@0 @204 PRIVATE
+  NtGdiDdDDICreateProtectedSession@0 @205 PRIVATE
+  NtGdiDdDDICreateSwapChain@0 @206 PRIVATE
+  NtGdiDdDDICreateSynchronizationObject@0 @207 PRIVATE
+  NtGdiDdDDIDDisplayEnum@0 @208 PRIVATE
+  NtGdiDdDDIDestroyAllocation@0 @209 PRIVATE
+  NtGdiDdDDIDestroyAllocation2@0 @210 PRIVATE
+  NtGdiDdDDIDestroyContext@0 @211 PRIVATE
+  NtGdiDdDDIDestroyDCFromMemory@4 @212
+  NtGdiDdDDIDestroyDevice@4 @213
+  NtGdiDdDDIDestroyHwContext@0 @214 PRIVATE
+  NtGdiDdDDIDestroyHwQueue@0 @215 PRIVATE
+  NtGdiDdDDIDestroyKeyedMutex@0 @216 PRIVATE
+  NtGdiDdDDIDestroyOutputDupl@0 @217 PRIVATE
+  NtGdiDdDDIDestroyOverlay@0 @218 PRIVATE
+  NtGdiDdDDIDestroyPagingQueue@0 @219 PRIVATE
+  NtGdiDdDDIDestroyProtectedSession@0 @220 PRIVATE
+  NtGdiDdDDIDestroySynchronizationObject@0 @221 PRIVATE
+  NtGdiDdDDIDispMgrCreate@0 @222 PRIVATE
+  NtGdiDdDDIDispMgrSourceOperation@0 @223 PRIVATE
+  NtGdiDdDDIDispMgrTargetOperation@0 @224 PRIVATE
+  NtGdiDdDDIEnumAdapters@0 @225 PRIVATE
+  NtGdiDdDDIEnumAdapters2@0 @226 PRIVATE
+  NtGdiDdDDIEscape@4 @227
+  NtGdiDdDDIEvict@0 @228 PRIVATE
+  NtGdiDdDDIExtractBundleObject@0 @229 PRIVATE
+  NtGdiDdDDIFlipOverlay@0 @230 PRIVATE
+  NtGdiDdDDIFlushHeapTransitions@0 @231 PRIVATE
+  NtGdiDdDDIFreeGpuVirtualAddress@0 @232 PRIVATE
+  NtGdiDdDDIGetAllocationPriority@0 @233 PRIVATE
+  NtGdiDdDDIGetCachedHybridQueryValue@0 @234 PRIVATE
+  NtGdiDdDDIGetContextInProcessSchedulingPriority@0 @235 PRIVATE
+  NtGdiDdDDIGetContextSchedulingPriority@0 @236 PRIVATE
+  NtGdiDdDDIGetDWMVerticalBlankEvent@0 @237 PRIVATE
+  NtGdiDdDDIGetDeviceState@0 @238 PRIVATE
+  NtGdiDdDDIGetDisplayModeList@0 @239 PRIVATE
+  NtGdiDdDDIGetMemoryBudgetTarget@0 @240 PRIVATE
+  NtGdiDdDDIGetMultiPlaneOverlayCaps@0 @241 PRIVATE
+  NtGdiDdDDIGetMultisampleMethodList@0 @242 PRIVATE
+  NtGdiDdDDIGetOverlayState@0 @243 PRIVATE
+  NtGdiDdDDIGetPostCompositionCaps@0 @244 PRIVATE
+  NtGdiDdDDIGetPresentHistory@0 @245 PRIVATE
+  NtGdiDdDDIGetPresentQueueEvent@0 @246 PRIVATE
+  NtGdiDdDDIGetProcessDeviceRemovalSupport@0 @247 PRIVATE
+  NtGdiDdDDIGetProcessSchedulingPriorityBand@0 @248 PRIVATE
+  NtGdiDdDDIGetProcessSchedulingPriorityClass@0 @249 PRIVATE
+  NtGdiDdDDIGetResourcePresentPrivateDriverData@0 @250 PRIVATE
+  NtGdiDdDDIGetRuntimeData@0 @251 PRIVATE
+  NtGdiDdDDIGetScanLine@0 @252 PRIVATE
+  NtGdiDdDDIGetSetSwapChainMetadata@0 @253 PRIVATE
+  NtGdiDdDDIGetSharedPrimaryHandle@0 @254 PRIVATE
+  NtGdiDdDDIGetSharedResourceAdapterLuid@0 @255 PRIVATE
+  NtGdiDdDDIGetSharedResourceAdapterLuidFlipManager@0 @256 PRIVATE
+  NtGdiDdDDIGetYieldPercentage@0 @257 PRIVATE
+  NtGdiDdDDIInvalidateActiveVidPn@0 @258 PRIVATE
+  NtGdiDdDDIInvalidateCache@0 @259 PRIVATE
+  NtGdiDdDDILock@0 @260 PRIVATE
+  NtGdiDdDDILock2@0 @261 PRIVATE
+  NtGdiDdDDIMakeResident@0 @262 PRIVATE
+  NtGdiDdDDIMapGpuVirtualAddress@0 @263 PRIVATE
+  NtGdiDdDDIMarkDeviceAsError@0 @264 PRIVATE
+  NtGdiDdDDINetDispGetNextChunkInfo@0 @265 PRIVATE
+  NtGdiDdDDINetDispQueryMiracastDisplayDeviceStatus@0 @266 PRIVATE
+  NtGdiDdDDINetDispQueryMiracastDisplayDeviceSupport@0 @267 PRIVATE
+  NtGdiDdDDINetDispStartMiracastDisplayDevice@0 @268 PRIVATE
+  NtGdiDdDDINetDispStopMiracastDisplayDevice@0 @269 PRIVATE
+  NtGdiDdDDIOfferAllocations@0 @270 PRIVATE
+  NtGdiDdDDIOpenAdapterFromDeviceName@4 @271
+  NtGdiDdDDIOpenAdapterFromHdc@4 @272
+  NtGdiDdDDIOpenAdapterFromLuid@4 @273
+  NtGdiDdDDIOpenBundleObjectNtHandleFromName@0 @274 PRIVATE
+  NtGdiDdDDIOpenKeyedMutex@0 @275 PRIVATE
+  NtGdiDdDDIOpenKeyedMutex2@0 @276 PRIVATE
+  NtGdiDdDDIOpenKeyedMutexFromNtHandle@0 @277 PRIVATE
+  NtGdiDdDDIOpenNtHandleFromName@0 @278 PRIVATE
+  NtGdiDdDDIOpenProtectedSessionFromNtHandle@0 @279 PRIVATE
+  NtGdiDdDDIOpenResource@0 @280 PRIVATE
+  NtGdiDdDDIOpenResourceFromNtHandle@0 @281 PRIVATE
+  NtGdiDdDDIOpenSwapChain@0 @282 PRIVATE
+  NtGdiDdDDIOpenSyncObjectFromNtHandle@0 @283 PRIVATE
+  NtGdiDdDDIOpenSyncObjectFromNtHandle2@0 @284 PRIVATE
+  NtGdiDdDDIOpenSyncObjectNtHandleFromName@0 @285 PRIVATE
+  NtGdiDdDDIOpenSynchronizationObject@0 @286 PRIVATE
+  NtGdiDdDDIOutputDuplGetFrameInfo@0 @287 PRIVATE
+  NtGdiDdDDIOutputDuplGetMetaData@0 @288 PRIVATE
+  NtGdiDdDDIOutputDuplGetPointerShapeData@0 @289 PRIVATE
+  NtGdiDdDDIOutputDuplPresent@0 @290 PRIVATE
+  NtGdiDdDDIOutputDuplReleaseFrame@0 @291 PRIVATE
+  NtGdiDdDDIPollDisplayChildren@0 @292 PRIVATE
+  NtGdiDdDDIPresent@0 @293 PRIVATE
+  NtGdiDdDDIPresentMultiPlaneOverlay@0 @294 PRIVATE
+  NtGdiDdDDIPresentMultiPlaneOverlay2@0 @295 PRIVATE
+  NtGdiDdDDIPresentMultiPlaneOverlay3@0 @296 PRIVATE
+  NtGdiDdDDIPresentRedirected@0 @297 PRIVATE
+  NtGdiDdDDIQueryAdapterInfo@0 @298 PRIVATE
+  NtGdiDdDDIQueryAllocationResidency@0 @299 PRIVATE
+  NtGdiDdDDIQueryClockCalibration@0 @300 PRIVATE
+  NtGdiDdDDIQueryFSEBlock@0 @301 PRIVATE
+  NtGdiDdDDIQueryProcessOfferInfo@0 @302 PRIVATE
+  NtGdiDdDDIQueryProtectedSessionInfoFromNtHandle@0 @303 PRIVATE
+  NtGdiDdDDIQueryProtectedSessionStatus@0 @304 PRIVATE
+  NtGdiDdDDIQueryRemoteVidPnSourceFromGdiDisplayName@0 @305 PRIVATE
+  NtGdiDdDDIQueryResourceInfo@0 @306 PRIVATE
+  NtGdiDdDDIQueryResourceInfoFromNtHandle@0 @307 PRIVATE
+  NtGdiDdDDIQueryStatistics@4 @308
+  NtGdiDdDDIQueryVidPnExclusiveOwnership@0 @309 PRIVATE
+  NtGdiDdDDIQueryVideoMemoryInfo@0 @310 PRIVATE
+  NtGdiDdDDIReclaimAllocations@0 @311 PRIVATE
+  NtGdiDdDDIReclaimAllocations2@0 @312 PRIVATE
+  NtGdiDdDDIReleaseKeyedMutex@0 @313 PRIVATE
+  NtGdiDdDDIReleaseKeyedMutex2@0 @314 PRIVATE
+  NtGdiDdDDIReleaseProcessVidPnSourceOwners@0 @315 PRIVATE
+  NtGdiDdDDIReleaseSwapChain@0 @316 PRIVATE
+  NtGdiDdDDIRemoveSurfaceFromSwapChain@0 @317 PRIVATE
+  NtGdiDdDDIRender@0 @318 PRIVATE
+  NtGdiDdDDIReserveGpuVirtualAddress@0 @319 PRIVATE
+  NtGdiDdDDISetAllocationPriority@0 @320 PRIVATE
+  NtGdiDdDDISetContextInProcessSchedulingPriority@0 @321 PRIVATE
+  NtGdiDdDDISetContextSchedulingPriority@0 @322 PRIVATE
+  NtGdiDdDDISetDisplayMode@0 @323 PRIVATE
+  NtGdiDdDDISetDodIndirectSwapchain@0 @324 PRIVATE
+  NtGdiDdDDISetFSEBlock@0 @325 PRIVATE
+  NtGdiDdDDISetGammaRamp@0 @326 PRIVATE
+  NtGdiDdDDISetHwProtectionTeardownRecovery@0 @327 PRIVATE
+  NtGdiDdDDISetMemoryBudgetTarget@0 @328 PRIVATE
+  NtGdiDdDDISetMonitorColorSpaceTransform@0 @329 PRIVATE
+  NtGdiDdDDISetProcessDeviceRemovalSupport@0 @330 PRIVATE
+  NtGdiDdDDISetProcessSchedulingPriorityBand@0 @331 PRIVATE
+  NtGdiDdDDISetProcessSchedulingPriorityClass@0 @332 PRIVATE
+  NtGdiDdDDISetQueuedLimit@4 @333
+  NtGdiDdDDISetStablePowerState@0 @334 PRIVATE
+  NtGdiDdDDISetStereoEnabled@0 @335 PRIVATE
+  NtGdiDdDDISetSyncRefreshCountWaitTarget@0 @336 PRIVATE
+  NtGdiDdDDISetVidPnSourceHwProtection@0 @337 PRIVATE
+  NtGdiDdDDISetVidPnSourceOwner@4 @338
+  NtGdiDdDDISetYieldPercentage@0 @339 PRIVATE
+  NtGdiDdDDIShareObjects@0 @340 PRIVATE
+  NtGdiDdDDISharedPrimaryLockNotification@0 @341 PRIVATE
+  NtGdiDdDDISharedPrimaryUnLockNotification@0 @342 PRIVATE
+  NtGdiDdDDISignalSynchronizationObject@0 @343 PRIVATE
+  NtGdiDdDDISignalSynchronizationObjectFromCpu@0 @344 PRIVATE
+  NtGdiDdDDISignalSynchronizationObjectFromGpu@0 @345 PRIVATE
+  NtGdiDdDDISignalSynchronizationObjectFromGpu2@0 @346 PRIVATE
+  NtGdiDdDDISubmitCommand@0 @347 PRIVATE
+  NtGdiDdDDISubmitCommandToHwQueue@0 @348 PRIVATE
+  NtGdiDdDDISubmitSignalSyncObjectsToHwQueue@0 @349 PRIVATE
+  NtGdiDdDDISubmitWaitForSyncObjectsToHwQueue@0 @350 PRIVATE
+  NtGdiDdDDITrimProcessCommitment@0 @351 PRIVATE
+  NtGdiDdDDIUnOrderedPresentSwapChain@0 @352 PRIVATE
+  NtGdiDdDDIUnlock@0 @353 PRIVATE
+  NtGdiDdDDIUnlock2@0 @354 PRIVATE
+  NtGdiDdDDIUpdateAllocationProperty@0 @355 PRIVATE
+  NtGdiDdDDIUpdateGpuVirtualAddress@0 @356 PRIVATE
+  NtGdiDdDDIUpdateOverlay@0 @357 PRIVATE
+  NtGdiDdDDIWaitForIdle@0 @358 PRIVATE
+  NtGdiDdDDIWaitForSynchronizationObject@0 @359 PRIVATE
+  NtGdiDdDDIWaitForSynchronizationObjectFromCpu@0 @360 PRIVATE
+  NtGdiDdDDIWaitForSynchronizationObjectFromGpu@0 @361 PRIVATE
+  NtGdiDdDDIWaitForVerticalBlankEvent@0 @362 PRIVATE
+  NtGdiDdDDIWaitForVerticalBlankEvent2@0 @363 PRIVATE
+  NtGdiDdDestroyFullscreenSprite@0 @364 PRIVATE
+  NtGdiDdNotifyFullscreenSpriteUpdate@0 @365 PRIVATE
+  NtGdiDdQueryVisRgnUniqueness@0 @366 PRIVATE
+  NtGdiDeleteClientObj@4 @367
+  NtGdiDeleteColorSpace@0 @368 PRIVATE
+  NtGdiDeleteColorTransform@0 @369 PRIVATE
+  NtGdiDeleteObjectApp@4 @370
+  NtGdiDescribePixelFormat@16 @371
+  NtGdiDestroyOPMProtectedOutput@0 @372 PRIVATE
+  NtGdiDestroyPhysicalMonitor@0 @373 PRIVATE
+  NtGdiDoBanding@0 @374 PRIVATE
+  NtGdiDoPalette@24 @375
+  NtGdiDrawEscape@0 @376 PRIVATE
+  NtGdiDrawStream@12 @377
+  NtGdiDwmCreatedBitmapRemotingOutput@0 @378 PRIVATE
+  NtGdiEllipse@20 @379
+  NtGdiEnableEudc@0 @380 PRIVATE
+  NtGdiEndDoc@4 @381
+  NtGdiEndGdiRendering@0 @382 PRIVATE
+  NtGdiEndPage@4 @383
+  NtGdiEndPath@4 @384
+  NtGdiEngAlphaBlend@0 @385 PRIVATE
+  NtGdiEngAssociateSurface@0 @386 PRIVATE
+  NtGdiEngBitBlt@0 @387 PRIVATE
+  NtGdiEngCheckAbort@0 @388 PRIVATE
+  NtGdiEngComputeGlyphSet@0 @389 PRIVATE
+  NtGdiEngCopyBits@0 @390 PRIVATE
+  NtGdiEngCreateBitmap@0 @391 PRIVATE
+  NtGdiEngCreateClip@0 @392 PRIVATE
+  NtGdiEngCreateDeviceBitmap@0 @393 PRIVATE
+  NtGdiEngCreateDeviceSurface@0 @394 PRIVATE
+  NtGdiEngCreatePalette@0 @395 PRIVATE
+  NtGdiEngDeleteClip@0 @396 PRIVATE
+  NtGdiEngDeletePalette@0 @397 PRIVATE
+  NtGdiEngDeletePath@0 @398 PRIVATE
+  NtGdiEngDeleteSurface@0 @399 PRIVATE
+  NtGdiEngEraseSurface@0 @400 PRIVATE
+  NtGdiEngFillPath@0 @401 PRIVATE
+  NtGdiEngGradientFill@0 @402 PRIVATE
+  NtGdiEngLineTo@0 @403 PRIVATE
+  NtGdiEngLockSurface@0 @404 PRIVATE
+  NtGdiEngMarkBandingSurface@0 @405 PRIVATE
+  NtGdiEngPaint@0 @406 PRIVATE
+  NtGdiEngPlgBlt@0 @407 PRIVATE
+  NtGdiEngStretchBlt@0 @408 PRIVATE
+  NtGdiEngStretchBltROP@0 @409 PRIVATE
+  NtGdiEngStrokeAndFillPath@0 @410 PRIVATE
+  NtGdiEngStrokePath@0 @411 PRIVATE
+  NtGdiEngTextOut@0 @412 PRIVATE
+  NtGdiEngTransparentBlt@0 @413 PRIVATE
+  NtGdiEngUnlockSurface@0 @414 PRIVATE
+  NtGdiEnsureDpiDepDefaultGuiFontForPlateau@0 @415 PRIVATE
+  NtGdiEnumFonts@32 @416
+  NtGdiEnumObjects@0 @417 PRIVATE
+  NtGdiEqualRgn@8 @418
+  NtGdiEudcLoadUnloadLink@0 @419 PRIVATE
+  NtGdiExcludeClipRect@20 @420
+  NtGdiExtCreatePen@44 @421
+  NtGdiExtCreateRegion@12 @422
+  NtGdiExtEscape@32 @423
+  NtGdiExtFloodFill@20 @424
+  NtGdiExtGetObjectW@12 @425
+  NtGdiExtSelectClipRgn@12 @426
+  NtGdiExtTextOutW@36 @427
+  NtGdiFONTOBJ_cGetAllGlyphHandles@0 @428 PRIVATE
+  NtGdiFONTOBJ_cGetGlyphs@0 @429 PRIVATE
+  NtGdiFONTOBJ_pQueryGlyphAttrs@0 @430 PRIVATE
+  NtGdiFONTOBJ_pfdg@0 @431 PRIVATE
+  NtGdiFONTOBJ_pifi@0 @432 PRIVATE
+  NtGdiFONTOBJ_pvTrueTypeFontFile@0 @433 PRIVATE
+  NtGdiFONTOBJ_pxoGetXform@0 @434 PRIVATE
+  NtGdiFONTOBJ_vGetInfo@0 @435 PRIVATE
+  NtGdiFillPath@4 @436
+  NtGdiFillRgn@12 @437
+  NtGdiFlattenPath@4 @438
+  NtGdiFlush@0 @439
+  NtGdiFontIsLinked@4 @440
+  NtGdiForceUFIMapping@0 @441 PRIVATE
+  NtGdiFrameRgn@20 @442
+  NtGdiFullscreenControl@0 @443 PRIVATE
+  NtGdiGetAndSetDCDword@16 @444
+  NtGdiGetAppClipBox@8 @445
+  NtGdiGetAppliedDeviceGammaRamp@0 @446 PRIVATE
+  NtGdiGetBitmapBits@12 @447
+  NtGdiGetBitmapDimension@8 @448
+  NtGdiGetBitmapDpiScaleValue@0 @449 PRIVATE
+  NtGdiGetBoundsRect@12 @450
+  NtGdiGetCOPPCompatibleOPMInformation@0 @451 PRIVATE
+  NtGdiGetCertificate@0 @452 PRIVATE
+  NtGdiGetCertificateByHandle@0 @453 PRIVATE
+  NtGdiGetCertificateSize@0 @454 PRIVATE
+  NtGdiGetCertificateSizeByHandle@0 @455 PRIVATE
+  NtGdiGetCharABCWidthsW@24 @456
+  NtGdiGetCharSet@0 @457 PRIVATE
+  NtGdiGetCharWidthInfo@8 @458
+  NtGdiGetCharWidthW@24 @459
+  NtGdiGetCharacterPlacementW@0 @460 PRIVATE
+  NtGdiGetColorAdjustment@8 @461
+  NtGdiGetColorSpaceforBitmap@0 @462 PRIVATE
+  NtGdiGetCurrentDpiInfo@0 @463 PRIVATE
+  NtGdiGetDCDpiScaleValue@0 @464 PRIVATE
+  NtGdiGetDCDword@0 @465 PRIVATE
+  NtGdiGetDCObject@8 @466
+  NtGdiGetDCPoint@0 @467 PRIVATE
+  NtGdiGetDCforBitmap@0 @468 PRIVATE
+  NtGdiGetDIBitsInternal@36 @469
+  NtGdiGetDeviceCaps@8 @470
+  NtGdiGetDeviceCapsAll@0 @471 PRIVATE
+  NtGdiGetDeviceGammaRamp@8 @472
+  NtGdiGetDeviceWidth@0 @473 PRIVATE
+  NtGdiGetDhpdev@0 @474 PRIVATE
+  NtGdiGetETM@0 @475 PRIVATE
+  NtGdiGetEmbUFI@0 @476 PRIVATE
+  NtGdiGetEmbedFonts@0 @477 PRIVATE
+  NtGdiGetEntry@0 @478 PRIVATE
+  NtGdiGetEudcTimeStampEx@0 @479 PRIVATE
+  NtGdiGetFontData@20 @480
+  NtGdiGetFontFileData@20 @481
+  NtGdiGetFontFileInfo@20 @482
+  NtGdiGetFontResourceInfoInternalW@0 @483 PRIVATE
+  NtGdiGetFontUnicodeRanges@8 @484
+  NtGdiGetGammaRampCapability@0 @485 PRIVATE
+  NtGdiGetGlyphIndicesW@20 @486
+  NtGdiGetGlyphIndicesWInternal@0 @487 PRIVATE
+  NtGdiGetGlyphOutline@32 @488
+  NtGdiGetKerningPairs@12 @489
+  NtGdiGetLinkedUFIs@0 @490 PRIVATE
+  NtGdiGetMiterLimit@0 @491 PRIVATE
+  NtGdiGetMonitorID@0 @492 PRIVATE
+  NtGdiGetNearestColor@8 @493
+  NtGdiGetNearestPaletteIndex@8 @494
+  NtGdiGetNumberOfPhysicalMonitors@0 @495 PRIVATE
+  NtGdiGetOPMInformation@0 @496 PRIVATE
+  NtGdiGetOPMRandomNumber@0 @497 PRIVATE
+  NtGdiGetObjectBitmapHandle@0 @498 PRIVATE
+  NtGdiGetOutlineTextMetricsInternalW@16 @499
+  NtGdiGetPath@16 @500
+  NtGdiGetPerBandInfo@0 @501 PRIVATE
+  NtGdiGetPhysicalMonitorDescription@0 @502 PRIVATE
+  NtGdiGetPhysicalMonitors@0 @503 PRIVATE
+  NtGdiGetPixel@12 @504
+  NtGdiGetProcessSessionFonts@0 @505 PRIVATE
+  NtGdiGetPublicFontTableChangeCookie@0 @506 PRIVATE
+  NtGdiGetRandomRgn@12 @507
+  NtGdiGetRasterizerCaps@8 @508
+  NtGdiGetRealizationInfo@8 @509
+  NtGdiGetRegionData@12 @510
+  NtGdiGetRgnBox@8 @511
+  NtGdiGetServerMetaFileBits@0 @512 PRIVATE
+  NtGdiGetSpoolMessage@16 @513
+  NtGdiGetStats@0 @514 PRIVATE
+  NtGdiGetStringBitmapW@0 @515 PRIVATE
+  NtGdiGetSuggestedOPMProtectedOutputArraySize@0 @516 PRIVATE
+  NtGdiGetSystemPaletteUse@4 @517
+  NtGdiGetTextCharsetInfo@12 @518
+  NtGdiGetTextExtent@0 @519 PRIVATE
+  NtGdiGetTextExtentExW@32 @520
+  NtGdiGetTextFaceW@16 @521
+  NtGdiGetTextMetricsW@12 @522
+  NtGdiGetTransform@12 @523
+  NtGdiGetUFI@0 @524 PRIVATE
+  NtGdiGetUFIPathname@0 @525 PRIVATE
+  NtGdiGetWidthTable@0 @526 PRIVATE
+  NtGdiGradientFill@24 @527
+  NtGdiHLSurfGetInformation@0 @528 PRIVATE
+  NtGdiHLSurfSetInformation@0 @529 PRIVATE
+  NtGdiHT_Get8BPPFormatPalette@0 @530 PRIVATE
+  NtGdiHT_Get8BPPMaskPalette@0 @531 PRIVATE
+  NtGdiHfontCreate@20 @532
+  NtGdiIcmBrushInfo@0 @533 PRIVATE
+  NtGdiInit@0 @534 PRIVATE
+  NtGdiInitSpool@0 @535
+  NtGdiIntersectClipRect@20 @536
+  NtGdiInvertRgn@8 @537
+  NtGdiLineTo@12 @538
+  NtGdiMakeFontDir@0 @539 PRIVATE
+  NtGdiMakeInfoDC@0 @540 PRIVATE
+  NtGdiMakeObjectUnXferable@0 @541 PRIVATE
+  NtGdiMakeObjectXferable@0 @542 PRIVATE
+  NtGdiMaskBlt@52 @543
+  NtGdiMirrorWindowOrg@0 @544 PRIVATE
+  NtGdiModifyWorldTransform@12 @545
+  NtGdiMonoBitmap@0 @546 PRIVATE
+  NtGdiMoveTo@16 @547
+  NtGdiOffsetClipRgn@12 @548
+  NtGdiOffsetRgn@12 @549
+  NtGdiOpenDCW@32 @550
+  NtGdiPATHOBJ_bEnum@0 @551 PRIVATE
+  NtGdiPATHOBJ_bEnumClipLines@0 @552 PRIVATE
+  NtGdiPATHOBJ_vEnumStart@0 @553 PRIVATE
+  NtGdiPATHOBJ_vEnumStartClipLines@0 @554 PRIVATE
+  NtGdiPATHOBJ_vGetBounds@0 @555 PRIVATE
+  NtGdiPatBlt@24 @556
+  NtGdiPathToRegion@4 @557
+  NtGdiPlgBlt@44 @558
+  NtGdiPolyDraw@16 @559
+  NtGdiPolyPatBlt@0 @560 PRIVATE
+  NtGdiPolyPolyDraw@20 @561
+  NtGdiPolyTextOutW@0 @562 PRIVATE
+  NtGdiPtInRegion@12 @563
+  NtGdiPtVisible@12 @564
+  NtGdiQueryFontAssocInfo@0 @565 PRIVATE
+  NtGdiQueryFonts@0 @566 PRIVATE
+  NtGdiRectInRegion@8 @567
+  NtGdiRectVisible@8 @568
+  NtGdiRectangle@20 @569
+  NtGdiRemoveFontMemResourceEx@4 @570
+  NtGdiRemoveFontResourceW@24 @571
+  NtGdiRemoveMergeFont@0 @572 PRIVATE
+  NtGdiResetDC@20 @573
+  NtGdiResizePalette@8 @574
+  NtGdiRestoreDC@8 @575
+  NtGdiRoundRect@28 @576
+  NtGdiSTROBJ_bEnum@0 @577 PRIVATE
+  NtGdiSTROBJ_bEnumPositionsOnly@0 @578 PRIVATE
+  NtGdiSTROBJ_bGetAdvanceWidths@0 @579 PRIVATE
+  NtGdiSTROBJ_dwGetCodePage@0 @580 PRIVATE
+  NtGdiSTROBJ_vEnumStart@0 @581 PRIVATE
+  NtGdiSaveDC@4 @582
+  NtGdiScaleRgn@0 @583 PRIVATE
+  NtGdiScaleValues@0 @584 PRIVATE
+  NtGdiScaleViewportExtEx@24 @585
+  NtGdiScaleWindowExtEx@24 @586
+  NtGdiSelectBitmap@8 @587
+  NtGdiSelectBrush@8 @588
+  NtGdiSelectClipPath@8 @589
+  NtGdiSelectFont@8 @590
+  NtGdiSelectPen@8 @591
+  NtGdiSetBitmapAttributes@0 @592 PRIVATE
+  NtGdiSetBitmapBits@12 @593
+  NtGdiSetBitmapDimension@16 @594
+  NtGdiSetBoundsRect@12 @595
+  NtGdiSetBrushAttributes@0 @596 PRIVATE
+  NtGdiSetBrushOrg@16 @597
+  NtGdiSetColorAdjustment@8 @598
+  NtGdiSetColorSpace@0 @599 PRIVATE
+  NtGdiSetDIBitsToDeviceInternal@64 @600
+  NtGdiSetDeviceGammaRamp@8 @601
+  NtGdiSetFontEnumeration@0 @602 PRIVATE
+  NtGdiSetFontXform@0 @603 PRIVATE
+  NtGdiSetIcmMode@0 @604 PRIVATE
+  NtGdiSetLayout@12 @605
+  NtGdiSetLinkedUFIs@0 @606 PRIVATE
+  NtGdiSetMagicColors@12 @607
+  NtGdiSetMetaRgn@4 @608
+  NtGdiSetMiterLimit@0 @609 PRIVATE
+  NtGdiSetOPMSigningKeyAndSequenceNumbers@0 @610 PRIVATE
+  NtGdiSetPUMPDOBJ@0 @611 PRIVATE
+  NtGdiSetPixel@16 @612
+  NtGdiSetPixelFormat@8 @613
+  NtGdiSetPrivateDeviceGammaRamp@0 @614 PRIVATE
+  NtGdiSetRectRgn@20 @615
+  NtGdiSetSizeDevice@0 @616 PRIVATE
+  NtGdiSetSystemPaletteUse@8 @617
+  NtGdiSetTextJustification@12 @618
+  NtGdiSetUMPDSandboxState@0 @619 PRIVATE
+  NtGdiSetVirtualResolution@20 @620
+  NtGdiStartDoc@16 @621
+  NtGdiStartPage@4 @622
+  NtGdiStretchBlt@48 @623
+  NtGdiStretchDIBitsInternal@64 @624
+  NtGdiStrokeAndFillPath@4 @625
+  NtGdiStrokePath@4 @626
+  NtGdiSwapBuffers@4 @627
+  NtGdiTransformPoints@20 @628
+  NtGdiTransparentBlt@44 @629
+  NtGdiUMPDEngFreeUserMem@0 @630 PRIVATE
+  NtGdiUnloadPrinterDriver@0 @631 PRIVATE
+  NtGdiUnmapMemFont@0 @632 PRIVATE
+  NtGdiUnrealizeObject@4 @633
+  NtGdiUpdateColors@4 @634
+  NtGdiUpdateTransform@0 @635 PRIVATE
+  NtGdiWidenPath@4 @636
+  NtGdiXFORMOBJ_bApplyXform@0 @637 PRIVATE
+  NtGdiXFORMOBJ_iGetXform@0 @638 PRIVATE
+  NtGdiXLATEOBJ_cGetPalette@0 @639 PRIVATE
+  NtGdiXLATEOBJ_hGetColorTransform@0 @640 PRIVATE
+  NtGdiXLATEOBJ_iXlate@0 @641 PRIVATE
+  NtHWCursorUpdatePointer@0 @642 PRIVATE
+  NtInputSpaceRegionFromPoint@0 @643 PRIVATE
+  NtIsOneCoreTransformMode@0 @644 PRIVATE
+  NtMITAccessibilityTimerNotification@0 @645 PRIVATE
+  NtMITActivateInputProcessing@0 @646 PRIVATE
+  NtMITCoreMsgKOpenConnectionTo@0 @647 PRIVATE
+  NtMITDeactivateInputProcessing@0 @648 PRIVATE
+  NtMITDisableMouseIntercept@0 @649 PRIVATE
+  NtMITDispatchCompletion@0 @650 PRIVATE
+  NtMITEnableMouseIntercept@0 @651 PRIVATE
+  NtMITGetCursorUpdateHandle@0 @652 PRIVATE
+  NtMITInitMinuserThread@0 @653 PRIVATE
+  NtMITMinuserSetInputTransformOffset@0 @654 PRIVATE
+  NtMITMinuserWindowCreated@0 @655 PRIVATE
+  NtMITMinuserWindowDestroyed@0 @656 PRIVATE
+  NtMITPostMouseInputMessage@0 @657 PRIVATE
+  NtMITPostThreadEventMessage@0 @658 PRIVATE
+  NtMITPostWindowEventMessage@0 @659 PRIVATE
+  NtMITPrepareReceiveInputMessage@0 @660 PRIVATE
+  NtMITPrepareSendInputMessage@0 @661 PRIVATE
+  NtMITProcessDelegateCapturedPointers@0 @662 PRIVATE
+  NtMITSetForegroundRoutingInfo@0 @663 PRIVATE
+  NtMITSetInputCallbacks@0 @664 PRIVATE
+  NtMITSetInputDelegationMode@0 @665 PRIVATE
+  NtMITSetInputObservationState@0 @666 PRIVATE
+  NtMITSetKeyboardInputRoutingPolicy@0 @667 PRIVATE
+  NtMITSetKeyboardOverriderState@0 @668 PRIVATE
+  NtMITSetLastInputRecipient@0 @669 PRIVATE
+  NtMITSynthesizeKeyboardInput@0 @670 PRIVATE
+  NtMITSynthesizeMouseInput@0 @671 PRIVATE
+  NtMITSynthesizeTouchInput@0 @672 PRIVATE
+  NtMITUninitMinuserThread@0 @673 PRIVATE
+  NtMITUpdateInputGlobals@0 @674 PRIVATE
+  NtMapVisualRelativePoints@0 @675 PRIVATE
+  NtMinGetInputTransform@0 @676 PRIVATE
+  NtMinInteropCoreMessagingWithInput@0 @677 PRIVATE
+  NtMinQPeekForInput@0 @678 PRIVATE
+  NtMinQSuspendInputProcessing@0 @679 PRIVATE
+  NtMinQUpdateWakeMask@0 @680 PRIVATE
+  NtModerncoreBeginLayoutUpdate@0 @681 PRIVATE
+  NtModerncoreCreateDCompositionHwndTarget@0 @682 PRIVATE
+  NtModerncoreCreateGDIHwndTarget@0 @683 PRIVATE
+  NtModerncoreDestroyDCompositionHwndTarget@0 @684 PRIVATE
+  NtModerncoreDestroyGDIHwndTarget@0 @685 PRIVATE
+  NtModerncoreEnableResizeLayoutSynchronization@0 @686 PRIVATE
+  NtModerncoreGetNavigationWindowVisual@0 @687 PRIVATE
+  NtModerncoreGetResizeDCompositionSynchronizationObject@0 @688 PRIVATE
+  NtModerncoreGetWindowContentVisual@0 @689 PRIVATE
+  NtModerncoreIdleTimerThread@0 @690 PRIVATE
+  NtModerncoreIsResizeLayoutSynchronizationEnabled@0 @691 PRIVATE
+  NtModerncoreProcessConnect@0 @692 PRIVATE
+  NtModerncoreRegisterEnhancedNavigationWindowHandle@0 @693 PRIVATE
+  NtModerncoreRegisterNavigationWindowHandle@0 @694 PRIVATE
+  NtModerncoreSetNavigationServiceSid@0 @695 PRIVATE
+  NtModerncoreUnregisterNavigationWindowHandle@0 @696 PRIVATE
+  NtNotifyPresentToCompositionSurface@0 @697 PRIVATE
+  NtOpenCompositionSurfaceDirtyRegion@0 @698 PRIVATE
+  NtOpenCompositionSurfaceSectionInfo@0 @699 PRIVATE
+  NtOpenCompositionSurfaceSwapChainHandleInfo@0 @700 PRIVATE
+  NtQueryCompositionInputIsImplicit@0 @701 PRIVATE
+  NtQueryCompositionInputQueueAndTransform@0 @702 PRIVATE
+  NtQueryCompositionInputSink@0 @703 PRIVATE
+  NtQueryCompositionInputSinkLuid@0 @704 PRIVATE
+  NtQueryCompositionInputSinkViewId@0 @705 PRIVATE
+  NtQueryCompositionSurfaceBinding@0 @706 PRIVATE
+  NtQueryCompositionSurfaceHDRMetaData@0 @707 PRIVATE
+  NtQueryCompositionSurfaceRenderingRealization@0 @708 PRIVATE
+  NtQueryCompositionSurfaceStatistics@0 @709 PRIVATE
+  NtRIMAddInputObserver@0 @710 PRIVATE
+  NtRIMAreSiblingDevices@0 @711 PRIVATE
+  NtRIMDeviceIoControl@0 @712 PRIVATE
+  NtRIMEnableMonitorMappingForDevice@0 @713 PRIVATE
+  NtRIMFreeInputBuffer@0 @714 PRIVATE
+  NtRIMGetDevicePreparsedData@0 @715 PRIVATE
+  NtRIMGetDevicePreparsedDataLockfree@0 @716 PRIVATE
+  NtRIMGetDeviceProperties@0 @717 PRIVATE
+  NtRIMGetDevicePropertiesLockfree@0 @718 PRIVATE
+  NtRIMGetPhysicalDeviceRect@0 @719 PRIVATE
+  NtRIMGetSourceProcessId@0 @720 PRIVATE
+  NtRIMObserveNextInput@0 @721 PRIVATE
+  NtRIMOnPnpNotification@0 @722 PRIVATE
+  NtRIMOnTimerNotification@0 @723 PRIVATE
+  NtRIMQueryDevicePath@0 @724 PRIVATE
+  NtRIMReadInput@0 @725 PRIVATE
+  NtRIMRegisterForInput@0 @726 PRIVATE
+  NtRIMRemoveInputObserver@0 @727 PRIVATE
+  NtRIMSetExtendedDeviceProperty@0 @728 PRIVATE
+  NtRIMSetTestModeStatus@0 @729 PRIVATE
+  NtRIMUnregisterForInput@0 @730 PRIVATE
+  NtRIMUpdateInputObserverRegistration@0 @731 PRIVATE
+  NtSetCompositionSurfaceAnalogExclusive@0 @732 PRIVATE
+  NtSetCompositionSurfaceBufferUsage@0 @733 PRIVATE
+  NtSetCompositionSurfaceDirectFlipState@0 @734 PRIVATE
+  NtSetCompositionSurfaceIndependentFlipInfo@0 @735 PRIVATE
+  NtSetCompositionSurfaceStatistics@0 @736 PRIVATE
+  NtSetCursorInputSpace@0 @737 PRIVATE
+  NtSetPointerDeviceInputSpace@0 @738 PRIVATE
+  NtSetShellCursorState@0 @739 PRIVATE
+  NtTokenManagerConfirmOutstandingAnalogToken@0 @740 PRIVATE
+  NtTokenManagerCreateCompositionTokenHandle@0 @741 PRIVATE
+  NtTokenManagerCreateFlipObjectReturnTokenHandle@0 @742 PRIVATE
+  NtTokenManagerCreateFlipObjectTokenHandle@0 @743 PRIVATE
+  NtTokenManagerGetAnalogExclusiveSurfaceUpdates@0 @744 PRIVATE
+  NtTokenManagerGetAnalogExclusiveTokenEvent@0 @745 PRIVATE
+  NtTokenManagerOpenSectionAndEvents@0 @746 PRIVATE
+  NtTokenManagerThread@0 @747 PRIVATE
+  NtUnBindCompositionSurface@0 @748 PRIVATE
+  NtUpdateInputSinkTransforms@0 @749 PRIVATE
+  NtUserAcquireIAMKey@0 @750 PRIVATE
+  NtUserAcquireInteractiveControlBackgroundAccess@0 @751 PRIVATE
+  NtUserActivateKeyboardLayout@0 @752 PRIVATE
+  NtUserAddClipboardFormatListener@0 @753 PRIVATE
+  NtUserAddVisualIdentifier@0 @754 PRIVATE
+  NtUserAlterWindowStyle@0 @755 PRIVATE
+  NtUserAssociateInputContext@0 @756 PRIVATE
+  NtUserAttachThreadInput@0 @757 PRIVATE
+  NtUserAutoPromoteMouseInPointer@0 @758 PRIVATE
+  NtUserAutoRotateScreen@0 @759 PRIVATE
+  NtUserBeginLayoutUpdate@0 @760 PRIVATE
+  NtUserBeginPaint@0 @761 PRIVATE
+  NtUserBitBltSysBmp@0 @762 PRIVATE
+  NtUserBlockInput@0 @763 PRIVATE
+  NtUserBroadcastThemeChangeEvent@0 @764 PRIVATE
+  NtUserBuildHimcList@0 @765 PRIVATE
+  NtUserBuildHwndList@0 @766 PRIVATE
+  NtUserBuildNameList@0 @767 PRIVATE
+  NtUserBuildPropList@0 @768 PRIVATE
+  NtUserCalcMenuBar@0 @769 PRIVATE
+  NtUserCalculatePopupWindowPosition@0 @770 PRIVATE
+  NtUserCallHwnd@0 @771 PRIVATE
+  NtUserCallHwndLock@0 @772 PRIVATE
+  NtUserCallHwndLockSafe@0 @773 PRIVATE
+  NtUserCallHwndOpt@0 @774 PRIVATE
+  NtUserCallHwndParam@0 @775 PRIVATE
+  NtUserCallHwndParamLock@0 @776 PRIVATE
+  NtUserCallHwndParamLockSafe@0 @777 PRIVATE
+  NtUserCallHwndSafe@0 @778 PRIVATE
+  NtUserCallMsgFilter@0 @779 PRIVATE
+  NtUserCallNextHookEx@0 @780 PRIVATE
+  NtUserCallNoParam@0 @781 PRIVATE
+  NtUserCallOneParam@0 @782 PRIVATE
+  NtUserCallTwoParam@0 @783 PRIVATE
+  NtUserCanBrokerForceForeground@0 @784 PRIVATE
+  NtUserChangeClipboardChain@0 @785 PRIVATE
+  NtUserChangeDisplaySettings@0 @786 PRIVATE
+  NtUserChangeWindowMessageFilterEx@0 @787 PRIVATE
+  NtUserCheckAccessForIntegrityLevel@0 @788 PRIVATE
+  NtUserCheckMenuItem@0 @789 PRIVATE
+  NtUserCheckProcessForClipboardAccess@0 @790 PRIVATE
+  NtUserCheckProcessSession@0 @791 PRIVATE
+  NtUserCheckWindowThreadDesktop@0 @792 PRIVATE
+  NtUserChildWindowFromPointEx@0 @793 PRIVATE
+  NtUserClearForeground@0 @794 PRIVATE
+  NtUserClipCursor@0 @795 PRIVATE
+  NtUserCloseClipboard@0 @796 PRIVATE
+  NtUserCloseDesktop@4 @797
+  NtUserCloseWindowStation@4 @798
+  NtUserCompositionInputSinkLuidFromPoint@0 @799 PRIVATE
+  NtUserCompositionInputSinkViewInstanceIdFromPoint@0 @800 PRIVATE
+  NtUserConfigureActivationObject@0 @801 PRIVATE
+  NtUserConfirmResizeCommit@0 @802 PRIVATE
+  NtUserConsoleControl@0 @803 PRIVATE
+  NtUserConvertMemHandle@0 @804 PRIVATE
+  NtUserCopyAcceleratorTable@0 @805 PRIVATE
+  NtUserCountClipboardFormats@0 @806 PRIVATE
+  NtUserCreateAcceleratorTable@0 @807 PRIVATE
+  NtUserCreateActivationGroup@0 @808 PRIVATE
+  NtUserCreateActivationObject@0 @809 PRIVATE
+  NtUserCreateCaret@0 @810 PRIVATE
+  NtUserCreateDCompositionHwndTarget@0 @811 PRIVATE
+  NtUserCreateDesktopEx@24 @812
+  NtUserCreateEmptyCursorObject@0 @813 PRIVATE
+  NtUserCreateInputContext@0 @814 PRIVATE
+  NtUserCreateLocalMemHandle@0 @815 PRIVATE
+  NtUserCreatePalmRejectionDelayZone@0 @816 PRIVATE
+  NtUserCreateWindowEx@0 @817 PRIVATE
+  NtUserCreateWindowGroup@0 @818 PRIVATE
+  NtUserCreateWindowStation@28 @819
+  NtUserCtxDisplayIOCtl@0 @820 PRIVATE
+  NtUserDdeInitialize@0 @821 PRIVATE
+  NtUserDefSetText@0 @822 PRIVATE
+  NtUserDeferWindowDpiChanges@0 @823 PRIVATE
+  NtUserDeferWindowPosAndBand@0 @824 PRIVATE
+  NtUserDelegateCapturePointers@0 @825 PRIVATE
+  NtUserDelegateInput@0 @826 PRIVATE
+  NtUserDeleteMenu@0 @827 PRIVATE
+  NtUserDeleteWindowGroup@0 @828 PRIVATE
+  NtUserDestroyAcceleratorTable@0 @829 PRIVATE
+  NtUserDestroyActivationGroup@0 @830 PRIVATE
+  NtUserDestroyActivationObject@0 @831 PRIVATE
+  NtUserDestroyCursor@0 @832 PRIVATE
+  NtUserDestroyDCompositionHwndTarget@0 @833 PRIVATE
+  NtUserDestroyInputContext@0 @834 PRIVATE
+  NtUserDestroyMenu@0 @835 PRIVATE
+  NtUserDestroyPalmRejectionDelayZone@0 @836 PRIVATE
+  NtUserDestroyWindow@0 @837 PRIVATE
+  NtUserDisableImmersiveOwner@0 @838 PRIVATE
+  NtUserDisableProcessWindowFiltering@0 @839 PRIVATE
+  NtUserDisableThreadIme@0 @840 PRIVATE
+  NtUserDiscardPointerFrameMessages@0 @841 PRIVATE
+  NtUserDispatchMessage@0 @842 PRIVATE
+  NtUserDisplayConfigGetDeviceInfo@0 @843 PRIVATE
+  NtUserDisplayConfigSetDeviceInfo@0 @844 PRIVATE
+  NtUserDoSoundConnect@0 @845 PRIVATE
+  NtUserDoSoundDisconnect@0 @846 PRIVATE
+  NtUserDownlevelTouchpad@0 @847 PRIVATE
+  NtUserDragDetect@0 @848 PRIVATE
+  NtUserDragObject@0 @849 PRIVATE
+  NtUserDrawAnimatedRects@0 @850 PRIVATE
+  NtUserDrawCaption@0 @851 PRIVATE
+  NtUserDrawCaptionTemp@0 @852 PRIVATE
+  NtUserDrawIconEx@0 @853 PRIVATE
+  NtUserDrawMenuBarTemp@0 @854 PRIVATE
+  NtUserDwmGetRemoteSessionOcclusionEvent@0 @855 PRIVATE
+  NtUserDwmGetRemoteSessionOcclusionState@0 @856 PRIVATE
+  NtUserDwmKernelShutdown@0 @857 PRIVATE
+  NtUserDwmKernelStartup@0 @858 PRIVATE
+  NtUserDwmValidateWindow@0 @859 PRIVATE
+  NtUserEmptyClipboard@0 @860 PRIVATE
+  NtUserEnableChildWindowDpiMessage@0 @861 PRIVATE
+  NtUserEnableIAMAccess@0 @862 PRIVATE
+  NtUserEnableMenuItem@0 @863 PRIVATE
+  NtUserEnableMouseInPointer@0 @864 PRIVATE
+  NtUserEnableMouseInPointerForWindow@0 @865 PRIVATE
+  NtUserEnableMouseInputForCursorSuppression@0 @866 PRIVATE
+  NtUserEnableNonClientDpiScaling@0 @867 PRIVATE
+  NtUserEnableResizeLayoutSynchronization@0 @868 PRIVATE
+  NtUserEnableScrollBar@0 @869 PRIVATE
+  NtUserEnableSoftwareCursorForScreenCapture@0 @870 PRIVATE
+  NtUserEnableTouchPad@0 @871 PRIVATE
+  NtUserEnableWindowGDIScaledDpiMessage@0 @872 PRIVATE
+  NtUserEnableWindowGroupPolicy@0 @873 PRIVATE
+  NtUserEnableWindowResizeOptimization@0 @874 PRIVATE
+  NtUserEndDeferWindowPosEx@0 @875 PRIVATE
+  NtUserEndMenu@0 @876 PRIVATE
+  NtUserEndPaint@0 @877 PRIVATE
+  NtUserEnumDisplayDevices@0 @878 PRIVATE
+  NtUserEnumDisplayMonitors@0 @879 PRIVATE
+  NtUserEnumDisplaySettings@0 @880 PRIVATE
+  NtUserEvent@0 @881 PRIVATE
+  NtUserExcludeUpdateRgn@0 @882 PRIVATE
+  NtUserFillWindow@0 @883 PRIVATE
+  NtUserFindExistingCursorIcon@0 @884 PRIVATE
+  NtUserFindWindowEx@0 @885 PRIVATE
+  NtUserFlashWindowEx@0 @886 PRIVATE
+  NtUserForceWindowToDpiForTest@0 @887 PRIVATE
+  NtUserFrostCrashedWindow@0 @888 PRIVATE
+  NtUserFunctionalizeDisplayConfig@0 @889 PRIVATE
+  NtUserGetActiveProcessesDpis@0 @890 PRIVATE
+  NtUserGetAltTabInfo@0 @891 PRIVATE
+  NtUserGetAncestor@0 @892 PRIVATE
+  NtUserGetAppImeLevel@0 @893 PRIVATE
+  NtUserGetAsyncKeyState@0 @894 PRIVATE
+  NtUserGetAtomName@0 @895 PRIVATE
+  NtUserGetAutoRotationState@0 @896 PRIVATE
+  NtUserGetCIMSSM@0 @897 PRIVATE
+  NtUserGetCPD@0 @898 PRIVATE
+  NtUserGetCaretBlinkTime@0 @899 PRIVATE
+  NtUserGetCaretPos@0 @900 PRIVATE
+  NtUserGetClassInfoEx@0 @901 PRIVATE
+  NtUserGetClassName@0 @902 PRIVATE
+  NtUserGetClipCursor@0 @903 PRIVATE
+  NtUserGetClipboardAccessToken@0 @904 PRIVATE
+  NtUserGetClipboardData@0 @905 PRIVATE
+  NtUserGetClipboardFormatName@0 @906 PRIVATE
+  NtUserGetClipboardOwner@0 @907 PRIVATE
+  NtUserGetClipboardSequenceNumber@0 @908 PRIVATE
+  NtUserGetClipboardViewer@0 @909 PRIVATE
+  NtUserGetComboBoxInfo@0 @910 PRIVATE
+  NtUserGetControlBrush@0 @911 PRIVATE
+  NtUserGetControlColor@0 @912 PRIVATE
+  NtUserGetCurrentDpiInfoForWindow@0 @913 PRIVATE
+  NtUserGetCurrentInputMessageSource@0 @914 PRIVATE
+  NtUserGetCursor@0 @915 PRIVATE
+  NtUserGetCursorFrameInfo@0 @916 PRIVATE
+  NtUserGetCursorInfo@0 @917 PRIVATE
+  NtUserGetDC@0 @918 PRIVATE
+  NtUserGetDCEx@0 @919 PRIVATE
+  NtUserGetDManipHookInitFunction@0 @920 PRIVATE
+  NtUserGetDesktopID@0 @921 PRIVATE
+  NtUserGetDisplayAutoRotationPreferences@0 @922 PRIVATE
+  NtUserGetDisplayAutoRotationPreferencesByProcessId@0 @923 PRIVATE
+  NtUserGetDisplayConfigBufferSizes@0 @924 PRIVATE
+  NtUserGetDoubleClickTime@0 @925 PRIVATE
+  NtUserGetDpiForCurrentProcess@0 @926 PRIVATE
+  NtUserGetDpiForMonitor@0 @927 PRIVATE
+  NtUserGetExtendedPointerDeviceProperty@0 @928 PRIVATE
+  NtUserGetForegroundWindow@0 @929 PRIVATE
+  NtUserGetGUIThreadInfo@0 @930 PRIVATE
+  NtUserGetGestureConfig@0 @931 PRIVATE
+  NtUserGetGestureExtArgs@0 @932 PRIVATE
+  NtUserGetGestureInfo@0 @933 PRIVATE
+  NtUserGetGuiResources@0 @934 PRIVATE
+  NtUserGetHDevName@0 @935 PRIVATE
+  NtUserGetHimetricScaleFactorFromPixelLocation@0 @936 PRIVATE
+  NtUserGetIconInfo@0 @937 PRIVATE
+  NtUserGetIconSize@0 @938 PRIVATE
+  NtUserGetImeHotKey@0 @939 PRIVATE
+  NtUserGetImeInfoEx@0 @940 PRIVATE
+  NtUserGetInputContainerId@0 @941 PRIVATE
+  NtUserGetInputLocaleInfo@0 @942 PRIVATE
+  NtUserGetInteractiveControlDeviceInfo@0 @943 PRIVATE
+  NtUserGetInteractiveControlInfo@0 @944 PRIVATE
+  NtUserGetInteractiveCtrlSupportedWaveforms@0 @945 PRIVATE
+  NtUserGetInternalWindowPos@0 @946 PRIVATE
+  NtUserGetKeyNameText@0 @947 PRIVATE
+  NtUserGetKeyState@0 @948 PRIVATE
+  NtUserGetKeyboardLayout@0 @949 PRIVATE
+  NtUserGetKeyboardLayoutList@0 @950 PRIVATE
+  NtUserGetKeyboardLayoutName@0 @951 PRIVATE
+  NtUserGetKeyboardState@0 @952 PRIVATE
+  NtUserGetLayeredWindowAttributes@0 @953 PRIVATE
+  NtUserGetListBoxInfo@0 @954 PRIVATE
+  NtUserGetMenuBarInfo@0 @955 PRIVATE
+  NtUserGetMenuIndex@0 @956 PRIVATE
+  NtUserGetMenuItemRect@0 @957 PRIVATE
+  NtUserGetMessage@0 @958 PRIVATE
+  NtUserGetMouseMovePointsEx@0 @959 PRIVATE
+  NtUserGetObjectInformation@20 @960
+  NtUserGetOemBitmapSize@0 @961 PRIVATE
+  NtUserGetOpenClipboardWindow@0 @962 PRIVATE
+  NtUserGetOwnerTransformedMonitorRect@0 @963 PRIVATE
+  NtUserGetPhysicalDeviceRect@0 @964 PRIVATE
+  NtUserGetPointerCursorId@0 @965 PRIVATE
+  NtUserGetPointerDevice@0 @966 PRIVATE
+  NtUserGetPointerDeviceCursors@0 @967 PRIVATE
+  NtUserGetPointerDeviceInputSpace@0 @968 PRIVATE
+  NtUserGetPointerDeviceOrientation@0 @969 PRIVATE
+  NtUserGetPointerDeviceProperties@0 @970 PRIVATE
+  NtUserGetPointerDeviceRects@0 @971 PRIVATE
+  NtUserGetPointerDevices@0 @972 PRIVATE
+  NtUserGetPointerFrameTimes@0 @973 PRIVATE
+  NtUserGetPointerInfoList@0 @974 PRIVATE
+  NtUserGetPointerInputTransform@0 @975 PRIVATE
+  NtUserGetPointerProprietaryId@0 @976 PRIVATE
+  NtUserGetPointerType@0 @977 PRIVATE
+  NtUserGetPrecisionTouchPadConfiguration@0 @978 PRIVATE
+  NtUserGetPriorityClipboardFormat@0 @979 PRIVATE
+  NtUserGetProcessDpiAwarenessContext@0 @980 PRIVATE
+  NtUserGetProcessUIContextInformation@0 @981 PRIVATE
+  NtUserGetProcessWindowStation@0 @982
+  NtUserGetProp@0 @983 PRIVATE
+  NtUserGetQueueStatus@0 @984 PRIVATE
+  NtUserGetQueueStatusReadonly@0 @985 PRIVATE
+  NtUserGetRawInputBuffer@0 @986 PRIVATE
+  NtUserGetRawInputData@0 @987 PRIVATE
+  NtUserGetRawInputDeviceInfo@0 @988 PRIVATE
+  NtUserGetRawInputDeviceList@0 @989 PRIVATE
+  NtUserGetRawPointerDeviceData@0 @990 PRIVATE
+  NtUserGetRegisteredRawInputDevices@0 @991 PRIVATE
+  NtUserGetRequiredCursorSizes@0 @992 PRIVATE
+  NtUserGetResizeDCompositionSynchronizationObject@0 @993 PRIVATE
+  NtUserGetScrollBarInfo@0 @994 PRIVATE
+  NtUserGetSharedWindowData@0 @995 PRIVATE
+  NtUserGetSystemDpiForProcess@0 @996 PRIVATE
+  NtUserGetSystemMenu@0 @997 PRIVATE
+  NtUserGetThreadDesktop@4 @998
+  NtUserGetThreadState@0 @999 PRIVATE
+  NtUserGetTitleBarInfo@0 @1000 PRIVATE
+  NtUserGetTopLevelWindow@0 @1001 PRIVATE
+  NtUserGetTouchInputInfo@0 @1002 PRIVATE
+  NtUserGetTouchValidationStatus@0 @1003 PRIVATE
+  NtUserGetUniformSpaceMapping@0 @1004 PRIVATE
+  NtUserGetUpdateRect@0 @1005 PRIVATE
+  NtUserGetUpdateRgn@0 @1006 PRIVATE
+  NtUserGetUpdatedClipboardFormats@0 @1007 PRIVATE
+  NtUserGetWOWClass@0 @1008 PRIVATE
+  NtUserGetWindowBand@0 @1009 PRIVATE
+  NtUserGetWindowCompositionAttribute@0 @1010 PRIVATE
+  NtUserGetWindowCompositionInfo@0 @1011 PRIVATE
+  NtUserGetWindowDC@0 @1012 PRIVATE
+  NtUserGetWindowDisplayAffinity@0 @1013 PRIVATE
+  NtUserGetWindowFeedbackSetting@0 @1014 PRIVATE
+  NtUserGetWindowGroupId@0 @1015 PRIVATE
+  NtUserGetWindowMinimizeRect@0 @1016 PRIVATE
+  NtUserGetWindowPlacement@0 @1017 PRIVATE
+  NtUserGetWindowProcessHandle@0 @1018 PRIVATE
+  NtUserGetWindowRgnEx@0 @1019 PRIVATE
+  NtUserGhostWindowFromHungWindow@0 @1020 PRIVATE
+  NtUserHandleDelegatedInput@0 @1021 PRIVATE
+  NtUserHardErrorControl@0 @1022 PRIVATE
+  NtUserHideCaret@0 @1023 PRIVATE
+  NtUserHidePointerContactVisualization@0 @1024 PRIVATE
+  NtUserHiliteMenuItem@0 @1025 PRIVATE
+  NtUserHungWindowFromGhostWindow@0 @1026 PRIVATE
+  NtUserHwndQueryRedirectionInfo@0 @1027 PRIVATE
+  NtUserHwndSetRedirectionInfo@0 @1028 PRIVATE
+  NtUserImpersonateDdeClientWindow@0 @1029 PRIVATE
+  NtUserInheritWindowMonitor@0 @1030 PRIVATE
+  NtUserInitTask@0 @1031 PRIVATE
+  NtUserInitialize@0 @1032 PRIVATE
+  NtUserInitializeClientPfnArrays@0 @1033 PRIVATE
+  NtUserInitializeGenericHidInjection@0 @1034 PRIVATE
+  NtUserInitializeInputDeviceInjection@0 @1035 PRIVATE
+  NtUserInitializePointerDeviceInjection@0 @1036 PRIVATE
+  NtUserInitializePointerDeviceInjectionEx@0 @1037 PRIVATE
+  NtUserInitializeTouchInjection@0 @1038 PRIVATE
+  NtUserInjectDeviceInput@0 @1039 PRIVATE
+  NtUserInjectGenericHidInput@0 @1040 PRIVATE
+  NtUserInjectGesture@0 @1041 PRIVATE
+  NtUserInjectKeyboardInput@0 @1042 PRIVATE
+  NtUserInjectMouseInput@0 @1043 PRIVATE
+  NtUserInjectPointerInput@0 @1044 PRIVATE
+  NtUserInjectTouchInput@0 @1045 PRIVATE
+  NtUserInteractiveControlQueryUsage@0 @1046 PRIVATE
+  NtUserInternalGetWindowIcon@0 @1047 PRIVATE
+  NtUserInternalGetWindowText@0 @1048 PRIVATE
+  NtUserInternalToUnicode@0 @1049 PRIVATE
+  NtUserInvalidateRect@0 @1050 PRIVATE
+  NtUserInvalidateRgn@0 @1051 PRIVATE
+  NtUserIsChildWindowDpiMessageEnabled@0 @1052 PRIVATE
+  NtUserIsClipboardFormatAvailable@0 @1053 PRIVATE
+  NtUserIsMouseInPointerEnabled@0 @1054 PRIVATE
+  NtUserIsMouseInputEnabled@0 @1055 PRIVATE
+  NtUserIsNonClientDpiScalingEnabled@0 @1056 PRIVATE
+  NtUserIsResizeLayoutSynchronizationEnabled@0 @1057 PRIVATE
+  NtUserIsTopLevelWindow@0 @1058 PRIVATE
+  NtUserIsTouchWindow@0 @1059 PRIVATE
+  NtUserIsWindowBroadcastingDpiToChildren@0 @1060 PRIVATE
+  NtUserIsWindowGDIScaledDpiMessageEnabled@0 @1061 PRIVATE
+  NtUserKillTimer@0 @1062 PRIVATE
+  NtUserLayoutCompleted@0 @1063 PRIVATE
+  NtUserLinkDpiCursor@0 @1064 PRIVATE
+  NtUserLoadKeyboardLayoutEx@0 @1065 PRIVATE
+  NtUserLockCursor@0 @1066 PRIVATE
+  NtUserLockWindowStation@0 @1067 PRIVATE
+  NtUserLockWindowUpdate@0 @1068 PRIVATE
+  NtUserLockWorkStation@0 @1069 PRIVATE
+  NtUserLogicalToPerMonitorDPIPhysicalPoint@0 @1070 PRIVATE
+  NtUserLogicalToPhysicalDpiPointForWindow@0 @1071 PRIVATE
+  NtUserLogicalToPhysicalPoint@0 @1072 PRIVATE
+  NtUserMNDragLeave@0 @1073 PRIVATE
+  NtUserMNDragOver@0 @1074 PRIVATE
+  NtUserMagControl@0 @1075 PRIVATE
+  NtUserMagGetContextInformation@0 @1076 PRIVATE
+  NtUserMagSetContextInformation@0 @1077 PRIVATE
+  NtUserMapPointsByVisualIdentifier@0 @1078 PRIVATE
+  NtUserMapVirtualKeyEx@0 @1079 PRIVATE
+  NtUserMarkWindowForRawMouse@0 @1080 PRIVATE
+  NtUserMenuItemFromPoint@0 @1081 PRIVATE
+  NtUserMessageCall@0 @1082 PRIVATE
+  NtUserMinInitialize@0 @1083 PRIVATE
+  NtUserMinMaximize@0 @1084 PRIVATE
+  NtUserModifyUserStartupInfoFlags@0 @1085 PRIVATE
+  NtUserModifyWindowTouchCapability@0 @1086 PRIVATE
+  NtUserMoveWindow@0 @1087 PRIVATE
+  NtUserMsgWaitForMultipleObjectsEx@0 @1088 PRIVATE
+  NtUserNavigateFocus@0 @1089 PRIVATE
+  NtUserNotifyIMEStatus@0 @1090 PRIVATE
+  NtUserNotifyProcessCreate@0 @1091 PRIVATE
+  NtUserNotifyWinEvent@0 @1092 PRIVATE
+  NtUserOpenClipboard@0 @1093 PRIVATE
+  NtUserOpenDesktop@12 @1094
+  NtUserOpenInputDesktop@12 @1095
+  NtUserOpenThreadDesktop@0 @1096 PRIVATE
+  NtUserOpenWindowStation@8 @1097
+  NtUserPaintDesktop@0 @1098 PRIVATE
+  NtUserPaintMenuBar@0 @1099 PRIVATE
+  NtUserPaintMonitor@0 @1100 PRIVATE
+  NtUserPeekMessage@0 @1101 PRIVATE
+  NtUserPerMonitorDPIPhysicalToLogicalPoint@0 @1102 PRIVATE
+  NtUserPhysicalToLogicalDpiPointForWindow@0 @1103 PRIVATE
+  NtUserPhysicalToLogicalPoint@0 @1104 PRIVATE
+  NtUserPostKeyboardInputMessage@0 @1105 PRIVATE
+  NtUserPostMessage@0 @1106 PRIVATE
+  NtUserPostThreadMessage@0 @1107 PRIVATE
+  NtUserPrintWindow@0 @1108 PRIVATE
+  NtUserProcessConnect@0 @1109 PRIVATE
+  NtUserProcessInkFeedbackCommand@0 @1110 PRIVATE
+  NtUserPromoteMouseInPointer@0 @1111 PRIVATE
+  NtUserPromotePointer@0 @1112 PRIVATE
+  NtUserQueryActivationObject@0 @1113 PRIVATE
+  NtUserQueryBSDRWindow@0 @1114 PRIVATE
+  NtUserQueryDisplayConfig@0 @1115 PRIVATE
+  NtUserQueryInformationThread@0 @1116 PRIVATE
+  NtUserQueryInputContext@0 @1117 PRIVATE
+  NtUserQuerySendMessage@0 @1118 PRIVATE
+  NtUserQueryWindow@0 @1119 PRIVATE
+  NtUserRealChildWindowFromPoint@0 @1120 PRIVATE
+  NtUserRealInternalGetMessage@0 @1121 PRIVATE
+  NtUserRealWaitMessageEx@0 @1122 PRIVATE
+  NtUserRedrawWindow@0 @1123 PRIVATE
+  NtUserRegisterBSDRWindow@0 @1124 PRIVATE
+  NtUserRegisterClassExWOW@0 @1125 PRIVATE
+  NtUserRegisterDManipHook@0 @1126 PRIVATE
+  NtUserRegisterEdgy@0 @1127 PRIVATE
+  NtUserRegisterErrorReportingDialog@0 @1128 PRIVATE
+  NtUserRegisterHotKey@0 @1129 PRIVATE
+  NtUserRegisterManipulationThread@0 @1130 PRIVATE
+  NtUserRegisterPointerDeviceNotifications@0 @1131 PRIVATE
+  NtUserRegisterPointerInputTarget@0 @1132 PRIVATE
+  NtUserRegisterRawInputDevices@0 @1133 PRIVATE
+  NtUserRegisterServicesProcess@0 @1134 PRIVATE
+  NtUserRegisterSessionPort@0 @1135 PRIVATE
+  NtUserRegisterShellPTPListener@0 @1136 PRIVATE
+  NtUserRegisterTasklist@0 @1137 PRIVATE
+  NtUserRegisterTouchHitTestingWindow@0 @1138 PRIVATE
+  NtUserRegisterTouchPadCapable@0 @1139 PRIVATE
+  NtUserRegisterUserApiHook@0 @1140 PRIVATE
+  NtUserRegisterWindowMessage@0 @1141 PRIVATE
+  NtUserReleaseDC@0 @1142 PRIVATE
+  NtUserReleaseDwmHitTestWaiters@0 @1143 PRIVATE
+  NtUserRemoteConnect@0 @1144 PRIVATE
+  NtUserRemoteRedrawRectangle@0 @1145 PRIVATE
+  NtUserRemoteRedrawScreen@0 @1146 PRIVATE
+  NtUserRemoteStopScreenUpdates@0 @1147 PRIVATE
+  NtUserRemoveClipboardFormatListener@0 @1148 PRIVATE
+  NtUserRemoveInjectionDevice@0 @1149 PRIVATE
+  NtUserRemoveMenu@0 @1150 PRIVATE
+  NtUserRemoveProp@0 @1151 PRIVATE
+  NtUserRemoveVisualIdentifier@0 @1152 PRIVATE
+  NtUserReportInertia@0 @1153 PRIVATE
+  NtUserRequestMoveSizeOperation@0 @1154 PRIVATE
+  NtUserResolveDesktopForWOW@0 @1155 PRIVATE
+  NtUserRestoreWindowDpiChanges@0 @1156 PRIVATE
+  NtUserSBGetParms@0 @1157 PRIVATE
+  NtUserScrollDC@0 @1158 PRIVATE
+  NtUserScrollWindowEx@0 @1159 PRIVATE
+  NtUserSelectPalette@0 @1160 PRIVATE
+  NtUserSendEventMessage@0 @1161 PRIVATE
+  NtUserSendInput@0 @1162 PRIVATE
+  NtUserSendInteractiveControlHapticsReport@0 @1163 PRIVATE
+  NtUserSetActivationFilter@0 @1164 PRIVATE
+  NtUserSetActiveProcessForMonitor@0 @1165 PRIVATE
+  NtUserSetActiveWindow@0 @1166 PRIVATE
+  NtUserSetAppImeLevel@0 @1167 PRIVATE
+  NtUserSetAutoRotation@0 @1168 PRIVATE
+  NtUserSetBridgeWindowChild@0 @1169 PRIVATE
+  NtUserSetBrokeredForeground@0 @1170 PRIVATE
+  NtUserSetCalibrationData@0 @1171 PRIVATE
+  NtUserSetCapture@0 @1172 PRIVATE
+  NtUserSetChildWindowNoActivate@0 @1173 PRIVATE
+  NtUserSetClassLong@0 @1174 PRIVATE
+  NtUserSetClassLongPtr@0 @1175 PRIVATE
+  NtUserSetClassWord@0 @1176 PRIVATE
+  NtUserSetClipboardData@0 @1177 PRIVATE
+  NtUserSetClipboardViewer@0 @1178 PRIVATE
+  NtUserSetCoreWindow@0 @1179 PRIVATE
+  NtUserSetCoreWindowPartner@0 @1180 PRIVATE
+  NtUserSetCursor@0 @1181 PRIVATE
+  NtUserSetCursorContents@0 @1182 PRIVATE
+  NtUserSetCursorIconData@0 @1183 PRIVATE
+  NtUserSetCursorPos@0 @1184 PRIVATE
+  NtUserSetDesktopColorTransform@0 @1185 PRIVATE
+  NtUserSetDesktopVisualInputSink@0 @1186 PRIVATE
+  NtUserSetDialogControlDpiChangeBehavior@0 @1187 PRIVATE
+  NtUserSetDisplayAutoRotationPreferences@0 @1188 PRIVATE
+  NtUserSetDisplayConfig@0 @1189 PRIVATE
+  NtUserSetDisplayMapping@0 @1190 PRIVATE
+  NtUserSetFallbackForeground@0 @1191 PRIVATE
+  NtUserSetFeatureReportResponse@0 @1192 PRIVATE
+  NtUserSetFocus@0 @1193 PRIVATE
+  NtUserSetForegroundWindowForApplication@0 @1194 PRIVATE
+  NtUserSetFullscreenMagnifierOffsetsDWMUpdated@0 @1195 PRIVATE
+  NtUserSetGestureConfig@0 @1196 PRIVATE
+  NtUserSetImeHotKey@0 @1197 PRIVATE
+  NtUserSetImeInfoEx@0 @1198 PRIVATE
+  NtUserSetImeOwnerWindow@0 @1199 PRIVATE
+  NtUserSetInformationThread@0 @1200 PRIVATE
+  NtUserSetInputServiceState@0 @1201 PRIVATE
+  NtUserSetInteractiveControlFocus@0 @1202 PRIVATE
+  NtUserSetInteractiveCtrlRotationAngle@0 @1203 PRIVATE
+  NtUserSetInternalWindowPos@0 @1204 PRIVATE
+  NtUserSetKeyboardState@0 @1205 PRIVATE
+  NtUserSetLayeredWindowAttributes@0 @1206 PRIVATE
+  NtUserSetMagnificationDesktopMagnifierOffsetsDWMUpdated@0 @1207 PRIVATE
+  NtUserSetManipulationInputTarget@0 @1208 PRIVATE
+  NtUserSetMenu@0 @1209 PRIVATE
+  NtUserSetMenuContextHelpId@0 @1210 PRIVATE
+  NtUserSetMenuDefaultItem@0 @1211 PRIVATE
+  NtUserSetMenuFlagRtoL@0 @1212 PRIVATE
+  NtUserSetMirrorRendering@0 @1213 PRIVATE
+  NtUserSetMonitorWorkArea@0 @1214 PRIVATE
+  NtUserSetMouseInputRateLimitingTimer@0 @1215 PRIVATE
+  NtUserSetObjectInformation@16 @1216
+  NtUserSetParent@0 @1217 PRIVATE
+  NtUserSetPrecisionTouchPadConfiguration@0 @1218 PRIVATE
+  NtUserSetProcessDpiAwarenessContext@0 @1219 PRIVATE
+  NtUserSetProcessInteractionFlags@0 @1220 PRIVATE
+  NtUserSetProcessMousewheelRoutingMode@0 @1221 PRIVATE
+  NtUserSetProcessRestrictionExemption@0 @1222 PRIVATE
+  NtUserSetProcessUIAccessZorder@0 @1223 PRIVATE
+  NtUserSetProcessWindowStation@4 @1224
+  NtUserSetProp@0 @1225 PRIVATE
+  NtUserSetScrollInfo@0 @1226 PRIVATE
+  NtUserSetSensorPresence@0 @1227 PRIVATE
+  NtUserSetSharedWindowData@0 @1228 PRIVATE
+  NtUserSetShellWindowEx@0 @1229 PRIVATE
+  NtUserSetSysColors@0 @1230 PRIVATE
+  NtUserSetSystemCursor@0 @1231 PRIVATE
+  NtUserSetSystemMenu@0 @1232 PRIVATE
+  NtUserSetSystemTimer@0 @1233 PRIVATE
+  NtUserSetTargetForResourceBrokering@0 @1234 PRIVATE
+  NtUserSetThreadDesktop@4 @1235
+  NtUserSetThreadInputBlocked@0 @1236 PRIVATE
+  NtUserSetThreadLayoutHandles@0 @1237 PRIVATE
+  NtUserSetThreadState@0 @1238 PRIVATE
+  NtUserSetTimer@0 @1239 PRIVATE
+  NtUserSetWinEventHook@0 @1240 PRIVATE
+  NtUserSetWindowArrangement@0 @1241 PRIVATE
+  NtUserSetWindowBand@0 @1242 PRIVATE
+  NtUserSetWindowCompositionAttribute@0 @1243 PRIVATE
+  NtUserSetWindowCompositionTransition@0 @1244 PRIVATE
+  NtUserSetWindowDisplayAffinity@0 @1245 PRIVATE
+  NtUserSetWindowFNID@0 @1246 PRIVATE
+  NtUserSetWindowFeedbackSetting@0 @1247 PRIVATE
+  NtUserSetWindowGroup@0 @1248 PRIVATE
+  NtUserSetWindowLong@0 @1249 PRIVATE
+  NtUserSetWindowLongPtr@0 @1250 PRIVATE
+  NtUserSetWindowPlacement@0 @1251 PRIVATE
+  NtUserSetWindowPos@0 @1252 PRIVATE
+  NtUserSetWindowRgn@0 @1253 PRIVATE
+  NtUserSetWindowRgnEx@0 @1254 PRIVATE
+  NtUserSetWindowShowState@0 @1255 PRIVATE
+  NtUserSetWindowStationUser@0 @1256 PRIVATE
+  NtUserSetWindowWord@0 @1257 PRIVATE
+  NtUserSetWindowsHookAW@0 @1258 PRIVATE
+  NtUserSetWindowsHookEx@0 @1259 PRIVATE
+  NtUserShowCaret@0 @1260 PRIVATE
+  NtUserShowCursor@0 @1261 PRIVATE
+  NtUserShowScrollBar@0 @1262 PRIVATE
+  NtUserShowSystemCursor@0 @1263 PRIVATE
+  NtUserShowWindow@0 @1264 PRIVATE
+  NtUserShowWindowAsync@0 @1265 PRIVATE
+  NtUserShutdownBlockReasonCreate@0 @1266 PRIVATE
+  NtUserShutdownBlockReasonQuery@0 @1267 PRIVATE
+  NtUserShutdownReasonDestroy@0 @1268 PRIVATE
+  NtUserSignalRedirectionStartComplete@0 @1269 PRIVATE
+  NtUserSlicerControl@0 @1270 PRIVATE
+  NtUserSoundSentry@0 @1271 PRIVATE
+  NtUserStopAndEndInertia@0 @1272 PRIVATE
+  NtUserSwitchDesktop@0 @1273 PRIVATE
+  NtUserSystemParametersInfo@0 @1274 PRIVATE
+  NtUserSystemParametersInfoForDpi@0 @1275 PRIVATE
+  NtUserTestForInteractiveUser@0 @1276 PRIVATE
+  NtUserThunkedMenuInfo@0 @1277 PRIVATE
+  NtUserThunkedMenuItemInfo@0 @1278 PRIVATE
+  NtUserToUnicodeEx@0 @1279 PRIVATE
+  NtUserTrackMouseEvent@0 @1280 PRIVATE
+  NtUserTrackPopupMenuEx@0 @1281 PRIVATE
+  NtUserTransformPoint@0 @1282 PRIVATE
+  NtUserTransformRect@0 @1283 PRIVATE
+  NtUserTranslateAccelerator@0 @1284 PRIVATE
+  NtUserTranslateMessage@0 @1285 PRIVATE
+  NtUserUndelegateInput@0 @1286 PRIVATE
+  NtUserUnhookWinEvent@0 @1287 PRIVATE
+  NtUserUnhookWindowsHookEx@0 @1288 PRIVATE
+  NtUserUnloadKeyboardLayout@0 @1289 PRIVATE
+  NtUserUnlockWindowStation@0 @1290 PRIVATE
+  NtUserUnregisterClass@0 @1291 PRIVATE
+  NtUserUnregisterHotKey@0 @1292 PRIVATE
+  NtUserUnregisterSessionPort@0 @1293 PRIVATE
+  NtUserUnregisterUserApiHook@0 @1294 PRIVATE
+  NtUserUpdateDefaultDesktopThumbnail@0 @1295 PRIVATE
+  NtUserUpdateInputContext@0 @1296 PRIVATE
+  NtUserUpdateInstance@0 @1297 PRIVATE
+  NtUserUpdateLayeredWindow@0 @1298 PRIVATE
+  NtUserUpdatePerUserSystemParameters@0 @1299 PRIVATE
+  NtUserUpdateWindowInputSinkHints@0 @1300 PRIVATE
+  NtUserUpdateWindowTrackingInfo@0 @1301 PRIVATE
+  NtUserUserHandleGrantAccess@0 @1302 PRIVATE
+  NtUserValidateRect@0 @1303 PRIVATE
+  NtUserValidateTimerCallback@0 @1304 PRIVATE
+  NtUserVkKeyScanEx@0 @1305 PRIVATE
+  NtUserWOWCleanup@0 @1306 PRIVATE
+  NtUserWaitAvailableMessageEx@0 @1307 PRIVATE
+  NtUserWaitForInputIdle@0 @1308 PRIVATE
+  NtUserWaitForMsgAndEvent@0 @1309 PRIVATE
+  NtUserWaitForRedirectionStartComplete@0 @1310 PRIVATE
+  NtUserWaitMessage@0 @1311 PRIVATE
+  NtUserWindowFromDC@0 @1312 PRIVATE
+  NtUserWindowFromPhysicalPoint@0 @1313 PRIVATE
+  NtUserWindowFromPoint@0 @1314 PRIVATE
+  NtUserYieldTask@0 @1315 PRIVATE
+  NtValidateCompositionSurfaceHandle@0 @1316 PRIVATE
+  NtVisualCaptureBits@0 @1317 PRIVATE
+  GetDCHook@8 @1318
+  SetDCHook@12 @1319
+  SetHookFlags@8 @1320
+  GDISelectPalette@12 @1321
+  GDIRealizePalette@4 @1322
+  __wine_make_gdi_object_system @1323
+  __wine_set_visible_region @1324
+  __wine_set_display_driver @1325
+  __wine_get_wgl_driver @1326
+  __wine_get_vulkan_driver @1327
+  MirrorRgn@8 @1328
+  SetDIBits@28 @1329
+  __wine_get_brush_bitmap_info @1330
+  __wine_get_icm_profile @1331
+  __wine_get_file_outline_text_metric @1332
