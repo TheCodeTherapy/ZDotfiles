@@ -16,6 +16,8 @@ HOSTSBACKUP=/etc/hosts.bak
 HOSTSDENYBACKUP=/etc/hostsdeny.bak
 HOSTSSECURED="${DOTDIR}/hostssecured"
 
+mkdir -p $ME/Storage/NAS/volume1/
+
 declare -rA COLORS=(
     [RED]=$'\033[0;31m'
     [GREEN]=$'\033[0;32m'
@@ -87,9 +89,7 @@ protect_hosts () {
         msg="# Protecting hosts and hosts.deny"
         print_cyan "${msg}"
         sudo wget https://hosts.ubuntu101.co.za/hosts -O /etc/hosts
-        rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
         sudo wget https://hosts.ubuntu101.co.za/hosts.deny -O /etc/hosts.deny
-        rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
         touch $HOSTSSECURED
     else
         msg="# hosts and hosts.deny already protected."
@@ -125,7 +125,6 @@ link_dotfiles () {
         msg="RETRIEVING ATTRACT MODE CONFIG ..."
         print_yellow "${msg}"
         git clone https://github.com/MarcoGomezGT/attract-cfg.git attract
-        rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
     fi
 
     home_link "bash/bashrc" ".bashrc"
@@ -186,7 +185,6 @@ install_with_pip () {
     msg="Installing $1 ..."
     print_yellow "${msg}"
     sudo -H pip install --upgrade $1
-    rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
 }
 
 install_neovim () {
@@ -196,7 +194,6 @@ install_neovim () {
         print_green "${msg}"
     else
         sudo add-apt-repository -y ppa:neovim-ppa/unstable
-        rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
         sudo apt update
     fi
     install_with_aptitude neovim
@@ -209,7 +206,6 @@ install_basic_packages () {
     sudo killall packagekitd
     sudo add-apt-repository multiverse
     sudo aptitude update
-    rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
     sudo aptitude -y install mlocate build-essential llvm \
         pkg-config autoconf automake cmake cmake-data \
         clang clang-tools ca-certificates curl gnupg lsb-release \
@@ -370,7 +366,7 @@ install_docker_compose () {
     else
         msg="INSTALLING DOCKER-COMPOSE ..."
         print_yellow "${msg}"
-        sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+        sudo curl -L "https://github.com/docker/compose/releases/download/v2.6.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
         sudo chmod +x /usr/local/bin/docker-compose
     fi
 }
@@ -398,8 +394,7 @@ install_extra_packages () {
     if $(cat /etc/os-release | head -n 1 | grep "Pop" > /dev/null 2>&1); then
         msg="Distro is Pop!_OS"
         print_cyan "${msg}"
-        sudo flatpak remote-add --if-not-exists \
-            flathub https://flathub.org/repo/flathub.flatpakrepo
+        sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
         sudo flatpak update
         sudo flatpak -y install org.telegram.desktop
         sudo flatpak -y install com.spotify.Client
