@@ -2,6 +2,7 @@
 # @MarcoGomezGT - https://mgz.me
 # ~/.bashrc
 #=============================================================================
+ME="/home/$(whoami)"
 
 source /etc/profile
 
@@ -69,15 +70,18 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    alias ll='exa -bghHliS --git'
-    alias la='exa -bghHliSa --git'
     alias tmux='tmux -2'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+fi
+
+if [ -f $ME/.cargo/bin/exa ]; then
+    alias ll='exa -bghHlS --git'
+    alias la='exa -bghHlSa --git'
+else
+    alias ll='ls -hl --color=auto'
+    alias ls='ls -hlA --color=auto'
 fi
 
 # colored GCC warnings and errors
