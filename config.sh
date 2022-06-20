@@ -138,6 +138,7 @@ link_dotfiles () {
 
     home_link_cfg "scummvm"
     home_link_cfg "screenkey"
+    home_link_cfg "nvim"
 }
 
 fix_cedilla () {
@@ -451,6 +452,7 @@ install_docker_compose
 install_fd
 
 setup_fonts
+setup_fzf
 
 source ${ME}/.bashrc
 curl -sS https://starship.rs/install.sh | sh
