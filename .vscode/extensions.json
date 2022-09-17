@@ -1,15 +1,17 @@
 {
-    "recommendations": [
-        "bungcip.better-toml",
-        "dbaeumer.vscode-eslint",
-        "dlasagno.rasi",
-        "Equinusocio.vsc-community-material-theme",
-        "Equinusocio.vsc-material-theme",
-        "equinusocio.vsc-material-theme-icons",
-        "ms-vscode.cpptools",
-        "enkia.tokyo-night",
-        "ms-azuretools.vscode-docker",
-        "ms-vscode-remote.remote-containers",
-        "slevesque.shader"
-    ]
-  }
+  "recommendations": [
+    "bungcip.better-toml",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "dlasagno.rasi",
+    "ms-vscode.cpptools",
+    "ms-azuretools.vscode-docker",
+    "ms-vscode-remote.remote-containers",
+    "slevesque.shader",
+    "christian-kohler.path-intellisense",
+    "formulahendry.auto-rename-tag",
+    "mikestead.dotenv",
+    "Orta.vscode-jest",
+    "wayou.vscode-todo-highlight"
+  ]
+}
