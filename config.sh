@@ -189,15 +189,12 @@ install_with_pip () {
 }
 
 install_neovim () {
-    NVPPA=`ls /etc/apt/sources.list.d/neovim-ppa-ubuntu-unstable* 2>/dev/null | wc -l`
-    if [ $NVPPA != 0 ]; then
-        msg="Neovim unstable PPA already configured."
-        print_green "${msg}"
-    else
-        sudo add-apt-repository -y ppa:neovim-ppa/unstable
-        sudo apt update
-    fi
-    install_with_aptitude neovim
+    cd $DOTDIR
+    git clone https://github.com/neovim/neovim
+    git checkout stable
+    cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo -j$(nproc)
+    cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
+    cd $DOTDIR
 }
 
 install_basic_packages () {
@@ -209,6 +206,7 @@ install_basic_packages () {
     sudo aptitude update
     sudo aptitude -y install mlocate build-essential llvm \
         pkg-config autoconf automake cmake cmake-data \
+        ninja-build gettext libtool libtool-bin g++ \
         clang clang-tools ca-certificates curl gnupg lsb-release \
         python-is-python3 ipython3 python3-pip python3-dev \
         unzip lzma tree neofetch git zsh tmux gnome-tweaks \
@@ -217,8 +215,6 @@ install_basic_packages () {
         libfontconfig1-dev libfreetype-dev jq pixz hashdeep liblxc-dev \
         screenkey mypaint rofi liferea hexchat gimp blender imagemagick
     install_neovim
-    install_with_pip ueberzug
-    install_with_pip neovim-remote
     install_with_pip PyOpenGL
     install_with_pip numpy
     sudo updatedb
