@@ -1,6 +1,6 @@
 # ZDotfiles
 
-## The **ULTIMATE** Desktop Experience for a Developer / Gamer / Heavy User / Nerd like me on PopOS! 22.04 LTS 😁
+## The **ULTIMATE** Desktop Experience for a Developer / Gamer / Heavy User / Nerd like me on Ubuntu 22.04 LTS 😁
 ---
 
 <img src="https://mgz.me/publicfiles/images/dotfiles.gif?raw=true" width="800" height="450">
