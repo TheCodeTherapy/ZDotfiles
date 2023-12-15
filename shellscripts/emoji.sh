@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #=============================================================================
-# @MarcoGomezGT - https://mgz.me
+# @TheCodeTherapy - https://mgz.me
 # Emoji picker
 # To use, create a custom keyboard shortcut by following below instructions:
 # Settings -> Keyboard -> Keyboard Shortcuts -> View and Customise Shortcuts ->

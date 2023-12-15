@@ -1,5 +1,5 @@
 #=============================================================================
-# @MarcoGomezGT - https://mgz.me
+# @TheCodeTherapy - https://mgz.me
 # ~/.bashrc
 #=============================================================================
 ME="/home/$(whoami)"
@@ -99,8 +99,6 @@ export PATH=$PATH:/opt/rust/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export DOTFILES=$DOTFILESPATH
 export PAGER="most"
-
-eval "$(starship init bash)"
 
 clear
 neofetch --de_version on

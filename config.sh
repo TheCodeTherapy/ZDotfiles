@@ -2,7 +2,7 @@
 #set -eu -o pipefail
 
 #=============================================================================
-# @MarcoGomezGT - https://mgz.me
+# @TheCodeTherapy - https://mgz.me
 # dotfiles config script
 #=============================================================================
 
@@ -124,7 +124,7 @@ link_dotfiles () {
     else
         msg="RETRIEVING ATTRACT MODE CONFIG ..."
         print_yellow "${msg}"
-        git clone https://github.com/MarcoGomezGT/attract-cfg.git attract
+        git clone https://github.com/TheCodeTherapy/attract-cfg.git attract
     fi
 
     home_link "bash/bashrc" ".bashrc"
@@ -204,7 +204,7 @@ install_basic_packages () {
     msg="INSTALLING BASIC PACKAGES ..."
     mkdir -p ${BINDIR}
     print_yellow "${msg}"
-    sudo killall packagekitd
+    # sudo killall packagekitd
     sudo add-apt-repository multiverse
     sudo aptitude update
     sudo aptitude -y install mlocate build-essential llvm \
@@ -235,8 +235,11 @@ install_vscode () {
         msg="INSTALLING VSCODE ..."
         print_yellow "${msg}"
         sudo apt --assume-yes install software-properties-common apt-transport-https wget
-        wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-        sudo add-apt-repository -y "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+        wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+        sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+        rm -f packages.microsoft.gpg
+        sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] \
+            https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
         sudo apt --assume-yes update && sudo apt --assume-yes full-upgrade
         sudo apt --assume-yes install code
     fi
@@ -281,7 +284,7 @@ install_nvm () {
     if [[ -f $NVMDIR/nvm.sh ]]; then
         print_green "nvm already installed."
     else
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
     fi
 }
 
@@ -403,11 +406,9 @@ install_extra_packages () {
     else
         install_with_snap telegram-desktop
         install_with_snap discord
-        install_with_snap starship
         install_with_snap kdiskmark
         install_with_snap spotify
     fi
-    install_with_pip youtube-dl
     install_vscode
     install_obs_studio
 }
@@ -452,11 +453,9 @@ install_docker_compose
 install_fd
 
 setup_fonts
-setup_fzf
 
 source ${ME}/.bashrc
-curl -sS https://starship.rs/install.sh | sh
-sudo updatedb
+# sudo updatedb
 
 msg="CONFIG COMPLETE"
 print_cyan "${msg}"

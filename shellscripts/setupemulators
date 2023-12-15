@@ -2,7 +2,7 @@
 #set -eu -o pipefail
 
 #=============================================================================
-# @MarcoGomezGT - https://mgz.me
+# @TheCodeTherapy - https://mgz.me
 # Emulation setup script
 #=============================================================================
 
@@ -75,13 +75,13 @@ build_mame0226 () {
         mkdir -p ${EMUDIR}/emulators
         cd ${EMUDIR}/emulators
         git clone -b mame0226 --depth 1 \
-            https://github.com/MarcoGomezGT/mame.git mame0226
+            https://github.com/TheCodeTherapy/mame.git mame0226
         rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
         cd mame0226
         NOWERROR=1 make OVERRIDE_CC=clang OVERRIDE_CXX=clang++ TOOLS=1 REGENIE=1 -j$(nproc) ARCHOPTS=-U_FORTIFY_SOURCE
         rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
         cd ..
-        git clone https://github.com/MarcoGomezGT/MAME-PSGS.git
+        git clone https://github.com/TheCodeTherapy/MAME-PSGS.git
         mv ./MAME-PSGS/glsl ./mame0226/.
         rm -rf MAME-PSGS
     fi
@@ -96,7 +96,7 @@ build_scummvm () {
         print_yellow "${msg}"
         mkdir -p ${EMUDIR}/emulators
         cd ${EMUDIR}/emulators
-        git clone https://github.com/MarcoGomezGT/scummvm.git
+        git clone https://github.com/TheCodeTherapy/scummvm.git
         rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
         cd scummvm
         ./configure
@@ -115,7 +115,7 @@ build_retroarch () {
         print_yellow "${msg}"
         mkdir -p ${EMUDIR}/emulators
         cd ${EMUDIR}/emulators
-        git clone https://github.com/MarcoGomezGT/RetroArch.git
+        git clone https://github.com/TheCodeTherapy/RetroArch.git
         cd RetroArch
         ./configure
         rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
@@ -133,7 +133,7 @@ build_attract () {
         msg="INSTALLING ATTRACT-MODE ..."
         print_yellow "${msg}"
         cd ${FRONTDIR}
-        git clone https://github.com/MarcoGomezGT/attract.git
+        git clone https://github.com/TheCodeTherapy/attract.git
         cd attract
         make -j$(nproc) CXX="g++-9"
         rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
