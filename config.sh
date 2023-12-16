@@ -189,6 +189,8 @@ install_with_pip () {
 }
 
 install_neovim () {
+    msg="Building Neovim ..."
+    print_yellow "${msg}"
     cd $DOTDIR
     git clone https://github.com/neovim/neovim
     git checkout stable
@@ -206,7 +208,7 @@ install_basic_packages () {
     sudo aptitude update
     sudo aptitude -y install mlocate build-essential llvm \
         pkg-config autoconf automake cmake cmake-data \
-        ninja-build gettext libtool libtool-bin g++ \
+        ninja-build gettext libtool libtool-bin g++ meson \
         clang clang-tools ca-certificates curl gnupg lsb-release \
         python-is-python3 ipython3 python3-pip python3-dev \
         unzip lzma tree neofetch git zsh tmux gnome-tweaks \
@@ -215,7 +217,12 @@ install_basic_packages () {
         libfontconfig1-dev libfreetype-dev jq pixz hashdeep liblxc-dev \
         jackd qjackctl ardour pulseaudio-module-jack pipewire \
         libxrandr-dev libxinerama-dev libxcursor-dev libglx-dev libgl-dev \
-        screenkey mypaint rofi liferea hexchat gimp blender imagemagick
+        screenkey mypaint rofi liferea hexchat gimp blender imagemagick \
+        libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev \
+        libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev \
+        libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \
+        libxcb-shape0-dev libxcb-xrm-dev libxcb-xrm0 libxcb-xkb-dev \
+        libxkbcommon-dev libxkbcommon-x11-dev xutils-dev asciidoc
     sudo updatedb
 }
 
@@ -428,6 +435,20 @@ setup_fonts () {
     fc-cache -f
 }
 
+install_i3 () {
+    msg="Building i3-wm ..."
+    print_yellow "${msg}"
+    cd $DOTDIR
+    git clone https://github.com/i3/i3
+    cd i3
+    mkdir -p build && cd build
+    meson -Ddocs=true -Dmans=true ..
+    # meson ..
+    ninja
+    sudo ninja install
+    cd $DOTDIR
+}
+
 update_system
 # choose_fastest_mirror
 # protect_hosts
@@ -450,7 +471,9 @@ setup_fonts
 
 install_with_pip PyOpenGL
 install_with_pip numpy
+
 # install_neovim
+# install_i3
 
 source ${ME}/.bashrc
 sudo updatedb
