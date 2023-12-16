@@ -222,7 +222,9 @@ install_basic_packages () {
         libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev \
         libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \
         libxcb-shape0-dev libxcb-xrm-dev libxcb-xrm0 libxcb-xkb-dev \
-        libxkbcommon-dev libxkbcommon-x11-dev xutils-dev asciidoc
+        libxkbcommon-dev libxkbcommon-x11-dev xutils-dev asciidoc \
+        libconfuse-dev libasound2-dev libiw-dev libpulse-dev \
+        libnl-genl-3-dev
     sudo updatedb
 }
 
@@ -443,7 +445,19 @@ install_i3 () {
     cd i3
     mkdir -p build && cd build
     meson -Ddocs=true -Dmans=true ..
-    # meson ..
+    ninja
+    sudo ninja install
+    cd $DOTDIR
+}
+
+install_i3_status () {
+    msg="Building i3-status ..."
+    print_yellow "${msg}"
+    cd $DOTDIR
+    git clone https://github.com/i3/i3status
+    cd i3status
+    mkdir -p build && cd build
+    meson ..
     ninja
     sudo ninja install
     cd $DOTDIR
@@ -473,7 +487,9 @@ install_with_pip PyOpenGL
 install_with_pip numpy
 
 # install_neovim
+
 # install_i3
+install_i3_status
 
 source ${ME}/.bashrc
 sudo updatedb
