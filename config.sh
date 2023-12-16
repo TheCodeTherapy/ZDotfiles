@@ -459,5 +459,7 @@ print_cyan "${msg}"
 # sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # chsh -s $(which zsh)
 #
-# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-# echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
+# echo 'source ~/.powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+# p10k configure
+
