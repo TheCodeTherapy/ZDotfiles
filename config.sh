@@ -185,7 +185,7 @@ install_with_snap () {
 install_with_pip () {
     msg="Installing $1 ..."
     print_yellow "${msg}"
-    sudo -H pip install --upgrade $1
+    pip install --upgrade $1
 }
 
 install_neovim () {
@@ -214,9 +214,6 @@ install_basic_packages () {
         ranger libxext-dev ripgrep python3-pynvim xclip libnotify-bin \
         libfontconfig1-dev libfreetype-dev jq pixz hashdeep liblxc-dev \
         screenkey mypaint rofi liferea hexchat gimp blender imagemagick
-    install_neovim
-    install_with_pip PyOpenGL
-    install_with_pip numpy
     sudo updatedb
 }
 
@@ -447,11 +444,14 @@ install_docker
 install_docker_compose
 
 install_fd
-
 setup_fonts
 
+install_with_pip PyOpenGL
+install_with_pip numpy
+# install_neovim
+
 source ${ME}/.bashrc
-# sudo updatedb
+sudo updatedb
 
 msg="CONFIG COMPLETE"
 print_cyan "${msg}"
