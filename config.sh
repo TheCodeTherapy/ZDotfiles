@@ -141,6 +141,10 @@ link_dotfiles () {
     home_link_cfg "nvim"
 }
 
+restore_xorg () {
+    sudo cp ${DOTDIR}/x/xorg.conf /etc/X11/xorg.conf
+}
+
 fix_cedilla () {
     msg="Fixing cedilla character on XCompose..."
     print_cyan "${msg}"
@@ -441,8 +445,9 @@ install_i3 () {
     msg="Building i3-wm ..."
     print_yellow "${msg}"
     cd $DOTDIR
-    git clone https://github.com/i3/i3
-    cd i3
+    mkdir -p build
+    git clone https://github.com/i3/i3 build/i3
+    cd build/i3
     mkdir -p build && cd build
     meson -Ddocs=true -Dmans=true ..
     ninja
@@ -454,8 +459,9 @@ install_i3_status () {
     msg="Building i3-status ..."
     print_yellow "${msg}"
     cd $DOTDIR
-    git clone https://github.com/i3/i3status
-    cd i3status
+    mkdir -p build
+    git clone https://github.com/i3/i3status build/i3status
+    cd build/i3status
     mkdir -p build && cd build
     meson ..
     ninja
@@ -488,8 +494,9 @@ install_with_pip numpy
 
 # install_neovim
 
-# install_i3
+install_i3
 install_i3_status
+restore_xorg
 
 source ${ME}/.bashrc
 sudo updatedb

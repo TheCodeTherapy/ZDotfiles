@@ -1,0 +1,224 @@
+# i3-config ==================================================================
+
+# System theme colors ========================================================
+#304848
+#303030
+#486060
+#c0d8c0
+#a8c0a8
+#f0f0d8
+#609078
+#9090a8
+#78a878
+#181818
+# ============================================================================
+
+set $mod Mod4
+set $sup Mod1
+
+font pango:Fira Code, Misc Termsyn, Wuncon Siji 12
+
+for_window [class=".*"] border pixel 1
+for_window [title="video0 - mpv"] floating enable
+for_window [title="video0 - mpv"] sticky enable
+for_window [class="Xawtv"] floating enable
+for_window [class="Xawtv"] sticky enable
+for_window [class="emoji-keyboard"] floating enable
+
+gaps inner 17
+gaps outer 0
+
+# Mouse+$sup to drag floating windows
+floating_modifier $sup
+
+# start a terminal
+bindsym $sup+Return exec i3-sensible-terminal
+bindsym $sup+Shift+Return exec rofi -show run -theme ~/dotfiles/rofi/sp.theme
+bindsym $sup+Tab exec ~/dotfiles/shellscripts/rofiw
+
+# kill focused window
+bindsym $sup+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $sup+d exec exec rofi -show run -theme ~/dotfiles/rofi/sp.theme
+# bindsym $sup+d exec ~/dotfiles/shellscripts/ddmenu
+# bindsym $sup+z exec ~/dotfiles/shellscripts/browserprompt Browser
+# bindsym $sup+d exec --no-startup-id i3-dmenu-desktop
+
+bindsym $sup+t exec thunar
+
+# change focus
+bindsym $sup+h focus left
+bindsym $sup+j focus down
+bindsym $sup+k focus up
+bindsym $sup+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $sup+Left focus left
+bindsym $sup+Down focus down
+bindsym $sup+Up focus up
+bindsym $sup+Right focus right
+
+# move focused window
+bindsym $sup+Shift+j move left
+bindsym $sup+Shift+k move down
+bindsym $sup+Shift+l move up
+bindsym $sup+Shift+ccedilla move right
+
+# alternatively, you can use the cursor keys:
+bindsym $sup+Shift+Left move left
+bindsym $sup+Shift+Down move down
+bindsym $sup+Shift+Up move up
+bindsym $sup+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $sup+\ split h
+# split in vertical orientation
+bindsym $sup+v split v
+
+# enter fullscreen supe for the focused container
+bindsym $sup+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $sup+s layout stacking
+bindsym $sup+w layout tabbed
+bindsym $sup+e layout toggle split
+
+# toggle tiling / floating
+bindsym $sup+Shift+space floating toggle
+# change focus between tiling / floating windows
+bindsym $sup+space focus mode_toggle
+# focus the parent container
+bindsym $sup+a focus parent
+
+# focus the child container
+#bindsym $sup+d focus child
+
+# Define names for default workspaces =================================
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+# set $ws4 "4"
+# =====================================================================
+
+# Bind keys to access each workspace ==================================
+# switch to workspace
+bindsym $sup+1 workspace $ws1
+bindsym $sup+2 workspace $ws2
+bindsym $sup+3 workspace $ws3
+bindsym $sup+4 workspace $ws4
+bindsym $sup+5 workspace $ws5
+bindsym $sup+6 workspace $ws6
+# bindsym $sup+4 workspace $ws4
+# =====================================================================
+
+# Bind keys to move container to each workspace =======================
+bindsym $sup+Shift+1 move container to workspace $ws1
+bindsym $sup+Shift+2 move container to workspace $ws2
+bindsym $sup+Shift+3 move container to workspace $ws3
+bindsym $sup+Shift+4 move container to workspace $ws4
+bindsym $sup+Shift+5 move container to workspace $ws5
+bindsym $sup+Shift+6 move container to workspace $ws6
+# bindsym $sup+Shift+4 move container to workspace $ws4
+# =====================================================================
+
+# Bind workspaces to specific screens =================================
+workspace 1 output DisplayPort-2
+workspace 2 output DisplayPort-0
+workspace 3 output DisplayPort-1
+workspace 4 output DisplayPort-2
+workspace 5 output DisplayPort-0
+workspace 6 output DisplayPort-1
+# workspace 4 output DP-4
+# =====================================================================
+
+# reload, restart and exit bind keys ==================================
+bindsym $sup+Shift+c reload
+bindsym $sup+Shift+r restart
+bindsym $sup+Shift+e exec "i3-nagbar -t warning -m 'Restart X?' -B 'Yes' 'i3-msg exit'"
+# =====================================================================
+
+bindsym $sup+c exec rofi -modi "clipboard:greenclip print" -show clipboard
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym ccedilla resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+
+        # back to normal: Enter or Escape or $sup+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $sup+r mode "default"
+}
+
+bindsym $sup+r mode "resize"
+
+# class                 border  bground text    indicator child_border
+client.focused            #77AAFF #77AAFF #000000 #FFFFFF   #77AAff
+client.focused_inactive   #303030 #4477AA #000000 #484E50   #5F676A
+client.unfocused          #77AAFF #212121 #77AAFF #292D2E   #222222
+client.urgent             #303030 #904848 #FFFFFF #904848   #904848
+client.placeholder        #303030 #304848 #FFFFFF #000000   #0C0C0C
+client.background         #FFFFFF
+
+#bar {
+#    colors {
+#        background #000000
+#        statusline #FFFFFF
+#        separator  #666666
+#
+#        focused_workspace  #C0C0D8 #77AAff #000000
+#        active_workspace   #303030 #212121 #FFFFFF
+#        inactive_workspace #303030 #212121 #777777
+#        urgent_workspace   #303030 #904848 #FFFFFF
+#        binding_mode       #303030 #904848 #FFFFFF
+#    }
+#    status_command i3status -c ~/.config/i3status/config
+# }
+
+assign [class="code-oss"] $ws2
+assign [class="Slack"] $ws6
+assign [class="discord"] $ws6
+assign [class="skype"] $ws6
+assign [class="Skype"] $ws6
+assign [class="TelegramDesktop"] $ws6
+
+# exec --no-startup-id /usr/bin/compton --config ~/dotfiles/compton/compton.conf
+exec --no-startup-id picom --experimental-backends --config ~/dotfiles/picom/picom.conf
+exec --no-startup-id $HOME/dotfiles/polybar/launch.sh
+exec --no-startup-id greenclip daemon
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
+exec --no-startup-id feh --bg-scale --no-xinerama ~/images/wallpapers/triple-thecodetherapy-blur-b.png
+exec --no-startup-id xrandr --output DisplayPort-0 --primary --mode 1920x1080 --rate 143.85 --pos 1920x0 --rotate normal --output DisplayPort-1 --mode 1920x1080 --rate 143.85 --pos 3840x0 --rotate normal --output DisplayPort-2 --mode 1920x1080 --rate 143.85 --pos 0x0 --rotate normal --output HDMI-A-0 --off
+exec --no-startup-id mpd
+# exec --no-startup-id slack
+exec --no-startup-id telegram-desktop
+exec --no-startup-id discord
+exec --no-startup-id nm-applet
+exec --no-startup-id conky --config=/home/marcogomez/dotfiles/conky/conky_sys.conf
+exec --no-startup-id conky --config=/home/marcogomez/dotfiles/conky/conky_weather.conf
+# exec --no-startup-id screenkey --start-disabled
+# exec --no-startup-id optimus-manager-qt
+bindsym Print exec --no-startup-id xfce4-screenshooter
+bindsym --release $sup+x exec --no-startup-id import /tmp/latest-screenshot.png
+# bindsym --release $sup+Shift+c exec /home/marcogomez/dotfiles/shellscripts/webcamw
+bindsym --release $sup+n exec /home/marcogomez/dotfiles/shellscripts/latency
+bindsym $sup+z exec /home/marcogomez/dotfiles/shellscripts/emoji
+
