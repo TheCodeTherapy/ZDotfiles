@@ -463,3 +463,6 @@ print_cyan "${msg}"
 # echo 'source ~/.powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 # p10k configure
 
+# sudo apt install jackd qjackctl pulseaudio-module-jack
+# pactl load-module module-jack-sink client_name=discord_sink connect=no
+# pactl load-module module-jack-sink client_name=discord_sink connect=no
