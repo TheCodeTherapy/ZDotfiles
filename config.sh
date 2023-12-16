@@ -127,6 +127,7 @@ link_dotfiles () {
         git clone https://github.com/TheCodeTherapy/attract-cfg.git attract
     fi
 
+    home_link "profile/profile" ".profile"
     home_link "bash/bashrc" ".bashrc"
     home_link "bash/inputrc" ".inputrc"
     home_link "x/XCompose" ".XCompose"
@@ -139,6 +140,10 @@ link_dotfiles () {
     home_link_cfg "scummvm"
     home_link_cfg "screenkey"
     home_link_cfg "nvim"
+    home_link_cfg "i3"
+    home_link_cfg "i3status"
+    home_link_cfg "polybar"
+    home_link_cfg "alacritty"
 }
 
 restore_xorg () {
@@ -219,7 +224,7 @@ install_basic_packages () {
         inxi most ttfautohint v4l2loopback-dkms ffmpeg \
         ranger libxext-dev ripgrep python3-pynvim xclip libnotify-bin \
         libfontconfig1-dev libfreetype-dev jq pixz hashdeep liblxc-dev \
-        jackd qjackctl ardour pulseaudio-module-jack pipewire \
+        jackd qjackctl ardour pulseaudio-module-jack pipewire pavucontrol \
         libxrandr-dev libxinerama-dev libxcursor-dev libglx-dev libgl-dev \
         screenkey mypaint rofi liferea hexchat gimp blender imagemagick \
         libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev \
@@ -228,7 +233,7 @@ install_basic_packages () {
         libxcb-shape0-dev libxcb-xrm-dev libxcb-xrm0 libxcb-xkb-dev \
         libxkbcommon-dev libxkbcommon-x11-dev xutils-dev asciidoc \
         libconfuse-dev libasound2-dev libiw-dev libpulse-dev \
-        libnl-genl-3-dev
+        libnl-genl-3-dev feh
     sudo updatedb
 }
 
@@ -408,11 +413,9 @@ install_extra_packages () {
         print_cyan "${msg}"
         sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
         sudo flatpak update
-        sudo flatpak -y install org.telegram.desktop
         sudo flatpak -y install com.spotify.Client
         sudo flatpak -y install com.discordapp.Discord
     else
-        install_with_snap telegram-desktop
         install_with_snap discord
         install_with_snap kdiskmark
         install_with_snap spotify
@@ -513,4 +516,4 @@ print_cyan "${msg}"
 
 # sudo apt install jackd qjackctl pulseaudio-module-jack
 # pactl load-module module-jack-sink client_name=discord_sink connect=no
-# pactl load-module module-jack-sink client_name=discord_sink connect=no
+# pactl load-module module-jack-source client_name=discord_source connect=no

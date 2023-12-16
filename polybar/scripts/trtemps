@@ -1,0 +1,2 @@
+#!/bin/bash
+printf "%2.2f°C" $(sensors | grep 'Tc' | sed 's/^.*+//g' | sed 's/\..*$//g' | awk '{total += $1; count++} END {print total/count}')
