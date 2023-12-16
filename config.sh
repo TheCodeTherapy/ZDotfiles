@@ -213,6 +213,8 @@ install_basic_packages () {
         inxi most ttfautohint v4l2loopback-dkms ffmpeg \
         ranger libxext-dev ripgrep python3-pynvim xclip libnotify-bin \
         libfontconfig1-dev libfreetype-dev jq pixz hashdeep liblxc-dev \
+        jackd qjackctl ardour pulseaudio-module-jack pipewire \
+        libxrandr-dev libxinerama-dev libxcursor-dev libglx-dev libgl-dev \
         screenkey mypaint rofi liferea hexchat gimp blender imagemagick
     sudo updatedb
 }
