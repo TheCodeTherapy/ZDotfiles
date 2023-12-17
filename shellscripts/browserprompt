@@ -1,21 +1,19 @@
 #!/bin/bash
-CHOICE=$(echo -e "Chrome\nChromium\nFirefox\nOpera" | dmenu -h 27 \
-	-x 0 -y 0 -w 1920 \
-	-nb '#212121' \
-	-nf '#cccccc' \
-	-sb '#78a878' \
-	-sf '#ffffff' \
-	-fn 'Ubuntu-9' -i -p "$1")
+theme="/home/${USER}/ZDotfiles/rofi/sp.theme.rasi"
+chosen=$(echo -e "Chrome\nChromium\nFirefox\nOpera" | rofi -dmenu -theme ${theme})
 
-
-if [ "$CHOICE" == "Chrome" ]; then
-    google-chrome-stable
-elif [ "$CHOICE" == "Chromium" ]; then
-    chromium
-elif [ "$CHOICE" == "Firefox" ]; then
-	firefox
-elif [ "$CHOICE" == "Opera" ]; then
-    opera
+if [ "$chosen" == "Chrome" ]; then
+	notify-send -a "Browser Launcher" "$chosen" --expire-time=3000 &
+	google-chrome &
+elif [ "$chosen" == "Chromium" ]; then
+	notify-send -a "Browser Launcher" "$chosen" --expire-time=3000 &
+	chromium &
+elif [ "$chosen" == "Firefox" ]; then
+	notify-send -a "Browser Launcher" "$chosen" --expire-time=3000 &
+	firefox &
+elif [ "$chosen" == "Opera" ]; then
+	notify-send -a "Browser Launcher" "$chosen" --expire-time=3000 &
+	opera &
 else
 	exit 0
 fi

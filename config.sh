@@ -145,6 +145,7 @@ link_dotfiles () {
     home_link_cfg "polybar"
     home_link_cfg "alacritty"
     home_link_cfg "picom"
+    home_link_cfg "dunst"
 }
 
 restore_xorg () {
@@ -238,7 +239,7 @@ install_basic_packages () {
         libxcb-render0-dev libxcb-render-util0-dev libxcb-util-dev \
         libxcb-xfixes0-dev uthash-dev libxkbcommon-dev libxkbcommon-x11-dev \
         xutils-dev asciidoc libconfuse-dev libasound2-dev libiw-dev \
-        libpulse-dev libnl-genl-3-dev feh
+        libpulse-dev libnl-genl-3-dev feh notification-daemon dunst
     sudo updatedb
 }
 

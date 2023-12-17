@@ -13,8 +13,8 @@ set $lm DP-0
 set $cm DP-2
 set $rm DP-4
 
-set $mod Mod4
-set $sup Mod1
+set $mod Mod1
+set $sup Mod4
 
 font pango:MesloLGS NF, Misc Termsyn, Wuncon Siji 11
 
@@ -25,8 +25,8 @@ for_window [class="Xawtv"] floating enable
 for_window [class="Xawtv"] sticky enable
 for_window [class="emoji-keyboard"] floating enable
 
-gaps inner 17
-gaps outer 0
+gaps inner 15
+gaps outer 1
 
 # Mouse+$sup to drag floating windows
 floating_modifier $sup
@@ -41,8 +41,10 @@ bindsym $sup+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $sup+d exec exec rofi -show run -theme ~/ZDotfiles/rofi/sp.theme
+bindsym $sup+b exec ~/ZDotfiles/shellscripts/browserprompt
+bindsym $sup+z exec /home/marcogomez/ZDotfiles/shellscripts/emoji
+bindsym --release $sup+n exec /home/marcogomez/ZDotfiles/shellscripts/latency
 # bindsym $sup+d exec ~/dotfiles/shellscripts/ddmenu
-# bindsym $sup+z exec ~/dotfiles/shellscripts/browserprompt Browser
 # bindsym $sup+d exec --no-startup-id i3-dmenu-desktop
 
 bindsym $sup+t exec nautilus
@@ -166,15 +168,7 @@ mode "resize" {
 
 bindsym $sup+r mode "resize"
 
-# class                     border  bground text    indicator child_border
-# client.focused            #77AAFF #77AAFF #000000 #FFFFFF   #77AAff
-# client.focused_inactive   #303030 #4477AA #000000 #484E50   #5F676A
-# client.unfocused          #77AAFF #212121 #77AAFF #292D2E   #222222
-# client.urgent             #303030 #904848 #FFFFFF #904848   #904848
-# client.placeholder        #303030 #304848 #FFFFFF #000000   #0C0C0C
-# client.background         #FFFFFF
-
-client.focused              #000000 #212121 #AABBFF #777777 #303030
+client.focused              #000000 #212121 #AABBFF #AAAAAA #777777
 client.focused_inactive     #000000 #212121 #888888 #484E50 #303030
 client.unfocused            #000000 #212121 #555555 #292D2E #303030
 client.urgent               #ff0000 #904848 #FFFFFF #904848 #303030
@@ -182,7 +176,6 @@ client.placeholder          #000000 #304848 #FFFFFF #000000 #303030
 client.background           #000000
 
 for_window [all] border pixel 1
-
 
 assign [class="Code"] $ws2
 assign [class="Slack"] $ws6
@@ -226,5 +219,3 @@ exec --no-startup-id screenkey --start-disabled
 # bindsym Print exec --no-startup-id xfce4-screenshooter
 # bindsym --release $sup+x exec --no-startup-id import /tmp/latest-screenshot.png
 # bindsym --release $sup+Shift+c exec /home/marcogomez/dotfiles/shellscripts/webcamw
-bindsym --release $sup+n exec /home/marcogomez/ZDotfiles/shellscripts/latency
-bindsym $sup+z exec /home/marcogomez/ZDotfiles/shellscripts/emoji

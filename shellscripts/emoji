@@ -20,5 +20,5 @@ if [ -n "$1" ]; then
 	xdotool type "$chosen"
 else
 	echo "$chosen" | tr -d '\n' | xclip -selection clipboard
-	notify-send -a "Emoji Picker" "'$chosen' copied to clipboard." --expire-time=2100 &
+	notify-send -a "Emoji Picker" "'$chosen' copied to clipboard." --expire-time=3000 &
 fi
