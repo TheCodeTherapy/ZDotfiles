@@ -490,6 +490,12 @@ install_picom () {
     cd $DOTDIR
 }
 
+install_alacritty () {
+    msg="Building alacritty ..."
+    print_yellow "${msg}"
+    cargo install alacritty
+}
+
 update_system
 # choose_fastest_mirror
 # protect_hosts
@@ -518,6 +524,7 @@ install_with_pip numpy
 install_i3
 install_i3_status
 install_picom
+install_alacritty
 restore_xorg
 
 source ${ME}/.bashrc
