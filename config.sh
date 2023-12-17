@@ -222,7 +222,7 @@ install_basic_packages () {
         ninja-build gettext libtool libtool-bin g++ meson \
         clang clang-tools ca-certificates curl gnupg lsb-release \
         python-is-python3 ipython3 python3-pip python3-dev \
-        unzip lzma tree neofetch git zsh tmux gnome-tweaks \
+        unzip lzma tree neofetch git git-lfs zsh tmux gnome-tweaks \
         inxi most ttfautohint v4l2loopback-dkms ffmpeg \
         ranger libxext-dev ripgrep python3-pynvim xclip libnotify-bin \
         libfontconfig1-dev libfreetype-dev jq pixz hashdeep liblxc-dev \
@@ -239,7 +239,10 @@ install_basic_packages () {
         libxcb-render0-dev libxcb-render-util0-dev libxcb-util-dev \
         libxcb-xfixes0-dev uthash-dev libxkbcommon-dev libxkbcommon-x11-dev \
         xutils-dev asciidoc libconfuse-dev libasound2-dev libiw-dev \
-        libpulse-dev libnl-genl-3-dev feh notification-daemon dunst
+        libpulse-dev libnl-genl-3-dev feh notification-daemon dunst \
+        python3-sphinx python3-packaging libuv1-dev libcairo2-dev \
+        python3-xcbgen libxcb-ewmh-dev libjsoncpp-dev libmpdclient-dev \
+        libcurl4-openssl-dev xcb-proto
     sudo updatedb
 }
 
@@ -491,6 +494,20 @@ install_picom () {
     cd $DOTDIR
 }
 
+install_polybar () {
+    msg="Building polybar ..."
+    print_yellow "${msg}"
+    cd $DOTDIR
+    mkdir -p build
+    git clone --recursive https://github.com/polybar/polybar build/polybar
+    cd build/polybar
+    mkdir -p build && cd build
+    cmake ..
+    make -j$(nproc)
+    sudo make install
+    cd $DOTDIR
+}
+
 install_alacritty () {
     msg="Building alacritty ..."
     print_yellow "${msg}"
@@ -503,6 +520,7 @@ update_system
 
 install_basic_packages
 install_extra_packages
+
 link_dotfiles
 
 install_nvm
@@ -513,10 +531,8 @@ install_exa
 
 install_docker
 install_docker_compose
-
 install_fd
 setup_fonts
-
 install_with_pip PyOpenGL
 install_with_pip numpy
 
@@ -525,6 +541,7 @@ install_with_pip numpy
 install_i3
 install_i3_status
 install_picom
+install_polybar
 install_alacritty
 restore_xorg
 
