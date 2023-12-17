@@ -167,6 +167,13 @@ fix_cedilla () {
     sudo cp $DOTDIR/etc/environment /etc/environment
 }
 
+make_caps_super () {
+    msg="Replacing CAPS key by Super key ..."
+    print_yellow "${msg}"
+    sudo cp ${DOTDIR}/keyboard/keyboard /etc/default/keyboard
+    sudo udevadm trigger --subsystem-match=input --action=change
+}
+
 update_system () {
     msg="UPDATING SYSTEM ..."
     print_yellow "${msg}"
@@ -520,6 +527,7 @@ update_system
 
 install_basic_packages
 install_extra_packages
+make_caps_super
 
 link_dotfiles
 
