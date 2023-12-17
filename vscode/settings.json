@@ -1,4 +1,10 @@
 {
-  "editor.fontLigatures": false,
-  "window.titleBarStyle": "custom"
+    "editor.fontSize": 17,
+    "editor.fontLigatures": false,
+    "window.titleBarStyle": "custom",
+    "files.associations": {
+        "**/.i3/config": "i3",
+        "**/i3/config": "i3"
+    },
+    "workbench.colorTheme": "Moonlight II Italic",
 }

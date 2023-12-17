@@ -524,7 +524,9 @@ install_alacritty () {
 customize_vscode () {
     msg="Customizing vscode ..."
     print_yellow "${msg}"
-    cp ${DOTDIR}/vscode/settings.json ${CFG}/Code/User/settings.json
+    sudo rm -rf ${CFG}/Code/User/settings.json > /dev/null 2>&1 \
+        && ln -s ${DOTDIR}/vscode/settings.json ${CFG}/Code/User/settings.json \
+        || ln -s ${DOTDIR}/vscode/settings.json ${CFG}/Code/User/settings.json
 }
 
 update_system

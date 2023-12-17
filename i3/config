@@ -144,11 +144,6 @@ bindsym $sup+c exec rofi -modi "clipboard:greenclip print" -show clipboard
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
@@ -216,6 +211,7 @@ exec --no-startup-id discord
 # exec --no-startup-id conky --config=/home/marcogomez/dotfiles/conky/conky_weather.conf
 exec --no-startup-id screenkey --start-disabled
 # exec --no-startup-id optimus-manager-qt
-# bindsym Print exec --no-startup-id xfce4-screenshooter
+
+bindsym Print exec --no-startup-id xfce4-screenshooter
 # bindsym --release $sup+x exec --no-startup-id import /tmp/latest-screenshot.png
 # bindsym --release $sup+Shift+c exec /home/marcogomez/dotfiles/shellscripts/webcamw
