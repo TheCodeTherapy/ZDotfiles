@@ -249,7 +249,7 @@ install_basic_packages () {
         libpulse-dev libnl-genl-3-dev feh notification-daemon dunst \
         python3-sphinx python3-packaging libuv1-dev libcairo2-dev \
         python3-xcbgen libxcb-ewmh-dev libjsoncpp-dev libmpdclient-dev \
-        libcurl4-openssl-dev xcb-proto
+        libcurl4-openssl-dev xcb-proto policykit-1-gnome
     sudo updatedb
 }
 
