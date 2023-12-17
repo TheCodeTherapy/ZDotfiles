@@ -521,6 +521,12 @@ install_alacritty () {
     cargo install alacritty
 }
 
+customize_vscode () {
+    msg="Customizing vscode ..."
+    print_yellow "${msg}"
+    cp ${DOTDIR}/vscode/settings.json ${CFG}/Code/User/settings.json
+}
+
 update_system
 # choose_fastest_mirror
 # protect_hosts
@@ -552,6 +558,8 @@ install_picom
 install_polybar
 install_alacritty
 restore_xorg
+
+customize_vscode
 
 source ${ME}/.bashrc
 sudo updatedb
