@@ -8,13 +8,18 @@ window:
     columns: 0
     lines: 0
   padding:
-    x: 10
-    y: 10
+    x: 3
+    y: 7
   dynamic_padding: false
-  decorations: full
+  opacity: 0.8
+  decorations: none
   startup_mode: Windowed
   title: Alacritty
   class: Alacritty
+
+# window.dynamic_title: true
+# window.opacity: 0.7
+# window.option_as_alt: true
 
 scrolling:
   history: 20000
@@ -68,9 +73,9 @@ colors:
   indexed_colors: []
 
 bell:
-  animation: EaseOutSine
+  animation: EaseOutQuart
   duration: 300
-  color: '0x303030'
+  color: '0x3366ee'
 
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
@@ -87,10 +92,6 @@ mouse:
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
   save_to_clipboard: false
-
-window.dynamic_title: true
-window.opacity: 0.7
-window.option_as_alt: true
 
 cursor:
   style: Underline

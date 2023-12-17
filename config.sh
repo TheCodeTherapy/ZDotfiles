@@ -144,6 +144,7 @@ link_dotfiles () {
     home_link_cfg "i3status"
     home_link_cfg "polybar"
     home_link_cfg "alacritty"
+    home_link_cfg "picom"
 }
 
 restore_xorg () {
@@ -231,9 +232,13 @@ install_basic_packages () {
         libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev \
         libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \
         libxcb-shape0-dev libxcb-xrm-dev libxcb-xrm0 libxcb-xkb-dev \
-        libxkbcommon-dev libxkbcommon-x11-dev xutils-dev asciidoc \
-        libconfuse-dev libasound2-dev libiw-dev libpulse-dev \
-        libnl-genl-3-dev feh
+        libconfig-dev libdbus-1-dev libegl-dev libpcre2-dev libpixman-1-dev \
+        libx11-xcb-dev libxcb-composite0-dev libxcb-damage0-dev \
+        libxcb-dpms0-dev libxcb-glx0-dev libxcb-image0-dev libxcb-present-dev \
+        libxcb-render0-dev libxcb-render-util0-dev libxcb-util-dev \
+        libxcb-xfixes0-dev uthash-dev libxkbcommon-dev libxkbcommon-x11-dev \
+        xutils-dev asciidoc libconfuse-dev libasound2-dev libiw-dev \
+        libpulse-dev libnl-genl-3-dev feh
     sudo updatedb
 }
 
@@ -472,6 +477,19 @@ install_i3_status () {
     cd $DOTDIR
 }
 
+install_picom () {
+    msg="Building picom ..."
+    print_yellow "${msg}"
+    cd $DOTDIR
+    mkdir -p build
+    git clone https://github.com/yshui/picom.git build/picom
+    cd build/picom
+    meson setup --buildtype=release build
+    ninja -C build
+    sudo ninja -C build install
+    cd $DOTDIR
+}
+
 update_system
 # choose_fastest_mirror
 # protect_hosts
@@ -499,6 +517,7 @@ install_with_pip numpy
 
 install_i3
 install_i3_status
+install_picom
 restore_xorg
 
 source ${ME}/.bashrc
