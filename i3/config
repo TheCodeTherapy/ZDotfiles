@@ -181,6 +181,9 @@ assign [class="TelegramDesktop"] $ws6
 assign [class="QjackCtl"] $ws4
 assign [class="REAPER"] $ws5
 
+assign [title="^Friends List$"] $ws1
+assign [title="^Steam$"] $ws1
+
 for_window [class="QjackCtl" instance="qjackctl"] floating enable
 for_window [title="^Friends List$"] floating enable
 
