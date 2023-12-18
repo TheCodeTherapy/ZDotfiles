@@ -1,0 +1,33 @@
+<!DOCTYPE patchbay>
+<patchbay name="broadcast_patchbay" version="0.9.6">
+ <output-sockets>
+  <socket name="REAPER 1" client="REAPER" type="jack-audio" exclusive="off">
+   <plug>out5</plug>
+   <plug>out6</plug>
+  </socket>
+  <socket name="voicesend_sink 1" client="voicesend_sink" type="jack-audio" exclusive="off">
+   <plug>front\-left</plug>
+   <plug>front\-right</plug>
+  </socket>
+  <socket name="system 1" client="system" type="jack-audio" exclusive="off">
+   <plug>capture_1</plug>
+   <plug>capture_2</plug>
+  </socket>
+ </output-sockets>
+ <input-sockets>
+  <socket name="voicesend_source 1" client="voicesend_source" type="jack-audio" exclusive="off">
+   <plug>front\-left</plug>
+   <plug>front\-right</plug>
+  </socket>
+  <socket name="system 1" client="system" type="jack-audio" exclusive="off">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+  </socket>
+ </input-sockets>
+ <slots/>
+ <cables>
+  <cable input="voicesend_source 1" output="REAPER 1" type="jack-audio"/>
+  <cable input="system 1" output="voicesend_sink 1" type="jack-audio"/>
+ </cables>
+</patchbay>
+
