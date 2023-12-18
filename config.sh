@@ -544,6 +544,23 @@ install_reaper () {
     fi
 }
 
+install_opera () {
+    if $(opera --version > /dev/null 2>&1); then
+        msg="Opera already installed."
+        print_green "${msg}"
+    else
+        msg="Installing Opera ..."
+        print_yellow "${msg}"
+        wget -O- https://deb.opera.com/archive.key \
+            | sudo gpg --dearmor \
+            | sudo tee /usr/share/keyrings/opera.gpg
+        echo deb [arch=amd64 signed-by=/usr/share/keyrings/opera.gpg] https://deb.opera.com/opera-stable/ stable non-free \
+            | sudo tee /etc/apt/sources.list.d/opera.list
+        sudo apt --assume-yes update
+        sudo apt --assume-yes install opera-stable
+    fi
+}
+
 update_system
 # choose_fastest_mirror
 # protect_hosts
@@ -579,6 +596,7 @@ restore_xorg
 customize_vscode
 
 install_reaper
+install_opera
 
 source ${ME}/.bashrc
 sudo updatedb
