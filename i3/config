@@ -172,34 +172,42 @@ client.background           #000000
 
 for_window [all] border pixel 1
 
+# Workspace 1 =================================================================
+assign [title="^Friends List$"] $ws1
+assign [title="^Steam$"] $ws1
+
+# Workspace 2 =================================================================
 assign [class="Code"] $ws2
+assign [title="^Path of Exile"] $ws2
+
+# Workspace 3 =================================================================
+assign [class="Alacritty"] $ws3
+
+# Workspace 4 =================================================================
+assign [class="QjackCtl"] $ws4
+
+# Workspace 6 =================================================================
 assign [class="Slack"] $ws6
 assign [class="discord"] $ws6
 assign [class="skype"] $ws6
 assign [class="Skype"] $ws6
 assign [class="TelegramDesktop"] $ws6
-assign [class="QjackCtl"] $ws4
-assign [class="REAPER"] $ws5
+assign [class="REAPER"] $ws6
 
-assign [title="^Friends List$"] $ws1
-assign [title="^Steam$"] $ws1
-assign [title="^Path of Exile"] $ws2
-
+#for_window [class="QjackCtl" instance="qjackctl"] layout tabbed
 for_window [class="QjackCtl" instance="qjackctl"] floating enable
+
 for_window [title="^Friends List$"] floating enable
 
 exec --no-startup-id $HOME/ZDotfiles/polybar/launch.sh
 exec --no-startup-id picom --config ~/ZDotfiles/picom/picom.conf
 
 # exec --no-startup-id greenclip daemon
-
 # exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
-
 exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 
 exec --no-startup-id feh --bg-scale --no-xinerama ~/ZDotfiles/wallpaper/waves_ai.jpg
-# exec --no-startup-id xrandr --output DP-2 --primary --mode 1920x1080 --rate 143.85 --pos 1920x0 --rotate normal --output DP-4 --mode 1920x1080 --rate 143.85 --pos 3840x0 --rotate normal --output DP-0 --mode 1920x1080 --rate 143.85 --pos 0x0 --rotate normal --output HDMI-0 --off
 
 exec --no-startup-id xrandr \
         --output DP-4 --mode 1920x1080 --rate 143.85 --pos 3840x0 --rotate normal \
