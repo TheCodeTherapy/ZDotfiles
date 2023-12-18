@@ -1,3 +1,47 @@
 #!/bin/bash
-pactl load-module module-jack-source client_name=discord_source connect=no
-pactl load-module module-jack-sink client_name=discord_sink connect=no
+ME="/home/$(whoami)"
+DOTDIR="${ME}/ZDotfiles"
+REAPERDIR="${DOTDIR}/software/reaper_linux_x86_64/REAPER"
+
+declare -rA COLORS=(
+    [RED]=$'\033[0;31m'
+    [GREEN]=$'\033[0;32m'
+    [BLUE]=$'\033[0;34m'
+    [PURPLE]=$'\033[0;35m'
+    [CYAN]=$'\033[0;36m'
+    [WHITE]=$'\033[0;37m'
+    [YELLOW]=$'\033[0;33m'
+    [BOLD]=$'\033[1m'
+    [OFF]=$'\033[0m'
+)
+
+print_green () {
+    echo -e "\n${COLORS[GREEN]}${1}${COLORS[OFF]}\n"
+}
+
+if $(pactl list | grep voicesend_source > /dev/null 2>&1); then
+    msg="voicesend_source already created."
+    print_green "${msg}"
+else
+    msg="Creating voicesend_source ..."
+    print_green "${msg}"
+    pactl load-module module-jack-source client_name=voicesend_source connect=no
+fi
+
+if $(pactl list | grep voicesend_sink > /dev/null 2>&1); then
+    msg="voicesend_sink already created."
+    print_green "${msg}"
+else
+    msg="Creating voicesend_sink ..."
+    print_green "${msg}"
+    pactl load-module module-jack-sink client_name=voicesend_sink connect=no
+fi
+
+if $(ps aux | grep -v grep | grep "REAPER/reaper" > /dev/null 2>&1); then
+    msg="Reaper already running."
+    print_green "${msg}"
+else
+    msg="Starting Reaper ..."
+    print_green "${msg}"
+    ${REAPERDIR}/reaper &
+fi

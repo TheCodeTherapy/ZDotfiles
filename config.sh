@@ -529,6 +529,21 @@ customize_vscode () {
         || ln -s ${DOTDIR}/vscode/settings.json ${CFG}/Code/User/settings.json
 }
 
+install_reaper () {
+    if [[ -f $ME/.gnome/apps/cockos-reaper.desktop ]]; then
+        msg="Reaper already installed."
+        print_green "${msg}"
+    else
+        msg="Installing Reaper ..."
+        print_yellow "${msg}"
+        cd $DOTDIR/software
+        tar -xf reaper707_linux_x86_64.tar.xz
+        cd $DOTDIR/software/reaper_linux_x86_64
+        ./install-reaper.sh --integrate-user-desktop
+        cd $DOTDIR
+    fi
+}
+
 update_system
 # choose_fastest_mirror
 # protect_hosts
@@ -562,6 +577,8 @@ install_alacritty
 restore_xorg
 
 customize_vscode
+
+install_reaper
 
 source ${ME}/.bashrc
 sudo updatedb
