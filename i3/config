@@ -13,8 +13,8 @@ set $lm DP-0
 set $cm DP-2
 set $rm DP-4
 
-set $mod Mod1
-set $sup Mod4
+set $mod Mod4
+set $sup Mod1
 
 font pango:MesloLGS NF, Misc Termsyn, Wuncon Siji 11
 
@@ -50,28 +50,28 @@ bindsym --release $sup+n exec /home/marcogomez/ZDotfiles/shellscripts/latency
 bindsym $sup+t exec nautilus
 
 # change focus
-bindsym $sup+h focus left
-bindsym $sup+j focus down
-bindsym $sup+k focus up
-bindsym $sup+l focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $sup+Left focus left
-bindsym $sup+Down focus down
-bindsym $sup+Up focus up
-bindsym $sup+Right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # move focused window
-bindsym $sup+Shift+j move left
-bindsym $sup+Shift+k move down
-bindsym $sup+Shift+l move up
-bindsym $sup+Shift+ccedilla move right
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+ccedilla move right
 
 # alternatively, you can use the cursor keys:
-bindsym $sup+Shift+Left move left
-bindsym $sup+Shift+Down move down
-bindsym $sup+Shift+Up move up
-bindsym $sup+Shift+Right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $sup+\ split h
