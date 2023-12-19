@@ -136,6 +136,7 @@ link_dotfiles () {
     home_link "darkplaces" ".darkplaces"
     home_link "lutris" ".local/share/lutris"
     home_link "attract" ".attract"
+    home_link "vst3" ".vst3"
 
     home_link_cfg "scummvm"
     home_link_cfg "screenkey"
@@ -249,7 +250,11 @@ install_basic_packages () {
         libpulse-dev libnl-genl-3-dev feh notification-daemon dunst \
         python3-sphinx python3-packaging libuv1-dev libcairo2-dev \
         python3-xcbgen libxcb-ewmh-dev libjsoncpp-dev libmpdclient-dev \
-        libcurl4-openssl-dev xcb-proto policykit-1-gnome
+        libcurl4-openssl-dev xcb-proto policykit-1-gnome \
+        python3-gi gir1.2-gtk-3.0 python3-gi-cairo python3-cairo \
+        python3-setuptools python3-babel python3-dbus \
+        fonts-font-awesome slop gir1.2-ayatanaappindicator3-0.1
+
     sudo updatedb
 }
 
