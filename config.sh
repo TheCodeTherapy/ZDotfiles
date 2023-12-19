@@ -215,7 +215,7 @@ install_neovim () {
     git checkout stable
     cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo -j$(nproc)
     cd build && cpack -G DEB
-    # sudo dpkg -i nvim-linux64.deb
+    sudo dpkg -i nvim-linux64.deb
     cd $DOTDIR
 }
 
