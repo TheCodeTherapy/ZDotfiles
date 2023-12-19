@@ -573,8 +573,6 @@ setup_fonts
 install_with_pip PyOpenGL
 install_with_pip numpy
 
-install_neovim
-
 install_i3
 install_i3_status
 install_picom
@@ -582,9 +580,9 @@ install_polybar
 install_alacritty
 restore_xorg
 
-customize_vscode
-
 install_reaper
+customize_vscode
+install_neovim
 
 source ${ME}/.bashrc
 sudo updatedb
