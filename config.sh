@@ -208,15 +208,20 @@ install_with_pip () {
 }
 
 install_neovim () {
-    msg="Building Neovim ..."
-    print_yellow "${msg}"
-    cd $DOTDIR
-    git clone https://github.com/neovim/neovim
-    git checkout stable
-    cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo -j$(nproc)
-    cd build && cpack -G DEB
-    sudo dpkg -i nvim-linux64.deb
-    cd $DOTDIR
+    if [[ -f /usr/bin/nvim ]]; then
+        msg="Neovim already installed."
+        print_green "${msg}"
+    else
+        msg="INSTALLING NEOVIM ..."
+        print_yellow "${msg}"
+        cd $DOTDIR
+        git clone https://github.com/neovim/neovim
+        git checkout stable
+        cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo -j$(nproc)
+        cd build && cpack -G DEB
+        sudo dpkg -i nvim-linux64.deb
+        cd $DOTDIR
+    fi
 }
 
 install_basic_packages () {
