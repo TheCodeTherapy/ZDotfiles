@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Get the JSON formatted list of sinks
+sinks_json=$(pactl --format=json list sinks)
+
+# Create an array of sink names
+readarray -t sink_names < <(echo "$sinks_json" | jq -r '.[].name')
+
+# Get the name of the current default sink
+current_sink_name=$(pactl get-default-sink)
+echo "Current sink name: $current_sink_name"
+
+# Find the index of the current sink in the array
+for i in "${!sink_names[@]}"; do
+    if [[ "${sink_names[$i]}" == "$current_sink_name" ]]; then
+        current_sink_index=$i
+        break
+    fi
+done
+echo "Current sink index: $current_sink_index"
+
+# Get total number of sinks
+total_sinks=${#sink_names[@]}
+echo "Total sinks: $total_sinks"
+
+# Calculate the index of the next sink (cycling back to 0 if at the end)
+next_sink_index=$(( (current_sink_index + 1) % total_sinks ))
+echo "Next sink index: $next_sink_index"
+
+# Set the next sink as the default output
+next_sink_name=${sink_names[$next_sink_index]}
+pactl set-default-sink "$next_sink_name"
+echo "Default sink set to: $next_sink_name"
+
+# Extract the alsa.card_name of the new default sink
+sink_alsa_card_name=$(echo "$sinks_json" | \
+    jq -r --arg name "$next_sink_name" '.[] | select(.name == $name) | .properties."alsa.card_name"')
+echo "New default sink alsa.card_name: $sink_alsa_card_name"
+
+# Notify the user of the change
+notify-send -a "Default Output Device" "Sink #$(echo "$sinks_json" | jq -r --arg name "$next_sink_name" '.[] | select(.name == $name) | .index'):
+'$sink_alsa_card_name'." --expire-time=3000 &

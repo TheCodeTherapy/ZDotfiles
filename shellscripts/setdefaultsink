@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# Regex to match the desired sink (case-insensitive)
+REGEX="scarlett"
+
+# Function to check if alsa.card_name matches regex
+function matches_regex {
+    echo "$1" | grep -iq "$REGEX"
+}
+
+# Initialize variables
+matched_sink=""
+sink_block=""
+
+# Read the output of 'pactl list sinks' line by line
+while IFS= read -r line; do
+    if [[ -z $line ]]; then
+        # If we've reached the end of a sink block, check if it matches the regex
+        if matches_regex "$sink_block"; then
+            # Extract the sink name or number
+            matched_sink=$(echo "$sink_block" | awk -F# '/^Sink /{print $2; exit}')
+            break
+        fi
+        sink_block=""
+    else
+        # Accumulate lines into sink_block
+        sink_block+=$'\n'"$line"
+    fi
+done < <(pactl list sinks)
+
+# Check if a matching sink was found
+if [ -z "$matched_sink" ]; then
+    echo "No sink matching the regex '$REGEX' was found."
+    exit 1
+fi
+
+# Set the matched sink as the default output
+pactl set-default-sink "$matched_sink"
+
+# Get the JSON formatted list of sinks
+sinks_json=$(pactl --format=json list sinks)
+sink_description=$(echo "$sinks_json" | \
+    jq --arg sink_no "$matched_sink" -r \
+    '.[] | select(.index == ($sink_no | tonumber)) | .description'
+)
+sink_alsa_card_name=$(echo "$sinks_json" | \
+    jq --arg sink_no "$matched_sink" -r \
+    '.[] | select(.index == ($sink_no | tonumber)) | .properties."alsa.card_name"'
+)
+
+# Use jq to extract and print the description of the matched sink
+echo "Default output device set to sink #$matched_sink:"
+echo "$sinks_json" | jq --arg sink_no "$matched_sink" -r '.[] | select(.index == ($sink_no | tonumber)) | .description'
+
+notify-send -a "Default Output Device" "Sink #$matched_sink:
+'$sink_alsa_card_name'." --expire-time=3000 &
