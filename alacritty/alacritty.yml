@@ -72,33 +72,66 @@ draw_bold_text_with_bright_colors: true
 #     white:   '0xffffff'
 #   indexed_colors: []
 
+# colors:
+#   primary:
+#     #background: '0x1e2030'
+#     background: "#222436"
+#     foreground: "#7f85a3"
+#   cursor:
+#     text: "#7f85a3"
+#     cursor: "#808080"
+#   normal:
+#     black: "#444a73"
+#     red: "#ff5370"
+#     green: "#4fd6be"
+#     yellow: "#ffc777"
+#     blue: "#3e68d7"
+#     magenta: "#fc7b7b"
+#     cyan: "#86e1fc"
+#     white: "#d0d0d0"
+#   bright:
+#     black: "#828bb8"
+#     red: "#ff98a4"
+#     green: "#c3e88d"
+#     yellow: "#ffc777"
+#     blue: "#82aaff"
+#     magenta: "#ff966c"
+#     cyan: "#b4f9f8"
+#     white: "#5f8787"
+#   indexed_colors: []
+
 colors:
+  # Default colors
   primary:
-    #background: '0x1e2030'
-    background: "#222436"
-    foreground: "#7f85a3"
-  cursor:
-    text: "#7f85a3"
-    cursor: "#808080"
+    background: '0x24283b'
+    foreground: '0xc0caf5'
+
+  # Normal colors
   normal:
-    black: "#444a73"
-    red: "#ff5370"
-    green: "#4fd6be"
-    yellow: "#ffc777"
-    blue: "#3e68d7"
-    magenta: "#fc7b7b"
-    cyan: "#86e1fc"
-    white: "#d0d0d0"
+    black:   '0x1d202f'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    # blue:    '0x7aa2f7'
+    blue:    '0x3e68d7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
+
+  # Bright colors
   bright:
-    black: "#828bb8"
-    red: "#ff98a4"
-    green: "#c3e88d"
-    yellow: "#ffc777"
-    blue: "#82aaff"
-    magenta: "#ff966c"
-    cyan: "#b4f9f8"
-    white: "#5f8787"
-  indexed_colors: []
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'
+
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }
 
 bell:
   animation: EaseOutQuart
