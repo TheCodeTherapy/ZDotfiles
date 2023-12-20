@@ -193,7 +193,7 @@ assign [class="Code"] $ws2
 assign [title="^Path of Exile"] $ws2
 
 # Workspace 3 =================================================================
-assign [class="Alacritty"] $ws3
+# assign [class="Alacritty"] $ws3
 
 # Workspace 4 =================================================================
 
