@@ -1,15 +1,14 @@
 {
-    "editor.fontSize": 17,
-    "editor.fontLigatures": false,
-    "window.titleBarStyle": "custom",
-    "files.associations": {
-        "**/.i3/config": "i3",
-        "**/i3/config": "i3"
-    },
-    "workbench.colorTheme": "Moonlight II Italic",
-    "workbench.colorCustomizations": {
-        "editor.background": "#1b1d2b",
-        "sideBar.background": "#1e2030"
-    },
-    "editor.semanticHighlighting.enabled": true,
+  "editor.fontSize": 17,
+  "editor.fontLigatures": false,
+  "window.titleBarStyle": "custom",
+  "files.associations": {
+    "**/.i3/config": "i3",
+    "**/i3/config": "i3"
+  },
+  "workbench.colorTheme": "Moonlight II Italic",
+  "workbench.colorCustomizations": {
+    "editor.background": "#24283b"
+  },
+  "editor.semanticHighlighting.enabled": true
 }
