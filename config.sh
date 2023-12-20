@@ -222,6 +222,7 @@ install_neovim () {
         sudo dpkg -i nvim-linux64.deb
         cd $DOTDIR
     fi
+    home_link_cfg "nvim"
 }
 
 install_basic_packages () {

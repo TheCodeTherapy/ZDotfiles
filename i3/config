@@ -25,7 +25,7 @@ for_window [class="Xawtv"] floating enable
 for_window [class="Xawtv"] sticky enable
 for_window [class="emoji-keyboard"] floating enable
 
-gaps inner 15
+gaps inner 10
 gaps outer 1
 
 # Mouse+$sup to drag floating windows
