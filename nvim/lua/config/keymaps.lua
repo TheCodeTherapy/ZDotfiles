@@ -22,9 +22,23 @@ keymap.set("n", "te", ":tabedit", opts)
 keymap.set("n", "<tab>", ":tabnext<Return>", opts)
 keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 
--- Split window
+-- Split windows and move through them
 keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
+keymap.set("n", "sh", "<C-w>h")
+keymap.set("n", "sk", "<C-w>k")
+keymap.set("n", "sj", "<C-w>j")
+keymap.set("n", "sl", "<C-w>l")
+keymap.set("n", "<leader><Left>", "<C-w>h", opts)
+keymap.set("n", "<leader><Down>", "<C-w>j", opts)
+keymap.set("n", "<leader><Up>", "<C-w>k", opts)
+keymap.set("n", "<leader><Right>", "<C-w>l", opts)
+
+-- Resize windows
+keymap.set("n", "<C-w><left>", "<C-w><")
+keymap.set("n", "<C-w><right>", "<C-w>>")
+keymap.set("n", "<C-w><up>", "<C-w>+")
+keymap.set("n", "<C-w><down>", "<C-w>-")
 
 -- Move current/selected line up
 keymap.set("n", "<C-Up>", ":m .-2<CR>==", opts)
