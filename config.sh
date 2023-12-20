@@ -260,7 +260,8 @@ install_basic_packages () {
         libcurl4-openssl-dev xcb-proto policykit-1-gnome \
         python3-gi gir1.2-gtk-3.0 python3-gi-cairo python3-cairo \
         python3-setuptools python3-babel python3-dbus \
-        fonts-font-awesome slop gir1.2-ayatanaappindicator3-0.1
+        fonts-font-awesome slop gir1.2-ayatanaappindicator3-0.1 \
+        libgtk-4-dev libx11-dev libxcomposite-dev libxfixes-dev
 
     sudo updatedb
 }
@@ -316,6 +317,17 @@ install_exa () {
         msg="INSTALLING EXA ..."
         print_yellow "${msg}"
         cargo install exa
+    fi
+}
+
+install_xcolor () {
+    if [[ -f $HOME/.cargo/bin/xcolor ]]; then
+        msg="XColor already installed."
+        print_green "${msg}"
+    else
+        msg="INSTALLING XCOLOR ..."
+        print_yellow "${msg}"
+        cargo install xcolor
     fi
 }
 
@@ -571,6 +583,7 @@ install_node
 install_yarn
 install_rust
 install_exa
+install_xcolor
 
 install_docker
 install_docker_compose

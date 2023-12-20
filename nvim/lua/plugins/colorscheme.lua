@@ -7,6 +7,9 @@ return {
         -- sidebars = "transparent",
         -- floats = "transparent",
       },
+      config = function()
+        vim.cmd("highlight Normal guibg=#1b1d2b")
+      end
     },
   },
 }

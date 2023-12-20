@@ -7,4 +7,9 @@
         "**/i3/config": "i3"
     },
     "workbench.colorTheme": "Moonlight II Italic",
+    "workbench.colorCustomizations": {
+        "editor.background": "#1b1d2b",
+        "sideBar.background": "#1e2030"
+    },
+    "editor.semanticHighlighting.enabled": true,
 }
