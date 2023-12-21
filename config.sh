@@ -262,7 +262,9 @@ install_basic_packages () {
         python3-setuptools python3-babel python3-dbus \
         fonts-font-awesome slop gir1.2-ayatanaappindicator3-0.1 \
         libgtk-4-dev libx11-dev libxcomposite-dev libxfixes-dev
-
+    # sudo aptitude install \
+    #     openjdk-8-jre=8u312-b07-0ubuntu1 \
+    #     openjdk-8-jre-headless=8u312-b07-0ubuntu1
     sudo updatedb
 }
 
