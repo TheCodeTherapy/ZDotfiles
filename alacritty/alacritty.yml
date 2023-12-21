@@ -11,7 +11,7 @@ window:
     x: 3
     y: 7
   dynamic_padding: false
-  opacity: 0.8
+  opacity: 0.85
   decorations: none
   startup_mode: Windowed
   title: Alacritty
