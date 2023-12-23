@@ -519,7 +519,7 @@ install_picom () {
     print_yellow "${msg}"
     cd $DOTDIR
     mkdir -p build
-    git clone https://github.com/yshui/picom.git build/picom
+    git clone https://github.com/TheCodeTherapy/picom build/picom
     cd build/picom
     meson setup --buildtype=release build
     ninja -C build

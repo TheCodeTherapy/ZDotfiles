@@ -82,7 +82,7 @@ bindsym $sup+v split v
 bindsym $sup+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $sup+s layout stacking
+# bindsym $sup+s layout stacking
 bindsym $sup+w layout tabbed
 bindsym $sup+e layout toggle split
 
@@ -225,7 +225,7 @@ for_window [class="QjackCtl" instance="qjackctl"] floating enable
 for_window [title="^Friends List$"] floating enable
 
 exec --no-startup-id $HOME/ZDotfiles/polybar/launch.sh
-exec --no-startup-id picom --config ~/ZDotfiles/picom/picom.conf --no-frame-pacing
+exec --no-startup-id picom --config ~/ZDotfiles/picom/picom.conf
 
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings

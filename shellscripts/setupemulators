@@ -35,7 +35,7 @@ print_green () {
 install_with_pip () {
     msg="Installing $1 ..."
     print_yellow "${msg}"
-    sudo -H pip install --upgrade $1
+    pip install --upgrade $1
     rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
 }
 
@@ -74,15 +74,16 @@ build_mame0226 () {
         print_yellow "${msg}"
         mkdir -p ${EMUDIR}/emulators
         cd ${EMUDIR}/emulators
-        git clone -b mame0226 --depth 1 \
-            https://github.com/TheCodeTherapy/mame.git mame0226
+        # git clone -b mame0226 --depth 1 \
+        #     https://github.com/TheCodeTherapy/mame.git mame0226
+        git clone https://github.com/mamedev/mame.git
         rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
-        cd mame0226
-        NOWERROR=1 make OVERRIDE_CC=clang OVERRIDE_CXX=clang++ TOOLS=1 REGENIE=1 -j$(nproc) ARCHOPTS=-U_FORTIFY_SOURCE
+        cd mame
+        NOWERROR=1 make TOOLS=1 REGENIE=1 -j$(nproc) ARCHOPTS=-U_FORTIFY_SOURCE
         rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
         cd ..
         git clone https://github.com/TheCodeTherapy/MAME-PSGS.git
-        mv ./MAME-PSGS/glsl ./mame0226/.
+        mv ./MAME-PSGS/glsl ./mame/.
         rm -rf MAME-PSGS
     fi
 }
