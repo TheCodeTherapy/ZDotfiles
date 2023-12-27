@@ -6,9 +6,10 @@
     "**/.i3/config": "i3",
     "**/i3/config": "i3"
   },
-  "workbench.colorTheme": "Moonlight II Italic",
   "workbench.colorCustomizations": {
-    "editor.background": "#24283b"
+    // "editor.background": "#24283b",
+    // "editor.background": "#1e2030"
   },
-  "editor.semanticHighlighting.enabled": true
+  "editor.semanticHighlighting.enabled": true,
+  "workbench.colorTheme": "TheCodeTheme Dark"
 }

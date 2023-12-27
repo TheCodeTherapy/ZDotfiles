@@ -184,7 +184,6 @@ client.background           #000000
 
 for_window [all] border pixel 2
 
-# Workspace 1 =================================================================
 assign [title="^Friends List$"] $ws1
 assign [title="^Steam$"] $ws1
 
