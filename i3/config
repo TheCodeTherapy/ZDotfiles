@@ -13,8 +13,8 @@ set $lm DP-0
 set $cm DP-2
 set $rm DP-4
 
-set $mod Mod4
-set $sup Mod1
+set $sup Mod4
+set $mod Mod1
 
 font pango:MesloLGS NF, Misc Termsyn, Wuncon Siji 11
 
