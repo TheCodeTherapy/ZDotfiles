@@ -18,7 +18,7 @@ set $mod Mod1
 
 font pango:MesloLGS NF, Misc Termsyn, Wuncon Siji 11
 
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 3
 for_window [title="video0 - mpv"] floating enable
 for_window [title="video0 - mpv"] sticky enable
 for_window [class="Xawtv"] floating enable
@@ -192,10 +192,10 @@ assign [class="Code"] $ws2
 assign [title="^Path of Exile"] $ws2
 
 # Workspace 3 =================================================================
-# assign [class="Alacritty"] $ws3
 
 # Workspace 4 =================================================================
 
+# Workspace 5 =================================================================
 
 # Workspace 6 =================================================================
 assign [class="Slack"] $ws6
@@ -204,13 +204,14 @@ assign [class="Skype"] $ws6
 assign [class="TelegramDesktop"] $ws6
 
 # Workspace 7 =================================================================
-assign [class="QjackCtl"] $ws7
 
 # Workspace 8 =================================================================
 assign [class="discord"] $ws8
 
 # Workspace 9 =================================================================
+assign [class="obs"]  $ws9
 assign [class="REAPER"] $ws9
+assign [class="QjackCtl"] $ws9
 
 # Switch window/workspace with mod+scroll and mod+shift scroll
 bindsym --whole-window --border $sup+button4 focus left

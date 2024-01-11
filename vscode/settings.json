@@ -11,5 +11,6 @@
     // "editor.background": "#1e2030"
   },
   "editor.semanticHighlighting.enabled": true,
-  "workbench.colorTheme": "TheCodeTheme Dark"
+  "workbench.colorTheme": "TheCodeTheme Dark",
+  "explorer.compactFolders": false
 }
