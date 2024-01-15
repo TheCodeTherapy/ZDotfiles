@@ -175,12 +175,12 @@ mode "resize" {
 
 bindsym $sup+r mode "resize"
 
-client.focused              #000000 #212121 #AABBFF #AAAAAA #777777
-client.focused_inactive     #000000 #212121 #888888 #484E50 #303030
-client.unfocused            #000000 #212121 #555555 #292D2E #303030
-client.urgent               #ff0000 #904848 #FFFFFF #904848 #303030
-client.placeholder          #000000 #304848 #FFFFFF #000000 #303030
-client.background           #000000
+client.focused              #424242 #303030 #ffffff #AAAAAA #888888
+client.focused_inactive     #424242 #303030 #dddddd #484E50 #303030
+client.unfocused            #424242 #000000 #777777 #292D2E #303030
+client.urgent               #ff0000 #904848 #ffdddd #904848 #703030
+client.placeholder          #424242 #304848 #ffffff #000000 #303030
+client.background           #008800
 
 for_window [all] border pixel 2
 
