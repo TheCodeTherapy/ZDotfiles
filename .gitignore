@@ -14,3 +14,4 @@ build
 reaper_linux_x86_64
 reaper/broadcast/Backups/
 backup/
+packages.microsoft.gpg
