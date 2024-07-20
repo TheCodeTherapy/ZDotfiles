@@ -541,6 +541,20 @@ install_reaper () {
     fi
 }
 
+install_chrome () {
+    if $(google-chrome-stable --version > /dev/null 2>&1); then
+        msg="Google Chrome already installed."
+        print_green "${msg}"
+    else
+        msg="Installing Google Chrome..."
+        print_yellow "${msg}"
+        cd ~/Downloads
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo dpkg -i google-chrome-stable_current_amd64.deb
+        sudo rm -f google-chrome-stable_current_amd64.deb
+    fi
+}
+
 update_system
 install_basic_packages
 install_extra_packages
@@ -573,6 +587,8 @@ restore_xorg
 install_reaper
 customize_vscode
 install_neovim
+
+install_chrome
 
 source ${ME}/.bashrc
 sudo updatedb
