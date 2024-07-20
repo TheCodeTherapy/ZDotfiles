@@ -9,9 +9,10 @@
 # --output HDMI-0 --off
 # ============================================================================
 
-set $lm DP-0
-set $cm DP-2
-set $rm DP-4
+set $bm HDMI-0
+set $lm DP-4
+set $cm DP-0
+set $rm DP-2
 
 set $sup Mod4
 set $mod Mod1
@@ -228,11 +229,17 @@ for_window [title="^Friends List$"] floating enable
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 
+# exec --no-startup-id xrandr \
+#         --output DP-4 --mode 1920x1080 --rate 143.85 --pos 3840x0 --rotate normal \
+#         --output DP-2 --primary --mode 1920x1080 --rate 143.85 --pos 1920x0 --rotate normal --left-of DP-4  \
+#         --output DP-0 --mode 1920x1080 --rate 143.85 --pos 0x0 --rotate normal --left-of DP-2 \
+#         --output HDMI-0 --off
+
 exec --no-startup-id xrandr \
-        --output DP-4 --mode 1920x1080 --rate 143.85 --pos 3840x0 --rotate normal \
-        --output DP-2 --primary --mode 1920x1080 --rate 143.85 --pos 1920x0 --rotate normal --left-of DP-4  \
-        --output DP-0 --mode 1920x1080 --rate 143.85 --pos 0x0 --rotate normal --left-of DP-2 \
-        --output HDMI-0 --off
+        --output HDMI-0 --mode 3840x2160 --rate 120.00 --pos 0x0 --rotate normal --left-of DP-4 \
+        --output DP-4 --mode 1920x1080 --rate 143.85 --pos 3840x0 --rotate normal --left-of DP-0 \
+        --output DP-0 --mode 1920x1080 --rate 143.85 --pos 5760x0 --rotate normal --left-of DP-2 \
+        --output DP-2 --mode 1920x1080 --rate 143.85 --pos 7680x0 --rotate normal
 
 # exec --no-startup-id mpd
 
