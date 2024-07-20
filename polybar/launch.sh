@@ -10,7 +10,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar
 if type "xrandr"; then
-    for MON in $(xrandr --query | grep " connected" | grep -v "primary" | cut -d " " -f 1); do
+    for MON in $(xrandr --query | grep " connected" | grep -v "primary" | grep -v "None" | cut -d " " -f 1); do
         MONITOR=$MON polybar -c ~/.config/polybar/config.ini main &
     done
 else
