@@ -1,0 +1,13 @@
+[legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(0,0,0)'
+background-transparency-percent=18
+cursor-blink-mode='on'
+cursor-shape='underline'
+default-size-columns=120
+default-size-rows=30
+font='MesloLGS NF 14'
+foreground-color='rgb(255,255,255)'
+use-system-font=false
+use-theme-colors=false
+use-theme-transparency=false
+use-transparent-background=true

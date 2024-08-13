@@ -1,0 +1,4 @@
+[custom0]
+binding='<Super>period'
+command='/home/marcogomez/ZDotfiles/shellscripts/emoji'
+name='Emoji Picker'

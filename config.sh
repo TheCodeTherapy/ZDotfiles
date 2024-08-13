@@ -554,6 +554,16 @@ install_chrome () {
     fi
 }
 
+restore_terminal_cfg () {
+    dconf load /org/gnome/terminal/ < \
+        ${HOME}/ZDotfiles/terminal/gnome-terminal-settings-backup.dconf
+}
+
+restore_bind_keys () {
+    dconf load /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ < \
+        ${HOME}/ZDotfiles/bindkeys/gnome-custom-shortcuts.dconf
+}
+
 update_system
 
 install_basic_packages
@@ -580,6 +590,8 @@ install_docker_compose
 
 install_fd
 setup_fonts
+restore_terminal_cfg
+restore_bind_keys
 
 # install_i3
 # install_i3_status
