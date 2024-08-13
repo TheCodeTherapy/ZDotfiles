@@ -147,9 +147,8 @@ install_basic_packages () {
         inxi most ttfautohint v4l2loopback-dkms ffmpeg \
         ranger libxext-dev ripgrep python3-pynvim xclip libnotify-bin \
         libfontconfig1-dev libfreetype-dev jq pixz hashdeep liblxc-dev \
-        jackd qjackctl ardour pulseaudio-module-jack pipewire pavucontrol \
         libxrandr-dev libxinerama-dev libxcursor-dev libglx-dev libgl-dev \
-        screenkey mypaint rofi liferea hexchat gimp blender imagemagick \
+        screenkey mypaint rofi gimp blender imagemagick \
         libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev \
         libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev \
         libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \
@@ -556,8 +555,13 @@ install_chrome () {
 }
 
 update_system
+
 install_basic_packages
 install_extra_packages
+
+install_chrome
+customize_vscode
+
 
 fix_cedilla
 make_caps_super
@@ -577,18 +581,16 @@ install_docker_compose
 install_fd
 setup_fonts
 
-install_i3
-install_i3_status
-install_picom
-install_polybar
-install_alacritty
-restore_xorg
+# install_i3
+# install_i3_status
+# install_picom
+# install_polybar
+# install_alacritty
+# restore_xorg
 
-install_reaper
-customize_vscode
-install_neovim
+# install_reaper
+# install_neovim
 
-install_chrome
 
 source ${ME}/.bashrc
 sudo updatedb
