@@ -1,16 +1,14 @@
 {
-  "editor.fontSize": 19,
+  "editor.fontSize": 17,
+  "editor.fontFamily": "MesloLGS NF",
   "editor.fontLigatures": false,
-  "window.titleBarStyle": "custom",
+  // "window.titleBarStyle": "custom",
   "files.associations": {
     "**/.i3/config": "i3",
     "**/i3/config": "i3"
   },
   "workbench.colorCustomizations": {
-    // "editor.background": "#24283b",
-    // "editor.background": "#1e2030"
   },
   "editor.semanticHighlighting.enabled": true,
-  // "workbench.colorTheme": "TheCodeTheme Dark",
   "explorer.compactFolders": false
 }
