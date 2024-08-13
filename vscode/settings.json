@@ -1,4 +1,5 @@
 {
+  "editor.tabSize": 2,
   "editor.fontSize": 17,
   "editor.fontFamily": "MesloLGS NF",
   "editor.fontLigatures": false,
@@ -8,7 +9,52 @@
     "**/i3/config": "i3"
   },
   "workbench.colorCustomizations": {
+    "editor.background": "#070710",
+    "editorGroupHeader.tabsBackground": "#070710",
+    "activityBar.background": "#070710",
+    "minimap.background": "#070710",
+    "sideBar.background": "#070710",
+    "sideBarSectionHeader.background": "#070710",
+    "statusBar.background": "#070710",
+    "tab.activeBorder": "#ffffff",
+    "tab.inactiveBackground": "#070710",
+    "titleBar.activeBackground": "#070710",
+    "titleBar.border": "#070710",
+    "window.activeBorder": "#070710",
+    "window.inactiveBorder": "#070710",
+    "breadcrumb.background": "#07071000",
+    "editorGutter.background": "#07071000",
+    "sideBarTitle.foreground": "#07071000",
+    "tab.border": "#070710",
+    "activityBar.dropBorder": "#07071000",
+    "tab.activeBackground": "#070710",
+    "tab.lastPinnedBorder": "#cccccc33",
+    "terminal.foreground": "#dddddd",
+    "terminal.background": "#070717",
+    "terminal.selectionBackground": "#C1DEFF",
+    "terminalCursor.background": "#000000",
+    "terminalCursor.foreground": "#AAFFAA"
   },
   "editor.semanticHighlighting.enabled": true,
-  "explorer.compactFolders": false
+  "explorer.compactFolders": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "[json][jsonc]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "search.exclude": {
+    "package-lock.json": true
+  }
 }
