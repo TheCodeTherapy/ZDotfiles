@@ -2,3 +2,8 @@
 binding='<Super>period'
 command='/home/marcogomez/ZDotfiles/shellscripts/emoji'
 name='Emoji Picker'
+
+[custom1]
+binding='<Super>slash'
+command='/home/marcogomez/ZDotfiles/shellscripts/conkytoggle'
+name='Conky Toggle'
