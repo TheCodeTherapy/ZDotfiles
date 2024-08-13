@@ -148,7 +148,7 @@ install_basic_packages () {
         ranger libxext-dev ripgrep python3-pynvim xclip libnotify-bin \
         libfontconfig1-dev libfreetype-dev jq pixz hashdeep liblxc-dev \
         libxrandr-dev libxinerama-dev libxcursor-dev libglx-dev libgl-dev \
-        screenkey mypaint rofi gimp blender imagemagick \
+        screenkey mypaint rofi gimp blender imagemagick net-tools \
         libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev \
         libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev \
         libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \
