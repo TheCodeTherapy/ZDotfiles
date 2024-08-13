@@ -144,7 +144,7 @@ install_basic_packages () {
         clang clang-tools ca-certificates curl gnupg lsb-release \
         python-is-python3 ipython3 python3-pip python3-dev \
         unzip lzma tree neofetch git git-lfs zsh tmux gnome-tweaks \
-        inxi most ttfautohint v4l2loopback-dkms ffmpeg \
+        inxi most ttfautohint v4l2loopback-dkms ffmpeg htop \
         ranger libxext-dev ripgrep python3-pynvim xclip libnotify-bin \
         libfontconfig1-dev libfreetype-dev jq pixz hashdeep liblxc-dev \
         libxrandr-dev libxinerama-dev libxcursor-dev libglx-dev libgl-dev \
@@ -166,7 +166,7 @@ install_basic_packages () {
         python3-gi gir1.2-gtk-3.0 python3-gi-cairo python3-cairo \
         python3-setuptools python3-babel python3-dbus \
         fonts-font-awesome slop gir1.2-ayatanaappindicator3-0.1 \
-        libgtk-4-dev libx11-dev libxcomposite-dev libxfixes-dev
+        libgtk-4-dev libx11-dev libxcomposite-dev libxfixes-dev \
     # sudo aptitude install \
     #     openjdk-8-jre=8u312-b07-0ubuntu1 \
     #     openjdk-8-jre-headless=8u312-b07-0ubuntu1
