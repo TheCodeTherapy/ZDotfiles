@@ -31,19 +31,19 @@ declare -rA COLORS=(
 )
 
 print_red() {
-  echo -e "\n${COLORS[RED]}${1}${COLORS[OFF]}\n"
+  echo -e "${COLORS[RED]}${1}${COLORS[OFF]}"
 }
 
 print_yellow() {
-  echo -e "\n${COLORS[YELLOW]}${1}${COLORS[OFF]}\n"
+  echo -e "${COLORS[YELLOW]}${1}${COLORS[OFF]}"
 }
 
 print_green() {
-  echo -e "\n${COLORS[GREEN]}${1}${COLORS[OFF]}\n"
+  echo -e "${COLORS[GREEN]}${1}${COLORS[OFF]}"
 }
 
 print_cyan() {
-  echo -e "\n${COLORS[CYAN]}${1}${COLORS[OFF]}\n"
+  echo -e "${COLORS[CYAN]}${1}${COLORS[OFF]}"
 }
 
 wait_key() {
@@ -73,29 +73,31 @@ link_dotfiles() {
   print_yellow "${msg}"
   mkdir -p ${DOTLOCAL}
 
-  if [[ -f ./attract/attract.cfg ]]; then
+  if [[ -f $DOTDIR/homeconfig/attract/attract.cfg ]]; then
     msg="Attract Mode configs already retrieved."
     print_green "${msg}"
   else
     msg="RETRIEVING ATTRACT MODE CONFIG ..."
     print_yellow "${msg}"
+    cd $DOTDIR/homeconfig
     git clone https://github.com/TheCodeTherapy/attract-cfg.git attract
+    cd $DOTDIR
   fi
 
-  home_link "profile/profile" ".profile"
-  home_link "bash/bashrc" ".bashrc"
-  home_link "bash/inputrc" ".inputrc"
-  home_link "zsh/zshrc" ".zshrc"
-  home_link "zsh/zshenv" ".zshenv"
+  home_link "homeconfig/profile/profile" ".profile"
+  home_link "homeconfig/bash/bashrc" ".bashrc"
+  home_link "homeconfig/bash/inputrc" ".inputrc"
+  home_link "homeconfig/zsh/zshrc" ".zshrc"
+  home_link "homeconfig/zsh/zshenv" ".zshenv"
 
-  home_link "x/XCompose" ".XCompose"
-  home_link "themes" ".themes"
-  home_link "mame" ".mame"
+  home_link "homeconfig/x/XCompose" ".XCompose"
+  home_link "homeconfig/themes" ".themes"
+  home_link "homeconfig/mame" ".mame"
 
-  home_link "darkplaces" ".darkplaces"
-  home_link "lutris" ".local/share/lutris"
-  home_link "attract" ".attract"
-  home_link "vst3" ".vst3"
+  home_link "homeconfig/darkplaces" ".darkplaces"
+  home_link "homeconfig/lutris" ".local/share/lutris"
+  home_link "homeconfig/attract" ".attract"
+  home_link "homeconfig/vst3" ".vst3"
 
   home_link_cfg "scummvm"
   home_link_cfg "screenkey"
@@ -243,11 +245,11 @@ install_extra_packages() {
 fix_cedilla() {
   msg="Fixing cedilla character on XCompose..."
   print_cyan "${msg}"
-  mkdir -p $DOTDIR/x
+  mkdir -p $DOTDIR/homeconfig/x
   sed -e 's,\xc4\x86,\xc3\x87,g' -e 's,\xc4\x87,\xc3\xa7,g' \
     </usr/share/X11/locale/en_US.UTF-8/Compose \
-    >$DOTDIR/x/XCompose
-  home_link "x/XCompose" ".XCompose"
+    >$DOTDIR/homeconfig/x/XCompose
+  home_link "homeconfig/x/XCompose" ".XCompose"
   sudo cp /usr/lib/x86_64-linux-gnu/gtk-3.0/3.0.0/immodules.cache /usr/lib/x86_64-linux-gnu/gtk-3.0/3.0.0/immodules.cache.bckp
   sudo sed -i 's,"az:ca:co:fr:gv:oc:pt:sq:tr:wa","az:ca:co:fr:gv:oc:pt:sq:tr:wa:en",g' /usr/lib/x86_64-linux-gnu/gtk-3.0/3.0.0/immodules.cache
   sudo cp /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules.cache /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules.cache.bckp

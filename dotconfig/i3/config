@@ -215,7 +215,7 @@ bindsym --whole-window --border $sup+shift+button5 workspace next
 for_window [class="QjackCtl" instance="qjackctl"] floating enable
 for_window [title="^Friends List$"] floating enable
 
-#exec --no-startup-id picom --config ~/ZDotfiles/picom/picom.conf
+#exec --no-startup-id picom --config ~/ZDotfiles/dotconfig/picom/picom.conf
 
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
@@ -236,7 +236,7 @@ exec --no-startup-id xrandr \
 
 # exec --no-startup-id /home/marcogomez/Apps/Telegram/Telegram
 exec --no-startup-id feh --bg-scale --no-xinerama ~/ZDotfiles/wallpaper/waves_ai.jpg
-exec --no-startup-id $HOME/ZDotfiles/polybar/launch.sh
+exec --no-startup-id $HOME/ZDotfiles/dotconfig/polybar/launch.sh
 exec --no-startup-id obs
 exec --no-startup-id discord
 exec --no-startup-id qjackctl
