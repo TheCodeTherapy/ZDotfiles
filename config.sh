@@ -69,6 +69,7 @@ home_link_cfg() {
 }
 
 link_dotfiles() {
+  echo
   msg="LINKING DOTFILES ..."
   print_yellow "${msg}"
   mkdir -p ${DOTLOCAL}
@@ -112,6 +113,7 @@ link_dotfiles() {
 }
 
 link_launchers () {
+  echo
   mkdir -p $ME/.local/share/applications
   home_link "homeconfig/launchers/org.gnome.Terminal.desktop" ".local/share/applications/org.gnome.Terminal.desktop"
   update-desktop-database $ME/.local/share/applications
@@ -135,6 +137,7 @@ install_with_snap() {
 }
 
 update_system() {
+  echo
   msg="UPDATING SYSTEM ..."
   print_yellow "${msg}"
   sudo apt --assume-yes update && sudo apt --assume-yes full-upgrade
@@ -144,6 +147,7 @@ update_system() {
 }
 
 install_basic_packages() {
+  echo
   msg="INSTALLING BASIC PACKAGES ..."
   mkdir -p ${BINDIR}
   print_yellow "${msg}"
@@ -187,6 +191,7 @@ install_basic_packages() {
 }
 
 install_vscode() {
+  echo
   if $(code --version >/dev/null 2>&1); then
     msg="VSCode already installed."
     print_green "${msg}"
@@ -207,6 +212,7 @@ install_vscode() {
 }
 
 install_obs_studio() {
+  echo
   PPA=$(ls /etc/apt/sources.list.d/obs* 2>/dev/null | wc -l)
   if [ $PPA != 0 ]; then
     msg="OBS Studio PPA already configured."
@@ -224,6 +230,7 @@ install_obs_studio() {
 }
 
 install_extra_packages() {
+  echo
   msg="INSTALLING EXTRA PACKAGES ..."
   print_yellow "${msg}"
   if $(cat /etc/os-release | head -n 1 | grep "Pop" >/dev/null 2>&1); then
@@ -243,6 +250,7 @@ install_extra_packages() {
 }
 
 fix_cedilla() {
+  echo
   msg="Fixing cedilla character on XCompose..."
   print_cyan "${msg}"
   mkdir -p $DOTDIR/homeconfig/x
@@ -258,6 +266,7 @@ fix_cedilla() {
 }
 
 make_caps_super() {
+  echo
   msg="Replacing CAPS key by Super key ..."
   print_yellow "${msg}"
   sudo cp ${DOTDIR}/keyboard/keyboard /etc/default/keyboard
@@ -265,6 +274,7 @@ make_caps_super() {
 }
 
 install_nvm() {
+  echo
   msg="INSTALLING NVM ..."
   print_yellow "${msg}"
   if [[ -f $NVMDIR/nvm.sh ]]; then
@@ -277,6 +287,7 @@ install_nvm() {
 }
 
 install_node() {
+  echo
   msg="INSTALLING NODEJS ..."
   print_yellow "${msg}"
   if [[ -f $NVMDIR/nvm.sh ]]; then
@@ -297,6 +308,7 @@ install_node() {
 }
 
 install_yarn() {
+  echo
   if $(yarn --version >/dev/null 2>&1); then
     msg="Yarn already installed."
     print_green "${msg}"
@@ -312,6 +324,7 @@ install_yarn() {
 }
 
 install_rust() {
+  echo
   if [[ -f /etc/profile.d/rust.sh ]]; then
     msg="Rust already installed."
     print_green "${msg}"
@@ -325,6 +338,7 @@ install_rust() {
 }
 
 install_exa() {
+  echo
   if [[ -f $HOME/.cargo/bin/exa ]]; then
     msg="Exa already installed."
     print_green "${msg}"
@@ -336,6 +350,7 @@ install_exa() {
 }
 
 install_xcolor() {
+  echo
   if [[ -f $HOME/.cargo/bin/xcolor ]]; then
     msg="XColor already installed."
     print_green "${msg}"
@@ -347,6 +362,7 @@ install_xcolor() {
 }
 
 choose_fastest_mirror() {
+  echo
   sudo apt -y install curl
   msg="# Checking mirrors speed (please wait)..."
   print_cyan "${msg}"
@@ -373,6 +389,7 @@ choose_fastest_mirror() {
 }
 
 protect_hosts() {
+  echo
   if [ ! -f "$HOSTSBACKUP" ]; then
     sudo cp /etc/hosts $HOSTSBACKUP
   fi
@@ -396,6 +413,7 @@ restore_xorg() {
 }
 
 install_neovim() {
+  echo
   if [[ -f /usr/bin/nvim ]]; then
     msg="Neovim already installed."
     print_green "${msg}"
@@ -410,10 +428,10 @@ install_neovim() {
     sudo dpkg -i nvim-linux64.deb
     cd $DOTDIR
   fi
-  home_link_cfg "nvim"
 }
 
 install_docker() {
+  echo
   if $(docker --version >/dev/null 2>&1); then
     msg="Docker already installed."
     print_green "${msg}"
@@ -438,6 +456,7 @@ install_docker() {
 }
 
 install_docker_compose() {
+  echo
   if $(docker-compose --version >/dev/null 2>&1); then
     msg="Docker-compose already installed."
     print_green "${msg}"
@@ -450,6 +469,7 @@ install_docker_compose() {
 }
 
 install_fd() {
+  echo
   if $(fd --version >/dev/null 2>&1); then
     msg="fd already installed."
     print_green "${msg}"
@@ -461,6 +481,7 @@ install_fd() {
 }
 
 setup_fonts() {
+  echo
   msg="SETTING UP FONTS ..."
   print_yellow "${msg}"
   rm -rf $ME/.fonts >/dev/null 2>&1 &&
@@ -470,6 +491,7 @@ setup_fonts() {
 }
 
 install_i3() {
+  echo
   msg="Building i3-wm ..."
   print_yellow "${msg}"
   cd $DOTDIR
@@ -484,6 +506,7 @@ install_i3() {
 }
 
 install_i3_status() {
+  echo
   msg="Building i3-status ..."
   print_yellow "${msg}"
   cd $DOTDIR
@@ -498,6 +521,7 @@ install_i3_status() {
 }
 
 install_picom() {
+  echo
   msg="Building picom ..."
   print_yellow "${msg}"
   cd $DOTDIR
@@ -511,6 +535,7 @@ install_picom() {
 }
 
 install_polybar() {
+  echo
   msg="Building polybar ..."
   print_yellow "${msg}"
   cd $DOTDIR
@@ -525,12 +550,14 @@ install_polybar() {
 }
 
 install_alacritty() {
+  echo
   msg="Building alacritty ..."
   print_yellow "${msg}"
   cargo install alacritty
 }
 
 customize_vscode() {
+  echo
   msg="Customizing vscode ..."
   print_yellow "${msg}"
   sudo rm -rf ${CFG}/Code/User/settings.json >/dev/null 2>&1 &&
@@ -539,6 +566,7 @@ customize_vscode() {
 }
 
 install_reaper() {
+  echo
   if [[ -f $ME/.gnome/apps/cockos-reaper.desktop ]]; then
     msg="Reaper already installed."
     print_green "${msg}"
@@ -554,6 +582,7 @@ install_reaper() {
 }
 
 install_chrome() {
+  echo
   if $(google-chrome-stable --version >/dev/null 2>&1); then
     msg="Google Chrome already installed."
     print_green "${msg}"
@@ -568,6 +597,7 @@ install_chrome() {
 }
 
 install_lazygit() {
+  echo
   if $(lazygit --version >/dev/null 2>&1); then
     msg="Lazygit already installed."
     print_green "${msg}"
@@ -609,6 +639,7 @@ customize_vscode
 
 fix_cedilla
 make_caps_super
+
 link_dotfiles
 link_launchers
 
@@ -622,9 +653,8 @@ install_xcolor
 
 install_docker
 install_docker_compose
-
 install_fd
-setup_fonts
+
 restore_terminal_cfg
 restore_bind_keys
 restore_monitor_cfg
@@ -642,8 +672,11 @@ install_lazygit
 install_neovim
 
 # source ${ME}/.bashrc
-sudo updatedb
 
+sudo updatedb
+setup_fonts
+
+echo
 msg="CONFIG COMPLETE"
 print_cyan "${msg}"
 
