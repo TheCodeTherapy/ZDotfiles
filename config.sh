@@ -112,7 +112,7 @@ link_dotfiles() {
   home_link_cfg "neofetch"
 }
 
-link_launchers () {
+link_launchers() {
   echo
   mkdir -p $ME/.local/share/applications
   home_link "homeconfig/launchers/org.gnome.Terminal.desktop" ".local/share/applications/org.gnome.Terminal.desktop"
