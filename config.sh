@@ -641,7 +641,6 @@ fix_cedilla
 make_caps_super
 
 link_dotfiles
-link_launchers
 
 install_nvm
 install_node
@@ -657,7 +656,9 @@ install_fd
 
 restore_terminal_cfg
 restore_bind_keys
-restore_monitor_cfg
+
+# link_launchers
+# restore_monitor_cfg
 
 # install_i3
 # install_i3_status
