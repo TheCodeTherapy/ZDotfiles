@@ -56,5 +56,6 @@
   },
   "search.exclude": {
     "package-lock.json": true
-  }
+  },
+  "github.copilot.preferredAccount": "TheCodeTherapy"
 }
