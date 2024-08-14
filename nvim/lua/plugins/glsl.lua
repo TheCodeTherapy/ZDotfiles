@@ -1,3 +1,0 @@
-return {
-  { "tikhomirov/vim-glsl" },
-}
