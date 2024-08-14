@@ -108,6 +108,12 @@ link_dotfiles() {
   home_link_cfg "dunst"
 }
 
+link_launchers () {
+  mkdir -p $ME/.local/share/applications
+  home_link "launchers/org.gnome.Terminal.desktop" ".local/share/applications/org.gnome.Terminal.desktop"
+  update-desktop-database $ME/.local/share/applications
+}
+
 install_with_aptitude() {
   msg="Installing $1 ..."
   print_yellow "${msg}"
@@ -601,6 +607,7 @@ customize_vscode
 fix_cedilla
 make_caps_super
 link_dotfiles
+link_launchers
 
 install_nvm
 install_node
