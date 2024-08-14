@@ -1,12 +1,15 @@
 [legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
 background-color='rgb(18,18,33)'
 background-transparency-percent=0
+bold-is-bright=true
 cursor-blink-mode='on'
 cursor-shape='underline'
 default-size-columns=120
 default-size-rows=30
 font='MesloLGS NF 13'
 foreground-color='rgb(255,255,255)'
+scrollback-lines=21000
+scrollbar-policy='never'
 use-system-font=false
 use-theme-colors=false
 use-theme-transparency=false
