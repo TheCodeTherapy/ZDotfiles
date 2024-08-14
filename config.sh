@@ -85,9 +85,13 @@ link_dotfiles() {
   home_link "profile/profile" ".profile"
   home_link "bash/bashrc" ".bashrc"
   home_link "bash/inputrc" ".inputrc"
+  home_link "zsh/zshrc" ".zshrc"
+  home_link "zsh/zshenv" ".zshenv"
+
   home_link "x/XCompose" ".XCompose"
   home_link "themes" ".themes"
   home_link "mame" ".mame"
+
   home_link "darkplaces" ".darkplaces"
   home_link "lutris" ".local/share/lutris"
   home_link "attract" ".attract"
