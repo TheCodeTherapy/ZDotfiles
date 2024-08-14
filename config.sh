@@ -582,6 +582,10 @@ restore_bind_keys() {
     ${HOME}/ZDotfiles/bindkeys/gnome-custom-shortcuts.dconf
 }
 
+restore_monitor_cfg() {
+  cp ${HOME}/ZDotfiles/monitor/monitors-backup.xml ~/.config/monitors.xml
+}
+
 update_system
 
 install_basic_packages
@@ -609,6 +613,7 @@ install_fd
 setup_fonts
 restore_terminal_cfg
 restore_bind_keys
+restore_monitor_cfg
 
 # install_i3
 # install_i3_status
