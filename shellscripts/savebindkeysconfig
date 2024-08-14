@@ -1,7 +1,7 @@
 #!/bin/bash
 save_bind_keys() {
   dconf dump /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ > \
-    ${HOME}/ZDotfiles/bindkeys/gnome-custom-shortcuts.dconf
+    ${HOME}/ZDotfiles/dconf/gnome-custom-shortcuts.dconf
 }
 
 save_bind_keys

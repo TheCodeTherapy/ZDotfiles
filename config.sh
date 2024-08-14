@@ -61,11 +61,11 @@ home_link() {
 }
 
 home_link_cfg() {
-  msg="[LINKING] $DOTDIR/$1 to $CFG/$1"
+  msg="[LINKING] $DOTDIR/dotconfig/$1 to $CFG/$1"
   print_cyan "${msg}"
   sudo rm -rf $CFG/$1 >/dev/null 2>&1 &&
-    ln -s $DOTDIR/$1 $CFG/. ||
-    ln -s $DOTDIR/$1 $CFG/.
+    ln -s $DOTDIR/dotconfig/$1 $CFG/. ||
+    ln -s $DOTDIR/dotconfig/$1 $CFG/.
 }
 
 link_dotfiles() {
@@ -584,12 +584,12 @@ install_lazygit() {
 
 restore_terminal_cfg() {
   dconf load /org/gnome/terminal/ < \
-    ${HOME}/ZDotfiles/terminal/gnome-terminal-settings-backup.dconf
+    ${HOME}/ZDotfiles/dconf/gnome-terminal-settings-backup.dconf
 }
 
 restore_bind_keys() {
   dconf load /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ < \
-    ${HOME}/ZDotfiles/bindkeys/gnome-custom-shortcuts.dconf
+    ${HOME}/ZDotfiles/dconf/gnome-custom-shortcuts.dconf
 }
 
 restore_monitor_cfg() {
