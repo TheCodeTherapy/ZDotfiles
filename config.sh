@@ -113,7 +113,7 @@ link_dotfiles() {
 
 link_launchers () {
   mkdir -p $ME/.local/share/applications
-  home_link "launchers/org.gnome.Terminal.desktop" ".local/share/applications/org.gnome.Terminal.desktop"
+  home_link "homeconfig/launchers/org.gnome.Terminal.desktop" ".local/share/applications/org.gnome.Terminal.desktop"
   update-desktop-database $ME/.local/share/applications
 }
 
