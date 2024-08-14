@@ -1,0 +1,26 @@
+#!/bin/bash
+
+install_prism_dependencies () {
+  sudo apt --assume-yes update
+  sudo apt --assume-yes upgrade
+  sudo apt --assume-yes install qt6-base-dev qtchooser \
+    qt6-base-dev-tools libqt6core6t64 libqt6core5compat6 \
+    libqt6core5compat6-dev libqt6networkauth6-dev \
+    libqt6network6t64 cmake ninja-build extra-cmake-modules \
+    zlib1g-dev libgl1-mesa-dev scdoc openjdk-17-jdk
+}
+
+build_prism_launcher () {
+  mkdir -p ${HOME}/Games
+  cd ${HOME}/Games
+  git clone --recursive https://github.com/PrismLauncher/PrismLauncher.git
+  cd PrismLauncher
+  cmake -S . -B build -G Ninja \
+    -DCMAKE_INSTALL_PREFIX=install
+  cmake --build build
+  cmake --install build
+  cmake --install build --component portable
+}
+
+install_prism_dependencies
+build_prism_launcher
