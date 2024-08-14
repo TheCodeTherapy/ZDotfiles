@@ -1,0 +1,6 @@
+#!/bin/bash
+save_monitor_cfg() {
+  cp ~/.config/monitors.xml ${HOME}/ZDotfiles/monitor/monitors-backup.xml
+}
+
+save_monitor_cfg

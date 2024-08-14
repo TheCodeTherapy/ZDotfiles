@@ -1,0 +1,7 @@
+#!/bin/bash
+save_terminal_cfg() {
+  dconf dump /org/gnome/terminal/ > \
+    ${HOME}/ZDotfiles/terminal/gnome-terminal-settings-backup.dconf
+}
+
+save_terminal_cfg
