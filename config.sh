@@ -106,6 +106,7 @@ link_dotfiles() {
   home_link_cfg "alacritty"
   home_link_cfg "picom"
   home_link_cfg "dunst"
+  home_link_cfg "neofetch"
 }
 
 link_launchers () {
