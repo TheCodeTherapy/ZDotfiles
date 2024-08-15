@@ -123,6 +123,57 @@ local function create_and_preview_diagnostics()
   vim.cmd("MarkdownPreview")
 end
 
+local function make_and_run()
+  vim.cmd("w")
+  vim.fn.system("make && make run")
+end
+
+local function build_and_run()
+  vim.cmd("w") -- Save the current file.
+
+  -- Command to execute
+  local build_command = "make && make run; echo Exit code: $?"
+
+  -- Open a floating toggle terminal
+  vim.cmd("ToggleTerm direction=float")
+
+  -- Define and configure the terminal
+  local term = require("toggleterm.terminal").Terminal:new({
+    cmd = build_command,
+    hidden = true,
+    direction = "float",
+    close_on_exit = false, -- Set to false to handle reading the output
+    on_stdout = function(t, job, data, name)
+      print(t)
+      print(job)
+      print(data)
+      print(name)
+    end,
+    on_exit = function(term)
+      -- Read the last few lines of the terminal output to get the exit code
+      vim.defer_fn(function()
+        local lines = vim.api.nvim_buf_get_lines(term.bufnr, -3, -1, false)
+        for _, line in ipairs(lines) do
+          local exit_code = line:match("Exit code: (%d+)")
+          print(exit_code)
+          if exit_code then
+            exit_code = tonumber(exit_code)
+            if exit_code ~= 0 then
+              print("Build failed with exit code " .. exit_code)
+            end
+            break
+          end
+        end
+        vim.cmd(term.bufnr .. "bd!") -- Close the buffer after checking
+      end, 1000) -- Delay to ensure output is ready to be read
+    end,
+  })
+
+  term:toggle()
+end
+
+keymap.set("n", "<F8>", build_and_run, opts)
+
 keymap.set("n", "<leader>ccm", create_and_preview_diagnostics, opts)
 keymap.set("n", "<leader>cca", copy_file_and_diagnostics_to_clipboard, opts)
 keymap.set("n", "<leader>cc", copy_diagnostics_to_clipboard, opts)
@@ -199,6 +250,14 @@ local function force_signature_help()
   signature_help_forced = true
   vim.lsp.buf.signature_help()
 end
+
+---@diagnostic disable-next-line: unused-local
+local function toggle_inlay_hings()
+  local enabled = vim.lsp.inlay_hint.is_enabled()
+  vim.lsp.inlay_hint.enable(not enabled)
+end
+
+keymap.set("n", "<F9>", toggle_inlay_hings, opts)
 
 -- These mappings allow to focus on the floating window when opened.
 keymap.set("n", "<C-k>", force_signature_help, opts)

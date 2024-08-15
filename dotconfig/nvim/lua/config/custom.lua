@@ -43,3 +43,24 @@ for _, lsp in ipairs(servers) do
     end,
   })
 end
+
+-- Add the search and replace functionality
+local M = {}
+
+M.search_and_replace = function()
+  local word = vim.fn.expand("<cword>")
+
+  require("telescope.builtin").grep_string({
+    search = word,
+    word_match = "-w",
+    use_regex = false,
+    search_dirs = { vim.fn.getcwd() },
+    prompt_title = "Search and Replace",
+  })
+
+  vim.api.nvim_command("copen")
+  vim.api.nvim_command("setlocal modifiable")
+  vim.api.nvim_command("cdo s/\\<" .. word .. "\\>/\\=" .. 'input("Replace with: ")' .. "/g | update")
+end
+
+return M
