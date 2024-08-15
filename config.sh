@@ -90,6 +90,7 @@ link_dotfiles() {
   home_link "homeconfig/bash/inputrc" ".inputrc"
   home_link "homeconfig/zsh/zshrc" ".zshrc"
   home_link "homeconfig/zsh/zshenv" ".zshenv"
+  home_link "homeconfig/tmux/tmux.conf" ".tmux.conf"
 
   home_link "homeconfig/x/XCompose" ".XCompose"
   home_link "homeconfig/themes" ".themes"
@@ -159,9 +160,9 @@ install_basic_packages() {
     pkg-config autoconf automake cmake cmake-data \
     ninja-build gettext libtool libtool-bin g++ meson \
     clang clang-tools ca-certificates curl gnupg lsb-release \
-    python-is-python3 ipython3 python3-pip python3-dev \
+    python-is-python3 ipython3 python3-pip python3-dev gawk \
     unzip lzma tree neofetch git git-lfs zsh tmux gnome-tweaks \
-    inxi most ttfautohint v4l2loopback-dkms ffmpeg htop \
+    inxi most ttfautohint v4l2loopback-dkms ffmpeg htop bc \
     ranger libxext-dev ripgrep python3-pynvim xclip libnotify-bin \
     libfontconfig1-dev libfreetype-dev jq pixz hashdeep liblxc-dev \
     libxrandr-dev libxinerama-dev libxcursor-dev libglx-dev libgl-dev \
@@ -181,7 +182,7 @@ install_basic_packages() {
     python3-xcbgen libxcb-ewmh-dev libjsoncpp-dev libmpdclient-dev \
     libcurl4-openssl-dev xcb-proto policykit-1-gnome \
     python3-gi gir1.2-gtk-3.0 python3-gi-cairo python3-cairo \
-    python3-setuptools python3-babel python3-dbus \
+    python3-setuptools python3-babel python3-dbus playerctl \
     fonts-font-awesome slop gir1.2-ayatanaappindicator3-0.1 \
     libgtk-4-dev libx11-dev libxcomposite-dev libxfixes-dev
   # sudo aptitude install \
@@ -422,8 +423,10 @@ install_neovim() {
     print_yellow "${msg}"
     cd $DOTDIR
     git clone https://github.com/neovim/neovim
-    git checkout stable
-    cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo -j$(nproc)
+    cd neovim
+    git fetch --tags
+    git checkout v0.10.1
+    make CMAKE_BUILD_TYPE=RelWithDebInfo -j$(nproc)
     cd build && cpack -G DEB
     sudo dpkg -i nvim-linux64.deb
     cd $DOTDIR
@@ -615,17 +618,35 @@ install_lazygit() {
   fi
 }
 
+install_tmux_plugin_manager() {
+  echo
+  if [[ -d $ME/.tmux/plugins/tpm ]]; then
+    msg="Tmux Plugin Manager already installed."
+    print_green "${msg}"
+  else
+    msg="Installing Tmux Plugin Manager..."
+    print_yellow "${msg}"
+    git clone https://github.com/tmux-plugins/tpm ${ME}/.tmux/plugins/tpm
+  fi
+}
+
 restore_terminal_cfg() {
+  msg="Restoring terminal configuration"
+  print_cyan "${msg}"
   dconf load /org/gnome/terminal/ < \
-    ${HOME}/ZDotfiles/dconf/gnome-terminal-settings-backup.dconf
+    ${DOTDIR}/dconf/gnome-terminal-settings-backup.dconf
 }
 
 restore_bind_keys() {
+  msg="Restoring custom shortcuts"
+  print_cyan "${msg}"
   dconf load /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ < \
-    ${HOME}/ZDotfiles/dconf/gnome-custom-shortcuts.dconf
+    ${DOTDIR}/dconf/gnome-custom-shortcuts.dconf
 }
 
 restore_monitor_cfg() {
+  msg="Restoring monitor configuration"
+  print_cyan "${msg}"
   cp ${HOME}/ZDotfiles/monitor/monitors-backup.xml ~/.config/monitors.xml
 }
 
@@ -671,6 +692,7 @@ restore_bind_keys
 
 install_lazygit
 install_neovim
+install_tmux_plugin_manager
 
 # source ${ME}/.bashrc
 
