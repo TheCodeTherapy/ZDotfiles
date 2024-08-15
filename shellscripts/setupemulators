@@ -129,7 +129,7 @@ install_attract_dependencies () {
         libfontconfig1-dev libopenal-dev libsfml-dev \
         libavutil-dev libavcodec-dev libavformat-dev \
         libavfilter-dev libswscale-dev libjpeg-dev \
-        libglu1-mesa-dev libxrandr-dev
+        libglu1-mesa-dev libxrandr-dev libswresample-dev
 }
 
 build_attract () {
