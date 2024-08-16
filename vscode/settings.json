@@ -63,5 +63,9 @@
     "plaintext": false,
     "markdown": false,
     "scminput": false
-  }
+  },
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "editor.renderWhitespace": "none"
 }
