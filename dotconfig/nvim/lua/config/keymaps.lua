@@ -142,31 +142,7 @@ local function build_and_run()
     cmd = build_command,
     hidden = true,
     direction = "float",
-    close_on_exit = false, -- Set to false to handle reading the output
-    on_stdout = function(t, job, data, name)
-      print(t)
-      print(job)
-      print(data)
-      print(name)
-    end,
-    on_exit = function(term)
-      -- Read the last few lines of the terminal output to get the exit code
-      vim.defer_fn(function()
-        local lines = vim.api.nvim_buf_get_lines(term.bufnr, -3, -1, false)
-        for _, line in ipairs(lines) do
-          local exit_code = line:match("Exit code: (%d+)")
-          print(exit_code)
-          if exit_code then
-            exit_code = tonumber(exit_code)
-            if exit_code ~= 0 then
-              print("Build failed with exit code " .. exit_code)
-            end
-            break
-          end
-        end
-        vim.cmd(term.bufnr .. "bd!") -- Close the buffer after checking
-      end, 1000) -- Delay to ensure output is ready to be read
-    end,
+    close_on_exit = false, -- Keep terminal open to view output
   })
 
   term:toggle()
