@@ -184,7 +184,9 @@ install_basic_packages() {
     python3-gi gir1.2-gtk-3.0 python3-gi-cairo python3-cairo \
     python3-setuptools python3-babel python3-dbus playerctl \
     fonts-font-awesome slop gir1.2-ayatanaappindicator3-0.1 \
-    libgtk-4-dev libx11-dev libxcomposite-dev libxfixes-dev
+    libgtk-4-dev libx11-dev libxcomposite-dev libxfixes-dev \
+    libgl1-mesa-dev libxi-dev libwayland-dev
+
   # sudo aptitude install \
   #     openjdk-8-jre=8u312-b07-0ubuntu1 \
   #     openjdk-8-jre-headless=8u312-b07-0ubuntu1
