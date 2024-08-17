@@ -350,6 +350,28 @@ install_exa() {
   fi
 }
 
+install_golang() {
+  echo
+  if $(go version >/dev/null 2>&1); then
+    msg="Golang already installed."
+    print_green "${msg}"
+  else
+    msg="INSTALLING GOLANG ..."
+    print_yellow "${msg}"
+    cd $DOTDIR
+    mkdir -p temp
+    cd temp
+    wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
+    sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
+    # we mst add export PATH=$PATH:/usr/local/go/bin to $HOME/.profile IF it's not there
+    if ! grep -q '/usr/local/go/bin' $HOME/.profile; then
+      echo 'export PATH=$PATH:/usr/local/go/bin' >>$HOME/.profile
+    fi
+    source $HOME/.profile
+    go version
+  fi
+}
+
 install_xcolor() {
   echo
   if [[ -f $HOME/.cargo/bin/xcolor ]]; then
@@ -670,6 +692,8 @@ install_yarn
 install_rust
 install_exa
 install_xcolor
+
+install_golang
 
 install_docker
 install_docker_compose
