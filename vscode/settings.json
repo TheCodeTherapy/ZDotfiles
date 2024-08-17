@@ -67,5 +67,8 @@
   "[c]": {
     "editor.defaultFormatter": "xaver.clang-format"
   },
-  "editor.renderWhitespace": "none"
+  "editor.renderWhitespace": "none",
+  "zig.path": "zig",
+  "zig.zls.path": "/home/marcogomez/.config/Code/User/globalStorage/ziglang.vscode-zig/zls_install/zls",
+  "zig.initialSetupDone": true
 }
