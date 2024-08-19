@@ -33,5 +33,6 @@ export PATH=$PATH:/opt/rust/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export DOTFILES=$DOTFILESPATH
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
 export PAGER="most"
 . "$HOME/.cargo/env"
