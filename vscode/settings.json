@@ -3,19 +3,19 @@
   "editor.fontSize": 15,
   "editor.fontFamily": "MesloLGS NF",
   "editor.fontLigatures": false,
-  // "window.titleBarStyle": "custom",
+  "window.titleBarStyle": "custom",
   "files.associations": {
     "**/.i3/config": "i3",
     "**/i3/config": "i3"
   },
   "workbench.colorCustomizations": {
     "editor.background": "#070710",
-    "editorGroupHeader.tabsBackground": "#070710",
     "activityBar.background": "#070710",
     "minimap.background": "#070710",
     "sideBar.background": "#070710",
-    "sideBarSectionHeader.background": "#070710",
+    "editorGroupHeader.tabsBackground": "#070710",
     "statusBar.background": "#070710",
+    "sideBarSectionHeader.background": "#070710",
     "tab.activeBorder": "#ffffff",
     "tab.inactiveBackground": "#070710",
     "titleBar.activeBackground": "#070710",
@@ -49,6 +49,13 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true
+  },
+  "[go]": {
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
   },
   "[json][jsonc]": {
     "editor.formatOnSave": true,
