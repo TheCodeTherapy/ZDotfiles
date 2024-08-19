@@ -623,6 +623,25 @@ install_chrome() {
   fi
 }
 
+install_brave() {
+  echo
+  if $(brave-browser --version >/dev/null 2>&1); then
+    msg="Brave Browser already installed."
+    print_green "${msg}"
+  else
+    msg="Installing Brave Browser..."
+    print_yellow "${msg}"
+    sudo apt --assume-yes install curl
+    sudo curl -fsSLo \
+      /usr/share/keyrings/brave-browser-archive-keyring.gpg \
+      https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+    echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+    sudo apt --assume-yes update
+    sudo apt --assume-yes install brave-browser
+  fi
+}
+
 install_lazygit() {
   echo
   if $(lazygit --version >/dev/null 2>&1); then
@@ -680,6 +699,7 @@ install_basic_packages
 install_extra_packages
 
 install_chrome
+install_brave
 customize_vscode
 
 fix_cedilla
