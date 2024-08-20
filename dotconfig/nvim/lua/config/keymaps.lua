@@ -243,3 +243,5 @@ vim.lsp.handlers["textDocument/signatureHelp"] =
   vim.lsp.with(my_signature_help_handler(vim.lsp.handlers.signature_help), {})
 
 vim.api.nvim_set_keymap("n", "gg", "<cmd>lua require('thecodetherapy.goto').go_to_implementation()<CR>", opts)
+
+vim.api.nvim_set_keymap("n", "<leader>rr", "<cmd>lua os.exit(1)<CR>", opts)
