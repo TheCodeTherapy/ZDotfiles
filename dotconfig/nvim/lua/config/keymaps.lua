@@ -195,12 +195,31 @@ keymap.set("n", "<C-w><Right>", "<C-w>>")
 -- Disable default macro record
 keymap.set("n", "q", "<Nop>", opts)
 
--- Normie emulation
+-- Normie emulation ==========================================================
 keymap.set("n", "<S-End>", "v$")
 keymap.set("v", "<S-End>", "g_", opts)
+keymap.set("i", "<S-End>", "<Esc>v$", opts)
+
+keymap.set("n", "<S-Home>", "v0")
+keymap.set("v", "<S-Home>", "0", opts)
+keymap.set("i", "<S-Home>", "<Esc>v0", opts)
+
 keymap.set("v", "<C-c>", '"+y', opts)
 keymap.set("n", "<C-v>", '"+p', opts)
 keymap.set("i", "<C-v>", "<C-r>+", { noremap = true })
+
+-- moving lines up and down with Alt + keys in normal mode or insert mode
+keymap.set("n", "<A-Up>", ":m .-2<CR>==", opts)
+keymap.set("i", "<A-Up>", "<Esc>:m .-2<CR>==gi", opts)
+keymap.set("n", "<A-Down>", ":m .+1<CR>==", opts)
+keymap.set("i", "<A-Down>", "<Esc>:m .+1<CR>==gi", opts)
+
+-- making shift + down and shift + up select lines
+keymap.set("n", "<S-Down>", "v<Down>", opts)
+keymap.set("v", "<S-Down>", "j", opts)
+keymap.set("n", "<S-Up>", "v<Up>", opts)
+keymap.set("v", "<S-Up>", "k", opts)
+-- ===========================================================================
 
 local signature_help_window_opened = false
 local signature_help_forced = false
