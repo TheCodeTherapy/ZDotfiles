@@ -157,7 +157,7 @@ install_basic_packages() {
   sudo add-apt-repository --yes multiverse
   sudo aptitude update
   sudo aptitude -y install plocate build-essential llvm \
-    pkg-config autoconf automake cmake cmake-data \
+    pkg-config autoconf automake cmake cmake-data autopoint \
     ninja-build gettext libtool libtool-bin g++ meson \
     clang clang-tools ca-certificates curl gnupg lsb-release \
     python-is-python3 ipython3 python3-pip python3-dev gawk \
@@ -185,7 +185,8 @@ install_basic_packages() {
     python3-setuptools python3-babel python3-dbus playerctl \
     fonts-font-awesome slop gir1.2-ayatanaappindicator3-0.1 \
     libgtk-4-dev libx11-dev libxcomposite-dev libxfixes-dev \
-    libgl1-mesa-dev libxi-dev libwayland-dev
+    libgl1-mesa-dev libxi-dev libwayland-dev \
+    libncurses5-dev libreadline-dev
 
   # sudo aptitude install \
   #     openjdk-8-jre=8u312-b07-0ubuntu1 \
