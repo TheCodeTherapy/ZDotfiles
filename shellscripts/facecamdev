@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Define the expected device name and a control value to look for
+EXPECTED_DEVICE_NAME="Elgato Facecam"
+EXPECTED_CONTROL="brightness"
+
+# Get the list of video devices
+devices=$(v4l2-ctl --list-devices)
+
+# Initialize the variable to store the correct video device path
+correct_device=""
+
+# Loop through each video device path
+for dev in $(echo "$devices" | grep -o '/dev/video[0-9]\+'); do
+  # Check if the device name matches the expected device
+  if echo "$devices" | grep -A1 "$EXPECTED_DEVICE_NAME" | grep -q "$dev"; then
+    # Verify if the expected control exists on this device
+    if v4l2-ctl --list-ctrls -d "$dev" | grep -q "$EXPECTED_CONTROL"; then
+      correct_device="$dev"
+      break
+    fi
+  fi
+done
+
+# Check if the correct device was found
+if [ -n "$correct_device" ]; then
+  echo "$correct_device"
+else
+  exit 1
+fi
