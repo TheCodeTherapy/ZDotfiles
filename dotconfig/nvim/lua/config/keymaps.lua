@@ -169,8 +169,8 @@ keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv", opts)
 
 -- New tab
 keymap.set("n", "te", "tabedit", opts)
-keymap.set("n", "<tab>", ":tabnext<Return>", opts)
-keymap.set("n", "<s-tab>", ":tabprev", opts)
+-- keymap.set("n", "<tab>", ":tabnext<Return>", opts)
+-- keymap.set("n", "<s-tab>", ":tabprev", opts)
 
 -- Split window
 keymap.set("n", "ss", ":split<Return>", opts)
@@ -219,6 +219,16 @@ keymap.set("n", "<S-Down>", "v<Down>", opts)
 keymap.set("v", "<S-Down>", "j", opts)
 keymap.set("n", "<S-Up>", "v<Up>", opts)
 keymap.set("v", "<S-Up>", "k", opts)
+
+-- tab or shift+tab on normal mode to indent right or left the current line
+keymap.set("n", "<Tab>", ">>")
+keymap.set("n", "<S-Tab>", "<<")
+-- on insert mode, tab or shift+tab will indent right or left the current line
+keymap.set("i", "<Tab>", "<C-t>")
+keymap.set("i", "<S-Tab>", "<C-d>")
+-- on visual mode, tab or shift+tab will indent right or left the selected lines
+keymap.set("v", "<Tab>", ">gv")
+keymap.set("v", "<S-Tab>", "<gv")
 -- ===========================================================================
 
 local signature_help_window_opened = false
