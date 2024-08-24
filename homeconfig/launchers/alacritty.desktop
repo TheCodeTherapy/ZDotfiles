@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Alacritty
+Comment=Alacritty Terminal
+Exec=alacritty
+Icon=org.gnome.Terminal
+Terminal=false
+Type=Application
+Categories=System;TerminalEmulator;
+Keywords=terminal;shell;command;commandline;
+StartupWMClass=Alacritty
