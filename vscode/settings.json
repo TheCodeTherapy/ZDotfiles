@@ -11,6 +11,10 @@
 
   "editor.semanticHighlighting.enabled": true,
   "terminal.integrated.minimumContrastRatio": 1,
+
+  "workbench.activityBar.location": "top",
+  "window.customTitleBarVisibility": "auto",
+
   "gopls": {
     "ui.semanticTokens": true
   },
