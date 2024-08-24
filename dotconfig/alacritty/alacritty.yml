@@ -27,13 +27,13 @@ scrolling:
 
 font:
   normal:
-    family: "MesloLGS NF"
+    family: "NotoMono Nerd Font"
     style: Regular
   bold:
-    family: "MesloLGS NF"
+    family: "NotoMono Nerd Font"
     style: Bold
   italic:
-    family: "MesloLGS NF"
+    family: "NotoMono Nerd Font"
     style: Italic
   size: 13.0
   offset:
@@ -103,7 +103,7 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x24283b'
+    background: '0x121217'
     # foreground: '0xc0caf5'
     foreground: '0xc0c0c0'
 

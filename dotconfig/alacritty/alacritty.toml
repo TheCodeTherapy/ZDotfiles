@@ -38,7 +38,7 @@ white = "0xa9b1d6"
 yellow = "0xe0af68"
 
 [colors.primary]
-background = "0x24283b"
+background = "0x121217"
 foreground = "0xc0c0c0"
 
 [cursor]
@@ -52,10 +52,10 @@ print_events = false
 render_timer = false
 
 [font]
-size = 13.0
+size = 12.0
 
 [font.bold]
-family = "MesloLGS NF"
+family = "NotoMono Nerd Font"
 style = "Bold"
 
 [font.glyph_offset]
@@ -63,11 +63,11 @@ x = 0
 y = 0
 
 [font.italic]
-family = "MesloLGS NF"
+family = "NotoMono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "MesloLGS NF"
+family = "NotoMono Nerd Font"
 style = "Regular"
 
 [font.offset]
@@ -609,7 +609,7 @@ semantic_escape_chars = ''',│`|:"' ()[]{}<>'''
 class = "Alacritty"
 decorations = "transparent"
 dynamic_padding = false
-opacity = 0.99
+opacity = 1.0
 startup_mode = "Windowed"
 title = "Alacritty"
 
