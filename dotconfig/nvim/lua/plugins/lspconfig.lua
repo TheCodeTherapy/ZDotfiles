@@ -4,6 +4,9 @@ return {
     "p00f/clangd_extensions.nvim",
   },
   opts = {
+    presets = {
+      lsp_doc_border = "rounded",
+    },
     servers = {
       -- Ensure mason installs the server
       clangd = {
