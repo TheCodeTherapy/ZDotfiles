@@ -1,41 +1,38 @@
 {
   "editor.tabSize": 2,
-  "editor.fontSize": 15,
-  "editor.fontFamily": "MesloLGS NF",
+  "editor.fontSize": 16,
+  "editor.fontFamily": "'NotoMono Nerd Font', 'MesloLGS NF'",
   "editor.fontLigatures": false,
   "window.titleBarStyle": "custom",
+
+  "editor.renderWhitespace": "none",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
+
+  "editor.semanticHighlighting.enabled": true,
+  "terminal.integrated.minimumContrastRatio": 1,
+  "gopls": {
+    "ui.semanticTokens": true
+  },
   "files.associations": {
     "**/.i3/config": "i3",
     "**/i3/config": "i3"
   },
   "workbench.colorCustomizations": {
-    "editor.background": "#070710",
-    "activityBar.background": "#070710",
-    "minimap.background": "#070710",
-    "sideBar.background": "#070710",
-    "editorGroupHeader.tabsBackground": "#070710",
-    "statusBar.background": "#070710",
-    "sideBarSectionHeader.background": "#070710",
-    "tab.activeBorder": "#ffffff",
-    "tab.inactiveBackground": "#070710",
-    "titleBar.activeBackground": "#070710",
-    "titleBar.border": "#070710",
-    "window.activeBorder": "#070710",
-    "window.inactiveBorder": "#070710",
-    "breadcrumb.background": "#07071000",
-    "editorGutter.background": "#07071000",
-    "sideBarTitle.foreground": "#07071000",
-    "tab.border": "#070710",
-    "activityBar.dropBorder": "#07071000",
-    "tab.activeBackground": "#070710",
-    "tab.lastPinnedBorder": "#cccccc33",
-    "terminal.foreground": "#dddddd",
-    "terminal.background": "#070717",
-    "terminal.selectionBackground": "#C1DEFF",
-    "terminalCursor.background": "#000000",
-    "terminalCursor.foreground": "#AAFFAA"
+    "editor.background": "#171721",
+    "activityBar.background": "#121217",
+    "activityBar.foreground": "#888888",
+    "activityBarBadge.background": "#aaaaff",
+    "minimap.background": "#171721",
+    "sideBar.background": "#121217",
+    "statusBar.background": "#121217",
+    "sideBarSectionHeader.background": "#121217",
+    "tab.activeBorderTop": "#ddddff",
+    "tab.unfocusedActiveBorderTop": "#ddddff",
+    "breadcrumb.background": "#17172100",
+    "editorGutter.background": "#17172100",
+    "sideBarTitle.foreground": "#17172100"
   },
-  "editor.semanticHighlighting.enabled": true,
   "explorer.compactFolders": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
@@ -74,7 +71,6 @@
   "[c]": {
     "editor.defaultFormatter": "xaver.clang-format"
   },
-  "editor.renderWhitespace": "none",
   "zig.path": "zig",
   "zig.zls.path": "/home/marcogomez/.config/Code/User/globalStorage/ziglang.vscode-zig/zls_install/zls",
   "zig.initialSetupDone": true
