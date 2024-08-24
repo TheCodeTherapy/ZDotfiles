@@ -116,7 +116,8 @@ link_dotfiles() {
 link_launchers() {
   echo
   mkdir -p $ME/.local/share/applications
-  home_link "homeconfig/launchers/org.gnome.Terminal.desktop" ".local/share/applications/org.gnome.Terminal.desktop"
+  # home_link "homeconfig/launchers/org.gnome.Terminal.desktop" ".local/share/applications/org.gnome.Terminal.desktop"
+  home_link "homeconfig/launchers/alacritty.desktop" ".local/share/applications/alacritty.desktop"
   update-desktop-database $ME/.local/share/applications
 }
 
@@ -725,7 +726,7 @@ install_fd
 restore_terminal_cfg
 restore_bind_keys
 
-# link_launchers
+link_launchers
 # restore_monitor_cfg
 
 # install_i3
