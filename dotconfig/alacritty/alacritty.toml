@@ -75,6 +75,11 @@ x = 0
 y = 0
 
 [[keyboard.bindings]]
+key = "F"
+mods = "Control|Shift"
+chars = ""
+
+[[keyboard.bindings]]
 action = "Paste"
 key = "Paste"
 
