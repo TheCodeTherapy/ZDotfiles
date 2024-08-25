@@ -3,7 +3,7 @@
 while true; do
   /usr/bin/nvim "$@"
   if [ $? -ne 1 ]; then
-    notify-send "Bye!!! [exit $?] 🙂"
+    # notify-send "Bye!!! [exit $?] 🙂"
     break
   fi
 done
