@@ -16,7 +16,7 @@ HOSTSBACKUP=/etc/hosts.bak
 HOSTSDENYBACKUP=/etc/hostsdeny.bak
 HOSTSSECURED="${DOTDIR}/hostssecured"
 
-mkdir -p $ME/Storage/NAS/volume1/
+mkdir -p "$ME"/Storage/NAS/volume1/
 
 declare -rA COLORS=(
   [RED]=$'\033[0;31m'
@@ -55,17 +55,17 @@ wait_key() {
 home_link() {
   msg="[LINKING] $DOTDIR/$1 to $ME/$2"
   print_cyan "${msg}"
-  sudo rm -rf $ME/$2 >/dev/null 2>&1 &&
-    ln -s $DOTDIR/$1 $ME/$2 ||
-    ln -s $DOTDIR/$1 $ME/$2
+  sudo rm -rf "$ME"/"$2" >/dev/null 2>&1 &&
+    ln -s "$DOTDIR"/"$1" "$ME"/"$2" ||
+    ln -s "$DOTDIR"/"$1" "$ME"/"$2"
 }
 
 home_link_cfg() {
   msg="[LINKING] $DOTDIR/dotconfig/$1 to $CFG/$1"
   print_cyan "${msg}"
-  sudo rm -rf $CFG/$1 >/dev/null 2>&1 &&
-    ln -s $DOTDIR/dotconfig/$1 $CFG/. ||
-    ln -s $DOTDIR/dotconfig/$1 $CFG/.
+  sudo rm -rf "$CFG"/"$1" >/dev/null 2>&1 &&
+    ln -s "$DOTDIR"/dotconfig/"$1" "$CFG"/. ||
+    ln -s "$DOTDIR"/dotconfig/"$1" "$CFG"/.
 }
 
 link_dotfiles() {
@@ -128,7 +128,7 @@ install_with_aptitude() {
 }
 
 install_with_snap() {
-  if $(locate $1 | grep '/snap/bin' >/dev/null 2>&1); then
+  if locate "$1" | grep '/snap/bin' >/dev/null 2>&1; then
     msg="$1 already installed."
     print_green "${msg}"
   else
@@ -197,10 +197,10 @@ install_basic_packages() {
 
 install_vscode() {
   echo
-  if $(code --version >/dev/null 2>&1); then
+  if code --version >/dev/null 2>&1; then
     msg="VSCode already installed."
     print_green "${msg}"
-  elif $(locate code | grep '/usr/bin/code' | grep -v 'codepage' >/dev/null 2>&1); then
+  elif locate code | grep '/usr/bin/code' | grep -v 'codepage' >/dev/null 2>&1; then
     msg="VSCode already installed."
     print_green "${msg}"
   else
@@ -219,14 +219,14 @@ install_vscode() {
 install_obs_studio() {
   echo
   PPA=$(ls /etc/apt/sources.list.d/obs* 2>/dev/null | wc -l)
-  if [ $PPA != 0 ]; then
+  if [ "$PPA" != 0 ]; then
     msg="OBS Studio PPA already configured."
     print_green "${msg}"
   else
     sudo add-apt-repository -y ppa:obsproject/obs-studio
     sudo apt update
   fi
-  if $(obs --version >/dev/null 2>&1); then
+  if obs --version >/dev/null 2>&1; then
     msg="OBS Studio alteady installed."
     print_green "${msg}"
   else
@@ -238,7 +238,7 @@ install_extra_packages() {
   echo
   msg="INSTALLING EXTRA PACKAGES ..."
   print_yellow "${msg}"
-  if $(cat /etc/os-release | head -n 1 | grep "Pop" >/dev/null 2>&1); then
+  if cat /etc/os-release | head -n 1 | grep "Pop" >/dev/null 2>&1; then
     msg="Distro is Pop!_OS"
     print_cyan "${msg}"
     sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -286,7 +286,7 @@ install_nvm() {
     print_green "nvm already installed."
   else
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-    source ${ME}/.bashrc
+    source "${ME}"/.bashrc
     nvm --version
   fi
 }
@@ -296,15 +296,15 @@ install_node() {
   msg="INSTALLING NODEJS ..."
   print_yellow "${msg}"
   if [[ -f $NVMDIR/nvm.sh ]]; then
-    if $(npm --version >/dev/null 2>&1); then
+    if npm --version >/dev/null 2>&1; then
       msg="npm already installed."
       print_green "${msg}"
     else
-      source $NVMDIR/nvm.sh
+      source "$NVMDIR"/nvm.sh
       VER=$(nvm ls-remote --lts | grep "Latest" | tail -n 1 | sed 's/[-/a-zA-Z]//g' | sed 's/^[ \t]*//')
       msg="Installing Latest NodeJS version found: ${VER}"
       print_yellow "${msg}"
-      nvm install $VER
+      nvm install "$VER"
     fi
   else
     msg="nvm not installed."
@@ -314,7 +314,7 @@ install_node() {
 
 install_yarn() {
   echo
-  if $(yarn --version >/dev/null 2>&1); then
+  if yarn --version >/dev/null 2>&1; then
     msg="Yarn already installed."
     print_green "${msg}"
   else
@@ -323,7 +323,7 @@ install_yarn() {
     NVM_DIR="$HOME/.nvm"
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-    source ${ME}/.bashrc
+    source "${ME}"/.bashrc
     npm install --global yarn
   fi
 }
@@ -337,7 +337,7 @@ install_rust() {
     msg="INSTALLING RUST ..."
     print_yellow "${msg}"
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-    source ${ME}/.bashrc
+    source "${ME}"/.bashrc
     rustc --version
   fi
 }
@@ -356,22 +356,22 @@ install_exa() {
 
 install_golang() {
   echo
-  if $(go version >/dev/null 2>&1); then
+  if go version >/dev/null 2>&1; then
     msg="Golang already installed."
     print_green "${msg}"
   else
     msg="INSTALLING GOLANG ..."
     print_yellow "${msg}"
-    cd $DOTDIR
+    cd "$DOTDIR" || exit
     mkdir -p temp
-    cd temp
+    cd temp || exit
     wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
     sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
     # we mst add export PATH=$PATH:/usr/local/go/bin to $HOME/.profile IF it's not there
-    if ! grep -q '/usr/local/go/bin' $HOME/.profile; then
-      echo 'export PATH=$PATH:/usr/local/go/bin' >>$HOME/.profile
+    if ! grep -q '/usr/local/go/bin' "$HOME"/.profile; then
+      echo 'export PATH=$PATH:/usr/local/go/bin' >>"$HOME"/.profile
     fi
-    source $HOME/.profile
+    source "$HOME"/.profile
     go version
   fi
 }
@@ -436,7 +436,7 @@ protect_hosts() {
 }
 
 restore_xorg() {
-  sudo cp ${DOTDIR}/x/xorg.conf /etc/X11/xorg.conf
+  sudo cp "${DOTDIR}"/x/xorg.conf /etc/X11/xorg.conf
 }
 
 install_neovim() {
@@ -447,21 +447,21 @@ install_neovim() {
   else
     msg="INSTALLING NEOVIM ..."
     print_yellow "${msg}"
-    cd $DOTDIR
+    cd "$DOTDIR" || exit
     git clone https://github.com/neovim/neovim
-    cd neovim
+    cd neovim || exit
     git fetch --tags
     git checkout v0.10.1
     make CMAKE_BUILD_TYPE=RelWithDebInfo -j$(nproc)
     cd build && cpack -G DEB
     sudo dpkg -i nvim-linux64.deb
-    cd $DOTDIR
+    cd "$DOTDIR" || exit
   fi
 }
 
 install_docker() {
   echo
-  if $(docker --version >/dev/null 2>&1); then
+  if docker --version >/dev/null 2>&1; then
     msg="Docker already installed."
     print_green "${msg}"
   else
@@ -480,13 +480,13 @@ install_docker() {
       sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
     sudo apt --assume-yes update
     sudo apt --assume-yes install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-    sudo usermod -a -G docker $USER
+    sudo usermod -a -G docker "$USER"
   fi
 }
 
 install_docker_compose() {
   echo
-  if $(docker-compose --version >/dev/null 2>&1); then
+  if docker-compose --version >/dev/null 2>&1; then
     msg="Docker-compose already installed."
     print_green "${msg}"
   else
@@ -499,7 +499,7 @@ install_docker_compose() {
 
 install_fd() {
   echo
-  if $(fd --version >/dev/null 2>&1); then
+  if fd --version >/dev/null 2>&1; then
     msg="fd already installed."
     print_green "${msg}"
   else
@@ -513,9 +513,9 @@ setup_fonts() {
   echo
   msg="SETTING UP FONTS ..."
   print_yellow "${msg}"
-  rm -rf $ME/.fonts >/dev/null 2>&1 &&
-    ln -s $DOTDIR/fonts $ME/.fonts ||
-    ln -s $DOTDIR/fonts $ME/.fonts
+  rm -rf "$ME"/.fonts >/dev/null 2>&1 &&
+    ln -s "$DOTDIR"/fonts "$ME"/.fonts ||
+    ln -s "$DOTDIR"/fonts "$ME"/.fonts
   fc-cache -f
 }
 
@@ -523,59 +523,59 @@ install_i3() {
   echo
   msg="Building i3-wm ..."
   print_yellow "${msg}"
-  cd $DOTDIR
+  cd "$DOTDIR" || exit
   mkdir -p build
   git clone https://github.com/i3/i3 build/i3
-  cd build/i3
-  mkdir -p build && cd build
+  cd build/i3 || exit
+  mkdir -p build && cd build || exit
   meson -Ddocs=true -Dmans=true ..
   ninja
   sudo ninja install
-  cd $DOTDIR
+  cd "$DOTDIR" || exit
 }
 
 install_i3_status() {
   echo
   msg="Building i3-status ..."
   print_yellow "${msg}"
-  cd $DOTDIR
+  cd "$DOTDIR" || exit
   mkdir -p build
   git clone https://github.com/i3/i3status build/i3status
-  cd build/i3status
-  mkdir -p build && cd build
+  cd build/i3status || exit
+  mkdir -p build && cd build || exit
   meson ..
   ninja
   sudo ninja install
-  cd $DOTDIR
+  cd "$DOTDIR" || exit
 }
 
 install_picom() {
   echo
   msg="Building picom ..."
   print_yellow "${msg}"
-  cd $DOTDIR
+  cd "$DOTDIR" || exit
   mkdir -p build
   git clone https://github.com/TheCodeTherapy/picom build/picom
-  cd build/picom
+  cd build/picom || exit
   meson setup --buildtype=release build
   ninja -C build
   sudo ninja -C build install
-  cd $DOTDIR
+  cd "$DOTDIR" || exit
 }
 
 install_polybar() {
   echo
   msg="Building polybar ..."
   print_yellow "${msg}"
-  cd $DOTDIR
+  cd "$DOTDIR" || exit
   mkdir -p build
   git clone --recursive https://github.com/polybar/polybar build/polybar
-  cd build/polybar
-  mkdir -p build && cd build
+  cd build/polybar || exit
+  mkdir -p build && cd build || exit
   cmake ..
   make -j$(nproc)
   sudo make install
-  cd $DOTDIR
+  cd "$DOTDIR" || exit
 }
 
 install_alacritty() {
@@ -589,9 +589,9 @@ customize_vscode() {
   echo
   msg="Customizing vscode ..."
   print_yellow "${msg}"
-  sudo rm -rf ${CFG}/Code/User/settings.json >/dev/null 2>&1 &&
-    ln -s ${DOTDIR}/vscode/settings.json ${CFG}/Code/User/settings.json ||
-    ln -s ${DOTDIR}/vscode/settings.json ${CFG}/Code/User/settings.json
+  sudo rm -rf "${CFG}"/Code/User/settings.json >/dev/null 2>&1 &&
+    ln -s "${DOTDIR}"/vscode/settings.json "${CFG}"/Code/User/settings.json ||
+    ln -s "${DOTDIR}"/vscode/settings.json "${CFG}"/Code/User/settings.json
 }
 
 install_reaper() {
@@ -602,23 +602,23 @@ install_reaper() {
   else
     msg="Installing Reaper ..."
     print_yellow "${msg}"
-    cd $DOTDIR/software
+    cd "$DOTDIR"/software || exit
     tar -xf reaper707_linux_x86_64.tar.xz
-    cd $DOTDIR/software/reaper_linux_x86_64
+    cd "$DOTDIR"/software/reaper_linux_x86_64 || exit
     ./install-reaper.sh --integrate-user-desktop
-    cd $DOTDIR
+    cd "$DOTDIR" || exit
   fi
 }
 
 install_chrome() {
   echo
-  if $(google-chrome-stable --version >/dev/null 2>&1); then
+  if google-chrome-stable --version >/dev/null 2>&1; then
     msg="Google Chrome already installed."
     print_green "${msg}"
   else
     msg="Installing Google Chrome..."
     print_yellow "${msg}"
-    cd ~/Downloads
+    cd ~/Downloads || exit
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo dpkg -i google-chrome-stable_current_amd64.deb
     sudo rm -f google-chrome-stable_current_amd64.deb
@@ -627,7 +627,7 @@ install_chrome() {
 
 install_brave() {
   echo
-  if $(brave-browser --version >/dev/null 2>&1); then
+  if brave-browser --version >/dev/null 2>&1; then
     msg="Brave Browser already installed."
     print_green "${msg}"
   else
@@ -646,20 +646,20 @@ install_brave() {
 
 install_lazygit() {
   echo
-  if $(lazygit --version >/dev/null 2>&1); then
+  if lazygit --version >/dev/null 2>&1; then
     msg="Lazygit already installed."
     print_green "${msg}"
   else
     msg="Installing Lazygit..."
     print_yellow "${msg}"
-    cd $DOTDIR
+    cd "$DOTDIR" || exit
     mkdir temp
-    cd temp
+    cd temp || exit
     LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
     curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
     tar xf lazygit.tar.gz lazygit
     sudo install lazygit /usr/local/bin
-    cd $DOTDIR
+    cd "$DOTDIR" || exit
   fi
 }
 
@@ -671,7 +671,7 @@ install_tmux_plugin_manager() {
   else
     msg="Installing Tmux Plugin Manager..."
     print_yellow "${msg}"
-    git clone https://github.com/tmux-plugins/tpm ${ME}/.tmux/plugins/tpm
+    git clone https://github.com/tmux-plugins/tpm "${ME}"/.tmux/plugins/tpm
   fi
 }
 
@@ -679,20 +679,20 @@ restore_terminal_cfg() {
   msg="Restoring terminal configuration"
   print_cyan "${msg}"
   dconf load /org/gnome/terminal/ < \
-    ${DOTDIR}/dconf/gnome-terminal-settings-backup.dconf
+    "${DOTDIR}"/dconf/gnome-terminal-settings-backup.dconf
 }
 
 restore_bind_keys() {
   msg="Restoring custom shortcuts"
   print_cyan "${msg}"
   dconf load /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ < \
-    ${DOTDIR}/dconf/gnome-custom-shortcuts.dconf
+    "${DOTDIR}"/dconf/gnome-custom-shortcuts.dconf
 }
 
 restore_monitor_cfg() {
   msg="Restoring monitor configuration"
   print_cyan "${msg}"
-  cp ${HOME}/ZDotfiles/monitor/monitors-backup.xml ~/.config/monitors.xml
+  cp "${HOME}"/ZDotfiles/monitor/monitors-backup.xml ~/.config/monitors.xml
 }
 
 update_system
