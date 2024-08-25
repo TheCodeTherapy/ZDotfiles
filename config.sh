@@ -163,7 +163,7 @@ install_basic_packages() {
     clang clang-tools ca-certificates curl gnupg lsb-release \
     python-is-python3 ipython3 python3-pip python3-dev gawk \
     unzip lzma tree neofetch git git-lfs zsh tmux gnome-tweaks \
-    inxi most ttfautohint v4l2loopback-dkms ffmpeg htop bc \
+    inxi most ttfautohint v4l2loopback-dkms ffmpeg htop bc fzf \
     ranger libxext-dev ripgrep python3-pynvim xclip libnotify-bin \
     libfontconfig1-dev libfreetype-dev jq pixz hashdeep liblxc-dev \
     libxrandr-dev libxinerama-dev libxcursor-dev libglx-dev libgl-dev \
