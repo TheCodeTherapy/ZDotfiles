@@ -72,7 +72,7 @@ link_dotfiles() {
   echo
   msg="LINKING DOTFILES ..."
   print_yellow "${msg}"
-  mkdir -p ${DOTLOCAL}
+  mkdir -p "${DOTLOCAL}"
 
   if [[ -f $DOTDIR/homeconfig/attract/attract.cfg ]]; then
     msg="Attract Mode configs already retrieved."
@@ -80,9 +80,9 @@ link_dotfiles() {
   else
     msg="RETRIEVING ATTRACT MODE CONFIG ..."
     print_yellow "${msg}"
-    cd $DOTDIR/homeconfig
+    cd "$DOTDIR"/homeconfig || exit
     git clone https://github.com/TheCodeTherapy/attract-cfg.git attract
-    cd $DOTDIR
+    cd "$DOTDIR" || exit
   fi
 
   home_link "homeconfig/profile/profile" ".profile"
@@ -115,16 +115,16 @@ link_dotfiles() {
 
 link_launchers() {
   echo
-  mkdir -p $ME/.local/share/applications
+  mkdir -p "$ME"/.local/share/applications
   # home_link "homeconfig/launchers/org.gnome.Terminal.desktop" ".local/share/applications/org.gnome.Terminal.desktop"
   home_link "homeconfig/launchers/alacritty.desktop" ".local/share/applications/alacritty.desktop"
-  update-desktop-database $ME/.local/share/applications
+  update-desktop-database "$ME"/.local/share/applications
 }
 
 install_with_aptitude() {
   msg="Installing $1 ..."
   print_yellow "${msg}"
-  sudo aptitude -y install $1
+  sudo aptitude -y install "$1"
 }
 
 install_with_snap() {
@@ -134,7 +134,7 @@ install_with_snap() {
   else
     msg="Installing $1 ..."
     print_yellow "${msg}"
-    sudo snap install $1
+    sudo snap install "$1"
   fi
 }
 
@@ -151,7 +151,7 @@ update_system() {
 install_basic_packages() {
   echo
   msg="INSTALLING BASIC PACKAGES ..."
-  mkdir -p ${BINDIR}
+  mkdir -p "${BINDIR}"
   print_yellow "${msg}"
   # sudo killall packagekitd
   sudo systemctl daemon-reload
@@ -258,23 +258,23 @@ fix_cedilla() {
   echo
   msg="Fixing cedilla character on XCompose..."
   print_cyan "${msg}"
-  mkdir -p $DOTDIR/homeconfig/x
+  mkdir -p "$DOTDIR"/homeconfig/x
   sed -e 's,\xc4\x86,\xc3\x87,g' -e 's,\xc4\x87,\xc3\xa7,g' \
     </usr/share/X11/locale/en_US.UTF-8/Compose \
-    >$DOTDIR/homeconfig/x/XCompose
+    >"$DOTDIR"/homeconfig/x/XCompose
   home_link "homeconfig/x/XCompose" ".XCompose"
   sudo cp /usr/lib/x86_64-linux-gnu/gtk-3.0/3.0.0/immodules.cache /usr/lib/x86_64-linux-gnu/gtk-3.0/3.0.0/immodules.cache.bckp
   sudo sed -i 's,"az:ca:co:fr:gv:oc:pt:sq:tr:wa","az:ca:co:fr:gv:oc:pt:sq:tr:wa:en",g' /usr/lib/x86_64-linux-gnu/gtk-3.0/3.0.0/immodules.cache
   sudo cp /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules.cache /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules.cache.bckp
   sudo sed -i 's,"az:ca:co:fr:gv:oc:pt:sq:tr:wa","az:ca:co:fr:gv:oc:pt:sq:tr:wa:en",g' /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules.cache
-  sudo cp $DOTDIR/etc/environment /etc/environment
+  sudo cp "$DOTDIR"/etc/environment /etc/environment
 }
 
 make_caps_super() {
   echo
   msg="Replacing CAPS key by Super key ..."
   print_yellow "${msg}"
-  sudo cp ${DOTDIR}/keyboard/keyboard /etc/default/keyboard
+  sudo cp "${DOTDIR}"/keyboard/keyboard /etc/default/keyboard
   sudo udevadm trigger --subsystem-match=input --action=change
 }
 
