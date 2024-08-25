@@ -229,6 +229,39 @@ keymap.set("i", "<S-Tab>", "<C-d>")
 -- on visual mode, tab or shift+tab will indent right or left the selected lines
 keymap.set("v", "<Tab>", ">gv")
 keymap.set("v", "<S-Tab>", "<gv")
+
+-- on visual mode, Ctrl + f should search the word under the cursor in the current buffer
+vim.keymap.set("n", "<C-f>", function()
+  require("telescope.builtin").grep_string({
+    search = vim.fn.expand("<cword>"),
+    use_regex = false,
+  })
+end, opts)
+-- on insert mode, Ctrl + f should search the word under the cursor in the current buffer
+vim.keymap.set("i", "<C-f>", function()
+  local word = vim.fn.expand("<cword>")
+  vim.cmd("stopinsert")
+  require("telescope.builtin").grep_string({
+    search = word,
+    use_regex = false,
+  })
+end, opts)
+
+-- On normal mode, Ctrl + g searches the word under the cursor in the entire project
+vim.keymap.set("n", "<C-g>", function()
+  require("telescope.builtin").live_grep({
+    default_text = vim.fn.expand("<cword>"),
+  })
+end, opts)
+
+-- On insert mode, Ctrl + g searches the word under the cursor in the entire project
+vim.keymap.set("i", "<C-g>", function()
+  local word = vim.fn.expand("<cword>")
+  vim.cmd("stopinsert")
+  require("telescope.builtin").live_grep({
+    default_text = word,
+  })
+end, opts)
 -- ===========================================================================
 
 local signature_help_window_opened = false
@@ -273,4 +306,5 @@ vim.lsp.handlers["textDocument/signatureHelp"] =
 
 vim.api.nvim_set_keymap("n", "gg", "<cmd>lua require('thecodetherapy.goto').go_to_implementation()<CR>", opts)
 
-vim.api.nvim_set_keymap("n", "<leader>rr", "<cmd>lua os.exit(1)<CR>", opts)
+-- this bindkey is not set in plugins/session-manager.lua
+-- vim.api.nvim_set_keymap("n", "<leader>rr", "<cmd>lua os.exit(1)<CR>", opts)
