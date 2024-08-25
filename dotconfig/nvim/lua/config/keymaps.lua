@@ -308,3 +308,6 @@ vim.api.nvim_set_keymap("n", "gg", "<cmd>lua require('thecodetherapy.goto').go_t
 
 -- this bindkey is not set in plugins/session-manager.lua
 -- vim.api.nvim_set_keymap("n", "<leader>rr", "<cmd>lua os.exit(1)<CR>", opts)
+
+-- sets up <leader>n to trigger <leader>snt in normal mode
+keymap.set("n", "<leader>n", ":NoicePick<CR>", opts)
