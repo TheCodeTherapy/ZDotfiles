@@ -311,3 +311,4 @@ vim.api.nvim_set_keymap("n", "gg", "<cmd>lua require('thecodetherapy.goto').go_t
 
 -- sets up <leader>n to trigger <leader>snt in normal mode
 keymap.set("n", "<leader>n", ":NoicePick<CR>", opts)
+keymap.set("n", "<leader>p", ":Telescope neovim-project discover<CR>", opts)
