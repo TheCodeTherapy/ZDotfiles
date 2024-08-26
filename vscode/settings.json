@@ -77,5 +77,8 @@
   },
   "zig.path": "zig",
   "zig.zls.path": "/home/marcogomez/.config/Code/User/globalStorage/ziglang.vscode-zig/zls_install/zls",
-  "zig.initialSetupDone": true
+  "zig.initialSetupDone": true,
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  }
 }
