@@ -187,7 +187,8 @@ install_basic_packages() {
     fonts-font-awesome slop gir1.2-ayatanaappindicator3-0.1 \
     libgtk-4-dev libx11-dev libxcomposite-dev libxfixes-dev \
     libgl1-mesa-dev libxi-dev libwayland-dev \
-    libncurses5-dev libreadline-dev usbview v4l-utils
+    libncurses5-dev libreadline-dev usbview v4l-utils \
+    libxrender-dev libglew-dev
 
   # sudo aptitude install \
   #     openjdk-8-jre=8u312-b07-0ubuntu1 \
