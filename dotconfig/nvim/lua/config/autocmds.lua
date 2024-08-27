@@ -4,6 +4,6 @@
 
 vim.api.nvim_create_autocmd({ "VimLeave" }, {
   callback = function()
-    vim.fn.jobstart('notify-send "hello"', { detatch = true })
+    vim.fn.jobstart('notify-send "."', { detatch = true })
   end,
 })
