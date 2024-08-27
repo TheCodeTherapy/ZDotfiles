@@ -25,16 +25,20 @@ local border = {
   { "│", "FloatBorder" },
 }
 
-local handler = {
-  ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
-  ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
-}
-
 local lspconfig = require("lspconfig")
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
-    handlers = handler,
-    border = border,
+    handlers = {
+      ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+      ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+        border = "rounded",
+        close_events = { "CursorMoved", "InsertCharPre" },
+        focusable = false,
+        offset_x = 0,
+        offset_y = -5, -- Adjust this to move the signature help window up or down
+      }),
+    },
+    -- border = border,
     capabilities = capabilities,
     on_attach = function(client, bufnr)
       if client.server_capabilities["documentSymbolProvider"] then
