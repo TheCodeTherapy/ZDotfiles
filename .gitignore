@@ -18,3 +18,5 @@ packages.microsoft.gpg
 temp/
 temp
 drivers/*
+diagnostics.md
+
