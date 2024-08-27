@@ -189,10 +189,6 @@ install_basic_packages() {
     libgl1-mesa-dev libxi-dev libwayland-dev \
     libncurses5-dev libreadline-dev usbview v4l-utils \
     libxrender-dev libglew-dev python3-venv
-
-  # sudo aptitude install \
-  #     openjdk-8-jre=8u312-b07-0ubuntu1 \
-  #     openjdk-8-jre-headless=8u312-b07-0ubuntu1
   sudo updatedb
 }
 
