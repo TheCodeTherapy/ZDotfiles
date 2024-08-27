@@ -1,3 +1,7 @@
+if true then
+  return {}
+end
+
 return {
   "Shatur/neovim-session-manager",
   requires = { "nvim-lua/plenary.nvim" },
