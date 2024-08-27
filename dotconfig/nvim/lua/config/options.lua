@@ -26,6 +26,7 @@ vim.cmd([[
 ]])
 
 vim.diagnostic.config({
+  virtual_text = false,
   float = {
     border = "rounded",
     source = true,
