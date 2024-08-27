@@ -19,10 +19,23 @@ return {
         return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
       end
 
-      table.insert(opts.sources, { name = "emoji" })
+      -- table.insert(opts.sources, { name = "emoji" })
       opts.preselect = cmp.PreselectMode.None
       opts.completion = {
         completeopt = "noselect",
+      }
+      opts.experimental = {
+        ghost_text = false,
+      }
+      opts.window = {
+        completion = cmp.config.window.bordered({
+          border = "rounded",
+          winhighlight = "NormalFloat:NormalFloat,FloatBorder:NormalFloat",
+        }),
+        documentation = cmp.config.window.bordered({
+          border = "rounded",
+          winhighlight = "NormalFloat:NormalFloat,FloatBorder:NormalFloat",
+        }),
       }
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping(function(fallback)
