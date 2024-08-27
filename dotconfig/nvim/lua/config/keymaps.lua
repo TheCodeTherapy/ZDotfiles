@@ -123,33 +123,6 @@ local function create_and_preview_diagnostics()
   vim.cmd("MarkdownPreview")
 end
 
-local function make_and_run()
-  vim.cmd("w")
-  vim.fn.system("make && make run")
-end
-
-local function build_and_run()
-  vim.cmd("w") -- Save the current file.
-
-  -- Command to execute
-  local build_command = "make && make run; echo Exit code: $?"
-
-  -- Open a floating toggle terminal
-  vim.cmd("ToggleTerm direction=float")
-
-  -- Define and configure the terminal
-  local term = require("toggleterm.terminal").Terminal:new({
-    cmd = build_command,
-    hidden = true,
-    direction = "float",
-    close_on_exit = false, -- Keep terminal open to view output
-  })
-
-  term:toggle()
-end
-
-keymap.set("n", "<F8>", build_and_run, opts)
-
 keymap.set("n", "<leader>ccm", create_and_preview_diagnostics, opts)
 keymap.set("n", "<leader>cca", copy_file_and_diagnostics_to_clipboard, opts)
 keymap.set("n", "<leader>cc", copy_diagnostics_to_clipboard, opts)
@@ -187,6 +160,8 @@ keymap.set("n", "<leader><Up>", "<C-w>k")
 keymap.set("n", "<leader><Down>", "<C-w>j")
 keymap.set("n", "<A-Right>", ":BufferLineCycleNext<CR>", opts)
 keymap.set("n", "<A-Left>", ":BufferLineCyclePrev<CR>", opts)
+keymap.set("n", "<S-A-Right>", ":BufferLineMoveNext<CR>", opts)
+keymap.set("n", "<S-A-Left>", ":BufferLineMovePrev<CR>", opts)
 
 -- Resize
 keymap.set("n", "<C-w><Left>", "<C-w><")
@@ -264,50 +239,10 @@ vim.keymap.set("i", "<C-g>", function()
 end, opts)
 -- ===========================================================================
 
-local signature_help_window_opened = false
-local signature_help_forced = false
-
-local function my_signature_help_handler(handler)
-  return function(...)
-    if signature_help_forced and signature_help_window_opened then
-      signature_help_forced = false
-      return handler(...)
-    end
-    if signature_help_window_opened then
-      return
-    end
-    local fbuf, fwin = handler(...)
-    signature_help_window_opened = true
-    vim.api.nvim_exec("autocmd WinClosed " .. fwin .. " lua signature_help_window_opened=false", false)
-    return fbuf, fwin
-  end
-end
-
----@diagnostic disable-next-line: unused-local, unused-function
-local function force_signature_help()
-  signature_help_forced = true
-  vim.lsp.buf.signature_help()
-end
-
----@diagnostic disable-next-line: unused-local
-local function toggle_inlay_hings()
-  local enabled = vim.lsp.inlay_hint.is_enabled()
-  vim.lsp.inlay_hint.enable(not enabled)
-end
-
-keymap.set("n", "<F9>", toggle_inlay_hings, opts)
-
--- These mappings allow to focus on the floating window when opened.
-keymap.set("n", "<C-k>", force_signature_help, opts)
-keymap.set("i", "<C-k>", force_signature_help, opts)
-
-vim.lsp.handlers["textDocument/signatureHelp"] =
-  vim.lsp.with(my_signature_help_handler(vim.lsp.handlers.signature_help), {})
-
 vim.api.nvim_set_keymap("n", "gg", "<cmd>lua require('thecodetherapy.goto').go_to_implementation()<CR>", opts)
 
 -- this bindkey is not set in plugins/session-manager.lua
--- vim.api.nvim_set_keymap("n", "<leader>rr", "<cmd>lua os.exit(1)<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>rr", "<cmd>lua os.exit(1)<CR>", opts)
 
 -- sets up <leader>n to trigger <leader>snt in normal mode
 keymap.set("n", "<leader>n", ":NoicePick<CR>", opts)
