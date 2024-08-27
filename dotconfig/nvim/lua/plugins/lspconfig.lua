@@ -45,6 +45,9 @@ return {
         },
       },
       gopls = {
+        capabilities = {
+          offsetEncoding = { "utf-16" }, -- Ensure consistency with clangd
+        },
         gofumpt = true,
         codelenses = {
           gc_details = false,
