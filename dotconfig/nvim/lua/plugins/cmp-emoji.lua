@@ -61,6 +61,11 @@ return {
             fallback()
           end
         end, { "i", "s" }),
+        ["<C-Tab>"] = cmp.mapping(function()
+          if cmp.visible() then
+            cmp.abort()
+          end
+        end, { "i", "s" }),
       })
     end,
   },
