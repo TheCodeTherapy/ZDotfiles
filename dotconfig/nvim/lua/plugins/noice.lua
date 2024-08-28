@@ -12,8 +12,18 @@ return {
       signature = {
         opts = {
           size = {
-            height = 10,
+            height = 4,
           },
+        },
+      },
+      documentation = {
+        view = "hover",
+        opts = {
+          lang = "markdown",
+          replace = true,
+          render = "plain",
+          format = { "{message}" },
+          win_options = { concealcursor = "n", conceallevel = 3 },
         },
       },
     },
