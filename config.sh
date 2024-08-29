@@ -748,16 +748,10 @@ echo
 msg="CONFIG COMPLETE"
 print_cyan "${msg}"
 
-# choose_fastest_mirror
-# protect_hosts
-
 # sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # chsh -s $(which zsh)
 #
 # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
 # echo 'source ~/.powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 # p10k configure
-
-# sudo apt install jackd qjackctl pulseaudio-module-jack
-# pactl load-module module-jack-sink client_name=discord_sink connect=no
-# pactl load-module module-jack-source client_name=discord_source connect=no
+#
