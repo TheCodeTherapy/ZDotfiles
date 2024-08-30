@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# Check if Conky is running
-if pgrep -x "conky" >/dev/null; then
-    killall conky
-else
-    conky --config=/home/marcogomez/ZDotfiles/conky/conky_sys.conf &
-    conky --config=/home/marcogomez/ZDotfiles/conky/conky_weather.conf &
-fi

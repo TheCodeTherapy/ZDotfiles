@@ -1,0 +1,9 @@
+[custom0]
+binding='<Super>period'
+command='/home/marcogomez/ZDotfiles/scripts/emoji'
+name='Emoji Picker'
+
+[custom1]
+binding='<Super>slash'
+command='/home/marcogomez/ZDotfiles/scripts/conkytoggle'
+name='Conky Toggle'
