@@ -11,7 +11,7 @@
 # Shortcut: Super + . (or any other you might want)
 #=============================================================================
 
-EMOJIS="/home/${USER}/ZDotfiles/emoji/emoji.txt"
+EMOJIS="/home/${USER}/ZDotfiles/dotfiles/emoji/emoji.txt"
 THEME="/home/${USER}/ZDotfiles/dotfiles/rofi/sp.theme.rasi"
 chosen=$(cut -d ';' -f1 ${EMOJIS} | rofi -dmenu -theme ${THEME} | sed "s/ .*//")
 [ -z "$chosen" ] && exit
