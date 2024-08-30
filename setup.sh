@@ -65,10 +65,6 @@ install_recipes() {
     "$recipe_dir/install_brave.sh"
     "$recipe_dir/install_lazygit.sh"
     "$recipe_dir/install_tmuxpm.sh"
-    "$recipe_dir/fix_cedilla.sh"
-    "$recipe_dir/restore_terminal_cfg.sh"
-    "$recipe_dir/restore_bind_keys.sh"
-    "$recipe_dir/make_caps_super.sh"
     "$recipe_dir/install_rust.sh"
     "$recipe_dir/install_golang.sh"
     "$recipe_dir/install_exa.sh"
@@ -77,6 +73,10 @@ install_recipes() {
     "$recipe_dir/install_xcolor.sh"
     "$recipe_dir/install_fd.sh"
     "$recipe_dir/install_alacritty.sh"
+    "$recipe_dir/fix_cedilla.sh"
+    "$recipe_dir/restore_terminal_cfg.sh"
+    "$recipe_dir/restore_bind_keys.sh"
+    "$recipe_dir/make_caps_super.sh"
   )
 
   for recipe in "${recipes[@]}"; do
