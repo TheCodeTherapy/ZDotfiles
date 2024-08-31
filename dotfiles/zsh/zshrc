@@ -107,6 +107,7 @@ export DOTFILESPATH="ZDotfiles"
 export PATH=$PATH:$HOME/${DOTFILESPATH}/scripts
 export PATH=$PATH:$HOME/${DOTFILESPATH}/bin
 export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.local/bin
 export DOTFILES=$DOTFILESPATH
 export PAGER="most"
 
