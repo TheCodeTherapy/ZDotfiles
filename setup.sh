@@ -42,10 +42,17 @@ install_basic_packages() {
     gir1.2-ayatanaappindicator3-0.1 libgtk-4-dev libx11-dev libxcomposite-dev
     libxfixes-dev libgl1-mesa-dev libxi-dev libwayland-dev libncurses5-dev
     libreadline-dev usbview v4l-utils libxrender-dev libglew-dev
+    gdebi nautilus-admin nautilus-extension-gnome-terminal
+    gnome-shell-extension-manager
   )
-  for package in "${packages[@]}"; do
-    install_with_package_manager "$package"
-  done
+
+  if ! sudo debconf-apt-progress -- apt-get install -y "${packages[@]}"; then
+    handle_error "Failed to install some packages."
+  fi
+
+  #for package in "${packages[@]}"; do
+  #  install_with_package_manager "$package"
+  #done
   sudo updatedb || handle_error "Failed to update the file database."
 }
 
@@ -76,7 +83,7 @@ install_recipes() {
     "$recipe_dir/fix_cedilla.sh"
     "$recipe_dir/restore_terminal_cfg.sh"
     "$recipe_dir/restore_bind_keys.sh"
-    "$recipe_dir/make_caps_super.sh"
+    "$recipe_dir/make_caps_hyper.sh"
   )
 
   for recipe in "${recipes[@]}"; do
