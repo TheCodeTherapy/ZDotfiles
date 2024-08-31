@@ -1,4 +1,6 @@
 local chatgpt = require("plugins.gpt.chatgpt")
+local repo_info_generator = require("plugins.gpt.repo_info")
+repo_info_generator.generate_repo_info()
 
 -- Function to create and handle a multi-line input floating window
 local function get_user_input(prompt_text, callback)
