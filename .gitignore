@@ -20,4 +20,5 @@ temp
 drivers/*
 diagnostics.md
 gpt_response.md
+.repoinfo.md
 
