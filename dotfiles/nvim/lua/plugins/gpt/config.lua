@@ -1,6 +1,5 @@
 local chatgpt = require("plugins.gpt.chatgpt")
 local repo_info_generator = require("plugins.gpt.repo_info")
-repo_info_generator.generate_repo_info()
 
 -- Function to create and handle a multi-line input floating window
 local function get_user_input(prompt_text, callback)
@@ -58,6 +57,24 @@ local function get_user_input(prompt_text, callback)
   vim.cmd("startinsert")
 end
 
+local function save_gpt_last_request(system_prompt, user_input)
+  local timestamp = os.date("%Y-%m-%d %H:%M:%S")
+  local last_request_file = "gpt_response.md"
+  last_request_file = vim.fn.fnamemodify(last_request_file, ":h") .. "/.gpt_last_request.md"
+
+  local file = io.open(last_request_file, "w")
+  if file then
+    file:write("# GPT Last Request\n\n")
+    file:write("**Timestamp:** " .. timestamp .. "\n\n")
+    file:write("**System Prompt:**\n\n" .. system_prompt .. "\n\n")
+    file:write("**User Input:**\n\n" .. user_input .. "\n\n")
+    file:close()
+    print("GPT last request saved to " .. last_request_file)
+  else
+    print("Error: Failed to write .gpt_last_request.md")
+  end
+end
+
 -- Command to trigger the GPT request with the multi-line input window
 vim.api.nvim_create_user_command("GPT", function()
   local api_key = os.getenv("OPENAI_API_KEY")
@@ -68,13 +85,21 @@ vim.api.nvim_create_user_command("GPT", function()
 
   get_user_input("User Prompt:", function(user_input)
     if user_input and user_input:gsub("%s+", "") ~= "" then
-      chatgpt.chatgpt_request(
-        api_key,
-        "You are a helpful assistant. Always answer in a markdown format. When writing code, please keep in mind to properly set the markdown for the appropriate syntax highlight.",
-        user_input,
-        "gpt_response.md"
-      )
-      vim.cmd("e gpt_response.md")
+      local repo_info = repo_info_generator.generate_repo_info()
+      if not repo_info then
+        print("Error: Failed to generate repo info")
+        return
+      else
+        local repo_info_content = io.open(repo_info, "r"):read("*a")
+        local system_prompt = "You are a helpful assistant."
+        system_prompt = system_prompt .. "Always answer in a markdown format."
+        system_prompt = system_prompt
+          .. "When writing code, please keep in mind to properly set the markdown for the appropriate syntax highlight."
+        system_prompt = system_prompt .. repo_info_content
+        save_gpt_last_request(system_prompt, user_input)
+        chatgpt.chatgpt_request(api_key, system_prompt, user_input, "gpt_response.md")
+        -- vim.cmd("e gpt_response.md")
+      end
     else
       print("Input was canceled or empty")
     end
