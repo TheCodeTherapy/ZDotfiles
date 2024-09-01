@@ -80,5 +80,6 @@
   "zig.initialSetupDone": true,
   "[cpp]": {
     "editor.defaultFormatter": "xaver.clang-format"
-  }
+  },
+  "cmake.options.statusBarVisibility": "visible"
 }
