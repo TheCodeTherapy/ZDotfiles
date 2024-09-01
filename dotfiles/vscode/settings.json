@@ -6,11 +6,13 @@
   "window.titleBarStyle": "custom",
 
   "editor.renderWhitespace": "none",
-  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorTheme": "TheCodeTheme Dark",
   "workbench.iconTheme": "catppuccin-mocha",
 
   "editor.semanticHighlighting.enabled": true,
+
   "terminal.integrated.minimumContrastRatio": 1,
+  "terminal.integrated.fontSize": 16,
 
   "workbench.activityBar.location": "top",
   "window.customTitleBarVisibility": "auto",
@@ -23,19 +25,20 @@
     "**/i3/config": "i3"
   },
   "workbench.colorCustomizations": {
-    "editor.background": "#171721",
-    "activityBar.background": "#121217",
-    "activityBar.foreground": "#888888",
-    "activityBarBadge.background": "#aaaaff",
-    "minimap.background": "#171721",
-    "sideBar.background": "#121217",
-    "statusBar.background": "#121217",
-    "sideBarSectionHeader.background": "#121217",
-    "tab.activeBorderTop": "#ddddff",
-    "tab.unfocusedActiveBorderTop": "#ddddff",
-    "breadcrumb.background": "#17172100",
-    "editorGutter.background": "#17172100",
-    "sideBarTitle.foreground": "#17172100"
+    // "editor.background": "#171721",
+    // "activityBar.background": "#121217",
+    // "activityBar.foreground": "#888888",
+    // "activityBarBadge.background": "#aaaaff",
+    // "minimap.background": "#171721",
+    // "sideBar.background": "#121217",
+    // "statusBar.background": "#121217",
+    // "sideBarSectionHeader.background": "#121217",
+    // "tab.activeBorderTop": "#ddddff",
+    // "tab.unfocusedActiveBorderTop": "#ddddff",
+    // "breadcrumb.background": "#17172100",
+    // "editorGutter.background": "#17172100",
+    // "sideBarTitle.foreground": "#17172100",
+    // "terminal.background": "#121217"
   },
   "explorer.compactFolders": false,
   "editor.codeActionsOnSave": {
@@ -81,5 +84,10 @@
   "[cpp]": {
     "editor.defaultFormatter": "xaver.clang-format"
   },
-  "cmake.options.statusBarVisibility": "visible"
+  "cmake.options.statusBarVisibility": "visible",
+  "cmake.showOptionsMovedNotification": false,
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ]
 }
