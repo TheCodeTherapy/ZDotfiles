@@ -16,34 +16,36 @@ install_basic_packages() {
   print_info "Installing basic packages ..."
   local packages=(
     plocate build-essential llvm pkg-config autoconf automake cmake cmake-data
-    autopoint ninja-build gettext libtool libtool-bin g++ meson clang
-    clang-tools ca-certificates curl gnupg lsb-release python-is-python3
+    autopoint ninja-build gettext libtool libtool-bin g++ make meson clang nasm
+    clang-tools ca-certificates curl gnupg lsb-release python-is-python3 feh
     ipython3 python3-pip python3-dev python3-venv gawk unzip lzma tree neofetch
+    python3-gi gir1.2-gtk-3.0 python3-gi-cairo python3-cairo python3-setuptools
+    python3-babel python3-dbus playerctl fonts-font-awesome slop dunst timidity
+    python3-pynvim python3-sphinx python3-packaging xclip notification-daemon
     git git-lfs zsh tmux gnome-tweaks inxi most ttfautohint v4l2loopback-dkms
-    ffmpeg htop bc fzf ranger libxext-dev ripgrep python3-pynvim xclip
-    libnotify-bin libfontconfig1-dev libfreetype-dev jq pixz hashdeep
+    ffmpeg htop bc fzf ranger ripgrep gdebi nautilus-admin tar jq pixz
+    screenkey mypaint rofi gimp blender imagemagick net-tools xcb-proto
+    gir1.2-ayatanaappindicator3-0.1 nautilus-extension-gnome-terminal
+    gnome-shell-extension-manager policykit-1-gnome uthash-dev hashdeep
+    libnotify-bin libfontconfig1-dev libfreetype-dev libxext-dev
     liblxc-dev libxrandr-dev libxinerama-dev libxcursor-dev libglx-dev
-    libgl-dev screenkey mypaint rofi gimp blender imagemagick net-tools
-    libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev
+    libgl-dev libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev
     libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev
     libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev
     libxcb-shape0-dev libxcb-xrm-dev libxcb-xrm0 libxcb-xkb-dev
     libconfig-dev libdbus-1-dev libegl-dev libpcre2-dev libpixman-1-dev
     libx11-xcb-dev libxcb-composite0-dev libxcb-damage0-dev libxcb-dpms0-dev
     libxcb-glx0-dev libxcb-image0-dev libxcb-present-dev libxcb-render0-dev
-    libxcb-render-util0-dev libxcb-util-dev libxcb-xfixes0-dev uthash-dev
+    libxcb-render-util0-dev libxcb-util-dev libxcb-xfixes0-dev
     libxkbcommon-dev libxkbcommon-x11-dev xutils-dev asciidoc libconfuse-dev
-    libasound2-dev libiw-dev libpulse-dev libnl-genl-3-dev feh
-    notification-daemon dunst python3-sphinx python3-packaging libuv1-dev
+    libasound2-dev libiw-dev libpulse-dev libnl-genl-3-dev libuv1-dev
     libcairo2-dev python3-xcbgen libxcb-ewmh-dev libjsoncpp-dev
-    libmpdclient-dev libcurl4-openssl-dev xcb-proto policykit-1-gnome
-    python3-gi gir1.2-gtk-3.0 python3-gi-cairo python3-cairo python3-setuptools
-    python3-babel python3-dbus playerctl fonts-font-awesome slop
-    gir1.2-ayatanaappindicator3-0.1 libgtk-4-dev libx11-dev libxcomposite-dev
-    libxfixes-dev libgl1-mesa-dev libxi-dev libwayland-dev libncurses5-dev
-    libreadline-dev usbview v4l-utils libxrender-dev libglew-dev
-    gdebi nautilus-admin nautilus-extension-gnome-terminal
-    gnome-shell-extension-manager
+    libmpdclient-dev libcurl4-openssl-dev libgtk-4-dev libx11-dev
+    libxcomposite-dev libxfixes-dev libgl1-mesa-dev libxi-dev libwayland-dev
+    libncurses5-dev libreadline-dev usbview v4l-utils libxrender-dev
+    libglew-dev libsdl2-dev zlib1g-dev libz3-dev libjpeg-dev libfluidsynth-dev
+    libgme-dev libopenal-dev libopenal-data libmpg123-dev libsndfile1-dev
+    libgtk-3-dev libsdl1.2-dev
   )
 
   if ! sudo debconf-apt-progress -- apt-get install -y "${packages[@]}"; then
