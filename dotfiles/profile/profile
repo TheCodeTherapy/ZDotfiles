@@ -29,12 +29,18 @@ DOTFILESPATH="ZDotfiles"
 
 source "${HOME}"/.gptkey
 
-export PATH=$PATH:$HOME/${DOTFILESPATH}/scripts
-export PATH=$PATH:$HOME/${DOTFILESPATH}/bin
-export PATH=$PATH:/opt/rust/bin
-export PATH=$PATH:$HOME/.cargo/bin
+PATH=$PATH:$HOME/${DOTFILESPATH}/scripts
+PATH=$PATH:$HOME/${DOTFILESPATH}/bin
+PATH=$PATH:$HOME/${DOTFILESPATH}/z_setup_scripts
+PATH=$PATH:/opt/rust/bin
+PATH=$PATH:$HOME/.cargo/bin
+PATH=$PATH:/usr/local/go/bin
+PATH=$PATH:$HOME/go/bin
+export PATH
+
 export DOTFILES=$DOTFILESPATH
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$HOME/go/bin
+export GAMES=$HOME/Games
+
 export PAGER="most"
+
 . "$HOME/.cargo/env"
