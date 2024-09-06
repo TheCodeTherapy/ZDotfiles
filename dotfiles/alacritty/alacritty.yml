@@ -14,8 +14,9 @@ window:
   opacity: 0.85
   decorations: none
   startup_mode: Windowed
-  title: Alacritty
+  title: ""
   class: Alacritty
+  dynamic_title: false
 
 # window.dynamic_title: true
 # window.opacity: 0.7
