@@ -78,6 +78,7 @@ install_recipes() {
     "$recipe_dir/install_tmuxpm.sh"
     "$recipe_dir/install_rust.sh"
     "$recipe_dir/install_golang.sh"
+    "$recipe_dir/install_mono.sh"
     "$recipe_dir/install_exa.sh"
     "$recipe_dir/install_docker.sh"
     "$recipe_dir/install_dockercompose.sh"
