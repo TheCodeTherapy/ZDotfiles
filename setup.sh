@@ -15,12 +15,12 @@ update_system() {
 install_basic_packages() {
   local packages=(
     plocate build-essential llvm pkg-config autoconf automake cmake cmake-data
-    autopoint ninja-build gettext libtool libtool-bin g++ make meson clang nasm
-    clang-tools curl wget ca-certificates gnupg lsb-release feh gawk unzip lzma
+    autopoint ninja-build gettext libtool libtool-bin g++ make meson clang gcc
+    nasm clang-tools dkms curl wget ca-certificates gnupg lsb-release feh gawk
     xclip notification-daemon git git-lfs zsh tmux gnome-tweaks inxi most tree
+    nautilus-admin tar jq pixz screenkey mypaint rofi gimp blender lzma unzip
     neofetch playerctl fonts-font-awesome slop dunst timidity gir1.2-gtk-3.0
     ttfautohint v4l2loopback-dkms ffmpeg htop bc fzf ranger ripgrep gdebi
-    nautilus-admin tar jq pixz screenkey mypaint rofi gimp blender
     imagemagick net-tools xcb-proto gir1.2-ayatanaappindicator3-0.1
     nautilus-extension-gnome-terminal asciidoc gnome-shell-extension-manager
     policykit-1 policykit-1-gnome uthash-dev hashdeep file usbview v4l-utils
@@ -61,6 +61,7 @@ install_dev_libs() {
     libreadline-dev libxrender-dev libglew-dev libsdl2-dev libz3-dev
     libjpeg-dev libfluidsynth-dev libgme-dev libopenal-dev libopenal-data
     libmpg123-dev libsndfile1-dev zlib1g-dev libglvnd-dev mesa-common-dev
+    libegl1 libgles-dev libgles1 libglvnd-core-dev libopengl-dev
   )
 
   print_info "Installing dev libs ..."
@@ -171,7 +172,7 @@ link_launchers() {
 }
 
 update_cache() {
-  print_info "Updating cache ..."
+  print_info "Updating fonts cache ..."
   fc-cache -f || handle_error "Failed to update font cache."
   sudo updatedb || handle_error "Failed to update the file database."
 }
