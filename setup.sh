@@ -20,14 +20,15 @@ install_basic_packages() {
     xclip notification-daemon git git-lfs zsh tmux gnome-tweaks inxi most tree
     nautilus-admin tar jq pixz screenkey mypaint rofi gimp blender lzma unzip
     neofetch playerctl fonts-font-awesome slop dunst timidity gir1.2-gtk-3.0
-    ttfautohint v4l2loopback-dkms ffmpeg htop bc fzf ranger ripgrep gdebi
-    imagemagick net-tools xcb-proto gir1.2-ayatanaappindicator3-0.1
+    ttfautohint v4l2loopback-dkms ffmpeg htop bc fzf ranger ripgrep gdebi rar
+    imagemagick net-tools xcb-proto gir1.2-ayatanaappindicator3-0.1 dialog
     nautilus-extension-gnome-terminal asciidoc gnome-shell-extension-manager
     policykit-1 policykit-1-gnome uthash-dev hashdeep file usbview v4l-utils
     python-is-python3 ipython3 python3-pip python3-dev python3-venv
     python3-gi python3-gi-cairo python3-cairo python3-setuptools
     python3-babel python3-dbus python3-pynvim python3-sphinx python3-packaging
-    python3-xcbgen xutils-dev xwayland valac hwdata
+    python3-xcbgen pipx xutils-dev xwayland valac hwdata vlc transmission
+    bear p7zip-full conky-all
   )
 
   print_info "Installing basic packages ..."
@@ -62,6 +63,9 @@ install_dev_libs() {
     libjpeg-dev libfluidsynth-dev libgme-dev libopenal-dev libopenal-data
     libmpg123-dev libsndfile1-dev zlib1g-dev libglvnd-dev mesa-common-dev
     libegl1 libgles-dev libgles1 libglvnd-core-dev libopengl-dev
+    libwxgtk3.2-dev libwxgtk3.2-1t64 libwxbase3.2-1t64 libwxsvg-dev libftgl-dev
+    libfreeimage-dev liblua5.4-dev libwxgtk-webview3.2-dev libadwaita-1-dev
+    libwireplumber-0.4-dev libdmapsharing-4.0-dev libswresample-dev
   )
 
   print_info "Installing dev libs ..."
