@@ -60,7 +60,7 @@ install_dev_libs() {
     libxfixes-dev libgl1-mesa-dev libxi-dev libwayland-dev libncurses5-dev
     libreadline-dev libxrender-dev libglew-dev libsdl2-dev libz3-dev
     libjpeg-dev libfluidsynth-dev libgme-dev libopenal-dev libopenal-data
-    libmpg123-dev libsndfile1-dev zlib1g-dev
+    libmpg123-dev libsndfile1-dev zlib1g-dev libglvnd-dev mesa-common-dev
   )
 
   print_info "Installing dev libs ..."
