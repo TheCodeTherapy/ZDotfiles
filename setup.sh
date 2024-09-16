@@ -127,6 +127,7 @@ install_recipes() {
 link_dotfiles() {
   local target_home="$HOME"
   local target_config="$HOME/.config"
+  mkdir -p "$target_config/Code/User"
   declare -A files_to_link=(
     ["${DOTDOT}/profile/profile"]="$target_home/.profile"
     ["${DOTDOT}/bash/bashrc"]="$target_home/.bashrc"
