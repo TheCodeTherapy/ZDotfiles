@@ -4,7 +4,7 @@ set -eu
 sleep 2
 ME="/home/$(whoami)"
 DOTDIR="${ME}/ZDotfiles"
-CONKYDIR="${DOTDIR}/conky"
+CONKYDIR="${DOTDIR}/dotfiles/conky"
 
 set -o allexport
 source $CONKYDIR/.env
