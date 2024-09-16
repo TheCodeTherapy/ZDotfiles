@@ -10,6 +10,8 @@ install_ytdlp() {
   else
     print_info "Installing YT-dlp ..."
 
+    mkdir -p $DOTDIR/bin
+
     cd "$DOTDIR" || handle_error "Failed to change directory to $DOTDIR"
     wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux \
       -O "$DOTDIR"/bin/yt-dlp ||
