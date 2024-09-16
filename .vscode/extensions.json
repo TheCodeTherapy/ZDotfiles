@@ -1,5 +1,7 @@
 {
   "recommendations": [
+    "TheCodeTherapy.thecodetheme-dark",
+    "TheCodeTherapy.thecodegpt",
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
     "boyswan.glsl-literal",
