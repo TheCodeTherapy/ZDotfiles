@@ -103,6 +103,7 @@ install_recipes() {
     "$recipe_dir/install_exa.sh"
     "$recipe_dir/install_docker.sh"
     "$recipe_dir/install_dockercompose.sh"
+    "$recipe_dir/install_nvidiacontainertk.sh"
     "$recipe_dir/install_xcolor.sh"
     "$recipe_dir/install_fd.sh"
     "$recipe_dir/install_alacritty.sh"
