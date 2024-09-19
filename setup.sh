@@ -95,6 +95,7 @@ install_recipes() {
     "$recipe_dir/install_brave.sh"
     "$recipe_dir/install_lazygit.sh"
     "$recipe_dir/install_gcloud.sh"
+    "$recipe_dir/install_cloudflared.sh"
     "$recipe_dir/install_githubcli.sh"
     "$recipe_dir/install_tmuxpm.sh"
     "$recipe_dir/install_rust.sh"
