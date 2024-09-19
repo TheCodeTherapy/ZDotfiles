@@ -41,6 +41,8 @@ export PATH
 export DOTFILES=$DOTFILESPATH
 export GAMES=$HOME/Games
 
+export CHROME_DEVEL_SANDBOX=/opt/google/chrome/chrome-sandbox
+
 export PAGER="most"
 
 . "$HOME/.cargo/env"
