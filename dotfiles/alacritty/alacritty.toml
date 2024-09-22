@@ -612,7 +612,6 @@ semantic_escape_chars = ''',│`|:"' ()[]{}<>'''
 
 [window]
 class = "Alacritty"
-decorations = "none"
 dynamic_padding = false
 opacity = 1.0
 startup_mode = "Windowed"
