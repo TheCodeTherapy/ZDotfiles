@@ -8,41 +8,53 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-# if running bash
+DOTFILESPATH="ZDotfiles"
+
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
 
-# set PATH so it includes user's private bin if it exists
+PATH=$PATH:$HOME/${DOTFILESPATH}/scripts
+PATH=$PATH:$HOME/${DOTFILESPATH}/bin
+PATH=$PATH:$HOME/${DOTFILESPATH}/z_setup_scripts
+
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-DOTFILESPATH="ZDotfiles"
 
-source "${HOME}"/.gptkey
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH=$PATH:$HOME/.cargo/bin
+fi
 
-PATH=$PATH:$HOME/${DOTFILESPATH}/scripts
-PATH=$PATH:$HOME/${DOTFILESPATH}/bin
-PATH=$PATH:$HOME/${DOTFILESPATH}/z_setup_scripts
-PATH=$PATH:/opt/rust/bin
-PATH=$PATH:$HOME/.cargo/bin
-PATH=$PATH:/usr/local/go/bin
-PATH=$PATH:$HOME/go/bin
+if [ -d /opt/rust/bin ] ; then
+    PATH=$PATH:/opt/rust/bin
+fi
+
+if [ -d "$HOME/go/bin" ] ; then
+    PATH=$PATH:$HOME/go/bin
+fi
+
+if [ -d /usr/local/go/bin ] ; then
+    PATH=$PATH:/usr/local/go/bin
+fi
+
 export PATH
-
 export DOTFILES=$DOTFILESPATH
 export GAMES=$HOME/Games
 
 export CHROME_DEVEL_SANDBOX=/opt/google/chrome/chrome-sandbox
-
 export PAGER="most"
 
-. "$HOME/.cargo/env"
+if [ -f "${HOME}"/.gptkey ] ; then
+    source "${HOME}"/.gptkey
+fi
+
+if [ -f "$HOME/.cargo/env" ] ; then
+    . "$HOME/.cargo/env"
+fi
