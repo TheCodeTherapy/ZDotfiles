@@ -109,6 +109,7 @@ install_recipes() {
     "$recipe_dir/install_fd.sh"
     "$recipe_dir/install_alacritty.sh"
     "$recipe_dir/install_ytdlp.sh"
+    "$recipe_dir/install_squid.sh"
     "$recipe_dir/fix_cedilla.sh"
     "$recipe_dir/restore_terminal_cfg.sh"
     "$recipe_dir/restore_bind_keys.sh"
