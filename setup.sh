@@ -28,7 +28,7 @@ install_basic_packages() {
     python3-gi python3-gi-cairo python3-cairo python3-setuptools
     python3-babel python3-dbus python3-pynvim python3-sphinx python3-packaging
     python3-xcbgen pipx xutils-dev xwayland valac hwdata vlc transmission
-    bear p7zip-full conky-all
+    bear p7zip-full conky-all zsh-autosuggestions zsh-syntax-highlighting
   )
 
   print_info "Installing basic packages ..."
