@@ -114,20 +114,20 @@ export DOTFILES=$DOTFILESPATH
 export PAGER="most"
 
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias tmux='tmux -2'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls --color=auto'
+  alias tmux='tmux -2'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
 fi
 
 if [ -f $ME/.cargo/bin/exa ]; then
-    alias ll='exa -bghHlS --git'
-    alias la='exa -bghHlSa --git'
+  alias ll='exa -bghHlS --git'
+  alias la='exa -bghHlSa --git'
 else
-    alias ll='ls -hl --color=auto'
-    alias la='ls -hlA --color=auto'
+  alias ll='ls -hl --color=auto'
+  alias la='ls -hlA --color=auto'
 fi
 
 export NVM_DIR="$HOME/.nvm"
@@ -148,6 +148,14 @@ export NVM_DIR="$HOME/.nvm"
 
 if [ -d "$HOME/.powerlevel10k" ]; then
   source ~/.powerlevel10k/powerlevel10k.zsh-theme
+fi
+
+if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
