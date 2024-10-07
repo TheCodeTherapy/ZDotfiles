@@ -44,6 +44,10 @@ if [ -d /usr/local/go/bin ] ; then
     PATH=$PATH:/usr/local/go/bin
 fi
 
+if [ -d "$HOME/$DOTFILESPATH/depot_tools" ] ; then
+    PATH=$PATH:$HOME/$DOTFILESPATH/depot_tools
+fi
+
 export PATH
 export DOTFILES=$DOTFILESPATH
 export GAMES=$HOME/Games

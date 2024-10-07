@@ -108,10 +108,11 @@ export ME="/home/$(whoami)"
 export DOTFILESPATH="ZDotfiles"
 export PATH=$PATH:$HOME/${DOTFILESPATH}/scripts
 export PATH=$PATH:$HOME/${DOTFILESPATH}/bin
+export PATH=$PATH:$HOME/${DOTFILESPATH}/depot_tools
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.local/bin
-export DOTFILES=$DOTFILESPATH
 export PAGER="most"
+export DOTFILES=$DOTFILESPATH
 
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
