@@ -90,5 +90,8 @@
   ],
   "C_Cpp.intelliSenseEngine": "disabled",
   "clangd.path": "/home/marcogomez/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/18.1.3/clangd_18.1.3/bin/clangd",
-  "workbench.activityBar.location": "top"
+  "workbench.activityBar.location": "top",
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  }
 }
