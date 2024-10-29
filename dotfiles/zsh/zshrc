@@ -1,5 +1,7 @@
 # if [ "$TMUX" = "" ]; then tmux; fi
-source "${HOME}"/.gptkey
+if [ -f "${HOME}"/.gptkey ]; then
+  source "${HOME}"/.gptkey
+fi
 
 echo && echo && neofetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
