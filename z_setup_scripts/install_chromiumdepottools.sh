@@ -5,6 +5,7 @@ source "$SCRIPT_DIR/_helpers.sh"
 source "$SCRIPT_DIR/_config.sh"
 
 install_chrome() {
+  source "${ME}"/.profile
   if gclient --version >/dev/null 2>&1; then
     print_info "Chromium Depot Tools is already installed ..."
   else
