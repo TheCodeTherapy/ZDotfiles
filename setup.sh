@@ -114,6 +114,9 @@ install_recipes() {
     "$recipe_dir/restore_terminal_cfg.sh"
     "$recipe_dir/restore_bind_keys.sh"
     "$recipe_dir/make_caps_hyper.sh"
+    "$recipe_dir/install_nginx.sh"
+    "$recipe_dir/install_oh-my-zsh.sh"
+    "$recipe_dir/install_powerlevel10k.sh"
   )
 
   for recipe in "${recipes[@]}"; do
