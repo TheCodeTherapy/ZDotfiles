@@ -24,7 +24,7 @@ install_basic_packages() {
     imagemagick net-tools xcb-proto gir1.2-ayatanaappindicator3-0.1 dialog
     nautilus-extension-gnome-terminal asciidoc gnome-shell-extension-manager
     policykit-1 policykit-1-gnome uthash-dev hashdeep file usbview v4l-utils
-    python-is-python3 ipython3 python3-pip python3-dev python3-venv
+    flatpak python-is-python3 ipython3 python3-pip python3-dev python3-venv
     python3-gi python3-gi-cairo python3-cairo python3-setuptools
     python3-babel python3-dbus python3-pynvim python3-sphinx python3-packaging
     python3-xcbgen pipx xutils-dev xwayland valac hwdata vlc transmission
