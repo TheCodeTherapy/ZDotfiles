@@ -87,7 +87,6 @@ install_recipes() {
   local recipes=(
     "$recipe_dir/install_neovim.sh"
     "$recipe_dir/install_vscode.sh"
-    "$recipe_dir/install_obs.sh"
     "$recipe_dir/install_nvm.sh"
     "$recipe_dir/install_node.sh"
     "$recipe_dir/install_yarn.sh"
