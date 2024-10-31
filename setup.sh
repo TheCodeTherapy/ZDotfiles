@@ -62,7 +62,7 @@ install_dev_libs() {
     libreadline-dev libxrender-dev libglew-dev libsdl2-dev libz3-dev
     libjpeg-dev libfluidsynth-dev libgme-dev libopenal-dev libopenal-data
     libmpg123-dev libsndfile1-dev zlib1g-dev libglvnd-dev mesa-common-dev
-    libegl1 libgles-dev libgles1 libglvnd-core-dev libopengl-dev
+    libegl1 libgles-dev libgles1 libglvnd-core-dev libopengl-dev libgif-dev
     libwxgtk3.2-dev libwxgtk3.2-1t64 libwxbase3.2-1t64 libwxsvg-dev libftgl-dev
     libfreeimage-dev liblua5.4-dev libwxgtk-webview3.2-dev libadwaita-1-dev
     libwireplumber-0.4-dev libdmapsharing-4.0-dev libswresample-dev
