@@ -85,6 +85,7 @@ install_recipes() {
   recipe_dir="${SCRIPT_DIR}/z_setup_scripts"
 
   local recipes=(
+    "$recipe_dir/install_flatpak.sh"
     "$recipe_dir/install_neovim.sh"
     "$recipe_dir/install_vscode.sh"
     "$recipe_dir/install_nvm.sh"
@@ -175,6 +176,10 @@ install_snap_packages() {
   install_with_snap spotify
 }
 
+install_flatpak_packages() {
+  flatpak install flathub com.obsproject.Studio
+}
+
 link_launchers() {
   print_info "Linking launchers ..."
   mkdir -p "$ME"/.local/share/applications
@@ -196,6 +201,7 @@ update_plocate_db
 
 install_recipes
 install_snap_packages
+install_flatpak_packages
 
 link_dotfiles
 link_launchers
