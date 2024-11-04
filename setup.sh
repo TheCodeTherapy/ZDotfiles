@@ -93,6 +93,7 @@ install_recipes() {
     "$recipe_dir/install_yarn.sh"
     "$recipe_dir/install_chrome.sh"
     "$recipe_dir/install_brave.sh"
+    "$recipe_dir/install_fanatec.sh"
     "$recipe_dir/install_lazygit.sh"
     "$recipe_dir/install_gcloud.sh"
     "$recipe_dir/install_chromiumdepottools.sh"
@@ -177,7 +178,23 @@ install_snap_packages() {
 }
 
 install_flatpak_packages() {
-  flatpak install flathub com.obsproject.Studio
+  if [[ -d $HOME/.var/app/com.obsproject.Studio ]]; then
+    print_info "OBS is already installed ..."
+  else
+    flatpak install flathub com.obsproject.Studio
+  fi
+
+  if [[ -d $HOME/.var/app/com.valvesoftware.Steam ]]; then
+    print_info "Steam is already installed ..."
+  else
+    flatpak install flathub com.valvesoftware.Steam
+  fi
+
+  if [[ -d $HOME/.var/app/net.davidotek.pupgui2 ]]; then
+    print_info "ProtonUp-Qt is already installed ..."
+  else
+    flatpak install flathub net.davidotek.pupgui2
+  fi
 }
 
 link_launchers() {
