@@ -10,6 +10,8 @@ install_golang() {
   else
     print_info "Installing Golang ..."
 
+    export GOPATH="$ME/.go"
+
     # Create a temporary directory for the installation
     cd "$DOTDIR" || handle_error "Failed to change directory to $DOTDIR"
     mkdir -p temp || handle_error "Failed to create temporary directory"
