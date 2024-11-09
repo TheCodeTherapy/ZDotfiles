@@ -80,6 +80,10 @@ update_plocate_db() {
 }
 
 install_recipes() {
+  sudo apt-get remove --purge -y -qq neovim || handle_error "Failed to remove neovim."
+  sudo apt-get autoremove -y -qq || handle_error "Autoremove failed."
+  sudo apt-get autoclean -y -qq || handle_error "Autoclean failed."
+
   local recipe_dir
   SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
   recipe_dir="${SCRIPT_DIR}/z_setup_scripts"
