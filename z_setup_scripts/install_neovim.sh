@@ -5,10 +5,16 @@ source "$SCRIPT_DIR/_helpers.sh"
 source "$SCRIPT_DIR/_config.sh"
 
 install_neovim() {
-  if [[ -f /usr/bin/nvim ]]; then
-    print_info "Neovim is already installed ..."
+  if nvim --version | grep "v0.10.1" >/dev/null 2>&1; then
+    print_info "Neovim v0.10.1 is already installed ..."
   else
-    print_info "Installing Neovim ..."
+    print_info "Installing Neovim v0.10.1 ..."
+
+    sudo apt-get remove --purge -y -qq neovim || handle_error "Failed to remove neovim."
+    sudo apt-get autoremove -y -qq || handle_error "Autoremove failed."
+    sudo apt-get autoclean -y -qq || handle_error "Autoclean failed."
+    sudo apt-get autoremove -y -qq || handle_error "Autoremove failed."
+    sudo apt-get autoclean -y -qq || handle_error "Autoclean failed."
 
     cd "$DOTDIR" ||
       handle_error "Failed to change directory to $DOTDIR"
