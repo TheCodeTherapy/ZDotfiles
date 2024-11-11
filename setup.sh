@@ -202,6 +202,12 @@ install_flatpak_packages() {
   else
     flatpak install flathub net.davidotek.pupgui2
   fi
+
+  if [[ -d $HOME/.var/app/com.github.Matoking.protontricks ]]; then
+    print_info "ProtonTricks is already installed ..."
+  else
+    flatpak install flathub com.github.Matoking.protontricks
+  fi
 }
 
 link_launchers() {
