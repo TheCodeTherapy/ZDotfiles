@@ -5,7 +5,7 @@ source "$SCRIPT_DIR/_helpers.sh"
 source "$SCRIPT_DIR/_config.sh"
 
 install_neovim() {
-  if nvim --version | grep "v0.10.1" >/dev/null 2>&1; then
+  if /usr/bin/nvim --version | grep "v0.10.1" >/dev/null 2>&1; then
     print_info "Neovim v0.10.1 is already installed ..."
   else
     print_info "Installing Neovim v0.10.1 ..."
