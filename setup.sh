@@ -80,7 +80,6 @@ update_plocate_db() {
 }
 
 install_recipes() {
-  sudo apt-get remove --purge -y -qq neovim || handle_error "Failed to remove neovim."
   sudo apt-get autoremove -y -qq || handle_error "Autoremove failed."
   sudo apt-get autoclean -y -qq || handle_error "Autoclean failed."
 
@@ -182,6 +181,10 @@ install_snap_packages() {
 }
 
 install_flatpak_packages() {
+  sudo apt-get install -y -qq flatpak || handle_error "Failed to install flatpak."
+  sudo apt-get install -y -qq gnome-software-plugin-flatpak || handle_error "Failed to install gnome-software-plugin-flatpak."
+  flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
   if [[ -d $HOME/.var/app/com.obsproject.Studio ]]; then
     print_info "OBS is already installed ..."
   else
