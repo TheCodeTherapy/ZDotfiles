@@ -4,6 +4,7 @@
   "editor.fontFamily": "'NotoMono Nerd Font', 'MesloLGS NF'",
   "editor.fontLigatures": false,
   "window.titleBarStyle": "custom",
+  "window.menuBarVisibility": "toggle",
 
   "editor.renderWhitespace": "none",
   "workbench.colorTheme": "TheCodeTheme Dark",
