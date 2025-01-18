@@ -88,6 +88,11 @@ install_recipes() {
   SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
   recipe_dir="${SCRIPT_DIR}/z_setup_scripts"
 
+  # Currently disabled recipes
+  # "$recipe_dir/install_squid.sh"
+  # "$recipe_dir/make_caps_hyper.sh"
+  # "$recipe_dir/install_chromiumdepottools.sh"
+
   local recipes=(
     "$recipe_dir/install_flatpak.sh"
     "$recipe_dir/install_neovim.sh"
@@ -100,7 +105,6 @@ install_recipes() {
     "$recipe_dir/install_fanatec.sh"
     "$recipe_dir/install_lazygit.sh"
     "$recipe_dir/install_gcloud.sh"
-    "$recipe_dir/install_chromiumdepottools.sh"
     "$recipe_dir/install_cloudflared.sh"
     "$recipe_dir/install_githubcli.sh"
     "$recipe_dir/install_tmuxpm.sh"
@@ -115,11 +119,9 @@ install_recipes() {
     "$recipe_dir/install_fd.sh"
     "$recipe_dir/install_alacritty.sh"
     "$recipe_dir/install_ytdlp.sh"
-    "$recipe_dir/install_squid.sh"
     "$recipe_dir/fix_cedilla.sh"
     "$recipe_dir/restore_terminal_cfg.sh"
     "$recipe_dir/restore_bind_keys.sh"
-    "$recipe_dir/make_caps_hyper.sh"
     "$recipe_dir/install_nginx.sh"
     "$recipe_dir/install_oh-my-zsh.sh"
     "$recipe_dir/install_powerlevel10k.sh"
