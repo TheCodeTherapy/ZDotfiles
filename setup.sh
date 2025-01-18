@@ -29,7 +29,7 @@ install_basic_packages() {
     python3-babel python3-dbus python3-pynvim python3-sphinx python3-packaging
     python3-xcbgen pipx xutils-dev xwayland valac hwdata vlc transmission
     bear p7zip-full conky-all zsh-autosuggestions zsh-syntax-highlighting
-    xdotool
+    xdotool fakeroot
   )
 
   print_info "Installing basic packages ..."
@@ -57,16 +57,16 @@ install_dev_libs() {
     libxcb-image0-dev libxcb-present-dev libxcb-render0-dev
     libxcb-render-util0-dev libxcb-util-dev libxcb-xfixes0-dev libxkbcommon-dev
     libxcb-ewmh-dev libnl-genl-3-dev libuv1-dev libcairo2-dev libjsoncpp-dev
-    libxkbcommon-x11-dev libconfuse-dev libasound2-dev libiw-dev libpulse-dev
-    libmpdclient-dev libcurl4-openssl-dev libx11-dev libxcomposite-dev
-    libxfixes-dev libgl1-mesa-dev libxi-dev libwayland-dev libncurses5-dev
-    libreadline-dev libxrender-dev libglew-dev libsdl2-dev libz3-dev
-    libjpeg-dev libfluidsynth-dev libgme-dev libopenal-dev libopenal-data
-    libmpg123-dev libsndfile1-dev zlib1g-dev libglvnd-dev mesa-common-dev
-    libegl1 libgles-dev libgles1 libglvnd-core-dev libopengl-dev libgif-dev
-    libwxgtk3.2-dev libwxgtk3.2-1t64 libwxbase3.2-1t64 libwxsvg-dev libftgl-dev
-    libfreeimage-dev liblua5.4-dev libwxgtk-webview3.2-dev libadwaita-1-dev
-    libwireplumber-0.4-dev libdmapsharing-4.0-dev libswresample-dev
+    libxkbcommon-x11-dev libxkbfile-dev libsecret-1-dev libkrb5-dev libconfuse-dev
+    libasound2-dev libiw-dev libpulse-dev libmpdclient-dev libcurl4-openssl-dev
+    libx11-dev libxcomposite-dev libxfixes-dev libgl1-mesa-dev libxi-dev
+    libwayland-dev libncurses5-dev libreadline-dev libxrender-dev libglew-dev
+    libsdl2-dev libz3-dev libjpeg-dev libfluidsynth-dev libgme-dev libopenal-dev
+    libopenal-data libmpg123-dev libsndfile1-dev zlib1g-dev libglvnd-dev
+    mesa-common-dev libegl1 libgles-dev libgles1 libglvnd-core-dev libopengl-dev
+    libgif-dev libwxgtk3.2-dev libwxgtk3.2-1t64 libwxbase3.2-1t64 libwxsvg-dev
+    libftgl-dev libfreeimage-dev liblua5.4-dev libwxgtk-webview3.2-dev
+    libadwaita-1-dev libwireplumber-0.4-dev libdmapsharing-4.0-dev libswresample-dev
   )
 
   print_info "Installing dev libs ..."
