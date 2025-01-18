@@ -16,7 +16,7 @@
   "editor.lightbulb.enabled": "off",
   "editor.copyWithSyntaxHighlighting": false,
   "editor.semanticHighlighting.enabled": true,
-  "workbench.statusBar.visible": false,
+  "workbench.statusBar.visible": true,
   "workbench.activityBar.location": "hidden",
 
   "workbench.colorCustomizations": {
