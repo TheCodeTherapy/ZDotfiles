@@ -17,6 +17,8 @@ install_ytdlp() {
       -O "$DOTDIR"/bin/yt-dlp ||
       handle_error "Failed to download YT-dlp"
 
+    chmod +x "$DOTDIR"/bin/yt-dlp
+
     print_success "YT-dlp installed successfully."
   fi
 }
