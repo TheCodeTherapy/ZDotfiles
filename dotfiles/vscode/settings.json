@@ -7,7 +7,7 @@
   "workbench.colorTheme": "TheCodeTheme Dark",
   "workbench.iconTheme": "catppuccin-mocha",
 
-  "window.titleBarStyle": "native",
+  "window.titleBarStyle": "custom",
   "window.menuBarVisibility": "toggle",
   "explorer.compactFolders": false,
   "breadcrumbs.enabled": false,
