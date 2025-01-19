@@ -142,6 +142,7 @@ link_dotfiles() {
   local target_home="$HOME"
   local target_config="$HOME/.config"
   mkdir -p "$target_config/Code/User"
+  mkdir -p "$target_config/VSCodium/User"
   declare -A files_to_link=(
     ["${DOTDOT}/profile/profile"]="$target_home/.profile"
     ["${DOTDOT}/bash/bashrc"]="$target_home/.bashrc"
@@ -168,6 +169,7 @@ link_dotfiles() {
     ["${DOTDOT}/dunst"]="$target_config/dunst"
     ["${DOTDOT}/neofetch"]="$target_config/neofetch"
     ["${DOTDOT}/vscode/settings.json"]="$target_config/Code/User/settings.json"
+    ["${DOTDOT}/vscodium/settings.json"]="$target_config/VSCodium/User/settings.json"
   )
 
   for source_file in "${!files_to_link[@]}"; do
