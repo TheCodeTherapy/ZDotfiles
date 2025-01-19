@@ -113,9 +113,11 @@ source $ZSH/oh-my-zsh.sh
 export ME="/home/$(whoami)"
 export DOTFILESPATH="ZDotfiles"
 export GOPATH="$ME/.go"
+export ODINPATH="$ME/.odin"
 export PATH=$PATH:$HOME/${DOTFILESPATH}/scripts
 export PATH=$PATH:$HOME/${DOTFILESPATH}/bin
 export PATH=$PATH:$HOME/${DOTFILESPATH}/depot_tools
+export PATH=$PATH:$HOME/.odin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.local/bin
 export PAGER="most"
