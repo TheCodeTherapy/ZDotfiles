@@ -17,7 +17,7 @@
   "editor.copyWithSyntaxHighlighting": false,
   "editor.semanticHighlighting.enabled": true,
   "workbench.statusBar.visible": true,
-  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "bottom",
 
   "workbench.colorCustomizations": {
     "editor.background": "#171721",
@@ -38,7 +38,7 @@
 
   "terminal.integrated.minimumContrastRatio": 1,
   "terminal.integrated.fontSize": 16,
-  "window.customTitleBarVisibility": "never",
+  "window.customTitleBarVisibility": "auto",
 
   "gopls": {
     "ui.semanticTokens": true
