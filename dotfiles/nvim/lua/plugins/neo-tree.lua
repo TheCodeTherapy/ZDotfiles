@@ -7,7 +7,7 @@ return {
         hide_gitignored = false,
       },
       window = {
-        width = 30,
+        width = 37,
         mappings = {
           ["L"] = "open_nofocus",
         },
@@ -22,6 +22,10 @@ return {
       },
     },
     sources = { "filesystem", "buffers", "git_status", "document_symbols" },
+    source_selector = {
+      winbar = true,
+      statusline = true,
+    },
     auto_close = true,
     close_if_last_window = true,
   },
