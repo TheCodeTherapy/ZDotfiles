@@ -2,6 +2,17 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 local surround_chars = "[\"'(){}%[%]]"
 
+local function merge_tables(t1, t2)
+  local result = {}
+  for k, v in pairs(t1) do
+    result[k] = v
+  end
+  for k, v in pairs(t2) do
+    result[k] = v
+  end
+  return result
+end
+
 local function copy_diagnostics_to_clipboard()
   local diagnostics = vim.diagnostic.get(0)
   local lines = {}
@@ -163,3 +174,9 @@ vim.keymap.set("i", "<C-g>", function()
     default_text = word,
   })
 end, opts)
+
+-- Back to start
+vim.keymap.set("n", "<leader>qA", function()
+  vim.cmd("bufdo bwipeout")
+  vim.cmd("Alpha")
+end, merge_tables(opts, { desc = "Close all buffers and return to dashboard" }))
