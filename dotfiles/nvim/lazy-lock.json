@@ -33,7 +33,7 @@
   "persistence.nvim": { "branch": "main", "commit": "f6aad7dde7fcf54148ccfc5f622c6d5badd0cc3d" },
   "plenary.nvim": { "branch": "master", "commit": "3707cdb1e43f5cea73afb6037e6494e7ce847a66" },
   "rustaceanvim": { "branch": "master", "commit": "8cf9705d98cc77837aa388a5d48f9a73f27f4782" },
-  "snacks.nvim": { "branch": "main", "commit": "f24b4372284ec67e699ea56bd16cd2d39597f89d" },
+  "snacks.nvim": { "branch": "main", "commit": "3df2408713efdbc72f9a8fcedc8586aed50ab023" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "dae2eac9d91464448b584c7949a31df8faefec56" },
   "telescope-undo.nvim": { "branch": "main", "commit": "2971cc9f193ec09e0c5de3563f99cbea16b63f10" },
   "telescope.nvim": { "branch": "master", "commit": "415af52339215926d705cccc08145f3782c4d132" },
