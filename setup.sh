@@ -29,7 +29,7 @@ install_basic_packages() {
     python3-babel python3-dbus python3-pynvim python3-sphinx python3-packaging
     python3-xcbgen pipx xutils-dev xwayland valac hwdata vlc transmission
     bear p7zip-full conky-all zsh-autosuggestions zsh-syntax-highlighting
-    xdotool fakeroot pavucontrol
+    xdotool fakeroot pavucontrol zeal qt6ct
   )
 
   print_info "Installing basic packages ..."
@@ -54,7 +54,7 @@ install_dev_libs() {
     libxcb-shape0-dev libxcb-xrm-dev libxcb-xrm0 libxcb-xkb-dev libconfig-dev
     libx11-xcb-dev libdbus-1-dev libegl-dev libpcre2-dev libpixman-1-dev
     libxcb-composite0-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-glx0-dev
-    libxcb-image0-dev libxcb-present-dev libxcb-render0-dev
+    libxcb-image0-dev libxcb-present-dev libxcb-render0-dev libcmark-dev
     libxcb-render-util0-dev libxcb-util-dev libxcb-xfixes0-dev libxkbcommon-dev
     libxcb-ewmh-dev libnl-genl-3-dev libuv1-dev libcairo2-dev libjsoncpp-dev
     libxkbcommon-x11-dev libxkbfile-dev libsecret-1-dev libkrb5-dev libconfuse-dev
