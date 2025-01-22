@@ -174,7 +174,7 @@ client.urgent               #ff0000 #904848 #ffdddd #904848 #703030
 client.placeholder          #424242 #304848 #ffffff #000000 #303030
 client.background           #008800
 
-for_window [all] border pixel 2
+for_window [all] border pixel 1
 
 # Workspace 1 =================================================================
 assign [title="^Friends List$"] $ws1
