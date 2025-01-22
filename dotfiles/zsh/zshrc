@@ -7,7 +7,16 @@ if [ -f "${HOME}"/.azure_marketplace ]; then
   source "${HOME}"/.azure_marketplace
 fi
 
-echo && echo && neofetch
+EMSCRIPTENPATH="$HOME/.emsdk"
+export EMSCRIPTENPATH="$EMSCRIPTENPATH"
+export PATH=$PATH:$EMSCRIPTENPATH
+export PATH=$PATH:$EMSCRIPTENPATH/upstream/emscripten
+
+if [ -d "$EMSCRIPTENPATH" ]; then
+  source $EMSCRIPTENPATH/emsdk_env.sh
+fi
+
+clear && echo && echo && neofetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.

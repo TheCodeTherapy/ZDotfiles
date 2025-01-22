@@ -48,6 +48,13 @@ if [ -d /usr/local/go/bin ] ; then
     PATH=$PATH:/usr/local/go/bin
 fi
 
+if [ -d "$HOME/.emsdk" ] ; then
+    PATH=$PATH:$HOME/.emsdk
+    if [ -d "$HOME/.emsdk/upstream/emscripten" ] ; then
+        PATH=$PATH:$HOME/.emsdk/upstream/emscripten
+    fi
+fi
+
 if [ -d "$HOME/$DOTFILESPATH/depot_tools" ] ; then
     PATH=$PATH:$HOME/$DOTFILESPATH/depot_tools
 fi
