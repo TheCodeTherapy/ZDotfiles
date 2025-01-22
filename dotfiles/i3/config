@@ -222,6 +222,7 @@ bindsym --whole-window --border $sup+shift+button4 workspace prev
 bindsym --whole-window --border $sup+shift+button5 workspace next
 
 for_window [title="^Friends List$"] floating enable
+for_window [title="^Volume Control$"] floating enable
 
 #exec --no-startup-id picom --config ~/ZDotfiles/dotconfig/picom/picom.conf
 
