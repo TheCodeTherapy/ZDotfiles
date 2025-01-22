@@ -1,9 +1,9 @@
 # i3-config ==================================================================
 
 set $bm HDMI-0
-set $lm DP-4
-set $cm DP-0
-set $rm DP-2
+set $lm DP-0
+set $cm DP-2
+set $rm DP-4
 
 set $sup Mod4
 set $mod Mod1
@@ -176,34 +176,44 @@ client.background           #008800
 
 for_window [all] border pixel 2
 
+# Workspace 1 =================================================================
 assign [title="^Friends List$"] $ws1
 assign [title="^Steam$"] $ws1
+# =============================================================================
 
 # Workspace 2 =================================================================
 assign [class="Code"] $ws2
 assign [title="^Path of Exile"] $ws2
+# =============================================================================
 
 # Workspace 3 =================================================================
+# =============================================================================
 
 # Workspace 4 =================================================================
+# =============================================================================
 
 # Workspace 5 =================================================================
+# =============================================================================
 
 # Workspace 6 =================================================================
 assign [class="Slack"] $ws6
 assign [class="skype"] $ws6
 assign [class="Skype"] $ws6
 assign [class="TelegramDesktop"] $ws6
+# =============================================================================
 
 # Workspace 7 =================================================================
+# =============================================================================
 
 # Workspace 8 =================================================================
 assign [class="discord"] $ws8
+# =============================================================================
 
 # Workspace 9 =================================================================
 assign [class="obs"]  $ws9
-assign [class="REAPER"] $ws9
-assign [class="QjackCtl"] $ws9
+# assign [class="REAPER"] $ws9
+# assign [class="QjackCtl"] $ws9
+# =============================================================================
 
 # Switch window/workspace with mod+scroll and mod+shift scroll
 bindsym --whole-window --border $sup+button4 focus left
@@ -211,8 +221,6 @@ bindsym --whole-window --border $sup+button5 focus right
 bindsym --whole-window --border $sup+shift+button4 workspace prev
 bindsym --whole-window --border $sup+shift+button5 workspace next
 
-
-for_window [class="QjackCtl" instance="qjackctl"] floating enable
 for_window [title="^Friends List$"] floating enable
 
 #exec --no-startup-id picom --config ~/ZDotfiles/dotconfig/picom/picom.conf
@@ -220,34 +228,23 @@ for_window [title="^Friends List$"] floating enable
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 
-# exec --no-startup-id xrandr \
-#         --output DP-4 --mode 1920x1080 --rate 143.85 --pos 3840x0 --rotate normal \
-#         --output DP-2 --primary --mode 1920x1080 --rate 143.85 --pos 1920x0 --rotate normal --left-of DP-4  \
-#         --output DP-0 --mode 1920x1080 --rate 143.85 --pos 0x0 --rotate normal --left-of DP-2 \
-#         --output HDMI-0 --off
-
 exec --no-startup-id xrandr \
-        --output HDMI-0 --mode 3840x2160 --rate 119.88 --pos 0x0 --rotate normal --left-of DP-4 \
-        --output DP-4 --mode 1920x1080 --rate 120.00 --pos 3840x0 --rotate normal --left-of DP-0 \
-        --output DP-0 --primary --mode 1920x1080 --rate 120.00 --pos 5760x0 --rotate normal --left-of DP-2 \
-        --output DP-2 --mode 1920x1080 --rate 120.00 --pos 7680x0 --rotate normal
+        --output DP-4 --mode 1920x1080 --rate 120.00 --rotate normal \
+        --output DP-2 --primary --mode 1920x1080 --rate 120.00 --rotate normal --left-of DP-4 \
+        --output DP-0 --mode 1920x1080 --rate 120.00 --rotate normal --left-of DP-2 \
+        --output HDMI-0 --mode 3840x2160 --rate 119.88 --rotate normal --left-of DP-0
 
-# exec --no-startup-id mpd
-
-# exec --no-startup-id /home/marcogomez/Apps/Telegram/Telegram
-exec --no-startup-id feh --bg-scale --no-xinerama ~/ZDotfiles/wallpaper/waves_ai.jpg
-exec --no-startup-id $HOME/ZDotfiles/dotconfig/polybar/launch.sh
-exec --no-startup-id obs
-exec --no-startup-id discord
-exec --no-startup-id qjackctl
-exec --no-startup-id slack
+exec --no-startup-id feh --bg-scale --no-xinerama ~/ZDotfiles/wallpaper/fog2.webp
 
 # exec --no-startup-id nm-applet
-# exec --no-startup-id conky --config=/home/marcogomez/dotfiles/conky/conky_sys.conf
-# exec --no-startup-id conky --config=/home/marcogomez/dotfiles/conky/conky_weather.conf
-exec --no-startup-id screenkey --start-disabled
-# exec --no-startup-id optimus-manager-qt
+# exec --no-startup-id screenkey --start-disabled
+# exec --no-startup-id flatpak run com.obsproject.Studio
+# exec --no-startup-id discord
 
-bindsym Print exec --no-startup-id xfce4-screenshooter
+exec --no-startup-id bash -c "sleep 3 && ~/ZDotfiles/dotconfig/polybar/launch.sh &"
+
+# exec --no-startup-id $HOME/ZDotfiles/dotconfig/polybar/launch.sh
+
+# bindsym Print exec --no-startup-id xfce4-screenshooter
 # bindsym --release $sup+x exec --no-startup-id import /tmp/latest-screenshot.png
 # bindsym --release $sup+Shift+c exec /home/marcogomez/dotfiles/scripts/webcamw
