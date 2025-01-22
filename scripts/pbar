@@ -1,0 +1,3 @@
+#!/bin/bash
+cd ~/ZDotfiles/dotfiles/polybar
+./launch.sh &
