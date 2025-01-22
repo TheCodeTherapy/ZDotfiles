@@ -39,7 +39,7 @@ bindsym --release $sup+n exec /home/marcogomez/ZDotfiles/scripts/latency
 # bindsym $sup+d exec ~/dotfiles/scripts/ddmenu
 # bindsym $sup+d exec --no-startup-id i3-dmenu-desktop
 
-bindsym $sup+t exec nautilus
+bindsym $sup+t exec GTK_THEME=Adwaita-dark nautilus
 
 # change focus
 bindsym $sup+h focus left
@@ -235,14 +235,14 @@ exec --no-startup-id xrandr \
         --output DP-0 --mode 1920x1080 --rate 120.00 --rotate normal --left-of DP-2 \
         --output HDMI-0 --mode 3840x2160 --rate 119.88 --rotate normal --left-of DP-0
 
-exec --no-startup-id feh --bg-scale --no-xinerama ~/ZDotfiles/wallpaper/fog2.webp
+exec --no-startup-id feh --bg-scale --no-xinerama ~/ZDotfiles/wallpaper/terrain_4s.jpg
 
-# exec --no-startup-id nm-applet
-# exec --no-startup-id screenkey --start-disabled
-# exec --no-startup-id flatpak run com.obsproject.Studio
-# exec --no-startup-id discord
+exec --no-startup-id nm-applet
+exec --no-startup-id screenkey --start-disabled
+exec --no-startup-id flatpak run com.obsproject.Studio
+exec --no-startup-id discord
 
-exec --no-startup-id bash -c "sleep 3 && ~/ZDotfiles/dotconfig/polybar/launch.sh &"
+exec --no-startup-id ~/ZDotfiles/dotconfig/polybar/launch.sh
 
 # exec --no-startup-id $HOME/ZDotfiles/dotconfig/polybar/launch.sh
 
