@@ -1,0 +1,17 @@
+
+#!/bin/sh
+
+#=============================================================================
+# @TheCodeTherapy - https://mgz.me
+# Rofi Temps
+# To use, create a custom keyboard shortcut by following below instructions:
+# Settings -> Keyboard -> Keyboard Shortcuts -> View and Customise Shortcuts ->
+# -> Custom Shortcuts -> + ->
+# Name: Rofi Temps
+# Command: [full path to this script file]
+# Shortcut: Super + Shift + t (or any other you might want)
+#=============================================================================
+
+THEME="/home/${USER}/ZDotfiles/dotfiles/rofi/sp.theme.rasi"
+rofi -show window -show-icons -theme ${THEME} -window-title "apps"
+
