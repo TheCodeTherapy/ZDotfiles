@@ -198,26 +198,43 @@ install_flatpak_packages() {
   if [[ -d $HOME/.var/app/com.obsproject.Studio ]]; then
     print_info "OBS is already installed ..."
   else
-    flatpak install flathub com.obsproject.Studio
+    print_info "Installing OBS ..."  
+    flatpak install -y flathub com.obsproject.Studio
+    mkdir -p "$HOME/.var/app/com.obsproject.Studio"
   fi
 
   if [[ -d $HOME/.var/app/com.valvesoftware.Steam ]]; then
     print_info "Steam is already installed ..."
   else
-    flatpak install flathub com.valvesoftware.Steam
+    print_info "Installing Steam ..."  
+    flatpak install -y flathub com.valvesoftware.Steam
+    mkdir -p "$HOME/.var/app/com.valvesoftware.Steam"
   fi
 
   if [[ -d $HOME/.var/app/net.davidotek.pupgui2 ]]; then
     print_info "ProtonUp-Qt is already installed ..."
   else
-    flatpak install flathub net.davidotek.pupgui2
+    print_info "Installing ProtonUp-Qt ..."
+    flatpak install -y flathub net.davidotek.pupgui2
+    mkdir -p "$HOME/.var/app/net.davidotek.pupgui2"
   fi
 
   if [[ -d $HOME/.var/app/com.github.Matoking.protontricks ]]; then
     print_info "ProtonTricks is already installed ..."
   else
-    flatpak install flathub com.github.Matoking.protontricks
+    print_info "Installing ProtonTricks ..."
+    flatpak install -y flathub com.github.Matoking.protontricks
+    mkdir -p "$HOME/.var/app/com.github.Matoking.protontricks"
   fi
+
+  if [[ -d $HOME/.var/app/com.slack.Slack ]]; then
+    print_info "Slack is already installed ..."
+  else
+    print_info "Installing Slack ..."
+    flatpak install -y flathub com.slack.Slack
+    mkdir -p "$HOME/.var/app/com.slack.Slack"
+  fi
+
 }
 
 link_launchers() {
