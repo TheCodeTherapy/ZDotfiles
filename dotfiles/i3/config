@@ -26,7 +26,7 @@ floating_modifier $sup
 # start a terminal
 bindsym $sup+Return exec alacritty
 bindsym $sup+Shift+Return exec rofi -show run -theme ~/ZDotfiles/dotfiles/rofi/sp.theme
-bindsym $sup+Tab exec ~/ZDotfiles/scripts/rofiw
+bindsym $sup+Tab exec ~/ZDotfiles/scripts/rofitab
 
 # kill focused window
 bindsym $sup+Shift+q kill
@@ -98,6 +98,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
+set $ws10 "10"
 # =====================================================================
 
 # Bind keys to access each workspace ==================================
@@ -111,6 +112,7 @@ bindsym $sup+6 workspace $ws6
 bindsym $sup+7 workspace $ws7
 bindsym $sup+8 workspace $ws8
 bindsym $sup+9 workspace $ws9
+bindsym $sup+0 workspace $ws10
 # =====================================================================
 
 # Bind keys to move container to each workspace =======================
@@ -123,6 +125,7 @@ bindsym $sup+Shift+6 move container to workspace $ws6
 bindsym $sup+Shift+7 move container to workspace $ws7
 bindsym $sup+Shift+8 move container to workspace $ws8
 bindsym $sup+Shift+9 move container to workspace $ws9
+bindsym $sup+Shift+0 move container to workspace $ws10
 # =====================================================================
 
 # Bind workspaces to specific screens =================================
@@ -135,6 +138,7 @@ workspace 6 output $rm
 workspace 7 output $lm
 workspace 8 output $cm
 workspace 9 output $rm
+workspace 10 output $bm
 # =====================================================================
 
 # reload, restart and exit bind keys ==================================
@@ -193,6 +197,7 @@ assign [title="^Path of Exile"] $ws2
 # =============================================================================
 
 # Workspace 5 =================================================================
+assign [class="firefox"] $ws5
 # =============================================================================
 
 # Workspace 6 =================================================================
@@ -214,6 +219,16 @@ assign [class="obs"]  $ws9
 # assign [class="REAPER"] $ws9
 # assign [class="QjackCtl"] $ws9
 # =============================================================================
+
+# for_window [title="^.*wip.*$"] floating enable
+# for_window [title="^.*wip.*$"] sticky enable
+# for_window [title="^.*wip.*$"] focus disable
+# assign [title="wip"] $ws2
+# no_focus [title="wip"]
+no_focus [title="^.*wip.*$"]
+# for_window [title="^.*wip.*$"] floating enable
+# for_window [title="^.*wip.*$"] sticky enable
+assign [title="^.*wip.*$"] $ws2
 
 # Switch window/workspace with mod+scroll and mod+shift scroll
 bindsym --whole-window --border $sup+button4 focus left
@@ -246,6 +261,6 @@ exec --no-startup-id ~/ZDotfiles/dotconfig/polybar/launch.sh
 
 # exec --no-startup-id $HOME/ZDotfiles/dotconfig/polybar/launch.sh
 
-# bindsym Print exec --no-startup-id xfce4-screenshooter
+bindsym Print exec --no-startup-id xfce4-screenshooter
 # bindsym --release $sup+x exec --no-startup-id import /tmp/latest-screenshot.png
 # bindsym --release $sup+Shift+c exec /home/marcogomez/dotfiles/scripts/webcamw
