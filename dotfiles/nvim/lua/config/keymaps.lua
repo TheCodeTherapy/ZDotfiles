@@ -134,8 +134,8 @@ keymap.set("n", "<Tab>", ">>")
 keymap.set("n", "<S-Tab>", "<<")
 
 -- on insert mode, tab or shift+tab will indent right or left the current line
-keymap.set("i", "<Tab>", "<C-t>")
-keymap.set("i", "<S-Tab>", "<C-d>")
+-- keymap.set("i", "<Tab>", "<C-t>")
+-- keymap.set("i", "<S-Tab>", "<C-d>")
 
 -- on visual mode, tab or shift+tab will indent right or left the selected lines
 keymap.set("v", "<Tab>", ">gv")
