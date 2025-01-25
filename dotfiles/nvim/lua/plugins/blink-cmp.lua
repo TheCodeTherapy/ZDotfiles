@@ -18,7 +18,7 @@ return {
           cmp.show({ providers = { "snippets" } })
         end,
       },
-      ["<CR>"] = { "accept" },
+      --["<CR>"] = { "accept" },
       ["<tab>"] = { "accept" },
       ["<S-tab>"] = { "cancel", "fallback" },
     },
