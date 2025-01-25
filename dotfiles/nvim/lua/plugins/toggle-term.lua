@@ -54,13 +54,6 @@ return {
       end,
       desc = "ToggleTerm (tab root_dir)",
     },
-    {
-      "<leader>TT",
-      function()
-        require("toggleterm").toggle(1, 100, vim.loop.cwd(), "tab")
-      end,
-      desc = "ToggleTerm (tab cwd_dir)",
-    },
   },
   opts = {
     size = function(term)
