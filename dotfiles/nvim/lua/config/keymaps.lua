@@ -73,9 +73,6 @@ keymap.set("n", "<leader>ccm", create_and_preview_diagnostics, opts)
 keymap.set("n", "<leader>cca", copy_file_and_diagnostics_to_clipboard, opts)
 keymap.set("n", "<leader>cc", copy_diagnostics_to_clipboard, opts)
 
--- Select all
-keymap.set("n", "<C-a>", "gg<S-v>G")
-
 -- Move lines around
 keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv", opts)
 keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv", opts)
@@ -113,7 +110,13 @@ keymap.set("n", "<S-Home>", "v0")
 keymap.set("v", "<S-Home>", "0", opts)
 keymap.set("i", "<S-Home>", "<Esc>v0", opts)
 
+keymap.set("n", "<C-a>", "gg<S-v>G")
+
 keymap.set("v", "<C-c>", '"+y', opts)
+
+keymap.set("n", "<C-x>", '"+d', opts)
+keymap.set("v", "<C-x>", '"+d', opts)
+
 keymap.set("n", "<C-v>", '"+p', opts)
 keymap.set("i", "<C-v>", "<C-r>+", { noremap = true })
 
