@@ -114,7 +114,7 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 
 keymap.set("v", "<C-c>", '"+y', opts)
 
-keymap.set("n", "<C-x>", '"+d', opts)
+-- keymap.set("n", "<C-x>", '"+d', opts)
 keymap.set("v", "<C-x>", '"+d', opts)
 
 keymap.set("n", "<C-v>", '"+p', opts)
