@@ -8,14 +8,14 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 --
 
--- vim.cmd([[
---   autocmd ColorScheme * highlight Normal guibg=NONE ctermbg=NONE
---   autocmd ColorScheme * highlight NormalFloat guibg=NONE ctermbg=NONE
---   autocmd ColorScheme * highlight SignColumn guibg=NONE ctermbg=NONE
--- ]])
+vim.cmd([[
+  autocmd ColorScheme * highlight Normal guibg=NONE ctermbg=NONE
+  autocmd ColorScheme * highlight NormalFloat guibg=NONE ctermbg=NONE
+  autocmd ColorScheme * highlight SignColumn guibg=NONE ctermbg=NONE
+]])
 
--- vim.cmd([[
---   highlight Normal guibg=NONE ctermbg=NONE
---   highlight NormalFloat guibg=NONE ctermbg=NONE
---   highlight SignColumn guibg=NONE ctermbg=NONE
--- ]])
+vim.cmd([[
+  highlight Normal guibg=NONE ctermbg=NONE
+  highlight NormalFloat guibg=NONE ctermbg=NONE
+  highlight SignColumn guibg=NONE ctermbg=NONE
+]])
