@@ -26,7 +26,7 @@
 
 // Tint all colors
 // [0, 1]^3
-#define TINT 0.93, 1.00, 0.96
+// #define TINT 0.93, 1.00, 0.96
 
 // How visible the scan line effect is
 // NOTE: Technically these are not scan lines, but rather the lack of them
@@ -143,7 +143,6 @@
 #define PI 3.1415926535897932384626433832795
 
 #ifdef BLOOM_SPREAD
-//   [x, y, weight] weight is inverse of distance.
 const vec3[24] bloom_samples = {
         vec3(0.1693761725038636, 0.9855514761735895, 1),
         vec3(-1.333070830962943, 0.4721463328627773, 0.7071067811865475),
