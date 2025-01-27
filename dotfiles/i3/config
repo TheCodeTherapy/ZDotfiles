@@ -24,7 +24,9 @@ gaps outer 1
 floating_modifier $sup
 
 # start a terminal
-bindsym $sup+Return exec alacritty
+# bindsym $sup+Return exec alacritty
+bindsym $sup+Return exec ghostty
+
 bindsym $sup+Shift+Return exec rofi -show run -theme ~/ZDotfiles/dotfiles/rofi/sp.theme
 bindsym $sup+Tab exec ~/ZDotfiles/scripts/rofitab
 
