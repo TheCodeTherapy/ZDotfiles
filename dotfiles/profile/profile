@@ -28,6 +28,10 @@ if [ -d "$HOME/.odin" ] ; then
     PATH=$PATH:$HOME/.odin
 fi
 
+if [ -d "$HOME/.zig" ] ; then
+    PATH=$PATH:$HOME/.zig
+fi
+
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
