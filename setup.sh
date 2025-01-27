@@ -165,6 +165,7 @@ link_dotfiles() {
     ["${DOTDOT}/fonts"]="$target_home/.fonts"
     ["${DOTDOT}/scummvm"]="$target_config/scummvm"
     ["${DOTDOT}/screenkey"]="$target_config/screenkey"
+    ["${DOTDOT}/ghostty"]="$target_config/ghostty"
     ["${DOTDOT}/nvim"]="$target_config/nvim"
     ["${DOTDOT}/i3"]="$target_config/i3"
     ["${DOTDOT}/i3status"]="$target_config/i3status"
@@ -198,7 +199,7 @@ install_flatpak_packages() {
   if [[ -d $HOME/.var/app/com.obsproject.Studio ]]; then
     print_info "OBS is already installed ..."
   else
-    print_info "Installing OBS ..."  
+    print_info "Installing OBS ..."
     flatpak install -y flathub com.obsproject.Studio
     mkdir -p "$HOME/.var/app/com.obsproject.Studio"
   fi
@@ -206,7 +207,7 @@ install_flatpak_packages() {
   if [[ -d $HOME/.var/app/com.valvesoftware.Steam ]]; then
     print_info "Steam is already installed ..."
   else
-    print_info "Installing Steam ..."  
+    print_info "Installing Steam ..."
     flatpak install -y flathub com.valvesoftware.Steam
     mkdir -p "$HOME/.var/app/com.valvesoftware.Steam"
   fi
