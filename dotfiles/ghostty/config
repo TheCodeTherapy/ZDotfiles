@@ -1,0 +1,41 @@
+window-decoration = false
+keybind = shift+space=ignore
+keybind = control+0=reset_font_size
+cursor-style = underline
+shell-integration-features = no-cursor
+cursor-style-blink = true
+font-size = 14
+
+custom-shader = shaders/in-game-crt.frag
+# custom-shader = shaders/matrix-hallway.frag
+# custom-shader = shaders/bettercrt.frag
+#
+# custom-shader = shaders/glitchy.frag
+# custom-shader = shaders/animated-gradient-shader.frag
+# custom-shader = shaders/bloom.frag
+# custom-shader = shaders/cineShader-Lava.frag
+# custom-shader = shaders/crt.frag
+# custom-shader = shaders/cubes.frag
+# custom-shader = shaders/dither.frag
+# custom-shader = shaders/drunkard.frag
+# custom-shader = shaders/fireworks.frag
+# custom-shader = shaders/fireworks-rockets.frag
+# custom-shader = shaders/galaxy.frag
+# custom-shader = shaders/gears-and-belts.frag
+# custom-shader = shaders/glitchy.frag
+# custom-shader = shaders/glow-rgbsplit-twitchy.frag
+# custom-shader = shaders/gradient-background.frag
+# custom-shader = shaders/inside-the-matrix.frag
+# custom-shader = shaders/just-snow.frag
+# custom-shader = shaders/negative.frag
+# custom-shader = shaders/retro-terminal.frag
+# custom-shader = shaders/sin-interference.frag
+# custom-shader = shaders/smoke-and-ghost.frag
+# custom-shader = shaders/sparks-from-fire.frag
+# custom-shader = shaders/spotlight.frag
+# custom-shader = shaders/starfield-colors.frag
+# custom-shader = shaders/starfield.frag
+# custom-shader = shaders/tft.frag
+# custom-shader = shaders/underwater.frag
+# custom-shader = shaders/water.frag
+
