@@ -73,6 +73,8 @@ keymap.set("n", "<leader>ccm", create_and_preview_diagnostics, opts)
 keymap.set("n", "<leader>cca", copy_file_and_diagnostics_to_clipboard, opts)
 keymap.set("n", "<leader>cc", copy_diagnostics_to_clipboard, opts)
 
+keymap.set("n", "<leader>#", "#N", opts)
+
 -- Move lines around
 keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv", opts)
 keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv", opts)
