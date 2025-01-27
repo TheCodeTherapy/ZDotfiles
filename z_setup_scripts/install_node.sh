@@ -12,7 +12,7 @@ install_node() {
     export NVM_DIR
     if [[ -s "$NVM_DIR/nvm.sh" ]]; then
       # shellcheck source=/dev/null
-      source "$NVM_DIR/nvm.sh" || handle_error "Failed to source NVM script"
+      source "$NVM_DIR/nvm.sh"
     fi
     if [[ -s "$NVM_DIR/bash_completion" ]]; then
       # shellcheck source=/dev/null
