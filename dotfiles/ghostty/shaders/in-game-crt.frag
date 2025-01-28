@@ -171,6 +171,25 @@ const vec3[24] bloom_samples = {
     };
 #endif
 
+const float TAU = PI * 2.0;
+const float SQRTAU = sqrt(TAU);
+
+float gaussian(float z, float u, float o) {
+    return (
+    (1.0 / (o * SQRTAU)) *
+        (exp(-(((z - u) * (z - u)) / (2.0 * (o * o)))))
+    );
+}
+
+vec3 gaussgrain(float t) {
+    vec2 ps = vec2(1.01) / iResolution.xy;
+    vec2 uv = gl_FragCoord.xy * ps;
+    float seed = dot(uv, vec2(12.9898, 78.233));
+    float noise = fract(sin(seed) * 43758.5453123 + t);
+    noise = gaussian(noise, 0.0, 0.5);
+    return vec3(noise);
+}
+
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     // Get texture coordinates
     vec2 uv = fragCoord.xy / iResolution.xy;
@@ -198,6 +217,8 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
     // Vignette effect
     vec3 vig = fragColor.rgb * VIGNETTE_BRIGHTNESS * pow(uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y), VIGNETTE_SPREAD);
+
+    fragColor.rgb += gaussgrain(iTime) * 0.05;
 
     fragColor.rgb = mix(fragColor.rgb, vig, 0.42);
 
@@ -233,10 +254,10 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
     // Add noise
     // NOTE: Hard-coded noise distributions
-    float noiseContent = smoothstep(0.4, 0.6, fract(sin(uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y) * iTime * 4096.0) * 65536.0));
-    float noiseUniform = smoothstep(0.4, 0.6, fract(sin(uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y) * iTime * 8192.0) * 65536.0));
-    fragColor.rgb *= clamp(noiseContent + 1.0 - NOISE_CONTENT_STRENGTH, 0.0, 1.0);
-    fragColor.rgb = clamp(fragColor.rgb + noiseUniform * NOISE_UNIFORM_STRENGTH, 0.0, 1.0);
+    // float noiseContent = smoothstep(0.4, 0.6, fract(sin(uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y) * iTime * 4096.0) * 65536.0));
+    // float noiseUniform = smoothstep(0.4, 0.6, fract(sin(uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y) * iTime * 8192.0) * 65536.0));
+    // fragColor.rgb *= clamp(noiseContent + 1.0 - NOISE_CONTENT_STRENGTH, 0.0, 1.0);
+    // fragColor.rgb = clamp(fragColor.rgb + noiseUniform * NOISE_UNIFORM_STRENGTH, 0.0, 1.0);
 
     // NOTE: At this point, RGB values are again within [0, 1]
 
