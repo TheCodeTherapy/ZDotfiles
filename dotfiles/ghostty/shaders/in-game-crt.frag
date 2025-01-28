@@ -26,7 +26,7 @@
 
 // Tint all colors
 // [0, 1]^3
-#define TINT 0.99, 1.0, 1.0
+// #define TINT 0.99, 1.0, 1.0
 
 // How visible the scan line effect is
 // NOTE: Technically these are not scan lines, but rather the lack of them
