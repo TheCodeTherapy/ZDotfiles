@@ -218,7 +218,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     // Vignette effect
     vec3 vig = fragColor.rgb * VIGNETTE_BRIGHTNESS * pow(uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y), VIGNETTE_SPREAD);
 
-    fragColor.rgb += gaussgrain(iTime) * 0.05;
+    fragColor.rgb += gaussgrain(iTime) * 0.04;
 
     fragColor.rgb = mix(fragColor.rgb, vig, 0.42);
 
