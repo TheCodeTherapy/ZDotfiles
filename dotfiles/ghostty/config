@@ -1,7 +1,8 @@
-window-decoration = false
 window-padding-x = 10
 window-padding-y = 0
 resize-overlay = never
+window-decoration = false
+gtk-titlebar=false
 
 gtk-adwaita=false
 adw-toolbar-style = flat
