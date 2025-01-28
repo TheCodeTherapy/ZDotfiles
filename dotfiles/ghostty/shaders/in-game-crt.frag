@@ -22,7 +22,7 @@
 #define VIGNETTE_SPREAD 0.21
 // How bright the vignette is
 // x \in R : x >= 0
-#define VIGNETTE_BRIGHTNESS 6.4
+#define VIGNETTE_BRIGHTNESS 7.0
 
 // Tint all colors
 // [0, 1]^3
@@ -197,7 +197,9 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     fragColor.rgb = mix(fragColor.rgb, fragColor.rgb * fragColor.rgb, DARKEN_MIX);
 
     // Vignette effect
-    fragColor.rgb *= VIGNETTE_BRIGHTNESS * pow(uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y), VIGNETTE_SPREAD);
+    vec3 vig = fragColor.rgb * VIGNETTE_BRIGHTNESS * pow(uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y), VIGNETTE_SPREAD);
+
+    fragColor.rgb = mix(fragColor.rgb, vig, 0.42);
 
     // Tint all colors
     fragColor.rgb *= vec3(TINT);
