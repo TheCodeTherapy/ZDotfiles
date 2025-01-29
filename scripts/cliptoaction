@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Directory to save downloaded videos
+DOWNLOAD_DIR="$HOME/Downloads/youtube"
+mkdir -p "$DOWNLOAD_DIR"
+
+YOUTUBE_REGEX="https?://(www\.)?(youtube\.com|youtu\.be)/.+"
+
+# List of domains to check for articles
+ARTICLE_DOMAINS=(
+  "telegraph.co.uk"
+  "bbc.co.uk"
+  "nytimes.com"
+)
+
+download_video() {
+  local url=$1
+  yt-dlp -o "$DOWNLOAD_DIR/%(title)s.%(ext)s" "$url"
+}
+
+# use ladder as local proxy for tracking removal
+open_in_wayback() {
+  local url=$1
+  xdg-open "http://localhost:9091/$url"
+}
+
+LAST_CLIPBOARD_CONTENT=""
+
+while true; do
+  CLIPBOARD_CONTENT=$(xclip -selection clipboard -o 2>/dev/null)
+  if [[ "$CLIPBOARD_CONTENT" != "$LAST_CLIPBOARD_CONTENT" ]]; then
+    LAST_CLIPBOARD_CONTENT="$CLIPBOARD_CONTENT"
+    if [[ $CLIPBOARD_CONTENT =~ $YOUTUBE_REGEX ]]; then
+      download_video "$CLIPBOARD_CONTENT"
+    else
+      for domain in "${ARTICLE_DOMAINS[@]}"; do
+        if [[ $CLIPBOARD_CONTENT == *"$domain"* ]]; then
+          open_in_wayback "$CLIPBOARD_CONTENT"
+          break
+        fi
+      done
+    fi
+  fi
+  sleep 1
+done
