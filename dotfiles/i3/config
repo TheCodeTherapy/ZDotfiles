@@ -113,7 +113,7 @@ bindsym $sup+5 workspace $ws5
 bindsym $sup+6 workspace $ws6
 bindsym $sup+7 workspace $ws7
 bindsym $sup+8 workspace $ws8
-bindsym $sup+9 workspace $ws9
+bindsym $sup+9 workspace $ws9; layout tabbed
 bindsym $sup+0 workspace $ws10
 # =====================================================================
 
@@ -199,7 +199,6 @@ assign [title="^Path of Exile"] $ws2
 # =============================================================================
 
 # Workspace 5 =================================================================
-assign [class="firefox"] $ws5
 # =============================================================================
 
 # Workspace 6 =================================================================
@@ -213,13 +212,12 @@ assign [class="TelegramDesktop"] $ws6
 # =============================================================================
 
 # Workspace 8 =================================================================
-assign [class="discord"] $ws8
 # =============================================================================
 
 # Workspace 9 =================================================================
 assign [class="obs"]  $ws9
-# assign [class="REAPER"] $ws9
-# assign [class="QjackCtl"] $ws9
+assign [class="discord"] $ws8
+assign [class="firefox"] $ws9
 # =============================================================================
 
 # for_window [title="^.*wip.*$"] floating enable
