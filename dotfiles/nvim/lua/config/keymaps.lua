@@ -74,6 +74,8 @@ keymap.set("n", "<leader>cca", copy_file_and_diagnostics_to_clipboard, opts)
 keymap.set("n", "<leader>cc", copy_diagnostics_to_clipboard, opts)
 
 keymap.set("n", "<leader>#", "#N", opts)
+keymap.set("t", "<S-Space>", "<Space>", opts)
+keymap.set("n", "<C-z>", "<Nop>", opts)
 
 -- Move lines around
 keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv", opts)
