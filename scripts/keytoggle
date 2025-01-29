@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Get the current layout and variant
+current_layout=$(setxkbmap -query | grep layout | awk '{print $2}')
+current_variant=$(setxkbmap -query | grep variant | awk '{print $2}')
+
+echo "Current layout: $current_layout"
+echo "Current variant: $current_variant"
+
+# Toggle between us and us(alt-intl)
+if [ "$current_layout" == "us" ] && [ "$current_variant" == "alt-intl" ]; then
+  echo "Switching to us"
+  setxkbmap us
+else
+  echo "Switching to us(alt-intl)"
+  setxkbmap us -variant alt-intl
+fi
