@@ -8,7 +8,8 @@ set $rm DP-4
 set $sup Mod4
 set $mod Mod1
 
-font pango:MesloLGS NF, Misc Termsyn, Wuncon Siji 11
+font pango:NotoMono Nerd Font, MesloLGS NF, Misc Termsyn, Wuncon Siji 12
+title_align center
 
 for_window [class=".*"] border pixel 3
 for_window [title="video0 - mpv"] floating enable
@@ -17,7 +18,7 @@ for_window [class="Xawtv"] floating enable
 for_window [class="Xawtv"] sticky enable
 for_window [class="emoji-keyboard"] floating enable
 
-gaps inner 6
+gaps inner 3
 gaps outer 1
 
 # Mouse+$sup to drag floating windows
@@ -173,15 +174,18 @@ mode "resize" {
 
 bindsym $sup+r mode "resize"
 
-client.focused              #424242 #303030 #ffffff #AAAAAA #888888
-client.focused_inactive     #424242 #303030 #dddddd #484E50 #303030
-client.unfocused            #424242 #000000 #777777 #292D2E #303030
+client.focused              #000000 #000000 #ffffff #AAAAAA #000000
+client.focused_inactive     #000000 #000000 #bbbbbb #484E50 #303030
+client.unfocused            #000000 #000000 #777777 #292D2E #303030
 client.urgent               #ff0000 #904848 #ffdddd #904848 #703030
 client.placeholder          #424242 #304848 #ffffff #000000 #303030
 client.background           #008800
 
 for_window [all] border pixel 1
 
+assign [title="^.*wip.*$"] $ws2
+for_window [title="^.*wip.*$"] move container to workspace $ws2, workspace $ws2, floating enable
+for_window [title="^.*wip.*$"] floating enable, resize set 802 402, move position 6869 668
 # Workspace 1 =================================================================
 assign [title="^Friends List$"] $ws1
 assign [title="^Steam$"] $ws1
@@ -220,15 +224,6 @@ assign [class="discord"] $ws9
 assign [class="firefox"] $ws9
 # =============================================================================
 
-# for_window [title="^.*wip.*$"] floating enable
-# for_window [title="^.*wip.*$"] sticky enable
-# for_window [title="^.*wip.*$"] focus disable
-# assign [title="wip"] $ws2
-# no_focus [title="wip"]
-no_focus [title="^.*wip.*$"]
-# for_window [title="^.*wip.*$"] floating enable
-# for_window [title="^.*wip.*$"] sticky enable
-assign [title="^.*wip.*$"] $ws2
 
 # Switch window/workspace with mod+scroll and mod+shift scroll
 bindsym --whole-window --border $sup+button4 focus left
