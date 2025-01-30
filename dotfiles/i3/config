@@ -216,7 +216,7 @@ assign [class="TelegramDesktop"] $ws6
 
 # Workspace 9 =================================================================
 assign [class="obs"]  $ws9
-assign [class="discord"] $ws8
+assign [class="discord"] $ws9
 assign [class="firefox"] $ws9
 # =============================================================================
 
