@@ -15,7 +15,7 @@
 #define FLICKER_FREQUENCY 15.0
 #define NOISE_CONTENT_STRENGTH 0.15
 #define NOISE_UNIFORM_STRENGTH 0.03
-#define BLOOM_STRENGTH 0.06
+#define BLOOM_STRENGTH 0.07
 #define BLOOM_SPREAD 1.5
 #define FADE_FACTOR 0.3
 
@@ -156,7 +156,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
     fragColor.rgb = mix(fragColor.rgb, fragColor.rgb * fragColor.rgb, DARKEN_MIX);
     vec3 vig = fragColor.rgb * VIGNETTE_BRIGHTNESS * pow(uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y), VIGNETTE_SPREAD);
-    fragColor.rgb += gaussgrain(iTime * 0.75) * 0.045;
+    fragColor.rgb += gaussgrain(iTime * 0.75) * 0.05;
     fragColor.rgb = mix(fragColor.rgb, vig, 0.42);
     fragColor.rgb *= vec3(TINT);
 
