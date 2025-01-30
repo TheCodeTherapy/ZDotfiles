@@ -77,6 +77,9 @@ keymap.set("n", "<leader>#", "#N", opts)
 keymap.set("t", "<S-Space>", "<Space>", opts)
 keymap.set("n", "<C-z>", "<Nop>", opts)
 
+keymap.set("i", "<S-Del>", "<Space><Esc>vwhdi", opts)
+keymap.set("n", "<S-Del>", "a<Space><Esc>vwhdi", opts)
+
 -- Move lines around
 keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv", opts)
 keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv", opts)
