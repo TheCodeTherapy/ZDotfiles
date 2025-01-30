@@ -69,7 +69,7 @@
 
 // How fast colors fade in and out
 // [0, 1]
-#define FADE_FACTOR 0.42
+#define FADE_FACTOR 0.3334
 
 // Disabled values for when the settings are not defined
 #ifndef COLOR_FRINGING_SPREAD
