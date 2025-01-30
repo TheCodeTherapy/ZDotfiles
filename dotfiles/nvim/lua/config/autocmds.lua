@@ -19,3 +19,13 @@ vim.cmd([[
   highlight NormalFloat guibg=NONE ctermbg=NONE
   highlight SignColumn guibg=NONE ctermbg=NONE
 ]])
+
+-- function CenterCursor()
+--   local pos = vim.api.nvim_win_get_cursor(0) -- Get the current cursor position
+--   vim.cmd("normal! zz") -- Center the cursor
+--   vim.api.nvim_win_set_cursor(0, pos) -- Restore the exact cursor position
+-- end
+--
+-- vim.api.nvim_create_autocmd("CursorMoved", {
+--   callback = CenterCursor,
+-- })
