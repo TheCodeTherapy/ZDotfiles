@@ -1,3 +1,7 @@
+-- do
+--   return {}
+-- end
+
 return {
   "saghen/blink.cmp",
   dependencies = "rafamadriz/friendly-snippets",
@@ -19,7 +23,7 @@ return {
         end,
       },
       --["<CR>"] = { "accept" },
-      ["<tab>"] = { "accept" },
+      ["<Tab>"] = { "accept" },
       ["<S-tab>"] = { "cancel", "fallback" },
     },
 
