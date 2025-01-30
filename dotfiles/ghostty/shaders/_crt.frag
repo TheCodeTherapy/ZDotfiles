@@ -145,37 +145,26 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     uv = (uv / 2.0) + 0.5;
     #endif
 
-    // Retrieve colors from appropriate locations
     fragColor.r = texture(iChannel0, vec2(uv.x + 0.0003 * COLOR_FRINGING_SPREAD, uv.y + 0.0003 * COLOR_FRINGING_SPREAD)).x;
     fragColor.g = texture(iChannel0, vec2(uv.x + 0.0000 * COLOR_FRINGING_SPREAD, uv.y - 0.0006 * COLOR_FRINGING_SPREAD)).y;
     fragColor.b = texture(iChannel0, vec2(uv.x - 0.0006 * COLOR_FRINGING_SPREAD, uv.y + 0.0000 * COLOR_FRINGING_SPREAD)).z;
     fragColor.a = texture(iChannel0, uv).a;
 
-    // Add faint ghost images
     fragColor.r += 0.04 * GHOSTING_STRENGTH * texture(iChannel0, GHOSTING_SPREAD * vec2(+0.025, -0.027) + uv.xy).x;
     fragColor.g += 0.02 * GHOSTING_STRENGTH * texture(iChannel0, GHOSTING_SPREAD * vec2(-0.022, -0.020) + uv.xy).y;
     fragColor.b += 0.04 * GHOSTING_STRENGTH * texture(iChannel0, GHOSTING_SPREAD * vec2(-0.020, -0.018) + uv.xy).z;
 
-    // Quadratically darken everything
     fragColor.rgb = mix(fragColor.rgb, fragColor.rgb * fragColor.rgb, DARKEN_MIX);
-
-    // Vignette effect
     vec3 vig = fragColor.rgb * VIGNETTE_BRIGHTNESS * pow(uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y), VIGNETTE_SPREAD);
-
     fragColor.rgb += gaussgrain(iTime * 0.75) * 0.045;
-
     fragColor.rgb = mix(fragColor.rgb, vig, 0.42);
-
     fragColor.rgb *= vec3(TINT);
 
-    // Add scan lines
     fragColor.rgb *= mix(
             1.0,
             SCAN_LINES_VARIANCE / 2.0 * (1.0 + sin(2 * PI * uv.y * iResolution.y / SCAN_LINES_PERIOD)),
             SCAN_LINES_STRENGTH
         );
-
-    // Add aperture grille
     int aperture_grille_step = int(8 * mod(fragCoord.x, APERTURE_GRILLE_PERIOD) / APERTURE_GRILLE_PERIOD);
     float aperture_grille_mask;
 
