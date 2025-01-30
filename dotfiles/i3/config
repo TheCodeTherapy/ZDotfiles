@@ -8,6 +8,8 @@ set $rm DP-4
 set $sup Mod4
 set $mod Mod1
 
+focus_follows_mouse no
+
 font pango:NotoMono Nerd Font, MesloLGS NF, Misc Termsyn, Wuncon Siji 12
 title_align center
 
