@@ -21,7 +21,7 @@ keybind = shift+space=unbind
 keybind = shift+end=unbind
 
 custom-shader-animation = true
-custom-shader = shaders/in-game-crt.frag
+custom-shader = shaders/_crt.frag
 # custom-shader = shaders/matrix-hallway.frag
 # custom-shader = shaders/bettercrt.frag
 #

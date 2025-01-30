@@ -1,77 +1,24 @@
-// How straight the terminal is in each axis
-// (x, y) \in R^2 : x, y > 0
 #define CURVE 13.0, 11.0
-
-// How far apart the different colors are from each other
-// x \in R
-#define COLOR_FRINGING_SPREAD 1.0
-
-// How much the ghost images are spread out
-// x \in R : x >= 0
+#define COLOR_FRINGING_SPREAD 1.11
 #define GHOSTING_SPREAD 0.75
-// How visible ghost images are
-// x \in R : x >= 0
 #define GHOSTING_STRENGTH 0.0
-
-// How much of the non-linearly darkened colors are mixed in
-// [0, 1]
 #define DARKEN_MIX 0.4
-
-// How far in the vignette spreads
-// x \in R : x >= 0
 #define VIGNETTE_SPREAD 0.21
-// How bright the vignette is
-// x \in R : x >= 0
 #define VIGNETTE_BRIGHTNESS 7.0
-
-// Tint all colors
-// [0, 1]^3
-// #define TINT 0.99, 1.0, 1.0
-
-// How visible the scan line effect is
-// NOTE: Technically these are not scan lines, but rather the lack of them
-// [0, 1]
+#define TINT 0.995, 1.0, 1.0
 #define SCAN_LINES_STRENGTH 0.15
-// How bright the spaces between the lines are
-// [0, 1]
 #define SCAN_LINES_VARIANCE 0.35
-// Pixels per scan line effect
-// x \in R : x > 0
 #define SCAN_LINES_PERIOD 4.0
-
-// How visible the aperture grille is
-// x \in R : x >= 0
-#define APERTURE_GRILLE_STRENGTH 0.2
-// Pixels per aperture grille
-// x \in R : x > 0
+#define APERTURE_GRILLE_STRENGTH 0.0125
 #define APERTURE_GRILLE_PERIOD 2.0
-
-// How much the screen flickers
-// x \in R : x >= 0
 #define FLICKER_STRENGTH 0.0
-// How fast the screen flickers
-// x \in R : x > 0
 #define FLICKER_FREQUENCY 15.0
-
-// How much noise is added to filled areas
-// [0, 1]
 #define NOISE_CONTENT_STRENGTH 0.15
-// How much noise is added everywhere
-// [0, 1]
 #define NOISE_UNIFORM_STRENGTH 0.03
+#define BLOOM_STRENGTH 0.06
+#define BLOOM_SPREAD 1.5
+#define FADE_FACTOR 0.3
 
-// How big the bloom is
-// x \in R : x >= 0
-#define BLOOM_SPREAD 2.0
-// How visible the bloom is
-// [0, 1]
-#define BLOOM_STRENGTH 0.05
-
-// How fast colors fade in and out
-// [0, 1]
-#define FADE_FACTOR 0.3334
-
-// Disabled values for when the settings are not defined
 #ifndef COLOR_FRINGING_SPREAD
 #define COLOR_FRINGING_SPREAD 0.0
 #endif
@@ -139,9 +86,11 @@
 #define FADE_FACTOR 1.00
 #endif
 
-// Constants
-#define PI 3.1415926535897932384626433832795
+const float PI = acos(-1.0);
+const float TAU = PI * 2.0;
+const float SQRTAU = sqrt(TAU);
 
+// pre-computed
 #ifdef BLOOM_SPREAD
 const vec3[24] bloom_samples = {
         vec3(0.1693761725038636, 0.9855514761735895, 1),
@@ -171,9 +120,6 @@ const vec3[24] bloom_samples = {
     };
 #endif
 
-const float TAU = PI * 2.0;
-const float SQRTAU = sqrt(TAU);
-
 float gaussian(float z, float u, float o) {
     return (
     (1.0 / (o * SQRTAU)) *
@@ -182,7 +128,7 @@ float gaussian(float z, float u, float o) {
 }
 
 vec3 gaussgrain(float t) {
-    vec2 ps = vec2(1.01) / iResolution.xy;
+    vec2 ps = vec2(1.414) / iResolution.xy;
     vec2 uv = gl_FragCoord.xy * ps;
     float seed = dot(uv, vec2(12.9898, 78.233));
     float noise = fract(sin(seed) * 43758.5453123 + t);
@@ -191,11 +137,9 @@ vec3 gaussgrain(float t) {
 }
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
-    // Get texture coordinates
     vec2 uv = fragCoord.xy / iResolution.xy;
 
     #ifdef CURVE
-    // Curve texture coordinates to mimic non-flat CRT monior
     uv = (uv - 0.5) * 2.0;
     uv.xy *= 1.0 + pow((abs(vec2(uv.y, uv.x)) / vec2(CURVE)), vec2(2.0));
     uv = (uv / 2.0) + 0.5;
@@ -218,16 +162,13 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     // Vignette effect
     vec3 vig = fragColor.rgb * VIGNETTE_BRIGHTNESS * pow(uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y), VIGNETTE_SPREAD);
 
-    fragColor.rgb += gaussgrain(iTime) * 0.04;
+    fragColor.rgb += gaussgrain(iTime * 0.75) * 0.045;
 
     fragColor.rgb = mix(fragColor.rgb, vig, 0.42);
 
-    // Tint all colors
     fragColor.rgb *= vec3(TINT);
 
-    // NOTE: At this point, RGB values may be above 1
-
-    // Add scan lines effect
+    // Add scan lines
     fragColor.rgb *= mix(
             1.0,
             SCAN_LINES_VARIANCE / 2.0 * (1.0 + sin(2 * PI * uv.y * iResolution.y / SCAN_LINES_PERIOD)),
@@ -252,14 +193,11 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     // Add flicker
     fragColor *= 1.0 - FLICKER_STRENGTH / 2.0 * (1.0 + sin(2 * PI * FLICKER_FREQUENCY * iTime));
 
-    // Add noise
     // NOTE: Hard-coded noise distributions
     // float noiseContent = smoothstep(0.4, 0.6, fract(sin(uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y) * iTime * 4096.0) * 65536.0));
     // float noiseUniform = smoothstep(0.4, 0.6, fract(sin(uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y) * iTime * 8192.0) * 65536.0));
     // fragColor.rgb *= clamp(noiseContent + 1.0 - NOISE_CONTENT_STRENGTH, 0.0, 1.0);
     // fragColor.rgb = clamp(fragColor.rgb + noiseUniform * NOISE_UNIFORM_STRENGTH, 0.0, 1.0);
-
-    // NOTE: At this point, RGB values are again within [0, 1]
 
     // Remove output outside of screen bounds
     if (uv.x < 0.0 || uv.x > 1.0)
@@ -268,7 +206,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
         fragColor.rgb *= 0.0;
 
     #ifdef BLOOM_SPREAD
-    // Add bloom
     vec2 step = BLOOM_SPREAD * vec2(1.414) / iResolution.xy;
 
     for (int i = 0; i < 24; i++) {
@@ -282,7 +219,5 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     fragColor = clamp(fragColor, 0.0, 1.0);
     #endif
 
-    // Add fade effect to smoothen out color transitions
-    // NOTE: May need to be iTime/iTimeDelta dependent
     fragColor = vec4(FADE_FACTOR * fragColor.rgb, FADE_FACTOR);
 }
