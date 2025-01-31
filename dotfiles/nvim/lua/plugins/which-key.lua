@@ -20,16 +20,6 @@ local function toggle_center_cursor()
   center_cursor_enabled = not center_cursor_enabled
 end
 
--- ✅ Enable Center Cursor by Default
-vim.api.nvim_create_autocmd("User", {
-  pattern = "VeryLazy",
-  callback = function()
-    if not center_cursor_enabled then
-      toggle_center_cursor()
-    end
-  end,
-})
-
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
