@@ -4,10 +4,16 @@ return {
     filesystem = {
       filtered_items = {
         hide_dotfiles = false,
-        hide_gitignored = false,
+        hide_gitignored = true,
+        hide_by_name = {
+          "node_modules",
+          ".git",
+          ".cache",
+        },
       },
       window = {
-        width = 37,
+        title = "_",
+        width = 32,
         mappings = {
           ["L"] = "open_nofocus",
         },
