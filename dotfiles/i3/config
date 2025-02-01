@@ -15,7 +15,7 @@ client.urgent               #ff0000 #904848 #ffdddd #904848 #703030
 client.placeholder          #000000 #304848 #ffffff #000000 #303030
 client.background           #008800
 
-focus_follows_mouse no
+focus_follows_mouse yes
 gaps inner 0
 gaps outer 0
 
@@ -28,6 +28,7 @@ for_window [title="video0 - mpv"] sticky enable
 for_window [class="Xawtv"] floating enable
 for_window [class="Xawtv"] sticky enable
 for_window [class="emoji-keyboard"] floating enable
+for_window [title="raylib"] floating enable
 
 for_window [class="^.*ghostty.*$"] title_format "C:\Windows\notepad.exe"
 for_window [class="^.*nvim.*$"] title_format "C:\Windows\notepad.exe"
@@ -119,16 +120,15 @@ set $ws10 "10"
 # =====================================================================
 
 # Bind keys to access each workspace ==================================
-# switch to workspace
-bindsym $sup+1 workspace $ws1
-bindsym $sup+2 workspace $ws2
-bindsym $sup+3 workspace $ws3
-bindsym $sup+4 workspace $ws4
-bindsym $sup+5 workspace $ws5
-bindsym $sup+6 workspace $ws6
-bindsym $sup+7 workspace $ws7
-bindsym $sup+8 workspace $ws8
-bindsym $sup+9 workspace $ws9; layout tabbed
+bindsym $sup+1 workspace $ws1; exec xdotool mousemove 5755 1075
+bindsym $sup+2 workspace $ws2; exec xdotool mousemove 7675 1075
+bindsym $sup+3 workspace $ws3; exec xdotool mousemove 9595 1075
+bindsym $sup+4 workspace $ws4; exec xdotool mousemove 5755 1075
+bindsym $sup+5 workspace $ws5; exec xdotool mousemove 7675 1075
+bindsym $sup+6 workspace $ws6; exec xdotool mousemove 9595 1075
+bindsym $sup+7 workspace $ws7; exec xdotool mousemove 5755 1075
+bindsym $sup+8 workspace $ws8; exec xdotool mousemove 7675 1075
+bindsym $sup+9 workspace $ws9; layout tabbed; exec xdotool mousemove 9595 1075
 bindsym $sup+0 workspace $ws10
 # =====================================================================
 
@@ -198,6 +198,8 @@ assign [title="^Steam$"] $ws1
 # Workspace 2 =================================================================
 assign [class="Code"] $ws2
 assign [title="^Path of Exile"] $ws2
+assign [class="steam_app_1337520"] $ws2
+
 # =============================================================================
 
 # Workspace 3 =================================================================
