@@ -8,20 +8,29 @@ set $rm DP-4
 set $sup Mod4
 set $mod Mod1
 
+client.focused              #000000 #000000 #ffffff #AAAAAA #888888
+client.focused_inactive     #000000 #000000 #dddddd #484E50 #303030
+client.unfocused            #000000 #000000 #777777 #292D2E #303030
+client.urgent               #ff0000 #904848 #ffdddd #904848 #703030
+client.placeholder          #000000 #304848 #ffffff #000000 #303030
+client.background           #008800
+
 focus_follows_mouse no
+gaps inner 0
+gaps outer 0
 
-font pango:NotoMono Nerd Font, MesloLGS NF, Misc Termsyn, Wuncon Siji 12
 title_align center
+font pango:NotoMono Nerd Font, MesloLGS NF, Misc Termsyn, Wuncon Siji 12
 
-for_window [class=".*"] border pixel 3
+for_window [all] border pixel 0
 for_window [title="video0 - mpv"] floating enable
 for_window [title="video0 - mpv"] sticky enable
 for_window [class="Xawtv"] floating enable
 for_window [class="Xawtv"] sticky enable
 for_window [class="emoji-keyboard"] floating enable
 
-gaps inner 3
-gaps outer 1
+for_window [class="^.*ghostty.*$"] title_format "C:\Windows\notepad.exe"
+for_window [class="^.*nvim.*$"] title_format "C:\Windows\notepad.exe"
 
 # Mouse+$sup to drag floating windows
 floating_modifier $sup
@@ -89,6 +98,9 @@ bindsym $sup+Shift+space floating toggle
 bindsym $sup+space focus mode_toggle
 # focus the parent container
 bindsym $sup+a focus parent
+# toggle resize mode
+bindsym $sup+r mode "resize"
+
 
 # focus the child container
 #bindsym $sup+d focus child
@@ -174,16 +186,6 @@ mode "resize" {
         bindsym $sup+r mode "default"
 }
 
-bindsym $sup+r mode "resize"
-
-client.focused              #000000 #000000 #ffffff #AAAAAA #000000
-client.focused_inactive     #000000 #000000 #bbbbbb #484E50 #303030
-client.unfocused            #000000 #000000 #777777 #292D2E #303030
-client.urgent               #ff0000 #904848 #ffdddd #904848 #703030
-client.placeholder          #424242 #304848 #ffffff #000000 #303030
-client.background           #008800
-
-for_window [all] border pixel 1
 
 assign [title="^.*wip.*$"] $ws2
 for_window [title="^.*wip.*$"] move container to workspace $ws2, workspace $ws2, floating enable
