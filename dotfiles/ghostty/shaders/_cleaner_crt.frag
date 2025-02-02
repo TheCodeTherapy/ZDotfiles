@@ -89,6 +89,7 @@
 const float PI = acos(-1.0);
 const float TAU = PI * 2.0;
 const float SQRTAU = sqrt(TAU);
+const vec3 BG = vec3(18.0 / 255.0, 18.0 / 255.0, 23.0 / 255.0);
 
 // pre-computed
 #ifdef BLOOM_SPREAD
@@ -190,11 +191,9 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     // fragColor.rgb *= clamp(noiseContent + 1.0 - NOISE_CONTENT_STRENGTH, 0.0, 1.0);
     // fragColor.rgb = clamp(fragColor.rgb + noiseUniform * NOISE_UNIFORM_STRENGTH, 0.0, 1.0);
 
-    // Remove output outside of screen bounds
-    if (uv.x < 0.0 || uv.x > 1.0)
-        fragColor.rgb *= 0.0;
-    if (uv.y < 0.0 || uv.y > 1.0)
-        fragColor.rgb *= 0.0;
+    if (uv.x < 0.0 || uv.x > 1.0 || uv.y < 0.0 || uv.y > 1.0) {
+        fragColor.rgb = BG;
+    }
 
     #ifdef BLOOM_SPREAD
     vec2 step = BLOOM_SPREAD * vec2(1.414) / iResolution.xy;
