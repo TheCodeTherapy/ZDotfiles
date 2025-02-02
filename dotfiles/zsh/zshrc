@@ -28,6 +28,10 @@ start_tmux() {
     return
   fi
 
+  if [[ "$TERM" != "xterm-ghostty" ]]; then
+    return
+  fi
+
   if [[ -z "$TMUX" && -o interactive ]]; then
     ~/ZDotfiles/scripts/startmux
   fi
