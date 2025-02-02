@@ -1,0 +1,26 @@
+#!/bin/bash
+
+SESSION="_"
+
+# Check if the session already exists
+tmux has-session -t $SESSION 2>/dev/null
+
+if [ $? != 0 ]; then
+  tmux new-session -d -s $SESSION -n SYS
+  tmux send-keys -t $SESSION:0 "btop" C-m
+  tmux rename-window -t $SESSION:0 SYS
+  tmux set-window-option -t $SESSION:0 automatic-rename off
+
+  tmux new-window -t $SESSION:1 -n LOG
+  tmux send-keys -t $SESSION:1 "lnav /var/log/syslog" C-m
+  tmux rename-window -t $SESSION:1 LOG
+  tmux set-window-option -t $SESSION:1 automatic-rename off
+
+  tmux new-window -t $SESSION:2 -n TTY
+  tmux send-keys -t $SESSION:2 "ll" C-m
+  tmux rename-window -t $SESSION:2 TTY
+  tmux set-window-option -t $SESSION:2 automatic-rename off
+
+fi
+
+tmux attach -t $SESSION
