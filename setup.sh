@@ -146,6 +146,7 @@ install_recipes() {
 link_dotfiles() {
   local target_home="$HOME"
   local target_config="$HOME/.config"
+  local target_local_share="$HOME/.local/share"
   mkdir -p "$target_config/Code/User"
   mkdir -p "$target_config/VSCodium/User"
   declare -A files_to_link=(
@@ -177,6 +178,7 @@ link_dotfiles() {
     ["${DOTDOT}/neofetch"]="$target_config/neofetch"
     ["${DOTDOT}/vscode/settings.json"]="$target_config/Code/User/settings.json"
     ["${DOTDOT}/vscodium/settings.json"]="$target_config/VSCodium/User/settings.json"
+    ["${DOTDOT}/local/share/ghostty"]="$target_local_share/ghostty"
   )
 
   for source_file in "${!files_to_link[@]}"; do
