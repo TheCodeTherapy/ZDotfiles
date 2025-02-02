@@ -54,7 +54,7 @@ bindsym --release $sup+n exec /home/marcogomez/ZDotfiles/scripts/latency
 # bindsym $sup+d exec ~/dotfiles/scripts/ddmenu
 # bindsym $sup+d exec --no-startup-id i3-dmenu-desktop
 
-bindsym $sup+t exec GTK_THEME=Adwaita-dark nautilus
+bindsym $sup+t exec thunar
 
 # change focus
 bindsym $sup+h focus left
