@@ -235,6 +235,14 @@ install_flatpak_packages() {
     flatpak install -y flathub com.slack.Slack
     mkdir -p "$HOME/.var/app/com.slack.Slack"
   fi
+
+  if [[ -d $HOME/.var/app/org.mapeditor.Tiled ]]; then
+    print_info "Tiled is already installed ..."
+  else
+    print_info "Installing Tiled ..."
+    flatpak install -y flathub org.mapeditor.Tiled
+    mkdir -p "$HOME/.var/app/org.mapeditor.Tiled"
+  fi
 }
 
 link_launchers() {
