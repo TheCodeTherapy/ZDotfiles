@@ -1,4 +1,4 @@
-#define CURVE 13.0, 11.0
+#define CURVE 13.0, 9.0
 #define COLOR_FRINGING_SPREAD 1.11
 #define GHOSTING_SPREAD 0.75
 #define GHOSTING_STRENGTH 0.0
