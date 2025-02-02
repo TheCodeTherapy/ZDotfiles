@@ -29,7 +29,7 @@ install_basic_packages() {
     python3-babel python3-dbus python3-pynvim python3-sphinx python3-packaging
     python3-xcbgen pipx xutils-dev xwayland valac hwdata vlc transmission
     bear p7zip-full conky-all zsh-autosuggestions zsh-syntax-highlighting
-    xdotool fakeroot pavucontrol zeal qt6ct
+    xdotool fakeroot pavucontrol zeal qt6ct thunar lxappearance
   )
 
   print_info "Installing basic packages ..."
