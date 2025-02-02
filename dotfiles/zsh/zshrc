@@ -1,4 +1,7 @@
 # if [ "$TMUX" = "" ]; then tmux; fi
+
+setxkbmap us
+
 if [ -f "${HOME}"/.gptkey ]; then
   source "${HOME}"/.gptkey
 fi
@@ -151,8 +154,7 @@ else
   alias la='ls -hlA --color=auto'
 fi
 
-alias nvim='setxkbmap us && nvim'
-alias vim='setxkbmap us && nvim'
+alias vim='nvim'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
