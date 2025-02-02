@@ -1,5 +1,4 @@
 # i3-config ==================================================================
-
 set $bm HDMI-0
 set $lm DP-0
 set $cm DP-2
@@ -8,9 +7,9 @@ set $rm DP-4
 set $sup Mod4
 set $mod Mod1
 
-client.focused              #000000 #000000 #ffffff #AAAAAA #888888
-client.focused_inactive     #000000 #000000 #dddddd #484E50 #303030
-client.unfocused            #000000 #000000 #777777 #292D2E #303030
+client.focused              #212121 #000000 #ffffff #AAAAAA #888888
+client.focused_inactive     #212121 #000000 #dddddd #484E50 #303030
+client.unfocused            #212121 #000000 #777777 #292D2E #303030
 client.urgent               #ff0000 #904848 #ffdddd #904848 #703030
 client.placeholder          #000000 #304848 #ffffff #000000 #303030
 client.background           #008800
@@ -22,7 +21,8 @@ gaps outer 0
 title_align center
 font pango:NotoMono Nerd Font, MesloLGS NF, Misc Termsyn, Wuncon Siji 12
 
-for_window [all] border pixel 0
+for_window [all] border pixel 1
+
 for_window [title="video0 - mpv"] floating enable
 for_window [title="video0 - mpv"] sticky enable
 for_window [class="Xawtv"] floating enable
@@ -120,15 +120,15 @@ set $ws10 "10"
 # =====================================================================
 
 # Bind keys to access each workspace ==================================
-bindsym $sup+1 workspace $ws1; exec xdotool mousemove 5755 1075
-bindsym $sup+2 workspace $ws2; exec xdotool mousemove 7675 1075
-bindsym $sup+3 workspace $ws3; exec xdotool mousemove 9595 1075
-bindsym $sup+4 workspace $ws4; exec xdotool mousemove 5755 1075
-bindsym $sup+5 workspace $ws5; exec xdotool mousemove 7675 1075
-bindsym $sup+6 workspace $ws6; exec xdotool mousemove 9595 1075
-bindsym $sup+7 workspace $ws7; exec xdotool mousemove 5755 1075
-bindsym $sup+8 workspace $ws8; exec xdotool mousemove 7675 1075
-bindsym $sup+9 workspace $ws9; layout tabbed; exec xdotool mousemove 9595 1075
+bindsym $sup+1 workspace $ws1; exec xdotool mousemove 5757 1077
+bindsym $sup+2 workspace $ws2; exec xdotool mousemove 7677 1077
+bindsym $sup+3 workspace $ws3; exec xdotool mousemove 9597 1077
+bindsym $sup+4 workspace $ws4; exec xdotool mousemove 5757 1077
+bindsym $sup+5 workspace $ws5; exec xdotool mousemove 7677 1077
+bindsym $sup+6 workspace $ws6; exec xdotool mousemove 9597 1077
+bindsym $sup+7 workspace $ws7; exec xdotool mousemove 5757 1077
+bindsym $sup+8 workspace $ws8; exec xdotool mousemove 7677 1077
+bindsym $sup+9 workspace $ws9; layout tabbed; exec xdotool mousemove 9597 1077
 bindsym $sup+0 workspace $ws10
 # =====================================================================
 
@@ -269,4 +269,24 @@ bindsym Print exec --no-startup-id xfce4-screenshooter
 # exec --no-startup-id xset q
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
+
+bar {
+    status_command i3status
+    position bottom
+    font pango:NotoMono 12
+
+    tray_output DP-0
+
+    colors {
+      background #121212
+      statusline #DDDDDD
+      separator  #424242
+      focused_workspace  #121212 #121212 #FFFFFF
+      active_workspace   #121212 #121212 #FFFFFF
+      inactive_workspace #121212 #121212 #888888
+      urgent_workspace   #2F343A #900000 #FFFFFF
+      binding_mode       #2F343A #900000 #FFFFFF
+    }
+
+}
 
