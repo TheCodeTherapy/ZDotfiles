@@ -1,6 +1,6 @@
 general {
   colors = true
-  interval = 3
+  interval = 1
 }
 
 # order += "ipv6"
@@ -28,7 +28,7 @@ battery all {
 }
 
 disk "/" {
-  format = "  %avail - %used "
+  format = "  %used / %avail "
 }
 
 load {
@@ -40,7 +40,7 @@ cpu_temperature 0 {
 }
 
 memory {
-  format = " 󰍛 %available - %used "
+  format = " 󰍛 %used / %available "
   threshold_degraded = "1G"
   format_degraded = "MEMORY < %available"
 }
