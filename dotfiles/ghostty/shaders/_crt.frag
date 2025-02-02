@@ -17,7 +17,7 @@
 #define NOISE_UNIFORM_STRENGTH 0.03
 #define BLOOM_STRENGTH 0.06
 #define BLOOM_SPREAD 1.5
-#define FADE_FACTOR 1.0
+#define FADE_FACTOR 0.3334
 
 #ifndef COLOR_FRINGING_SPREAD
 #define COLOR_FRINGING_SPREAD 0.0
@@ -89,6 +89,7 @@
 const float PI = acos(-1.0);
 const float TAU = PI * 2.0;
 const float SQRTAU = sqrt(TAU);
+const vec3 BG = vec3(18.0 / 255.0, 18.0 / 255.0, 23.0 / 255.0);
 
 // pre-computed
 #ifdef BLOOM_SPREAD
@@ -136,6 +137,18 @@ vec3 gaussgrain(float t) {
     return vec3(noise);
 }
 
+float ditherPos(vec2 coord) {
+    const int indexMatrix4x4[16] = int[16](
+            0, 8, 2, 10,
+            12, 4, 14, 6,
+            3, 11, 1, 9,
+            15, 7, 13, 5
+        );
+    int x = int(mod(coord.x, 4.0));
+    int y = int(mod(coord.y, 4.0));
+    return float(indexMatrix4x4[x + y * 4]) / 16.0;
+}
+
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     vec2 uv = fragCoord.xy / iResolution.xy;
 
@@ -179,20 +192,11 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
     fragColor.rgb *= 1.0 - APERTURE_GRILLE_STRENGTH * aperture_grille_mask;
 
-    // Add flicker
     fragColor *= 1.0 - FLICKER_STRENGTH / 2.0 * (1.0 + sin(2 * PI * FLICKER_FREQUENCY * iTime));
 
-    // NOTE: Hard-coded noise distributions
-    // float noiseContent = smoothstep(0.4, 0.6, fract(sin(uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y) * iTime * 4096.0) * 65536.0));
-    // float noiseUniform = smoothstep(0.4, 0.6, fract(sin(uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y) * iTime * 8192.0) * 65536.0));
-    // fragColor.rgb *= clamp(noiseContent + 1.0 - NOISE_CONTENT_STRENGTH, 0.0, 1.0);
-    // fragColor.rgb = clamp(fragColor.rgb + noiseUniform * NOISE_UNIFORM_STRENGTH, 0.0, 1.0);
-
-    // Remove output outside of screen bounds
-    if (uv.x < 0.0 || uv.x > 1.0)
-        fragColor.rgb *= 0.0;
-    if (uv.y < 0.0 || uv.y > 1.0)
-        fragColor.rgb *= 0.0;
+    if (uv.x < 0.0 || uv.x > 1.0 || uv.y < 0.0 || uv.y > 1.0) {
+        fragColor.rgb = BG;
+    }
 
     #ifdef BLOOM_SPREAD
     vec2 step = BLOOM_SPREAD * vec2(1.414) / iResolution.xy;
@@ -201,12 +205,17 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
         vec3 bloom_sample = bloom_samples[i];
         vec4 neighbor = texture(iChannel0, uv + bloom_sample.xy * step);
         float luminance = 0.299 * neighbor.r + 0.587 * neighbor.g + 0.114 * neighbor.b;
-
         fragColor += luminance * bloom_sample.z * neighbor * BLOOM_STRENGTH;
     }
 
     fragColor = clamp(fragColor, 0.0, 1.0);
     #endif
 
-    fragColor = vec4(FADE_FACTOR * fragColor.rgb, FADE_FACTOR);
+    float dither = ditherPos(fragCoord);
+
+    if (dither < 0.5) {
+        fragColor = vec4(FADE_FACTOR * fragColor.rgb, FADE_FACTOR);
+    } else {
+        fragColor = vec4(FADE_FACTOR * 2.0 * fragColor.rgb, FADE_FACTOR * 2.0);
+    }
 }
