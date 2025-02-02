@@ -235,7 +235,6 @@ install_flatpak_packages() {
     flatpak install -y flathub com.slack.Slack
     mkdir -p "$HOME/.var/app/com.slack.Slack"
   fi
-
 }
 
 link_launchers() {
