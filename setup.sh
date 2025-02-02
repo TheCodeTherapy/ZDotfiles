@@ -173,6 +173,7 @@ link_dotfiles() {
     ["${DOTDOT}/alacritty"]="$target_config/alacritty"
     ["${DOTDOT}/picom"]="$target_config/picom"
     ["${DOTDOT}/dunst"]="$target_config/dunst"
+    ["${DOTDOT}/GIMP"]="$target_config/GIMP"
     ["${DOTDOT}/neofetch"]="$target_config/neofetch"
     ["${DOTDOT}/vscode/settings.json"]="$target_config/Code/User/settings.json"
     ["${DOTDOT}/vscodium/settings.json"]="$target_config/VSCodium/User/settings.json"
