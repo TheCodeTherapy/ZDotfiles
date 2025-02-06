@@ -13,7 +13,7 @@
 #define ROTATION_STEPS 10
 #define ROTATION_INCREMENT (M_PI / 2.0 / ROTATION_STEPS)
 
-const float anticipation_distance = 5.0f;
+const float anticipation_distance = 6.0f;
 const float speed = 0.1f;
 
 char worldMap[MAP_HEIGHT][MAP_WIDTH];
