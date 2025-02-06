@@ -73,6 +73,57 @@ keymap.set("n", "<leader>ccm", create_and_preview_diagnostics, opts)
 keymap.set("n", "<leader>cca", copy_file_and_diagnostics_to_clipboard, opts)
 keymap.set("n", "<leader>cc", copy_diagnostics_to_clipboard, opts)
 
+local function change_project_root()
+  vim.ui.input({ prompt = "Enter new project root: ", completion = "dir" }, function(new_root)
+    if new_root and new_root ~= "" then
+      new_root = vim.fn.fnamemodify(new_root, ":p") -- Get absolute path
+      if vim.fn.isdirectory(new_root) == 1 then
+        -- Try closing all buffers (without force), gracefully handle cancellation
+        for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+          if vim.api.nvim_buf_is_loaded(buf) then
+            ---@diagnostic disable-next-line: unused-local
+            local ok, _err = pcall(vim.api.nvim_buf_delete, buf, { force = false })
+            if not ok then
+              print("Buffer closing canceled. Stopping project switch.")
+              return -- **Gracefully exit if user cancels**
+            end
+          end
+        end
+
+        -- Close Neo-tree if it is open
+        if pcall(require, "neo-tree.command") then
+          require("neo-tree.command").execute({ action = "close" })
+        end
+
+        -- Change Neovim working directory
+        vim.cmd("cd " .. new_root)
+
+        -- Re-open Neo-tree with the new root
+        if pcall(require, "neo-tree.command") then
+          require("neo-tree.command").execute({ action = "focus", dir = new_root })
+        end
+
+        -- Unfocus Neo-tree and return to the main window
+        vim.cmd("wincmd p")
+
+        vim.cmd("Alpha")
+
+        -- Notify user
+        print("Project root changed to: " .. new_root)
+      else
+        print("Invalid directory: " .. new_root)
+      end
+    end
+  end)
+end
+
+vim.keymap.set(
+  "n",
+  "<leader>jp",
+  change_project_root,
+  { noremap = true, silent = true, desc = "Jump to new project root" }
+)
+
 keymap.set("n", "<leader>#", "#N", opts)
 keymap.set("t", "<S-Space>", "<Space>", opts)
 keymap.set("n", "<C-z>", "<Nop>", opts)
