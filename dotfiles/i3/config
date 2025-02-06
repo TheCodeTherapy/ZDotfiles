@@ -21,7 +21,7 @@ gaps outer 0
 title_align center
 font pango:NotoMono Nerd Font, MesloLGS NF, Misc Termsyn, Wuncon Siji 12
 
-for_window [all] border pixel 0
+for_window [all] border pixel 1
 
 for_window [title="video0 - mpv"] floating enable
 for_window [title="video0 - mpv"] sticky enable
@@ -269,6 +269,7 @@ bindsym Print exec --no-startup-id xfce4-screenshooter
 # exec --no-startup-id xset q
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
+exec --no-startup-id xset r rate 350 50
 
 bar {
     status_command i3status
