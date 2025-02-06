@@ -258,9 +258,7 @@ exec --no-startup-id screenkey --start-disabled
 exec --no-startup-id flatpak run com.obsproject.Studio
 exec --no-startup-id discord
 
-exec --no-startup-id ~/ZDotfiles/dotconfig/polybar/launch.sh
-
-# exec --no-startup-id $HOME/ZDotfiles/dotconfig/polybar/launch.sh
+# exec --no-startup-id ~/ZDotfiles/dotconfig/polybar/launch.sh
 
 bindsym Print exec --no-startup-id xfce4-screenshooter
 # bindsym --release $sup+x exec --no-startup-id import /tmp/latest-screenshot.png
