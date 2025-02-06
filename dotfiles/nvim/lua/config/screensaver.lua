@@ -1,12 +1,16 @@
 local screensaver = {}
 local timer, is_running, fake_buf, fake_win
 local uv = vim.loop
-local effect = require("config.ss_matrix")
+
+local effects = {
+  matrix = require("config.ss_matrix"),
+  maze = require("config.ss_maze"),
+}
 
 local default_opts = {
-  style = "matrix",
+  style = "maze", -- "matrix" or "maze"
   customcmd = "",
-  after = 180,
+  after = 300,
   offset = 0,
   exclude_filetypes = {
     "TelescopePrompt",
@@ -21,6 +25,9 @@ local default_opts = {
     tick_time = 50,
     headache = false,
   },
+  maze = {
+    tick_time = 50,
+  },
 }
 
 local opts = default_opts
@@ -33,13 +40,13 @@ local function create_floating_window()
 
   ---@type vim.api.keyset.win_config
   local win_opts = {
-    relative = "win", -- Position relative to current window
-    width = vim.o.columns - w, -- Window width
-    height = vim.o.lines - vim.opt.cmdheight:get() - 2, -- Window height
-    border = "none", -- No border
-    row = 0, -- Row position
-    col = w, -- Column position
-    style = "minimal", -- Minimal UI style
+    relative = "win",
+    width = vim.o.columns - w,
+    height = vim.o.lines - vim.opt.cmdheight:get() - 2,
+    border = "none",
+    row = 0,
+    col = w,
+    style = "minimal",
   }
 
   fake_buf = vim.api.nvim_create_buf(false, true)
@@ -64,7 +71,7 @@ local function hide_cursor()
   old_guicursor = vim.o.guicursor
   old_cursorline = vim.o.cursorline
   old_cursorcolumn = vim.o.cursorcolumn
-  vim.opt.guicursor = "a:Cursor/lCursor" -- This actually makes it disappear
+  vim.opt.guicursor = "a:Cursor/lCursor"
   vim.opt.cursorline = false
   vim.opt.cursorcolumn = false
   vim.cmd([[ autocmd CursorMoved,CursorMovedI * set guicursor=a:Cursor/lCursor ]])
@@ -92,8 +99,8 @@ local function start_screensaver()
   fake_buf, fake_win = create_floating_window()
 
   local style = opts.style or "matrix"
-  if style == "matrix" then
-    effect.start(fake_buf, opts.matrix) -- Pass config!
+  if effects[style] then
+    effects[style].start(fake_buf, opts[style]) -- Pass correct effect config
   elseif style == "customcmd" then
     vim.cmd(opts.customcmd)
   end
@@ -102,7 +109,10 @@ end
 local function stop_screensaver()
   if is_running then
     is_running = false
-    effect.stop() -- Tell the effect to stop its animations
+    local style = opts.style or "matrix"
+    if effects[style] then
+      effects[style].stop()
+    end
   end
 
   show_cursor()
@@ -126,11 +136,16 @@ local function reset_activity()
     end
   end
 
-  stop_screensaver() -- Handle stopping correctly
+  stop_screensaver()
 
   ---@diagnostic disable-next-line: undefined-field
   timer = uv.new_timer()
   timer:start(opts.after * 1000, 0, vim.schedule_wrap(start_screensaver))
+end
+
+function screensaver.start_now()
+  stop_screensaver() -- Ensure it's not already running
+  start_screensaver()
 end
 
 function screensaver.setup(user_opts)
@@ -141,6 +156,12 @@ function screensaver.setup(user_opts)
     group = grp,
     callback = reset_activity,
   })
-end
 
+  vim.keymap.set(
+    "n",
+    "<leader>rm",
+    screensaver.start_now,
+    { noremap = true, silent = true, desc = "Start Screensaver" }
+  )
+end
 return screensaver
