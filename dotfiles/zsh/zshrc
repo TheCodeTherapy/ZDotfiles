@@ -36,7 +36,8 @@ start_tmux() {
     ~/ZDotfiles/scripts/startmux
   fi
 }
-start_tmux "$@"
+# start_tmux "$@"
+echo && neofetch
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
