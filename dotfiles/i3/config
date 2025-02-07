@@ -7,9 +7,10 @@ set $rm DP-4
 set $sup Mod4
 set $mod Mod1
 
-client.focused              #212121 #000000 #ffffff #AAAAAA #888888
-client.focused_inactive     #212121 #000000 #dddddd #484E50 #303030
-client.unfocused            #212121 #000000 #777777 #292D2E #303030
+# class                     border  bg      text    indicat chld_bd
+client.focused              #707070 #212121 #ffffff #707070 #121217
+client.focused_inactive     #707070 #000000 #dddddd #484E50 #121217
+client.unfocused            #707070 #000000 #707070 #292D2E #121217
 client.urgent               #ff0000 #904848 #ffdddd #904848 #703030
 client.placeholder          #000000 #304848 #ffffff #000000 #303030
 client.background           #008800
