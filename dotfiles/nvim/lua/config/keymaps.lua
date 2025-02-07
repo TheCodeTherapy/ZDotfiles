@@ -177,6 +177,7 @@ keymap.set("v", "<C-x>", '"+d', opts)
 
 keymap.set("n", "<C-v>", '"+p', opts)
 keymap.set("i", "<C-v>", "<C-r>+", { noremap = true })
+keymap.set("n", "<A-v>", "<Cmd>execute 'normal! <C-v>'<CR>", { noremap = true, silent = true })
 
 -- moving lines up and down with Alt + keys in normal mode or insert mode
 keymap.set("n", "<A-Up>", ":m .-2<CR>==", opts)
