@@ -1,11 +1,13 @@
 local maze = {}
 local uv = vim.loop
 
-local MAP_WIDTH, MAP_HEIGHT = 30, 30
+local MAP_WIDTH, MAP_HEIGHT = 60, 60
 local anticipation_distance = 6.0
 local speed = 0.1
 local ROTATION_STEPS = 10
 local ROTATION_INCREMENT = (math.pi / 2) / ROTATION_STEPS
+
+local max_shades = 64
 
 local playerX, playerY = 3.0, 3.0
 local dirX, dirY = 1.0, 0.0
@@ -17,6 +19,30 @@ local ns = vim.api.nvim_create_namespace("screensaver-maze")
 local timer
 local fake_buf
 local extmark_id = nil
+
+local function generate_shades()
+  -- Define color ranges
+  local dark_gray_min, dark_gray_max = 0x03, 0x12
+  local light_gray_min, light_gray_max = 0x07, 0x17
+  local blue_min, blue_max = 0x12, 0xBB
+
+  for i = 1, max_shades do
+    -- Dark gray (Ceiling)
+    local d = math.floor(dark_gray_min + ((dark_gray_max - dark_gray_min) / (max_shades - 1)) * (i - 1))
+    vim.cmd(string.format([[hi DarkGray%d guibg=#%02x%02x%02x]], i, d, d, d))
+
+    -- Light gray (Floor)
+    local l = math.floor(light_gray_min + ((light_gray_max - light_gray_min) / (max_shades - 1)) * (i - 1))
+    vim.cmd(string.format([[hi LightGray%d guibg=#%02x%02x%02x]], i, l, l, l))
+
+    -- Blue (Walls)
+    local b = math.floor(blue_min + ((blue_max - blue_min) / (max_shades - 1)) * (i - 1))
+    local fg_r = math.min(0xFF, math.floor(b * 0.7))
+    local fg_g = math.min(0xFF, math.max(0x00, math.floor(b * 0.9)))
+    local fg_b = math.min(0xFF, math.floor(b * 1.2))
+    vim.cmd(string.format([[hi Blue%d guibg=#%02x%02x%02x guifg=#%02x%02x%02x]], i, 0x00, 0x00, 0x20, fg_r, fg_g, fg_b))
+  end
+end
 
 local function split_string(input)
   local t = {}
@@ -151,6 +177,7 @@ local function update_movement()
     playerY = playerY + dirY * speed
   end
 end
+
 local function render()
   local screenHeight = vim.o.lines
   local screenWidth = vim.o.columns
@@ -200,19 +227,42 @@ local function render()
     local shadeIndex = math.max(1, math.min(#shading_chars, math.floor(lineHeight / screenHeight * #shading_chars)))
     local shadeChar = shading_chars[shadeIndex]
 
+    -- **Determine Wall Blue Shade**
+    local wallShadeIndex =
+      math.max(1, math.min(max_shades, math.floor((1 - math.min(1, perpWallDist / 10)) * max_shades)) - 1)
+
+    local wallForegroundIndex = wallShadeIndex + 1
+    local wallShade = { shadeChar, "Blue" .. wallShadeIndex }
+
     for y = 1, screenHeight do
-      grid[y][x] = {
-        (y >= screenHeight / 2 - lineHeight / 2 and y <= screenHeight / 2 + lineHeight / 2) and shadeChar or " ",
-        "White",
-      }
+      -- **Determine Floor & Ceiling Colors**
+      local ceilingOrFloor
+      if y < screenHeight / 2 then
+        -- Ceiling (Darker Gray)
+        local ceilingShadeIndex =
+          math.max(1, math.min(max_shades, math.floor(((screenHeight - y) / screenHeight) * max_shades)))
+        ceilingOrFloor = "DarkGray" .. ceilingShadeIndex
+      else
+        -- Floor (Lighter Gray)
+        local floorShadeIndex = math.max(1, math.min(max_shades, math.floor((y / screenHeight) * max_shades)))
+        ceilingOrFloor = "LightGray" .. floorShadeIndex
+      end
+
+      -- **Render Walls on top of Ceiling/Floor**
+      grid[y][x] = (y >= screenHeight / 2 - lineHeight / 2 and y <= screenHeight / 2 + lineHeight / 2) and wallShade
+        or { " ", ceilingOrFloor }
     end
   end
 
-  extmark_id = vim.api.nvim_buf_set_extmark(fake_buf, ns, 0, 0, { virt_lines = grid, id = extmark_id })
+  if vim.api.nvim_buf_is_valid(fake_buf) then
+    extmark_id = vim.api.nvim_buf_set_extmark(fake_buf, ns, 0, 0, { virt_lines = grid, id = extmark_id })
+  end
 end
 
 function maze.start(buf, config)
   fake_buf = buf
+
+  generate_shades()
   generate_maze()
   ---@diagnostic disable-next-line: undefined-field
   timer = uv.new_timer()
