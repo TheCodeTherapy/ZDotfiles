@@ -17,7 +17,10 @@
 #define NOISE_UNIFORM_STRENGTH 0.03
 #define BLOOM_STRENGTH 0.06
 #define BLOOM_SPREAD 1.5
-#define FADE_FACTOR 0.6667
+#define FADE_FACTOR 0.21
+#define BRIGHTNESS 0.1
+#define CONTRAST 1.25
+#define SATURATION 2.1
 
 #ifndef COLOR_FRINGING_SPREAD
 #define COLOR_FRINGING_SPREAD 0.0
@@ -90,6 +93,7 @@ const float PI = acos(-1.0);
 const float TAU = PI * 2.0;
 const float SQRTAU = sqrt(TAU);
 const vec3 BG = vec3(18.0 / 255.0, 18.0 / 255.0, 23.0 / 255.0);
+const float THIRD = 1.0 / 3.0;
 
 // pre-computed
 #ifdef BLOOM_SPREAD
@@ -148,6 +152,36 @@ float ditherPos(vec2 coord) {
     int y = int(mod(coord.y, 4.0));
     return float(indexMatrix4x4[x + y * 4]) / 16.0;
 }
+mat4 brightnessMatrix(float brightness) {
+    return mat4(
+        1, 0, 0, 0,
+        0, 1, 0, 0,
+        0, 0, 1, 0,
+        brightness, brightness, brightness, 1
+    );
+}
+
+mat4 contrastMatrix(float contrast) {
+    float t = (1.0 - contrast) / 2.0;
+    return mat4(
+        contrast, 0, 0, 0,
+        0, contrast, 0, 0,
+        0, 0, contrast, 0,
+        t, t, t, 1
+    );
+}
+
+mat4 saturationMatrix(float saturation) {
+    vec3 luminance = vec3(0.3086, 0.6094, 0.0820);
+    float oneMinusSat = 1.0 - saturation;
+    vec3 red = vec3(luminance.x * oneMinusSat);
+    red += vec3(saturation, 0, 0);
+    vec3 green = vec3(luminance.y * oneMinusSat);
+    green += vec3(0, saturation, 0);
+    vec3 blue = vec3(luminance.z * oneMinusSat);
+    blue += vec3(0, 0, saturation);
+    return mat4(red, 0, green, 0, blue, 0, 0, 0, 0, 1);
+}
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     vec2 uv = fragCoord.xy / iResolution.xy;
@@ -158,10 +192,29 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     uv = (uv / 2.0) + 0.5;
     #endif
 
+    vec4 tex = texture(iChannel0, uv);
+
+    #ifdef BRIGHTNESS
+    tex = brightnessMatrix(BRIGHTNESS) * tex;
+    #endif
+    #ifdef CONTRAST
+    tex = contrastMatrix(CONTRAST) * tex;
+    #endif
+    #ifdef SATURATION
+    tex = saturationMatrix(SATURATION) * tex;
+    #endif
+
+    vec4 highPass = tex;
+    if (length(highPass.rgb) < THIRD) {
+      highPass *= 0.0;
+    }
+
     fragColor.r = texture(iChannel0, vec2(uv.x + 0.0003 * COLOR_FRINGING_SPREAD, uv.y + 0.0003 * COLOR_FRINGING_SPREAD)).x;
     fragColor.g = texture(iChannel0, vec2(uv.x + 0.0000 * COLOR_FRINGING_SPREAD, uv.y - 0.0006 * COLOR_FRINGING_SPREAD)).y;
     fragColor.b = texture(iChannel0, vec2(uv.x - 0.0006 * COLOR_FRINGING_SPREAD, uv.y + 0.0000 * COLOR_FRINGING_SPREAD)).z;
     fragColor.a = texture(iChannel0, uv).a;
+
+    fragColor = mix(tex, fragColor, 0.5);
 
     fragColor.r += 0.04 * GHOSTING_STRENGTH * texture(iChannel0, GHOSTING_SPREAD * vec2(+0.025, -0.027) + uv.xy).x;
     fragColor.g += 0.02 * GHOSTING_STRENGTH * texture(iChannel0, GHOSTING_SPREAD * vec2(-0.022, -0.020) + uv.xy).y;
@@ -215,7 +268,8 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
     if (dither < 0.5) {
         fragColor = vec4(FADE_FACTOR * fragColor.rgb, FADE_FACTOR);
+        fragColor += highPass * (1.0 - FADE_FACTOR);
     } else {
-        fragColor = vec4(FADE_FACTOR * 2.0 * fragColor.rgb, FADE_FACTOR * 2.0);
+        fragColor = vec4(clamp(FADE_FACTOR * 2.0, 0.0, 1.0) * fragColor.rgb, clamp(FADE_FACTOR * 2.0, 0.0, 1.0));
     }
 }
