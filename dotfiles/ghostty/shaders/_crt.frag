@@ -272,4 +272,5 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     } else {
         fragColor = vec4(clamp(FADE_FACTOR * 2.0, 0.0, 1.0) * fragColor.rgb, clamp(FADE_FACTOR * 2.0, 0.0, 1.0));
     }
+    fragColor += highPass * 0.12;
 }
