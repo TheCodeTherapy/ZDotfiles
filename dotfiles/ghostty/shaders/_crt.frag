@@ -206,7 +206,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
     vec4 highPass = tex;
     if (length(highPass.rgb) < THIRD) {
-      highPass *= 0.0;
+        highPass *= 0.0;
     }
 
     fragColor.r = texture(iChannel0, vec2(uv.x + 0.0003 * COLOR_FRINGING_SPREAD, uv.y + 0.0003 * COLOR_FRINGING_SPREAD)).x;
