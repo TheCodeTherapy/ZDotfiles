@@ -1,13 +1,21 @@
-local maze = {}
-local uv = vim.loop
+local maze = {
+  timer = nil,
+}
+
+local debugInfo = false
 
 local MAP_WIDTH, MAP_HEIGHT = 60, 60
 local anticipation_distance = 6.0
-local speed = 0.1
-local ROTATION_STEPS = 10
+local speed = 0.125
+local ROTATION_STEPS = 12
 local ROTATION_INCREMENT = (math.pi / 2) / ROTATION_STEPS
 
+local shading_string = ".-':_,^=;><+!rc*/z?sLTv)J7(|Fi{C}fI31tlu[neoZ5Yxjya]2ESwqkP6h9d4VpOGbUAKXHm8RD#$Bg0MNWQ%&@"
+
 local max_shades = 64
+local dark_gray_min, dark_gray_max = 0x03, 0x12
+local light_gray_min, light_gray_max = 0x07, 0x17
+local blue_min, blue_max = 0x12, 0xBB
 
 local playerX, playerY = 3.0, 3.0
 local dirX, dirY = 1.0, 0.0
@@ -16,31 +24,33 @@ local last_rotation = 0
 local worldMap = {}
 
 local ns = vim.api.nvim_create_namespace("screensaver-maze")
-local timer
+
 local fake_buf
 local extmark_id = nil
 
+local last_notified_turn = nil
+
+local turn_delay_counter = 0
+local TURN_DELAY_THRESHOLD = 4
+local dice_rolled = false
+local rng = -1
+
 local function generate_shades()
-  -- Define color ranges
-  local dark_gray_min, dark_gray_max = 0x03, 0x12
-  local light_gray_min, light_gray_max = 0x07, 0x17
-  local blue_min, blue_max = 0x12, 0xBB
-
   for i = 1, max_shades do
-    -- Dark gray (Ceiling)
+    -- Ceiling
     local d = math.floor(dark_gray_min + ((dark_gray_max - dark_gray_min) / (max_shades - 1)) * (i - 1))
-    vim.cmd(string.format([[hi DarkGray%d guibg=#%02x%02x%02x]], i, d, d, d))
+    vim.cmd(string.format([[hi Ceiling%d guibg=#%02x%02x%02x]], i, d, d, d))
 
-    -- Light gray (Floor)
+    -- Floor
     local l = math.floor(light_gray_min + ((light_gray_max - light_gray_min) / (max_shades - 1)) * (i - 1))
-    vim.cmd(string.format([[hi LightGray%d guibg=#%02x%02x%02x]], i, l, l, l))
+    vim.cmd(string.format([[hi Floor%d guibg=#%02x%02x%02x]], i, l, l, l))
 
-    -- Blue (Walls)
+    -- Walls
     local b = math.floor(blue_min + ((blue_max - blue_min) / (max_shades - 1)) * (i - 1))
     local fg_r = math.min(0xFF, math.floor(b * 0.7))
     local fg_g = math.min(0xFF, math.max(0x00, math.floor(b * 0.9)))
     local fg_b = math.min(0xFF, math.floor(b * 1.2))
-    vim.cmd(string.format([[hi Blue%d guibg=#%02x%02x%02x guifg=#%02x%02x%02x]], i, 0x00, 0x00, 0x20, fg_r, fg_g, fg_b))
+    vim.cmd(string.format([[hi Wall%d guibg=#%02x%02x%02x guifg=#%02x%02x%02x]], i, 0x00, 0x00, 0x20, fg_r, fg_g, fg_b))
   end
 end
 
@@ -52,7 +62,6 @@ local function split_string(input)
   return t
 end
 
-local shading_string = ".-':_,^=;><+!rc*/z?sLTv)J7(|Fi{C}fI31tlu[neoZ5Yxjya]2ESwqkP6h9d4VpOGbUAKXHm8RD#$Bg0MNWQ%&@"
 local shading_chars = split_string(shading_string)
 
 local function is_wall(x, y)
@@ -113,6 +122,9 @@ local function generate_maze()
   repeat
     playerX, playerY = 3 + math.random(MAP_WIDTH - 6), 3 + math.random(MAP_HEIGHT - 6)
   until not is_wall(playerX, playerY)
+  if debugInfo then
+    vim.notify(string.format("Player start position: (%d, %d)", playerX, playerY))
+  end
 end
 
 local function rotate_player()
@@ -148,6 +160,71 @@ local function get_valid_rotations()
   return possible_rotations
 end
 
+local function cast_ray(x, y, dx, dy)
+  local dist = 0
+  while not is_wall(x + dx * dist, y + dy * dist) do
+    dist = dist + 1
+  end
+  return dist
+end
+
+---@diagnostic disable-next-line: unused-local, unused-function
+local function draw_rays()
+  if not vim.api.nvim_buf_is_valid(fake_buf) then
+    return
+  end
+
+  -- Get real-time ray distances
+  local forward_dist = cast_ray(playerX, playerY, dirX, dirY)
+  local backward_dist = cast_ray(playerX, playerY, -dirX, -dirY)
+  local right_dist = cast_ray(playerX, playerY, dirY, -dirX)
+  local left_dist = cast_ray(playerX, playerY, -dirY, dirX)
+
+  -- Format as a single-line string
+  local ray_text = string.format(
+    "→ Forward: %d | ← Backward: %d | ↓ Right: %d | ↑ Left: %d",
+    forward_dist,
+    backward_dist,
+    right_dist,
+    left_dist
+  )
+
+  -- Clear previous virtual text
+  vim.api.nvim_buf_clear_namespace(fake_buf, ns, 0, -1)
+
+  -- Set virtual text at the first line, single entry
+  ---@diagnostic disable-next-line: deprecated
+  vim.api.nvim_buf_set_virtual_text(fake_buf, ns, 0, { { ray_text, "Comment" } }, {})
+end
+
+local function check_turns()
+  local forward_dist = cast_ray(playerX, playerY, dirX, dirY)
+  local backward_dist = cast_ray(playerX, playerY, -dirX, -dirY)
+  local left_dist = cast_ray(playerX, playerY, dirY, -dirX)
+  local right_dist = cast_ray(playerX, playerY, -dirY, dirX)
+
+  local is_near_corner = (forward_dist <= 2 or backward_dist <= 2) -- Detect if we are at a corner
+  local new_turn = nil
+
+  -- Detect a valid side corridor (not a corner)
+  if not is_near_corner then
+    if right_dist > 2 then
+      new_turn = "Right"
+    elseif left_dist > 2 then
+      new_turn = "Left"
+    end
+  end
+
+  if new_turn and new_turn ~= last_notified_turn then
+    if debugInfo then
+      vim.notify(string.format("Detected a %s passage!", new_turn))
+    end
+    last_notified_turn = new_turn
+  end
+
+  return new_turn
+end
+
 local function update_movement()
   if rotating ~= 0 then
     rotate_player()
@@ -156,6 +233,33 @@ local function update_movement()
 
   local futureX = playerX + dirX * anticipation_distance * speed
   local futureY = playerY + dirY * anticipation_distance * speed
+
+  local detected_turn = check_turns() -- Check for possible turns
+
+  if detected_turn then
+    -- **Only roll for turning ONCE per corridor detection**
+    if not dice_rolled then
+      rng = math.random(2)
+      if debugInfo then
+        vim.notify(string.format("Rolling for turn: %d", rng))
+      end
+      dice_rolled = true
+    end
+
+    -- **Delay turn execution until the center of the corridor**
+    turn_delay_counter = turn_delay_counter + 1
+    if rng == 1 and turn_delay_counter >= TURN_DELAY_THRESHOLD then
+      dice_rolled = false -- Reset turn roll after turning
+      local new_turn_dir = detected_turn == "Left" and -1 or 1
+      rotating = new_turn_dir
+      turn_delay_counter = 0
+      return
+    end
+  else
+    -- Reset turn delay and roll once we're past the corridor
+    turn_delay_counter = 0
+    dice_rolled = false
+  end
 
   if is_wall(futureX, futureY) then
     local possible_rotations = get_valid_rotations()
@@ -169,16 +273,28 @@ local function update_movement()
 
     if #possible_rotations > 0 then
       rotating = possible_rotations[math.random(#possible_rotations)] -- Pick a valid rotation
+      last_side_corridor = nil -- Reset when forced to turn around
+      turn_delay_counter = 0 -- Reset counter
+      dice_rolled = false
     else
       rotating = -last_rotation -- If no valid turns, force a reversal
+      last_side_corridor = nil -- Reset when forced to turn around
+      turn_delay_counter = 0 -- Reset counter
+      dice_rolled = false
     end
   else
     playerX = playerX + dirX * speed
     playerY = playerY + dirY * speed
   end
 end
+--
+-- **Rendering**
+--
 
-local function render()
+local function render(buf)
+  if not vim.api.nvim_buf_is_valid(buf) then
+    return
+  end
   local screenHeight = vim.o.lines
   local screenWidth = vim.o.columns
 
@@ -227,28 +343,27 @@ local function render()
     local shadeIndex = math.max(1, math.min(#shading_chars, math.floor(lineHeight / screenHeight * #shading_chars)))
     local shadeChar = shading_chars[shadeIndex]
 
-    -- **Determine Wall Blue Shade**
+    -- **Determine Wall Wall Shade**
     local wallShadeIndex =
       math.max(1, math.min(max_shades, math.floor((1 - math.min(1, perpWallDist / 10)) * max_shades)) - 1)
 
-    local wallForegroundIndex = wallShadeIndex + 1
-    local wallShade = { shadeChar, "Blue" .. wallShadeIndex }
+    local wallShade = { shadeChar, "Wall" .. wallShadeIndex }
 
     for y = 1, screenHeight do
-      -- **Determine Floor & Ceiling Colors**
+      -- Determine Floor & Ceiling Colors
       local ceilingOrFloor
       if y < screenHeight / 2 then
-        -- Ceiling (Darker Gray)
+        -- Ceiling
         local ceilingShadeIndex =
           math.max(1, math.min(max_shades, math.floor(((screenHeight - y) / screenHeight) * max_shades)))
-        ceilingOrFloor = "DarkGray" .. ceilingShadeIndex
+        ceilingOrFloor = "Ceiling" .. ceilingShadeIndex
       else
-        -- Floor (Lighter Gray)
+        -- Floor
         local floorShadeIndex = math.max(1, math.min(max_shades, math.floor((y / screenHeight) * max_shades)))
-        ceilingOrFloor = "LightGray" .. floorShadeIndex
+        ceilingOrFloor = "Floor" .. floorShadeIndex
       end
 
-      -- **Render Walls on top of Ceiling/Floor**
+      -- Walls
       grid[y][x] = (y >= screenHeight / 2 - lineHeight / 2 and y <= screenHeight / 2 + lineHeight / 2) and wallShade
         or { " ", ceilingOrFloor }
     end
@@ -259,29 +374,31 @@ local function render()
   end
 end
 
-function maze.start(buf, config)
+function maze.start(buf, config, effect_timer)
   fake_buf = buf
+
+  if not effect_timer then
+    if debugInfo then
+      vim.notify("ERROR: No valid timer provided to maze.start()!", vim.log.levels.ERROR)
+    end
+    return
+  end
 
   generate_shades()
   generate_maze()
-  ---@diagnostic disable-next-line: undefined-field
-  timer = uv.new_timer()
-  timer:start(
+
+  effect_timer:start(
     10,
     config.tick_time,
     vim.schedule_wrap(function()
       update_movement()
-      render()
+      render(fake_buf)
     end)
   )
 end
 
 function maze.stop()
-  if timer then
-    timer:stop()
-    timer:close()
-    timer = nil
-  end
+  -- nothing to cleanup here
 end
 
 return maze
