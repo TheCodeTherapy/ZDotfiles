@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 local screensaver = {}
 
 local uv = vim.loop
