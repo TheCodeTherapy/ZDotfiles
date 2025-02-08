@@ -261,6 +261,8 @@ exec --no-startup-id discord
 
 # exec --no-startup-id ~/ZDotfiles/dotconfig/polybar/launch.sh
 
+bindsym $sup+equal exec --no-startup-id urblind 2
+
 bindsym Print exec --no-startup-id xfce4-screenshooter
 # bindsym --release $sup+x exec --no-startup-id import /tmp/latest-screenshot.png
 # bindsym --release $sup+Shift+c exec /home/marcogomez/dotfiles/scripts/webcamw
