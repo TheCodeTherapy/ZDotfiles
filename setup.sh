@@ -125,6 +125,7 @@ install_recipes() {
     "$recipe_dir/install_i3polybar.sh"
     "$recipe_dir/install_i3picom.sh"
     "$recipe_dir/install_ytdlp.sh"
+    "$recipe_dir/install_urblind.sh"
     "$recipe_dir/fix_cedilla.sh"
     "$recipe_dir/restore_terminal_cfg.sh"
     "$recipe_dir/restore_bind_keys.sh"
