@@ -22,7 +22,7 @@ keybind = shift+space=unbind
 keybind = shift+end=unbind
 keybind = control+tab=unbind
 
-custom-shader-animation = true
+custom-shader-animation = always
 custom-shader = shaders/_crt.frag
 # custom-shader = shaders/_cleaner_crt.frag
 
