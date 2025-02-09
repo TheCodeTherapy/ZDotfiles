@@ -22,10 +22,9 @@ diagnostics.md
 gpt_response.md
 .repoinfo.md
 .gpt_last_request.md
-yt-dlp
 depot_tools
 ch-zrh-wg-003.conf
 dotfiles/GIMP/2.10/action-history
 toys/screensaver/ssaver
-bin/ssaver
+bin/*
 
