@@ -15,7 +15,7 @@
 #define FLICKER_FREQUENCY 15.0
 #define NOISE_CONTENT_STRENGTH 0.15
 #define NOISE_UNIFORM_STRENGTH 0.03
-#define BLOOM_STRENGTH 0.06
+#define BLOOM_STRENGTH 0.091
 #define BLOOM_SPREAD 1.5
 #define BRIGHTNESS 0.1
 #define CONTRAST 1.25
@@ -94,6 +94,7 @@ const float TAU = PI * 2.0;
 const float SQRTAU = sqrt(TAU);
 const vec3 BG = vec3(18.0 / 255.0, 18.0 / 255.0, 23.0 / 255.0);
 const float THIRD = 1.0 / 3.0;
+const float TWOTHIRDS = 2.0 / 3.0;
 
 // pre-computed
 #ifdef BLOOM_SPREAD
@@ -193,6 +194,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     #endif
 
     vec4 tex = texture(iChannel0, uv);
+    vec4 oTex = tex;
 
     #ifdef BRIGHTNESS
     tex = brightnessMatrix(BRIGHTNESS) * tex;
@@ -252,11 +254,12 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     }
 
     #ifdef BLOOM_SPREAD
-    vec2 step = BLOOM_SPREAD * vec2(1.414) / iResolution.xy;
+    vec2 step = BLOOM_SPREAD * vec2(TWOTHIRDS) / iResolution.xy;
 
-    for (int i = 0; i < 24; i++) {
+    for (int i = 0; i < 30; i++) {
+        float offset = 1.0 + max(0.0, float(i - 8)) / 128.0;
         vec3 bloom_sample = bloom_samples[i];
-        vec4 neighbor = texture(iChannel0, uv + bloom_sample.xy * step);
+        vec4 neighbor = texture(iChannel0, uv + bloom_sample.xy * step * offset);
         float luminance = 0.299 * neighbor.r + 0.587 * neighbor.g + 0.114 * neighbor.b;
         fragColor += luminance * bloom_sample.z * neighbor * BLOOM_STRENGTH;
     }
@@ -273,4 +276,5 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
         fragColor = vec4(clamp(FADE_FACTOR * 2.0, 0.0, 1.0) * fragColor.rgb, clamp(FADE_FACTOR * 2.0, 0.0, 1.0));
     }
     fragColor += highPass * 0.12;
+    fragColor = mix(oTex, fragColor, 0.5);
 }
