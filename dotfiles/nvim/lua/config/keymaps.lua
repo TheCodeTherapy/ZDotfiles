@@ -1,5 +1,6 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
+---@diagnostic disable-next-line: unused-local
 local surround_chars = "[\"'(){}%[%]]"
 
 local function merge_tables(t1, t2)
@@ -159,37 +160,42 @@ keymap.set("n", "<C-w><Right>", "<C-w>>")
 keymap.set("n", "q", "<Nop>", opts)
 
 -- VSCode like keybindings ---------------------------------------------------
-keymap.set("n", "<C-b>", ":Neotree toggle<CR><C-w>l", opts)
-keymap.set("i", "<C-b>", "<Esc>:Neotree toggle<CR><C-w>i", opts)
+-- Save with Ctrl + s getting back to insert mode
+keymap.set("i", "<C-s>", "<Esc>:w<CR>a", opts)
+keymap.set("n", "<C-b>", ":Neotree toggle<CR>", opts)
+keymap.set("i", "<C-b>", "<Esc>:Neotree toggle<CR>", opts)
 
+-- select stuff with shift + keys
 keymap.set("n", "<S-End>", "v$h")
 keymap.set("v", "<S-End>", "g_", opts)
+keymap.set("i", "<S-End>", "<Esc>v$h", opts)
 keymap.set("n", "<S-Home>", "v0")
 keymap.set("v", "<S-Home>", "0", opts)
 keymap.set("i", "<S-Home>", "<Esc>v0", opts)
-
 keymap.set("i", "<S-Right>", "<Esc>vl", opts)
 keymap.set("v", "<S-Right>", "l", opts)
 keymap.set("i", "<S-Left>", "<Esc>vh", opts)
 keymap.set("v", "<S-Left>", "h", opts)
-
-keymap.set("i", "<S-End>", "<Esc>v$", opts)
 keymap.set("n", "<S-Down>", "v<Down>", opts)
 keymap.set("v", "<S-Down>", "j", opts)
 keymap.set("n", "<S-Up>", "v<Up>", opts)
 keymap.set("v", "<S-Up>", "k", opts)
 
+-- select all with Ctrl + a
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
-keymap.set("v", "<C-c>", '"+y', opts)
+-- Cut, copy and paste
 keymap.set("v", "<C-x>", '"+d', opts)
+keymap.set("v", "<C-c>", '"+y', opts)
 keymap.set("n", "<C-v>", '"+p', opts)
 keymap.set("i", "<C-v>", "<C-r>+", opts)
+keymap.set("v", "<C-v>", '"_d"+P', opts)
 
+-- Visual block with Alt + v
 keymap.set("n", "<A-v>", "<Cmd>execute 'normal! <C-v>'<CR>", opts)
 
 -- Close current buffer (equivalent to closing a tab in VSCode)
-keymap.set("n", "<C-w>", ":bdelete<CR>", opts)
+keymap.set("n", "<C-w>", ":BufferLinePickClose<CR>", opts)
 
 -- `Ctrl+P` to find files (same as VSCode's Quick Open)
 keymap.set("n", "<C-p>", ":Telescope find_files<CR>", opts)
@@ -214,12 +220,11 @@ keymap.set("n", "<S-Tab>", "<<")
 keymap.set("v", "<Tab>", ">gv")
 keymap.set("v", "<S-Tab>", "<gv")
 
--- on insert mode, tab or shift+tab will indent right or left the current line
--- keymap.set("i", "<Tab>", "<C-t>")
--- keymap.set("i", "<S-Tab>", "<C-d>")
-
 keymap.set("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 
+keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+keymap.set("n", "<F12>", ":Telescope diagnostics<CR>", opts)
+keymap.set("n", "<A-CR>", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 -- ---------------------------------------------------------------------------
 
 -- on visual mode, Ctrl + f should search the word under the cursor in the current buffer
