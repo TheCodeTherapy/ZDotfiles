@@ -158,6 +158,10 @@ keymap.set("n", "<C-w><Right>", "<C-w>>")
 -- Disable default macro record
 keymap.set("n", "q", "<Nop>", opts)
 
+-- VSCode like keybindings ---------------------------------------------------
+keymap.set("n", "<C-b>", ":Neotree toggle<CR><C-w>l", opts)
+keymap.set("i", "<C-b>", "<Esc>:Neotree toggle<CR><C-w>i", opts)
+
 keymap.set("n", "<S-End>", "v$h")
 keymap.set("v", "<S-End>", "g_", opts)
 keymap.set("n", "<S-Home>", "v0")
@@ -184,6 +188,18 @@ keymap.set("i", "<C-v>", "<C-r>+", opts)
 
 keymap.set("n", "<A-v>", "<Cmd>execute 'normal! <C-v>'<CR>", opts)
 
+-- Close current buffer (equivalent to closing a tab in VSCode)
+keymap.set("n", "<C-w>", ":bdelete<CR>", opts)
+
+-- `Ctrl+P` to find files (same as VSCode's Quick Open)
+keymap.set("n", "<C-p>", ":Telescope find_files<CR>", opts)
+
+-- `Ctrl+Shift+P` for Neovim's command palette (like VSCode)
+keymap.set("n", "<C-S-p>", ":Telescope commands<CR>", opts)
+
+-- `Ctrl+Shift+F` for searching in project (VSCode's global search)
+keymap.set("n", "<C-S-f>", ":Telescope live_grep<CR>", opts)
+
 -- moving lines up and down with Alt + keys in normal mode or insert mode
 keymap.set("n", "<A-Up>", ":m .-2<CR>==", opts)
 keymap.set("i", "<A-Up>", "<Esc>:m .-2<CR>==gi", opts)
@@ -194,13 +210,17 @@ keymap.set("i", "<A-Down>", "<Esc>:m .+1<CR>==gi", opts)
 keymap.set("n", "<Tab>", ">>")
 keymap.set("n", "<S-Tab>", "<<")
 
+-- on visual mode, tab or shift+tab will indent right or left the selected lines
+keymap.set("v", "<Tab>", ">gv")
+keymap.set("v", "<S-Tab>", "<gv")
+
 -- on insert mode, tab or shift+tab will indent right or left the current line
 -- keymap.set("i", "<Tab>", "<C-t>")
 -- keymap.set("i", "<S-Tab>", "<C-d>")
 
--- on visual mode, tab or shift+tab will indent right or left the selected lines
-keymap.set("v", "<Tab>", ">gv")
-keymap.set("v", "<S-Tab>", "<gv")
+keymap.set("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+
+-- ---------------------------------------------------------------------------
 
 -- on visual mode, Ctrl + f should search the word under the cursor in the current buffer
 vim.keymap.set("n", "<C-f>", function()
