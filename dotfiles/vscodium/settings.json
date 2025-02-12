@@ -1,16 +1,16 @@
 {
   "editor.tabSize": 2,
-  "editor.fontSize": 16,
+  "editor.fontSize": 17,
+  "editor.lineHeight": 21,
   "editor.fontFamily": "'NotoMono Nerd Font', 'MesloLGS NF'",
   "editor.fontLigatures": false,
 
-  // "workbench.colorTheme": "TheCodeTheme Dark",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.iconTheme": "catppuccin-mocha",
 
-  // "window.titleBarStyle": "native",
+  "window.titleBarStyle": "native",
   "workbench.activityBar.location": "bottom",
   "window.menuBarVisibility": "toggle",
-  "window.titleBarStyle": "custom",
   "explorer.compactFolders": false,
   "breadcrumbs.enabled": false,
   "editor.minimap.enabled": false,
@@ -20,14 +20,28 @@
   "editor.semanticHighlighting.enabled": true,
   "workbench.statusBar.visible": true,
 
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "comment.block",
+          "comment.block.documentation",
+          "comment.line"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+
   "workbench.colorCustomizations": {
     "terminal.background": "#121217",
-
     "editor.background": "#121217",
-
     "breadcrumb.background": "#121217ff",
-
     "activityBar.background": "#121217",
+    "activityBarTop.foreground": "default",
     "minimap.background": "#121217",
     "sideBar.background": "#121217",
     "sideBarSectionHeader.background": "#121217",
@@ -172,6 +186,9 @@
     "**/i3/config": "i3"
   },
 
+  "editor.formatOnSave": true,
+  "clang-format.executable": "/usr/bin/clang-format",
+
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
@@ -231,5 +248,5 @@
     "workbench.action.tasks.runTask"
   ],
   "C_Cpp.intelliSenseEngine": "disabled",
-  "clangd.path": "/home/marcogomez/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/18.1.3/clangd_18.1.3/bin/clangd"
+  "clangd.path": "/usr/bin/clangd"
 }
