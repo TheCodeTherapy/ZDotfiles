@@ -16,7 +16,7 @@ client.placeholder          #000000 #304848 #ffffff #000000 #303030
 client.background           #008800
 
 focus_follows_mouse yes
-gaps inner 3
+gaps inner 0
 gaps outer 0
 
 title_align center
