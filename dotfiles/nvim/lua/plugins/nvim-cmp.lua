@@ -1,3 +1,7 @@
+do
+  return {}
+end
+
 return {
   "hrsh7th/nvim-cmp",
   opts = {
@@ -10,6 +14,9 @@ return {
         border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
         winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None",
       },
+    },
+    experimental = {
+      ghost_text = false,
     },
   },
 }

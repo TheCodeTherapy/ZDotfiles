@@ -6,7 +6,7 @@ return {
   opts = {
     suggestion = {
       -- enabled = not vim.g.ai_cmp,
-      enabled = true,
+      enabled = false,
       auto_trigger = true,
       keymap = {
         -- accept = false, -- handled by nvim-cmp / blink.cmp
@@ -16,7 +16,7 @@ return {
       },
     },
     -- panel = { enabled = false },
-    panel = { enabled = true },
+    panel = { enabled = false },
     filetypes = {
       markdown = true,
       help = true,
