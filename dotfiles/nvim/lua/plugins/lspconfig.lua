@@ -71,6 +71,23 @@ return {
             offsetEncoding = { "utf-16" },
           },
         },
+        eslint = {
+          settings = {
+            format = { enable = true },
+            lintTask = { enable = true },
+          },
+          on_attach = function(client, bufnr)
+            if client.name == "eslint" then
+              vim.api.nvim_create_autocmd("BufWritePre", {
+                buffer = bufnr,
+                callback = function()
+                  vim.cmd("EslintFixAll") -- Run ESLint Fixes
+                  vim.cmd("silent! write") -- Save Again
+                end,
+              })
+            end
+          end,
+        },
         lua_ls = {
           -- mason = false, -- set to false if you don't want this server to be installed with mason
           -- Use this to add any additional keymaps
