@@ -1,190 +1,28 @@
 {
   "editor.tabSize": 2,
   "editor.fontSize": 17,
-  "editor.lineHeight": 21,
-  "editor.fontFamily": "'NotoMono Nerd Font', 'MesloLGS NF'",
-  "editor.fontLigatures": false,
+  "editor.lineHeight": 25,
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'NotoMono Nerd Font', 'MesloLGS NF'",
+  "editor.fontLigatures": true,
 
-  "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.iconTheme": "catppuccin-mocha",
 
   "window.titleBarStyle": "native",
-  "workbench.activityBar.location": "bottom",
   "window.menuBarVisibility": "toggle",
   "explorer.compactFolders": false,
+  "workbench.activityBar.location": "bottom",
   "breadcrumbs.enabled": false,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "none",
   "editor.lightbulb.enabled": "off",
   "editor.copyWithSyntaxHighlighting": false,
   "editor.semanticHighlighting.enabled": true,
+
   "workbench.statusBar.visible": true,
-
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": [
-          "comment",
-          "comment.block",
-          "comment.block.documentation",
-          "comment.line"
-        ],
-        "settings": {
-          "fontStyle": ""
-        }
-      }
-    ]
-  },
-
-  "workbench.colorCustomizations": {
-    "terminal.background": "#121217",
-    "editor.background": "#121217",
-    "breadcrumb.background": "#121217ff",
-    "activityBar.background": "#121217",
-    "activityBarTop.foreground": "default",
-    "minimap.background": "#121217",
-    "sideBar.background": "#121217",
-    "sideBarSectionHeader.background": "#121217",
-    "statusBar.background": "#121217",
-
-    "titleBar.activeBackground": "#121217",
-    "titleBar.inactiveBackground": "#121217",
-    "titleBar.border": "#303042",
-
-    "window.activeBorder": "#121217",
-    "window.inactiveBorder": "#121217",
-
-    "editorGutter.background": "#12121700",
-    "sideBarTitle.foreground": "#12121700",
-    "activityBar.dropBorder": "#12121700",
-
-    // tab bar background
-    "tab.border": "#121217",
-    "editorGroupHeader.tabsBackground": "#070707",
-    "tab.inactiveBackground": "#070707",
-    "tab.inactiveForeground": "#aaaaaa",
-
-    "tab.lastPinnedBorder": "#888888",
-    "tab.activeBorder": "#121217",
-
-    "tab.activeBackground": "#121217",
-
-    "activityBar.activeBorder": "#171712",
-    "activityBar.foreground": "#666666",
-
-    "tab.activeBorderTop": "#77aaff",
-    "tab.activeForeground": "#ffffff",
-    "tab.activeModifiedBorder": "#3399cc",
-    "tab.inactiveModifiedBorder": "#aaccaa",
-
-    "tab.unfocusedActiveBackground": "#121217",
-    "tab.unfocusedActiveBorder": "#121217",
-    "tab.unfocusedActiveForeground": "#ffffff80",
-    "tab.unfocusedActiveModifiedBorder": "#3399cc80",
-    "tab.unfocusedInactiveBackground": "#111116",
-    "tab.unfocusedInactiveForeground": "#ffffff80",
-    "tab.unfocusedInactiveModifiedBorder": "#3399cc40",
-    "tab.unfocusedActiveBorderTop": "#aaaaaa",
-    "tab.unfocusedHoverBackground": "#00000000",
-    "tab.unfocusedHoverBorder": "#00000000",
-    "tab.unfocusedHoverForeground": "#aaffaaAA",
-
-    "tab.hoverBackground": "#00000000",
-    "tab.hoverBorder": "#00000000",
-    "tab.hoverForeground": "#aaffaa",
-
-    "sideBar.border": "#303042",
-    "sideBarSectionHeader.border": "#303042",
-    "editor.foreground": "#d4d4d4",
-    "activityBarBadge.background": "#007acc",
-
-    "contrastBorder": "#33333300",
-
-    "editor.inactiveSelectionBackground": "#3a3d4177",
-
-    "editor.lineHighlightBackground": "#212130",
-    "editor.lineHighlightBorder": "#12121700",
-
-    "editor.selectionHighlightBackground": "#add6ff26",
-    "editorIndentGuide.activeBackground1": "#77aaff",
-
-    "editorIndentGuide.background2": "#42424242",
-    "editorWidget.background": "#212121",
-    "editorWidget.border": "#777777",
-
-    "input.placeholderForeground": "#a6a6a6",
-    "list.activeSelectionBackground": "#4477ff",
-    "list.activeSelectionIconForeground": "#ffffff",
-    "list.dropBackground": "#383b3d",
-
-    "menu.background": "#212130",
-    "menu.border": "#303042",
-    "menu.foreground": "#cccccc",
-    "menu.separatorBackground": "#454545",
-
-    "minimap.foregroundOpacity": "#000000",
-    "ports.iconRunningProcessForeground": "#369432",
-
-    "statusBar.border": "#888888",
-    "statusBar.foreground": "#aaaaaa",
-    "statusBarItem.remoteBackground": "#16825d",
-    "statusBarItem.remoteForeground": "#ffffff",
-    "terminal.inactiveSelectionBackground": "#3a3d41",
-    "tree.indentGuidesStroke": "#77777777",
-    "breadcrumb.activeSelectionForeground": "#e0e0e0",
-    "breadcrumb.focusForeground": "#e0e0e0",
-    "breadcrumb.foreground": "#88888888",
-    "breadcrumbPicker.background": "#212121",
-    "editorGutter.commentRangeForeground": "#37373d",
-    "editorGutter.deletedBackground": "#f14c4c",
-    "editorGutter.foldingControlForeground": "#c5c5c5",
-    "editorGutter.modifiedBackground": "#1b81a8",
-    "editorLineNumber.foreground": "#333333",
-    "scrollbar.shadow": "#00000000",
-    "scrollbarSlider.activeBackground": "#ffffff33",
-    "scrollbarSlider.background": "#79797933",
-    "scrollbarSlider.hoverBackground": "#79797966",
-
-    "editorBracketHighlight.unexpectedBracket.foreground": "#ff1212cc",
-    "editorBracketMatch.background": "#4477FF",
-    "editorBracketMatch.border": "#4477FF",
-    "editor.findMatchBackground": "#666666",
-    "editor.findMatchHighlightBackground": "#ffffff55",
-    "editor.findRangeHighlightBackground": "#ffffff55",
-
-    "statusBar.debuggingBackground": "#002100",
-    "statusBar.debuggingForeground": "#aaffaa",
-    "statusBar.debuggingBorder": "#aaffaa",
-
-    "statusBar.focusBorder": "#aaaaaa",
-    "statusBar.noFolderBackground": "#68217a",
-    "statusBar.noFolderBorder": "#777777",
-    "statusBar.noFolderForeground": "#aaaaaa",
-    "statusBarItem.activeBackground": "#ffffff2e",
-    "statusBarItem.compactHoverBackground": "#ffffff33",
-    "statusBarItem.errorBackground": "#c72e0f",
-    "statusBarItem.errorForeground": "#ffffff",
-    "statusBarItem.focusBorder": "#aaaaaa",
-    "statusBarItem.hoverBackground": "#ffffff1f",
-    "statusBarItem.prominentBackground": "#00000080",
-    "statusBarItem.prominentForeground": "#aaaaaa",
-    "statusBarItem.prominentHoverBackground": "#0000004d",
-    "statusBarItem.warningBackground": "#7a6400",
-    "statusBarItem.warningForeground": "#ffffff"
-  },
 
   "terminal.integrated.minimumContrastRatio": 1,
   "terminal.integrated.fontSize": 16,
   "window.customTitleBarVisibility": "auto",
-
-  "gopls": {
-    "ui.semanticTokens": true
-  },
-
-  "files.associations": {
-    "**/.i3/config": "i3",
-    "**/i3/config": "i3"
-  },
 
   "editor.formatOnSave": true,
   "clang-format.executable": "/usr/bin/clang-format",
@@ -193,16 +31,22 @@
     "source.fixAll.eslint": "explicit"
   },
 
+  "gopls": {
+    "ui.semanticTokens": true
+  },
+
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true
   },
+
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true
   },
+
   "[go]": {
     "editor.insertSpaces": true,
     "editor.formatOnSave": true,
@@ -210,36 +54,40 @@
       "source.organizeImports": "explicit"
     }
   },
+
   "[c]": {
     "editor.defaultFormatter": "xaver.clang-format"
   },
+
   "[cpp]": {
     "editor.defaultFormatter": "xaver.clang-format"
   },
+
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
+
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
   "[json][jsonc]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
   "search.exclude": {
     "package-lock.json": true
-  },
-  "github.copilot.preferredAccount": "TheCodeTherapy",
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
   },
 
   "zig.path": "zig",
   "zig.zls.path": "/home/marcogomez/.config/Code/User/globalStorage/ziglang.vscode-zig/zls_install/zls",
   "zig.initialSetupDone": true,
+
+  "files.associations": {
+    "**/.i3/config": "i3",
+    "**/i3/config": "i3"
+  },
 
   "cmake.options.statusBarVisibility": "visible",
   "cmake.showOptionsMovedNotification": false,
@@ -248,5 +96,13 @@
     "workbench.action.tasks.runTask"
   ],
   "C_Cpp.intelliSenseEngine": "disabled",
-  "clangd.path": "/usr/bin/clangd"
+  "clangd.path": "/usr/bin/clangd",
+
+  "github.copilot.preferredAccount": "TheCodeTherapy",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  }
 }
