@@ -2,6 +2,7 @@ theme = catppuccin-mocha
 background-opacity = 1
 
 font-family = "JetBrainsMono Nerd Font"
+# font-family = "NotoMono Nerd Font"
 
 window-padding-x = 10
 window-padding-y = 0
