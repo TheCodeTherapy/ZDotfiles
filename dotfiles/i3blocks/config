@@ -1,0 +1,138 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/share/i3blocks/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+# Volume indicator
+#
+# The first parameter sets the step (and units to display)
+# The second parameter overrides the mixer selection
+# See the script for details.
+
+# Memory usage
+#
+# The type defaults to "mem" if the instance is not specified.
+
+
+[iface]
+label=󰲝
+#instance=wlan0
+color=#00FF00
+interval=10
+separator=false
+
+[wifi]
+#instance=wlp3s0
+interval=10
+separator=false
+
+#[bandwidth]
+#instance=eth0
+#interval=1
+
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+#[mediaplayer]
+#instance=spotify
+#interval=5
+#signal=10
+
+# OpenVPN support
+#
+# Support multiple VPN, with colors.
+# [openvpn]
+[wireguard]
+label=󰩠
+command=vpnstatus
+interval=5
+
+# Temperature
+#
+# Support multiple chips, though lm-sensors.
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+
+# Key indicators
+#
+# Add the following bindings to i3 config file:
+#
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+#[keyindicator]
+#instance=CAPS
+#interval=once
+#signal=11
+
+#[keyindicator]
+#instance=NUM
+#interval=once
+#signal=11
+
+[cpu_usage]
+label=
+interval=10
+min_width= 100.00%
+separator=false
+
+[load_average]
+label=
+interval=10
+
+[temperature]
+label=
+interval=10
+
+[memory]
+label=󰍛
+separator=false
+interval=30
+
+[memory]
+label=
+instance=swap
+separator=false
+interval=30
+separator=true
+
+[disk]
+label=
+#instance=/mnt/data
+interval=30
+
+[volume]
+label=󰕾
+#label=♪
+instance=Master
+#instance=PCM
+interval=once
+signal=10
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=1
+label=󰸗
+

@@ -172,6 +172,7 @@ link_dotfiles() {
     ["${DOTDOT}/nvim"]="$target_config/nvim"
     ["${DOTDOT}/i3"]="$target_config/i3"
     ["${DOTDOT}/i3status"]="$target_config/i3status"
+    ["${DOTDOT}/i3blocks"]="$target_config/i3blocks"
     ["${DOTDOT}/polybar"]="$target_config/polybar"
     ["${DOTDOT}/alacritty"]="$target_config/alacritty"
     ["${DOTDOT}/picom"]="$target_config/picom"

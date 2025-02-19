@@ -11,6 +11,7 @@ general {
 order += "load"
 order += "memory"
 order += "disk /"
+order += "volume master"
 order += "tztime local"
 
 wireless _first_ {
@@ -43,6 +44,12 @@ memory {
   format = " 󰍛 %used / %available "
   threshold_degraded = "1G"
   format_degraded = "MEMORY < %available"
+}
+
+volume master {
+  format = "♪: %volume"
+  format_muted = "♪: muted (%volume)"
+  device = "pulse:alsa_output.usb-Astro_Gaming_Astro_A50-00.stereo-chat"
 }
 
 tztime local {

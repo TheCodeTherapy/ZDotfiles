@@ -275,7 +275,7 @@ exec --no-startup-id xset s off
 exec --no-startup-id xset r rate 350 50
 
 bar {
-    status_command i3status
+    status_command i3blocks
     position bottom
     font pango:NotoMono 12
 
