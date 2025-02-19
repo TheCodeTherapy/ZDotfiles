@@ -25,7 +25,7 @@
   "terminal.integrated.fontSize": 16,
   "window.customTitleBarVisibility": "auto",
 
-  "editor.formatOnSave": true,
+  // "editor.formatOnSave": true,
   "clang-format.executable": "/usr/bin/clang-format",
 
   "editor.codeActionsOnSave": {
@@ -70,6 +70,10 @@
 
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false
   },
 
   "[json][jsonc]": {
