@@ -1,5 +1,9 @@
 setxkbmap us
 
+if [ -f "${HOME}"/.npmkey ]; then
+  source "${HOME}"/.npmkey
+fi
+
 if [ -f "${HOME}"/.gptkey ]; then
   source "${HOME}"/.gptkey
 fi
