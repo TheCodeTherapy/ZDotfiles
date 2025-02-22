@@ -1,6 +1,6 @@
--- do
---   return {}
--- end
+do
+  return {}
+end
 
 return {
   "nvim-lua/plenary.nvim",
