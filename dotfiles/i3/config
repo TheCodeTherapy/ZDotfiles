@@ -22,7 +22,15 @@ gaps outer 0
 title_align center
 font pango:JetBrainsMono Nerd Font, NotoMono Nerd Font, MesloLGS NF, Misc Termsyn, Wuncon Siji 12
 
-for_window [all] border pixel 3
+for_window [all] border pixel 3 floating disable
+
+for_window [class="ghostty"] floating disable
+for_window [class="google-chrome"] floating disable
+for_window [class="Google-chrome"] floating disable
+for_window [class="discord"] floating disable
+for_window [class="obs"] floating disable
+for_window [class="vscodium"] floating disable
+for_window [class="VSCodium"] floating disable
 
 for_window [title="video0 - mpv"] floating enable
 for_window [title="video0 - mpv"] sticky enable
