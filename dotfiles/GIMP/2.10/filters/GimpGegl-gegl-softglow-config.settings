@@ -1,0 +1,16 @@
+# settings
+
+(GimpGegl-gegl-softglow-config "2025-02-27 14:25:59"
+    (time 1740666359)
+    (gimp-mode dodge)
+    (gimp-opacity 0.69999999999999996)
+    (glow-radius 7)
+    (brightness 0.29999999999999999)
+    (sharpness 0.84999999999999998))
+(GimpGegl-gegl-softglow-config "2025-02-27 14:22:22"
+    (time 1740666142)
+    (glow-radius 12)
+    (brightness 0.29999999999999999)
+    (sharpness 0.84999999999999998))
+
+# end of settings

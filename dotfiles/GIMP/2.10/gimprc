@@ -13,6 +13,11 @@
 (monitor-yresolution 92)
 (save-session-info no)
 (icon-theme "Symbolic-High-Contrast")
+(image-convert-indexed-max-colors 8)
+(image-convert-indexed-dither-type fs)
+(layer-new-fill-type foreground)
+(selection-feather-radius 300)
+(selection-shrink-radius 300)
 (fill-options
     (style solid)
     (antialias yes)
