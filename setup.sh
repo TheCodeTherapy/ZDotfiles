@@ -16,21 +16,22 @@ install_basic_packages() {
   local packages=(
     plocate build-essential llvm pkg-config autoconf automake cmake cmake-data
     autopoint ninja-build gettext libtool libtool-bin g++ make meson clang gcc
-    nasm clang-tools dkms curl wget ca-certificates gnupg lsb-release feh gawk
-    xclip notification-daemon git git-lfs zsh tmux gnome-tweaks inxi most tree
-    nautilus-admin tar jq pixz screenkey mypaint rofi gimp blender lzma unzip
-    neofetch playerctl fonts-font-awesome slop dunst timidity gir1.2-gtk-3.0
-    ttfautohint v4l2loopback-dkms ffmpeg htop bc fzf ranger ripgrep gdebi rar
-    imagemagick net-tools xcb-proto gir1.2-ayatanaappindicator3-0.1 dialog
-    nautilus-extension-gnome-terminal asciidoc gnome-shell-extension-manager
-    policykit-1 policykit-1-gnome uthash-dev hashdeep file usbview v4l-utils
-    flatpak python-is-python3 ipython3 python3-pip python3-dev python3-venv
-    python3-gi python3-gi-cairo python3-cairo python3-setuptools
-    python3-babel python3-dbus python3-pynvim python3-sphinx python3-packaging
-    python3-xcbgen pipx xutils-dev xwayland valac hwdata vlc transmission
-    bear p7zip-full conky-all zsh-autosuggestions zsh-syntax-highlighting
-    xdotool fakeroot pavucontrol zeal qt6ct thunar lxappearance btop lnav
-    multitail ccze
+    nasm clang-tools clangd clang-format dkms curl wget ca-certificates gnupg
+    lsb-release feh gawk xclip notification-daemon git git-lfs zsh tmux
+    gnome-tweaks inxi most tree nautilus-admin tar jq pixz screenkey mypaint
+    rofi gimp blender lzma unzip neofetch playerctl fonts-font-awesome slop
+    dunst timidity gir1.2-gtk-3.0 ttfautohint v4l2loopback-dkms ffmpeg htop
+    bc fzf ranger ripgrep gdebi rar imagemagick net-tools xcb-proto
+    gir1.2-ayatanaappindicator3-0.1 dialog nautilus-extension-gnome-terminal
+    asciidoc gnome-shell-extension-manager policykit-1 policykit-1-gnome
+    uthash-dev hashdeep file usbview v4l-utils flatpak python-is-python3
+    ipython3 python3-pip python3-dev python3-venv python3-gi python3-gi-cairo
+    python3-cairo python3-setuptools python3-babel python3-dbus
+    python3-pynvim python3-sphinx python3-packaging python3-xcbgen pipx
+    xutils-dev xwayland valac hwdata vlc transmission bear p7zip-full
+    conky-all zsh-autosuggestions zsh-syntax-highlighting xdotool fakeroot
+    pavucontrol zeal qt6ct thunar lxappearance btop lnav multitail ccze
+    libopencv-dev gource
   )
 
   print_info "Installing basic packages ..."
