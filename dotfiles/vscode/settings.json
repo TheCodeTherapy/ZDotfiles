@@ -137,6 +137,9 @@
   "terminal.integrated.fontSize": 16,
   "window.customTitleBarVisibility": "auto",
 
+  "editor.folding": true,
+  "editor.foldingStrategy": "indentation",
+
   "gopls": {
     "ui.semanticTokens": true
   },
