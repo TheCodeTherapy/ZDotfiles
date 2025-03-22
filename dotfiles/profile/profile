@@ -8,6 +8,8 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+mkdir -p "$HOME/.local/share/yabridge"
+
 DOTFILESPATH="ZDotfiles"
 
 if [ -n "$BASH_VERSION" ]; then
@@ -19,6 +21,7 @@ fi
 PATH=$PATH:$HOME/${DOTFILESPATH}/scripts
 PATH=$PATH:$HOME/${DOTFILESPATH}/bin
 PATH=$PATH:$HOME/${DOTFILESPATH}/z_setup_scripts
+PATH=$PATH:$HOME/.local/share/yabridge
 
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
