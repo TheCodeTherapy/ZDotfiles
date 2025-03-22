@@ -1,0 +1,8 @@
+plugin_dirs = ['/home/marcogomez/.wine/drive_c/Program Files/VSTPlugins']
+vst2_location = 'centralized'
+no_verify = false
+blacklist = []
+
+[last_known_config]
+wine_version = 'wine-9.0 (Ubuntu 9.0~repack-4build3)'
+yabridge_host_hash = 4279222400525443423
