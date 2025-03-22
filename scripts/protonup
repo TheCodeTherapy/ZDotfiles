@@ -1,0 +1,2 @@
+#!/bin/bash
+flatpak run net.davidotek.pupgui2
