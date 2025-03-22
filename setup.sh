@@ -5,6 +5,7 @@ source "$(dirname "$0")/z_setup_scripts/_config.sh"
 
 update_system() {
   print_info "Updating system ..."
+  sudo dpkg --add-architecture i386 || handle_error "Failed to add i386 architecture."
   sudo apt-get update -qq || handle_error "Failed to update package lists."
   sudo apt-get full-upgrade -y -qq || handle_error "System update failed."
   sudo apt-get autoremove -y -qq || handle_error "Autoremove failed."
@@ -38,6 +39,13 @@ install_basic_packages() {
   if ! sudo debconf-apt-progress -- apt-get install -y "${packages[@]}"; then
     handle_error "Failed to install one or more packages."
   fi
+}
+
+install_wine() {
+  print_info "Installing Wine ..."
+  sudo apt install --install-recommends \
+  wine64 wine32 wine32:i386 libwine libwine:i386 winetricks ||
+  handle_error "Failed to install Wine."
 }
 
 install_dev_libs() {
@@ -167,6 +175,9 @@ link_dotfiles() {
     ["${DOTDOT}/attract"]="$target_home/.attract"
     ["${DOTDOT}/vst3"]="$target_home/.vst3"
     ["${DOTDOT}/fonts"]="$target_home/.fonts"
+    ["${DOTDOT}/pipewire"]="$target_config/pipewire"
+    ["${DOTDOT}/wireplumber"]="$target_config/wireplumber"
+    ["${DOTDOT}/yabridgectl"]="$target_config/yabridgectl"
     ["${DOTDOT}/scummvm"]="$target_config/scummvm"
     ["${DOTDOT}/screenkey"]="$target_config/screenkey"
     ["${DOTDOT}/ghostty"]="$target_config/ghostty"
@@ -182,6 +193,7 @@ link_dotfiles() {
     ["${DOTDOT}/neofetch"]="$target_config/neofetch"
     ["${DOTDOT}/vscode/settings.json"]="$target_config/Code/User/settings.json"
     ["${DOTDOT}/vscodium/settings.json"]="$target_config/VSCodium/User/settings.json"
+    ["${DOTDOT}/local/share/yabridge"]="$target_local_share/yabridge"
     ["${DOTDOT}/local/share/ghostty"]="$target_local_share/ghostty"
   )
 
@@ -269,6 +281,7 @@ update_system
 
 install_basic_packages
 install_dev_libs
+install_wine
 update_plocate_db
 
 install_recipes
