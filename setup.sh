@@ -141,6 +141,7 @@ install_recipes() {
     "$recipe_dir/install_nginx.sh"
     "$recipe_dir/install_oh-my-zsh.sh"
     "$recipe_dir/install_powerlevel10k.sh"
+    "$recipe_dir/install_cursor.sh"
   )
 
   for recipe in "${recipes[@]}"; do
