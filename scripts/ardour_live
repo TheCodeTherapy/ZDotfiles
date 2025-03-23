@@ -1,0 +1,20 @@
+#!/bin/bash
+
+SESSION_PATH="$HOME/Music/Projects/LIVE_DEFAULT"
+
+for i in {1..10}; do
+  if pgrep raysession >/dev/null 2>&1; then
+    break
+  fi
+  sleep 1
+done
+
+sleep 5
+
+if [ -d "$SESSION_PATH" ]; then
+  nohup ardour "$SESSION_PATH" >/dev/null 2>&1 &
+  disown
+else
+  echo "Ardour session folder not found at: $SESSION_PATH" >&2
+  exit 1
+fi
