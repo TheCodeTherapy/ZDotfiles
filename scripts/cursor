@@ -1,0 +1,1 @@
+( /opt/cursor/cursor.AppImage --no-sandbox "$@" >/dev/null 2>&1 & disown ) >/dev/null 2>&1
