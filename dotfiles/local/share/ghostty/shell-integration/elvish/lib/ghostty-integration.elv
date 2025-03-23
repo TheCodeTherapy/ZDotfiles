@@ -92,7 +92,7 @@
     }
 
     if (not $sudoedit) { set args = [ TERMINFO=$E:TERMINFO $@args ] }
-    command sudo $@args
+    (external sudo) $@args
   }
 
   defer {
