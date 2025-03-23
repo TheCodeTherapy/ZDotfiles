@@ -267,10 +267,12 @@ exec --no-startup-id xrandr \
 exec --no-startup-id feh --bg-scale --no-xinerama ~/ZDotfiles/wallpaper/terrain_4s.jpg
 
 exec --no-startup-id nm-applet
-exec --no-startup-id screenkey --start-disabled
 exec --no-startup-id flatpak run com.obsproject.Studio
 exec --no-startup-id discord
+exec --no-startup-id raysession
+exec --no-startup-id /home/marcogomez/ZDotfiles/scripts/ardour_live
 
+# exec --no-startup-id screenkey --start-disabled
 # exec --no-startup-id ~/ZDotfiles/dotconfig/polybar/launch.sh
 
 bindsym $sup+equal exec --no-startup-id urblind 2
