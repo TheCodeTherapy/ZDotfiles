@@ -13,3 +13,12 @@ table.insert(alsa_monitor.rules, {
     ["device.disabled"] = true
   }
 })
+
+table.insert(alsa_monitor.rules, {
+  matches = {
+    { { "device.name", "matches", "alsa_card.usb-Sony_ZV-1_C7F6A02C734E-02" } }
+  },
+  apply_properties = {
+    ["device.disabled"] = true
+  }
+})
