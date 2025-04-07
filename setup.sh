@@ -5,6 +5,12 @@ source "$(dirname "$0")/z_setup_scripts/_config.sh"
 
 update_system() {
   print_info "Updating system ..."
+
+  if [ -f /etc/apt/sources.list.d/dvd.list ]; then
+    print_info "Removing DVD source ..."
+    sudo mv /etc/apt/sources.list.d/dvd.list /etc/apt/sources.list.d/dvd.list.bak
+  fi
+
   sudo dpkg --add-architecture i386 || handle_error "Failed to add i386 architecture."
   sudo apt-get update -qq || handle_error "Failed to update package lists."
   sudo apt-get full-upgrade -y -qq || handle_error "System update failed."
@@ -60,7 +66,7 @@ install_dev_libs() {
     libxrandr-dev libxinerama-dev libxcursor-dev libglx-dev libgl-dev
     libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev
     libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev
-    libxcb-randr0-dev libxcb-cursor-dev libxcb-xinerama0-dev
+    libxcb-randr0-dev libxcb-cursor-dev libxcb-xinerama0-dev libjson-c-dev
     libxcb-shape0-dev libxcb-xrm-dev libxcb-xrm0 libxcb-xkb-dev libconfig-dev
     libx11-xcb-dev libdbus-1-dev libegl-dev libpcre2-dev libpixman-1-dev
     libxcb-composite0-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-glx0-dev
@@ -142,6 +148,7 @@ install_recipes() {
     "$recipe_dir/install_oh-my-zsh.sh"
     "$recipe_dir/install_powerlevel10k.sh"
     "$recipe_dir/install_cursor.sh"
+    "$recipe_dir/install_scarlett-fcp.sh"
   )
 
   for recipe in "${recipes[@]}"; do
@@ -278,6 +285,10 @@ update_cache() {
   sudo updatedb || handle_error "Failed to update the file database."
 }
 
+post_install() {
+  sudo usermod -a -G audio $USER
+}
+
 update_system
 
 install_basic_packages
@@ -293,3 +304,5 @@ link_dotfiles
 link_launchers
 
 update_cache
+
+post_install
