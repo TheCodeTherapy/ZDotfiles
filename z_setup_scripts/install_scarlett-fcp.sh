@@ -10,7 +10,7 @@ install_scarlett-fcp() {
   if [ -d "/lib/modules/$(uname -r)/updates/snd-usb-audio" ]; then
     print_info "Scarlett FCP Kernel Module already installed ..."
   else
-    print_info "Scarlett FCP Kernel Module already installed ..."
+    print_info "Installing Scarlett FCP Kernel Module ..."
 
     cd $DOTDIR || handle_error "Failed to change directory to $DOTDIR"
 
