@@ -20,6 +20,7 @@ temp
 drivers/*
 !drivers/scarlett18i20
 drivers/scarlett18i20/fcp/snd-usb-audio-kmod-v6.11.11-f8
+drivers/scarlett18i20/fcp/fcp-support
 diagnostics.md
 gpt_response.md
 .repoinfo.md
