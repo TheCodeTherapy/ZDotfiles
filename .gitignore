@@ -18,6 +18,7 @@ packages.microsoft.gpg
 temp/
 temp
 drivers/*
+!drivers/scarlett18i20
 diagnostics.md
 gpt_response.md
 .repoinfo.md
@@ -27,4 +28,3 @@ ch-zrh-wg-003.conf
 dotfiles/GIMP/2.10/action-history
 toys/screensaver/ssaver
 bin/*
-
