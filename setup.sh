@@ -149,6 +149,7 @@ install_recipes() {
     "$recipe_dir/install_powerlevel10k.sh"
     "$recipe_dir/install_cursor.sh"
     "$recipe_dir/install_scarlett-fcp.sh"
+    "$recipe_dir/install_scarlett-fcp-support.sh"
   )
 
   for recipe in "${recipes[@]}"; do
