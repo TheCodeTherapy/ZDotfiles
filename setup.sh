@@ -109,6 +109,9 @@ install_recipes() {
   # "$recipe_dir/make_caps_hyper.sh"
   # "$recipe_dir/install_chromiumdepottools.sh"
 
+  # "$recipe_dir/install_scarlett-fcp.sh"
+  # "$recipe_dir/install_scarlett-fcp-support.sh"
+
   local recipes=(
     "$recipe_dir/install_flatpak.sh"
     "$recipe_dir/install_neovim.sh"
@@ -148,8 +151,6 @@ install_recipes() {
     "$recipe_dir/install_oh-my-zsh.sh"
     "$recipe_dir/install_powerlevel10k.sh"
     "$recipe_dir/install_cursor.sh"
-    "$recipe_dir/install_scarlett-fcp.sh"
-    "$recipe_dir/install_scarlett-fcp-support.sh"
   )
 
   for recipe in "${recipes[@]}"; do
@@ -215,8 +216,8 @@ link_dotfiles() {
 install_snap_packages() {
   print_info "Installing snap packages ..."
   install_with_snap discord
-  install_with_snap kdiskmark
-  install_with_snap spotify
+  # install_with_snap kdiskmark
+  # install_with_snap spotify
 }
 
 install_flatpak_packages() {
