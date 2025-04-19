@@ -184,7 +184,6 @@ link_dotfiles() {
     ["${DOTDOT}/lutris"]="$target_home/.local/share/lutris"
     ["${DOTDOT}/attract"]="$target_home/.attract"
     ["${DOTDOT}/vst3"]="$target_home/.vst3"
-    ["${DOTDOT}/fonts"]="$target_home/.fonts"
     ["${DOTDOT}/pipewire"]="$target_config/pipewire"
     ["${DOTDOT}/wireplumber"]="$target_config/wireplumber"
     ["${DOTDOT}/yabridgectl"]="$target_config/yabridgectl"
@@ -205,12 +204,14 @@ link_dotfiles() {
     ["${DOTDOT}/vscodium/settings.json"]="$target_config/VSCodium/User/settings.json"
     ["${DOTDOT}/local/share/yabridge"]="$target_local_share/yabridge"
     ["${DOTDOT}/local/share/ghostty"]="$target_local_share/ghostty"
+    ["${DOTDOT}/fonts"]="$target_home/.fonts"
   )
 
   for source_file in "${!files_to_link[@]}"; do
     local target_file="${files_to_link[$source_file]}"
     link_file "$source_file" "$target_file"
   done
+  fc-cache -f || handle_error "Failed to update font cache."
 }
 
 install_snap_packages() {
