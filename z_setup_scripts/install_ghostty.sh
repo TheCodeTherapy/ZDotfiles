@@ -10,6 +10,8 @@ install_ghostty() {
   else
     print_info "Installing Ghostty ..."
 
+    export PATH=$PATH:$HOME/.zig
+
     cd $DOTDIR || handle_error "Failed to change directory to $DOTDIR"
     mkdir -p build || handle_error "Failed to create build directory"
     cd build || handle_error "Failed to change directory to build"
