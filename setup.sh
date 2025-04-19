@@ -256,6 +256,7 @@ install_flatpak_packages() {
 link_launchers() {
   print_info "Linking launchers ..."
   mkdir -p "$ME"/.local/share/applications
+  link_file "${DOTDOT}/launchers/ghostty.desktop" "${HOME}/.local/share/applications/ghostty.desktop"
   link_file "${DOTDOT}/launchers/alacritty.desktop" "${HOME}/.local/share/applications/alacritty.desktop"
   update-desktop-database "$ME"/.local/share/applications
 }
