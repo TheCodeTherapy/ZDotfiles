@@ -215,8 +215,9 @@ link_dotfiles() {
 }
 
 install_snap_packages() {
-  print_info "Installing snap packages ..."
-  install_with_snap discord
+  print_info "Snap SUCKS! No packages to install."
+  # print_info "Installing snap packages ..."
+  # install_with_snap discord
   # install_with_snap kdiskmark
   # install_with_snap spotify
 }
@@ -226,53 +227,28 @@ install_flatpak_packages() {
   sudo apt-get install -y -qq gnome-software-plugin-flatpak || handle_error "Failed to install gnome-software-plugin-flatpak."
   flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-  if [[ -d $HOME/.var/app/com.obsproject.Studio ]]; then
-    print_info "OBS is already installed ..."
-  else
-    print_info "Installing OBS ..."
-    flatpak install -y flathub com.obsproject.Studio
-    mkdir -p "$HOME/.var/app/com.obsproject.Studio"
-  fi
+  local flatpak_apps_to_install=(
+    com.discordapp.Discord
+    com.obsproject.Studio
+    com.valvesoftware.Steam
+    net.davidotek.pupgui2
+    com.github.Matoking.protontricks
+    com.slack.Slack
+    org.mapeditor.Tiled
+  )
 
-  if [[ -d $HOME/.var/app/com.valvesoftware.Steam ]]; then
-    print_info "Steam is already installed ..."
-  else
-    print_info "Installing Steam ..."
-    flatpak install -y flathub com.valvesoftware.Steam
-    mkdir -p "$HOME/.var/app/com.valvesoftware.Steam"
-  fi
+  print_info "Installing flatpak packages ..."
+  for app in "${flatpak_apps_to_install[@]}"; do
+    if flatpak list --app | grep -q "$app"; then
+      print_info "$app is already installed ..."
+    else
+      print_info "Installing $app ..."
+      flatpak install -y flathub "$app"
+      mkdir -p "$HOME/.var/app/$app"
+    fi
+  done
 
-  if [[ -d $HOME/.var/app/net.davidotek.pupgui2 ]]; then
-    print_info "ProtonUp-Qt is already installed ..."
-  else
-    print_info "Installing ProtonUp-Qt ..."
-    flatpak install -y flathub net.davidotek.pupgui2
-    mkdir -p "$HOME/.var/app/net.davidotek.pupgui2"
-  fi
-
-  if [[ -d $HOME/.var/app/com.github.Matoking.protontricks ]]; then
-    print_info "ProtonTricks is already installed ..."
-  else
-    print_info "Installing ProtonTricks ..."
-    flatpak install -y flathub com.github.Matoking.protontricks
-    mkdir -p "$HOME/.var/app/com.github.Matoking.protontricks"
-  fi
-
-  if [[ -d $HOME/.var/app/com.slack.Slack ]]; then
-    print_info "Slack is already installed ..."
-  else
-    print_info "Installing Slack ..."
-    flatpak install -y flathub com.slack.Slack
-    mkdir -p "$HOME/.var/app/com.slack.Slack"
-  fi
-
-  if [[ -d $HOME/.var/app/org.mapeditor.Tiled ]]; then
-    print_info "Tiled is already installed ..."
-  else
-    print_info "Installing Tiled ..."
-    flatpak install -y flathub org.mapeditor.Tiled
-    mkdir -p "$HOME/.var/app/org.mapeditor.Tiled"
-  fi
+  print_success "Flatpak packages installed successfully."
 }
 
 link_launchers() {
