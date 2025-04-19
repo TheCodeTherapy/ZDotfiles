@@ -38,7 +38,7 @@ install_basic_packages() {
     xutils-dev xwayland valac hwdata vlc transmission bear p7zip-full
     conky-all zsh-autosuggestions zsh-syntax-highlighting xdotool fakeroot
     pavucontrol zeal qt6ct thunar lxappearance btop lnav multitail ccze
-    libopencv-dev gource
+    libopencv-dev gource blueprint-compiler
   )
 
   print_info "Installing basic packages ..."
@@ -151,6 +151,7 @@ install_recipes() {
     "$recipe_dir/install_nginx.sh"
     "$recipe_dir/install_oh-my-zsh.sh"
     "$recipe_dir/install_powerlevel10k.sh"
+    "$recipe_dir/install_ghostty.sh"
   )
 
   for recipe in "${recipes[@]}"; do
