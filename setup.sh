@@ -83,6 +83,8 @@ install_dev_libs() {
     libgif-dev libwxgtk3.2-dev libwxgtk3.2-1t64 libwxbase3.2-1t64 libwxsvg-dev
     libftgl-dev libfreeimage-dev liblua5.4-dev libwxgtk-webview3.2-dev
     libadwaita-1-dev libwireplumber-0.4-dev libdmapsharing-4.0-dev libswresample-dev
+    python3-qtpy python3-pyqt5 pyqt5-dev-tools qttools5-dev-tools python3-pyqt6
+    pyqt6-dev-tools qtchooser pyliblo-utils
   )
 
   print_info "Installing dev libs ..."
