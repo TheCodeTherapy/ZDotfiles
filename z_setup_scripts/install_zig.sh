@@ -5,7 +5,7 @@ source "$SCRIPT_DIR/_helpers.sh"
 source "$SCRIPT_DIR/_config.sh"
 
 install_zig() {
-  if zig --version >/dev/null 2>&1; then
+  if zig version >/dev/null 2>&1; then
     print_info "Zig is already installed ..."
   else
     print_info "Installing Zig ..."
