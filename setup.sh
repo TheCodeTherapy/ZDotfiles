@@ -176,6 +176,7 @@ link_dotfiles() {
     ["${DOTDOT}/bash/inputrc"]="$target_home/.inputrc"
     ["${DOTDOT}/zsh/zshrc"]="$target_home/.zshrc"
     ["${DOTDOT}/zsh/zshenv"]="$target_home/.zshenv"
+    ["${DOTDOT}/p10k/p10k.zsh"]="$target_home/.p10k.zsh"
     ["${DOTDOT}/tmux/tmux.conf"]="$target_home/.tmux.conf"
     ["${DOTDOT}/x/XCompose"]="$target_home/.XCompose"
     ["${DOTDOT}/themes"]="$target_home/.themes"
