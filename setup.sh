@@ -127,6 +127,7 @@ install_recipes() {
     "$recipe_dir/install_cloudflared.sh"
     "$recipe_dir/install_githubcli.sh"
     "$recipe_dir/install_tmuxpm.sh"
+    "$recipe_dir/install_zig.sh"
     "$recipe_dir/install_rust.sh"
     "$recipe_dir/install_golang.sh"
     "$recipe_dir/install_emscripten.sh"
