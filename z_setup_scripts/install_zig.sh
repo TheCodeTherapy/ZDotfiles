@@ -5,7 +5,7 @@ source "$SCRIPT_DIR/_helpers.sh"
 source "$SCRIPT_DIR/_config.sh"
 
 install_zig() {
-  if zig version >/dev/null 2>&1; then
+  if zog version >/dev/null 2>&1; then
     print_info "Zig is already installed ..."
   else
     print_info "Installing Zig ..."
@@ -14,19 +14,19 @@ install_zig() {
     mkdir -p build || handle_error "Failed to create build directory"
     cd build || handle_error "Failed to change directory to build"
 
-    zig_version="zig-linux-x86_64-0.14.0"
-    zig_14_tarball="$zig_version.tar.xz"
-    zig_14_url="https://ziglang.org/download/0.14.0/$zig_14_tarball"
+    zig_version="zig-linux-x86_64-0.13.0"
+    zig_13_tarball="$zig_version.tar.xz"
+    zig_13_url="https://ziglang.org/download/0.13.0/$zig_13_tarball"
 
     print_info "Downloading Zig package ..."
-    curl -L "$zig_14_url" -o $zig_14_tarball ||
+    curl -L "$zig_13_url" -o $zig_13_tarball ||
       handle_error "Failed to download Zig package"
 
     print_info "Extracting Zig package ..."
-    tar -xf $zig_14_tarball ||
+    tar -xf $zig_13_tarball ||
       handle_error "Failed to extract Zig package"
     
-    rm $zig_14_tarball ||
+    rm $zig_13_tarball ||
       handle_error "Failed to remove Zig tarball"
     
     cd $zig_version || handle_error "Failed to change directory to $zig_version"
