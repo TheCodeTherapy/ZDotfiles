@@ -26,7 +26,7 @@ install_basic_packages() {
     nasm clang-tools clangd clang-format dkms curl wget ca-certificates gnupg
     lsb-release feh gawk xclip notification-daemon git git-lfs zsh tmux
     gnome-tweaks inxi most tree nautilus-admin tar jq pixz screenkey mypaint
-    rofi gimp blender lzma unzip neofetch playerctl fonts-font-awesome slop
+    rofi blender lzma unzip neofetch playerctl fonts-font-awesome slop
     dunst timidity gir1.2-gtk-3.0 ttfautohint v4l2loopback-dkms ffmpeg htop
     bc fzf ranger ripgrep gdebi rar imagemagick net-tools xcb-proto
     gir1.2-ayatanaappindicator3-0.1 dialog nautilus-extension-gnome-terminal
@@ -202,7 +202,6 @@ link_dotfiles() {
     ["${DOTDOT}/alacritty"]="$target_config/alacritty"
     ["${DOTDOT}/picom"]="$target_config/picom"
     ["${DOTDOT}/dunst"]="$target_config/dunst"
-    ["${DOTDOT}/GIMP"]="$target_config/GIMP"
     ["${DOTDOT}/neofetch"]="$target_config/neofetch"
     ["${DOTDOT}/vscode/settings.json"]="$target_config/Code/User/settings.json"
     ["${DOTDOT}/vscodium/settings.json"]="$target_config/VSCodium/User/settings.json"
@@ -235,6 +234,7 @@ install_flatpak_packages() {
   local flatpak_apps_to_install=(
     com.discordapp.Discord
     com.obsproject.Studio
+    org.gimp.GIMP
     com.valvesoftware.Steam
     net.davidotek.pupgui2
     com.github.Matoking.protontricks
