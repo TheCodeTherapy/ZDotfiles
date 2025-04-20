@@ -12,7 +12,7 @@
 #=============================================================================
 
 EMOJIS="/home/${USER}/ZDotfiles/dotfiles/emoji/emoji.txt"
-THEME="/home/${USER}/ZDotfiles/dotfiles/rofi/sp.theme.rasi"
+THEME="/home/${USER}/ZDotfiles/dotfiles/rofi/rounded.rasi"
 chosen=$(cut -d ';' -f1 ${EMOJIS} | rofi -dmenu -theme ${THEME} | sed "s/ .*//")
 [ -z "$chosen" ] && exit
 
