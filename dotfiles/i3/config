@@ -231,9 +231,9 @@ exec --no-startup-id xrandr \
   --output DP-2 --off \
   --output DP-4 --off
 
-exec --no-startup-id feh --bg-scale --no-xinerama ~/ZDotfiles/dotfiles/wallpaper/32x9_trees.png
+exec --no-startup-id feh --bg-scale --no-xinerama ~/ZDotfiles/dotfiles/wallpaper/32x9_trees_dual_mon.jpg
 
-# exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 exec --no-startup-id raysession
 exec --no-startup-id flatpak run com.obsproject.Studio
 exec --no-startup-id flatpak run com.discordapp.Discord
