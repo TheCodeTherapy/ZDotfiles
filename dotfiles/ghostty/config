@@ -1,5 +1,5 @@
 theme = catppuccin-mocha
-background-opacity = 1
+background-opacity = 0.8
 
 font-family = "JetBrainsMono Nerd Font"
 # font-family = "NotoMono Nerd Font"
