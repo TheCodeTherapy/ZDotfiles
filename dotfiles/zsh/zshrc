@@ -16,7 +16,6 @@ EMSCRIPTENPATH="$HOME/.emsdk"
 export EMSCRIPTENPATH="$EMSCRIPTENPATH"
 export PATH=$PATH:$EMSCRIPTENPATH
 export PATH=$PATH:$EMSCRIPTENPATH/upstream/emscripten
-export QT_QPA_PLATFORMTHEME=qt6ct
 
 if [ -d "$EMSCRIPTENPATH" ]; then
   source $EMSCRIPTENPATH/emsdk_env.sh > /dev/null 2>&1
