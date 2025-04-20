@@ -20,6 +20,7 @@ fi
 
 export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/$USER/.local/share/flatpak/exports/share:/usr/local/share:/usr/share:$XDG_DATA_DIRS"
 
+PATH=$PATH:/var/lib/flatpak/exports/share
 PATH=$PATH:$HOME/${DOTFILESPATH}/scripts
 PATH=$PATH:$HOME/${DOTFILESPATH}/bin
 PATH=$PATH:$HOME/${DOTFILESPATH}/z_setup_scripts
@@ -75,7 +76,8 @@ export GAMES=$HOME/Games
 export CHROME_DEVEL_SANDBOX=/opt/google/chrome/chrome-sandbox
 export PAGER="most"
 export QT_QPA_PLATFORMTHEME=qt5ct
-export GTK_THEME=Adwaita-dark
+export QT_STYLE_OVERRIDE=kvantum
+export GTK_THEME=Nordic
 
 if [ -f "${HOME}"/.gptkey ] ; then
     source "${HOME}"/.gptkey
