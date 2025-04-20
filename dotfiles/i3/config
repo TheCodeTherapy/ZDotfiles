@@ -56,7 +56,7 @@ bindsym $sup+Tab exec ~/ZDotfiles/scripts/rofitab
 bindsym $sup+Shift+q kill # kill focused window
 
 # start dmenu (a program launcher)
-bindsym $sup+d exec exec rofi -show run -theme ~/ZDotfiles/dotfiles/rofi/rounded.rasi
+bindsym $sup+d exec exec rofi -show drun -drun-directories /usr/share/i3:/usr/share/applications:/home/marcogomez/.local/share/applications -theme ~/ZDotfiles/dotfiles/rofi/rounded.rasi
 
 # bindsym $sup+b exec ~/ZDotfiles/scripts/browserprompt
 # bindsym $sup+z exec /home/marcogomez/ZDotfiles/scripts/emoji
