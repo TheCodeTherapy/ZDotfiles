@@ -208,6 +208,7 @@ link_dotfiles() {
     ["${DOTDOT}/local/share/yabridge"]="$target_local_share/yabridge"
     ["${DOTDOT}/environment.d"]="$target_config/environment.d"
     ["${DOTDOT}/local/share/ghostty"]="$target_local_share/ghostty"
+    ["${DOTDOT}/qt5ct"]="$target_config/qt5ct"
     ["${DOTDOT}/fonts"]="$target_home/.fonts"
   )
 
