@@ -193,12 +193,12 @@ assign [class="steam_app_1337520"] $ws1
 # =============================================================================
 
 # Workspace 2 =================================================================
-assign [class="obs"]  $ws2
 # =============================================================================
 
 # Workspace 3 =================================================================
 assign [class="RaySession"] $ws3
 assign [class="Ardour"] $ws3
+assign [class="obs"]  $ws3
 assign [class="discord"] $ws3
 assign [class="firefox"] $ws3
 assign [class="Slack"] $ws3
@@ -234,11 +234,9 @@ exec --no-startup-id xrandr \
 exec --no-startup-id feh --bg-scale --no-xinerama ~/ZDotfiles/dotfiles/wallpaper/32x9_trees.png
 
 # exec --no-startup-id nm-applet
+exec --no-startup-id raysession
 exec --no-startup-id flatpak run com.obsproject.Studio
 exec --no-startup-id flatpak run com.discordapp.Discord
-exec --no-startup-id raysession
-# exec --no-startup-id /home/marcogomez/ZDotfiles/scripts/ardour_live
-
 # exec --no-startup-id screenkey --start-disabled
 # exec --no-startup-id ~/ZDotfiles/dotconfig/polybar/launch.sh
 
