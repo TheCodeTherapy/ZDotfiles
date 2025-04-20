@@ -1,5 +1,3 @@
-setxkbmap us
-
 if [ -f "${HOME}"/.npmkey ]; then
   source "${HOME}"/.npmkey
 fi
