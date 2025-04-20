@@ -77,10 +77,10 @@ bindsym $sup+Up focus up
 bindsym $sup+Right focus right
 
 # move focused window
-bindsym $sup+Shift+j move left
-bindsym $sup+Shift+k move down
-bindsym $sup+Shift+l move up
-bindsym $sup+Shift+ccedilla move right
+bindsym $sup+Shift+h move left
+bindsym $sup+Shift+j move down
+bindsym $sup+Shift+k move up
+bindsym $sup+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $sup+Shift+Left move left
