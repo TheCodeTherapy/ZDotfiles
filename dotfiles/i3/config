@@ -186,17 +186,15 @@ assign [class="steam_app_1337520"] $ws1
 # =============================================================================
 
 # Workspace 2 =================================================================
+assign [class="obs"]  $ws2
 # =============================================================================
 
 # Workspace 3 =================================================================
 assign [class="RaySession"] $ws3
 assign [class="Ardour"] $ws3
-assign [class="obs"]  $ws3
 assign [class="discord"] $ws3
 assign [class="firefox"] $ws3
 assign [class="Slack"] $ws3
-assign [class="skype"] $ws3
-assign [class="Skype"] $ws3
 assign [class="TelegramDesktop"] $ws3
 # =============================================================================
 
