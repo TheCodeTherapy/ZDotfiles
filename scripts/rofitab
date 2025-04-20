@@ -12,6 +12,6 @@
 # Shortcut: Super + Shift + t (or any other you might want)
 #=============================================================================
 
-THEME="/home/${USER}/ZDotfiles/dotfiles/rofi/sp.theme.rasi"
+THEME="/home/${USER}/ZDotfiles/dotfiles/rofi/rounded.rasi"
 rofi -show window -show-icons -theme ${THEME} -window-title "apps"
 
