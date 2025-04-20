@@ -57,9 +57,9 @@ bindsym $sup+Shift+q kill # kill focused window
 
 # start dmenu (a program launcher)
 bindsym $sup+d exec exec rofi -show drun -drun-directories /usr/share/i3:/usr/share/applications:/home/marcogomez/.local/share/applications -theme ~/ZDotfiles/dotfiles/rofi/rounded.rasi
+bindsym $sup+z exec /home/marcogomez/ZDotfiles/scripts/emoji
 
 # bindsym $sup+b exec ~/ZDotfiles/scripts/browserprompt
-# bindsym $sup+z exec /home/marcogomez/ZDotfiles/scripts/emoji
 # bindsym --release $sup+n exec /home/marcogomez/ZDotfiles/scripts/latency
 
 # bindsym $sup+d exec ~/dotfiles/scripts/ddmenu
