@@ -44,9 +44,6 @@ for_window [class="Xawtv"] sticky enable
 for_window [class="emoji-keyboard"] floating enable
 for_window [title="raylib"] floating enable
 
-for_window [class="^.*ghostty.*$"] title_format "C:\Windows\notepad.exe"
-for_window [class="^.*nvim.*$"] title_format "C:\Windows\notepad.exe"
-
 # Mouse+$sup to drag floating windows
 floating_modifier $sup
 
