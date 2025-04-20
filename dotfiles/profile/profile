@@ -74,7 +74,7 @@ export GAMES=$HOME/Games
 
 export CHROME_DEVEL_SANDBOX=/opt/google/chrome/chrome-sandbox
 export PAGER="most"
-export QT_QPA_PLATFORMTHEME=qt6ct
+export QT_QPA_PLATFORMTHEME=qt5ct
 export GTK_THEME=Adwaita-dark
 
 if [ -f "${HOME}"/.gptkey ] ; then
