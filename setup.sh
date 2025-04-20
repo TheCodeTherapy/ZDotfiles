@@ -207,6 +207,7 @@ link_dotfiles() {
     ["${DOTDOT}/vscode/settings.json"]="$target_config/Code/User/settings.json"
     ["${DOTDOT}/vscodium/settings.json"]="$target_config/VSCodium/User/settings.json"
     ["${DOTDOT}/local/share/yabridge"]="$target_local_share/yabridge"
+    ["${DOTDOT}/environment.d"]="$target_config/environment.d"
     ["${DOTDOT}/local/share/ghostty"]="$target_local_share/ghostty"
     ["${DOTDOT}/fonts"]="$target_home/.fonts"
   )
@@ -259,7 +260,6 @@ install_flatpak_packages() {
 link_launchers() {
   print_info "Linking launchers ..."
   mkdir -p "$ME"/.local/share/applications
-  link_file "${DOTDOT}/launchers/ghostty.desktop" "${HOME}/.local/share/applications/ghostty.desktop"
   link_file "${DOTDOT}/launchers/alacritty.desktop" "${HOME}/.local/share/applications/alacritty.desktop"
   update-desktop-database "$ME"/.local/share/applications
 }
