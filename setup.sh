@@ -238,6 +238,7 @@ install_flatpak_packages() {
     net.davidotek.pupgui2
     com.github.Matoking.protontricks
     com.slack.Slack
+    org.prismlauncher.PrismLauncher
     org.mapeditor.Tiled
   )
 
