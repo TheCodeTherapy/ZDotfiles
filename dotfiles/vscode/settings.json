@@ -1,7 +1,7 @@
 {
   "editor.tabSize": 2,
-  "editor.fontSize": 17,
-  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'NotoMono Nerd Font', 'MesloLGS NF'",
+  "editor.fontSize": 18,
+  "editor.fontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font', 'NotoMono Nerd Font', 'MesloLGS NF'",
   "editor.fontLigatures": false,
 
   "workbench.startupEditor": "none",
@@ -12,7 +12,7 @@
   "workbench.activityBar.location": "top",
   "window.menuBarVisibility": "toggle",
   "explorer.compactFolders": false,
-  "breadcrumbs.enabled": false,
+  "breadcrumbs.enabled": true,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "none",
   "editor.lightbulb.enabled": "off",
