@@ -39,6 +39,7 @@ install_basic_packages() {
     conky-all zsh-autosuggestions zsh-syntax-highlighting xdotool fakeroot
     pavucontrol zeal qt6ct thunar lxappearance btop lnav multitail ccze
     libopencv-dev gource blueprint-compiler
+    xdg-desktop-portal xdg-desktop-portal-kde
   )
 
   print_info "Installing basic packages ..."
@@ -154,6 +155,7 @@ install_recipes() {
     "$recipe_dir/install_oh-my-zsh.sh"
     "$recipe_dir/install_powerlevel10k.sh"
     "$recipe_dir/install_ghostty.sh"
+    "$recipe_dir/install_wezterm.sh"
   )
 
   for recipe in "${recipes[@]}"; do

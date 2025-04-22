@@ -48,7 +48,7 @@ for_window [title="raylib"] floating enable
 floating_modifier $sup
 
 # bindsym $sup+Return exec ~/.local/bin/ghostty # start a terminal
-bindsym $sup+Return exec alacritty
+bindsym $sup+Return exec ~/.local/bin/wezterm
 bindsym $sup+Shift+Return exec rofi -show run -theme ~/ZDotfiles/dotfiles/rofi/rounded.rasi
 bindsym $sup+Tab exec ~/ZDotfiles/scripts/rofitab
 bindsym $sup+Shift+q kill # kill focused window
