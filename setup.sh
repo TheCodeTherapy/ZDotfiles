@@ -224,6 +224,7 @@ link_dotfiles() {
     ["${DOTDOT}/themes/Nordic/gtk/Nordic/gtk-3.0/gtk-dark.css"]="$target_config/gtk-3.0/colors.css"
     ["${DOTDOT}/themes/Nordic/gtk/Nordic/gtk-4.0/gtk-dark.css"]="$target_config/gtk-4.0/colors.css"
     ["${DOTDOT}/fonts"]="$target_home/.fonts"
+    ["${DOTDOT}/wezterm/wezterm.lua"]="$target_home/.wezterm.lua"
   )
 
   for source_file in "${!files_to_link[@]}"; do
