@@ -177,6 +177,9 @@ link_dotfiles() {
   mkdir -p "$target_config/VSCodium/User"
   mkdir -p "$target_config/Kvantum"
   mkdir -p "$target_themes"
+  mkdir -p "$target_config/gtk-2.0"
+  mkdir -p "$target_config/gtk-3.0"
+  mkdir -p "$target_config/gtk-4.0"
   declare -A files_to_link=(
     ["${DOTDOT}/profile/profile"]="$target_home/.profile"
     ["${DOTDOT}/bash/bashrc"]="$target_home/.bashrc"
@@ -215,6 +218,8 @@ link_dotfiles() {
     ["${DOTDOT}/qt6ct"]="$target_config/qt6ct"
     ["${DOTDOT}/themes/Kvantum"]="$target_config/Kvantum"
     ["${DOTDOT}/themes/Nordic/gtk/Nordic"]="$target_themes/Nordic"
+    ["${DOTDOT}/themes/Catppuccin/gtk-3.0/gtk-dark.css"]="$target_config/gtk-3.0/colors.css"
+    ["${DOTDOT}/themes/Catppuccin/gtk-4.0/gtk-dark.css"]="$target_config/gtk-4.0/colors.css"
     ["${DOTDOT}/themes/Nordic/gtk/Nordic/gtk-3.0/gtk-dark.css"]="$target_config/gtk-3.0/colors.css"
     ["${DOTDOT}/themes/Nordic/gtk/Nordic/gtk-4.0/gtk-dark.css"]="$target_config/gtk-4.0/colors.css"
     ["${DOTDOT}/fonts"]="$target_home/.fonts"
