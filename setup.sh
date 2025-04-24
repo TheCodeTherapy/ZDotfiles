@@ -256,6 +256,7 @@ install_flatpak_packages() {
     com.slack.Slack
     org.prismlauncher.PrismLauncher
     org.mapeditor.Tiled
+    org.mozilla.firefox
   )
 
   print_info "Installing flatpak packages ..."
