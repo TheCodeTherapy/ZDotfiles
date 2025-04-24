@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Delay to give all windows time to appear
+sleep 3
+
+# Focus the target workspace
+i3-msg "workspace 3"
+
+# Ensure consistent layout: start in default split mode
+i3-msg "layout default"
+
+# Group RaySession, Ardour, and OBS in a tabbed container
+i3-msg '[class="raysession"] focus; mark tabgroup'
+i3-msg '[class="ardour_ardour"] focus; move to mark tabgroup'
+i3-msg '[class="obs"] focus; move to mark tabgroup'
+
+# Set layout to tabbed on the group
+i3-msg '[con_mark="tabgroup"] focus; layout tabbed; unmark tabgroup'
+
+# Focus Discord to ensure it’s not part of the tabbed group
+i3-msg '[class="discord"] focus'
