@@ -6,36 +6,39 @@ set $sup Mod4
 set $mod Mod1
 
 # class                     border  bg      text    indicat chld_bd
-client.focused              #707070 #212121 #ffffff #707070 #121217
-client.focused_inactive     #707070 #000000 #dddddd #484E50 #121217
-client.unfocused            #707070 #000000 #707070 #292D2E #121217
-client.urgent               #ff0000 #904848 #ffdddd #904848 #703030
-client.placeholder          #000000 #304848 #ffffff #000000 #303030
-client.background           #008800
+# client.focused              #707070 #212121 #ffffff #707070 #121217
+# client.focused_inactive     #707070 #000000 #dddddd #484E50 #121217
+# client.unfocused            #707070 #000000 #707070 #292D2E #121217
+# client.urgent               #ff0000 #904848 #ffdddd #904848 #703030
+# client.placeholder          #000000 #304848 #ffffff #000000 #303030
+# client.background           #008800
 
-# client.focused            #77AAFF #77AAFF #000000 #FFFFFF   #77AAff
-# client.focused_inactive   #303030 #4477AA #000000 #484E50   #5F676A
-# client.unfocused          #77AAFF #212121 #77AAFF #292D2E   #222222
-# client.urgent             #303030 #904848 #FFFFFF #904848   #904848
-# client.placeholder        #303030 #304848 #FFFFFF #000000   #0C0C0C
-# client.background         #FFFFFF
+client.focused            #77AAFF #77AAFF #000000 #FFFFFF   #77AAff
+client.focused_inactive   #303030 #4477AA #000000 #484E50   #5F676A
+client.unfocused          #77AAFF #212121 #77AAFF #292D2E   #222222
+client.urgent             #303030 #904848 #FFFFFF #904848   #904848
+client.placeholder        #303030 #304848 #FFFFFF #000000   #0C0C0C
+client.background         #FFFFFF
 
 focus_follows_mouse yes
 gaps inner 17
 gaps outer 0
 
 title_align center
-font pango:JetBrainsMono Nerd Font, NotoMono Nerd Font, MesloLGS NF, Misc Termsyn, Wuncon Siji 12
+font pango:JetBrainsMono Nerd Font, NotoSansM Nerd Font Mono, MesloLGS NF, Misc Termsyn, Wuncon Siji 12
 
-for_window [all] border pixel 0
+for_window [all] border pixel 1
 
 for_window [class="ghostty"] floating disable
 for_window [class="google-chrome"] floating disable
 for_window [class="Google-chrome"] floating disable
 for_window [class="discord"] floating disable
-for_window [class="obs"] floating disable
 for_window [class="vscodium"] floating disable
 for_window [class="VSCodium"] floating disable
+for_window [class="obs"] floating disable
+# for_window [class="obs" window_type="dialog"] floating enable
+for_window [class="obs" window_type="dialog"] floating enable, move position center
+
 
 for_window [title="video0 - mpv"] floating enable
 for_window [title="video0 - mpv"] sticky enable
