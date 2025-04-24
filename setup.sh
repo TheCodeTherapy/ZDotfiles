@@ -120,7 +120,7 @@ install_recipes() {
     "$recipe_dir/install_vscode.sh"
     "$recipe_dir/install_nvm.sh"
     "$recipe_dir/install_node.sh"
-    "$recipe_dir/install_yarn.sh"
+    # "$recipe_dir/install_yarn.sh"
     "$recipe_dir/install_chrome.sh"
     "$recipe_dir/install_brave.sh"
     "$recipe_dir/install_fanatec.sh"
