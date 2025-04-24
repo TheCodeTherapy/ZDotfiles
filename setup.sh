@@ -212,6 +212,7 @@ link_dotfiles() {
     ["${DOTDOT}/environment.d"]="$target_config/environment.d"
     ["${DOTDOT}/local/share/ghostty"]="$target_local_share/ghostty"
     ["${DOTDOT}/qt5ct"]="$target_config/qt5ct"
+    ["${DOTDOT}/qt6ct"]="$target_config/qt6ct"
     ["${DOTDOT}/themes/Nordic/kde/kvantum/Nordic"]="$target_config/Kvantum/Nordic"
     ["${DOTDOT}/themes/Nordic/kde/kvantum/Nordic-bluish"]="$target_config/Kvantum/Nordic-bluish"
     ["${DOTDOT}/themes/Nordic/kde/kvantum/Nordic-bluish-solid"]="$target_config/Kvantum/Nordic-bluish-solid"
