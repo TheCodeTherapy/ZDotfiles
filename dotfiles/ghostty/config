@@ -1,7 +1,8 @@
 theme = catppuccin-mocha
 background-opacity = 0.8
 
-font-family = "JetBrainsMono Nerd Font"
+font-family = "ComicShannsMono Nerd Font Mono"
+# font-family = "JetBrainsMono Nerd Font"
 # font-family = "NotoMono Nerd Font"
 
 window-padding-x = 10

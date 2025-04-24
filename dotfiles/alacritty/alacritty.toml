@@ -55,7 +55,7 @@ render_timer = false
 size = 13.0
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+family = "ComicShannsMono Nerd Font Mono"
 style = "Bold"
 
 [font.glyph_offset]
@@ -63,11 +63,11 @@ x = 0
 y = 0
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "ComicShannsMono Nerd Font Mono"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "ComicShannsMono Nerd Font Mono"
 style = "Regular"
 
 [font.offset]
