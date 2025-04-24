@@ -2,7 +2,7 @@
   "editor.tabSize": 2,
   "editor.fontSize": 17,
   "editor.lineHeight": 25,
-  "editor.fontFamily": "'ComicShannsMono Nerd Font Mono', 'JetBrainsMono Nerd Font', 'NotoMono Nerd Font', 'MesloLGS NF'",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'NotoMono Nerd Font', 'MesloLGS NF'",
   "editor.fontLigatures": true,
 
   "workbench.iconTheme": "catppuccin-mocha",

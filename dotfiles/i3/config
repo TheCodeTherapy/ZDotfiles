@@ -25,7 +25,7 @@ gaps inner 17
 gaps outer 0
 
 title_align center
-font pango:ComicShannsMono Nerd Font Mono, JetBrainsMono Nerd Font, NotoSansM Nerd Font Mono, MesloLGS NF, Misc Termsyn, Wuncon Siji 12
+font pango:JetBrainsMono Nerd Font, NotoSansM Nerd Font Mono, MesloLGS NF, Misc Termsyn, Wuncon Siji 12
 
 for_window [all] border pixel 1
 

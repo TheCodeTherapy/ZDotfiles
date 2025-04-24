@@ -1,7 +1,7 @@
 {
   "editor.tabSize": 2,
-  "editor.fontSize": 20,
-  "editor.fontFamily": "'ComicShannsMono Nerd Font Mono', 'JetBrainsMono Nerd Font', 'NotoMono Nerd Font', 'MesloLGS NF'",
+  "editor.fontSize": 17,
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'NotoMono Nerd Font', 'MesloLGS NF'",
   "editor.fontLigatures": false,
 
   "workbench.startupEditor": "none",
