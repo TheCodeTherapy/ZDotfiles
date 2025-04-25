@@ -257,6 +257,7 @@ bindsym --whole-window --border $sup+shift+button5 workspace next
 
 for_window [title="^Friends List$"] floating enable
 for_window [title="^Volume Control$"] floating enable
+for_window [class="spectacle"] floating enable
 
 exec picom
 
@@ -282,7 +283,7 @@ exec --no-startup-id flatpak run com.slack.Slack
 
 bindsym $sup+equal exec --no-startup-id ~/ZDotfiles/bin/urblind 1
 
-bindsym Print exec --no-startup-id xfce4-screenshooter
+bindsym Print exec --no-startup-id spectacle
 # bindsym --release $sup+x exec --no-startup-id import /tmp/latest-screenshot.png
 # bindsym --release $sup+Shift+c exec /home/marcogomez/dotfiles/scripts/webcamw
 
