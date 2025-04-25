@@ -2,7 +2,7 @@
 
 # Colors
 GREEN="#00FF00"
-GRAY="#888888"
+GRAY="#777777"
 
 # Check if any wireguard connection is active
 status=$(nmcli -t -f TYPE,STATE connection show --active | awk -F: '$1 == "wireguard" && $2 == "activated" {printf "%s", $1}')
@@ -14,7 +14,7 @@ if [[ -n "$status" ]]; then
   echo "$GREEN"
 else
   # WireGuard disconnected: empty text + gray color
-  echo "disabled"
+  echo "VPN disabled"
   echo "off"
   echo "$GRAY"
 fi

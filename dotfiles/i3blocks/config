@@ -49,7 +49,7 @@ separator=false
 [wifi]
 #instance=wlp3s0
 interval=10
-separator=false
+separator=true
 
 #[bandwidth]
 #instance=eth0
@@ -67,8 +67,9 @@ separator=false
 # [openvpn]
 [wireguard]
 label=󰩠
-command=vpnstatus
+command=/home/marcogomez/ZDotfiles/scripts/vpnstatus
 interval=5
+separator=true
 
 # Temperature
 #
@@ -82,15 +83,16 @@ interval=5
 #
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-#[keyindicator]
-#instance=CAPS
-#interval=once
-#signal=11
+[keyindicator]
+instance=CAPS
+interval=once
+signal=11
 
-#[keyindicator]
-#instance=NUM
-#interval=once
-#signal=11
+# [keyindicator]
+# instance=NUM
+# interval=once
+# signal=11
+# separator=true
 
 [cpu_usage]
 label=

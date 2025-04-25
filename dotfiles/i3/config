@@ -291,6 +291,9 @@ exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
 exec --no-startup-id xset r rate 350 50
 
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+
 bar {
   status_command i3blocks
   position bottom
