@@ -1,74 +1,20 @@
+/pagead.js
+/widget/ads
+
 ! hides gvt bullshit
 youtube.com##[id^="clarify-box"]
-
-! debloat UI ================================================================================================
-youtube.com##[id^="secondary"]
-youtube.com##[id^="background"]:style(background-color: #000000 !important;)
-
-youtube.com##[id^="above-the-fold"]:style(margin-top: 30px !important;)
-
-youtube.com##[id^="below"]:style(max-width: 1280px !important;)
-youtube.com##.ytd-watch-next-secondary-results-renderer
-youtube.com##.ytd-notification-topbar-button-renderer:style(display: none !important;)
-youtube.com##.ytd-watch-metadata:style(border-radius: 0px !important; border-bottom: 0px !important;)
-youtube.com##.ytd-watch-info-text:style(font-size: 17px; margin-bottom: 12px; color: #77aaff !important;)
-
-youtube.com##.ytp-paid-content-overlay:style(display: none !important;)
-youtube.com##.ytp-paid-content-overlay-text:style(display: none !important;)
-youtube.com##.ytp-paid-content-overlay-link:style(display: none !important;)
-
-
-youtube.com##body:style(background-color: #000000 !important;)
-youtube.com##ytd-app:style(background-color: #000000 !important;)
-
-youtube.com###bottom-row > .ytd-watch-metadata.style-scope.item:style(background-color: #121212 !important;)
-
-###below:style(max-width: 900px !important;)
-youtube.com##.ytd-watch-flexy:style(margin: 0px auto 0px auto !important;)
-
 /annotations_module.js$script,xhr,important,domain=youtube.com
 
-! hide stupid media bullshit
-youtube.com##ytd-rich-section-renderer ytd-rich-shelf-renderer:not([is-shorts]):upward(ytd-rich-section-renderer)
-youtube.com##ytd-rich-section-renderer:has(ytd-rich-shelf-renderer:not([is-shorts]))
+! Title: Hide YouTube Shorts
+! Description: Hide all traces of YouTube shorts videos on YouTube
+! Version: 1.10.0
+! Last modified: 2024-08-31 19:24
+! Expires: 2 weeks (update frequency)
+! Homepage: https://github.com/gijsdev/ublock-hide-yt-shorts
+! License: https://github.com/gijsdev/ublock-hide-yt-shorts/blob/master/LICENSE.md
 
-! Youtube - Set theater mode player
-youtube.com##+js(set, ytcfg.data_.START_IN_THEATER_MODE, true)
-
-! "i" button in the corner
-youtube.com##.ytp-button.ytp-cards-button
-! Brand image in the corner
-youtube.com##.ytp-button.branding-img-container
-! "Product" in bottom left corner
-youtube.com##.ytp-suggested-action
-! Hide "1080p Premium" in the video quality menu
-youtube.com##.ytp-quality-menu .ytp-menuitem:has(.ytp-premium-label)
-! Self promotion dialogs in bottom left corner ("Join Now")
-youtube.com##ytd-popup-container > tp-yt-paper-dialog > ytd-mealbar-promo-renderer, ytd-popup-container > tp-yt-paper-dialog > yt-mealbar-promo-renderer:has-text(/Claim Offer|Join now|Not Now|No thanks|YouTube TV|live TV|Live TV|movies|sports|Try it free|unlimited DVR|watch NFL/)
-! YT consent
-youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer.forceConsent, false)
-youtube.com##+js(json-prune, [].response.topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer)
-youtube.com##+js(json-prune, topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer)
-!! ==========================================================================================================
-
-!! ==========================================================================================================
-!! video filtering
-
-! Hide Homepage Videos Below 1K Views
-www.youtube.com##ytd-browse[page-subtype="home"] ytd-rich-item-renderer:has(#video-title-link:not(:is([aria-label*=",0"],[aria-label*=",1"],[aria-label*=",2"],[aria-label*=",3"],[aria-label*=",4"],[aria-label*=",5"],[aria-label*=",6"],[aria-label*=",7"],[aria-label*=",8"],[aria-label*=",9"])))
-! Hide Sidebar Videos Below 1K Views
-www.youtube.com##ytd-compact-video-renderer:has(#video-title:not(:is([aria-label*=",0"],[aria-label*=",1"],[aria-label*=",2"],[aria-label*=",3"],[aria-label*=",4"],[aria-label*=",5"],[aria-label*=",6"],[aria-label*=",7"],[aria-label*=",8"],[aria-label*=",9"])))
-
-! remove recommended videos after pause
-youtube-nocookie.com,youtube.com##.ytp-pause-overlay, .show-video-thumbnail-button
-~youtube-nocookie.com,~youtube.com##iframe ~ #topvbar > #rvid
-
-! YT Search - keep only videos (no shorts)
-youtube.com##ytd-search ytd-item-section-renderer>#contents>:is(:not(ytd-video-renderer,yt-showing-results-for-renderer,[icon-name="promo-full-height:EMPTY_SEARCH"]),ytd-video-renderer:has([aria-label="Shorts"])),ytd-secondary-search-container-renderer
-! YT Search - keep only videos (no shorts) and channels
-youtube.com##ytd-search ytd-item-section-renderer>#contents>:is(:not(ytd-video-renderer,ytd-channel-renderer,yt-showing-results-for-renderer,[icon-name="promo-full-height:EMPTY_SEARCH"]),ytd-video-renderer:has([aria-label="Shorts"])),ytd-secondary-search-container-renderer
-! YT Search - keep only videos (no shorts), channels and playlists
-youtube.com##ytd-search ytd-item-section-renderer>#contents>:is(:not(ytd-video-renderer,ytd-channel-renderer, ytd-playlist-renderer,yt-showing-results-for-renderer,[icon-name="promo-full-height:EMPTY_SEARCH"]),ytd-video-renderer:has([aria-label="Shorts"])),ytd-secondary-search-container-renderer
+! Remove empty spaces in grid
+www.youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
 
 ! Hide all videos containing the phrase "#shorts"
 www.youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(/(^| )#Shorts?( |$)/i))
@@ -85,41 +31,48 @@ www.youtube.com##ytd-guide-entry-renderer:has(yt-formatted-string:has-text(/^Sho
 ! Tablet resolution
 www.youtube.com##ytd-mini-guide-entry-renderer:has(.title:has-text(/^Shorts$/i))
 
-! Hide shorts section on homepage
-www.youtube.com##ytd-rich-section-renderer:has(#title:has-text(/(^| )Shorts( |$)/i))
-www.youtube.com##ytd-reel-shelf-renderer:has(.ytd-reel-shelf-renderer:has-text(/(^| )Shorts( |$)/i))
+! Hide shorts sections except on history page
+www.youtube.com##:matches-path(/^(?!\/feed\/history).*$/)ytd-rich-section-renderer:has(#title:has-text(/(^| )Shorts( |$)/i))
+www.youtube.com##:matches-path(/^(?!\/feed\/history).*$/)ytd-reel-shelf-renderer:has(.ytd-reel-shelf-renderer:has-text(/(^| )Shorts( |$)/i))
 
 ! Hide shorts tab on channel pages`
+! Old style
 www.youtube.com##tp-yt-paper-tab:has(.tp-yt-paper-tab:has-text(Shorts))
+! New style (2023-10)
 www.youtube.com##yt-tab-shape:has-text(/^Shorts$/)
 
-! Hide short remixes in video descriptions
-www.youtube.com##ytd-reel-shelf-renderer.ytd-structured-description-content-renderer:has-text(/^Shorts remixing this video$/i)
+! Hide short remixes in video descriptions and in suggestions beside the comments
+www.youtube.com##ytd-reel-shelf-renderer:has(#title:has-text(/(^| )Shorts.?Remix.*$/i))
 
 ! Hide shorts category on homepage and search pages
 www.youtube.com##yt-chip-cloud-chip-renderer:has(yt-formatted-string:has-text(/^Shorts$/i))
-!! ==========================================================================================================
 
-! mobile
+!!! MOBILE !!!
 
 ! Hide all videos in home feed containing the phrase "#shorts"
 www.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(/(^| )#Shorts?( |$)/i))
+
 ! Hide all videos in subscription feed containing the phrase "#shorts"
 m.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(/(^| )#Shorts?( |$)/i))
+
 ! Hide shorts button in the bottom navigation bar
 m.youtube.com##ytm-pivot-bar-item-renderer:has(.pivot-shorts)
+
 ! Hide all videos with the shorts indicator on the thumbnail
 m.youtube.com##ytm-video-with-context-renderer:has([data-style="SHORTS"])
-! Hide shorts sections
-m.youtube.com##ytm-rich-section-renderer:has(.reel-shelf-title-wrapper .yt-core-attributed-string:has-text(/(^| )Shorts( |$)/i))
-m.youtube.com##ytm-reel-shelf-renderer.item:has(.reel-shelf-title-wrapper .yt-core-attributed-string:has-text(/(^| )Shorts( |$)/i))
-! Hide shorts tab on channel pages
 
+! Hide shorts sections except on history page
+m.youtube.com##:matches-path(/^(?!\/feed\/history).*$/)ytm-rich-section-renderer:has(.reel-shelf-title-wrapper .yt-core-attributed-string:has-text(/(^| )Shorts( |$)/i))
+m.youtube.com##:matches-path(/^(?!\/feed\/history).*$/)ytm-reel-shelf-renderer.item:has(.reel-shelf-title-wrapper .yt-core-attributed-string:has-text(/(^| )Shorts( |$)/i))
+
+! Hide shorts tab on channel pages
 ! Old style
 m.youtube.com##.single-column-browse-results-tabs>a:has-text(Shorts)
 ! New style (2023-10)
 m.youtube.com##yt-tab-shape:has-text(/^Shorts$/)
-! Hide short remixes in video descriptions
-m.youtube.com##ytm-reel-shelf-renderer:has(.reel-shelf-title-wrapper .yt-core-attributed-string:has-text(/^Shorts remixing this video$/i))
+
+! Hide short remixes in video descriptions and in suggestions below the player
+m.youtube.com##ytm-reel-shelf-renderer:has(.reel-shelf-title-wrapper .yt-core-attributed-string:has-text(/(^| )Shorts.?Remix.*$/i))
+
 ! Hide shorts category on homepage
 m.youtube.com##ytm-chip-cloud-chip-renderer:has(.yt-core-attributed-string:has-text(/^Shorts$/i))
