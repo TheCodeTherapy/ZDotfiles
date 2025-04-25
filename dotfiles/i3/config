@@ -124,14 +124,24 @@ set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 # =====================================================================
 
 # Bind keys to access each workspace ==================================
-bindsym $sup+1 workspace $ws1; exec xdotool mousemove 5757 1077
-bindsym $sup+2 workspace $ws2; exec xdotool mousemove 7677 1077
-bindsym $sup+3 workspace $ws3; exec xdotool mousemove 9597 1077
-bindsym $sup+4 workspace $ws4; exec xdotool mousemove 5757 1077
-bindsym $sup+5 workspace $ws5; exec xdotool mousemove 7677 1077
+bindsym $sup+1 workspace $ws1; exec xdotool mousemove 6400 1436
+bindsym $sup+2 workspace $ws2; exec xdotool mousemove 6400 1436
+bindsym $sup+3 workspace $ws3; exec xdotool mousemove 6400 1436
+bindsym $sup+4 workspace $ws4; exec xdotool mousemove 6400 1436
+bindsym $sup+5 workspace $ws5; exec xdotool mousemove 6400 1436
+bindsym $sup+6 workspace $ws6; exec xdotool mousemove 6400 1436
+bindsym $sup+7 workspace $ws7; exec xdotool mousemove 6400 1436
+bindsym $sup+8 workspace $ws8; exec xdotool mousemove 6400 1436
+bindsym $sup+9 workspace $ws9; exec xdotool mousemove 6400 1436
+bindsym $sup+0 workspace $ws10; exec xdotool mousemove 1920 2156
 # =====================================================================
 
 # Bind keys to move container to each workspace =======================
@@ -140,6 +150,11 @@ bindsym $sup+Shift+2 move container to workspace $ws2
 bindsym $sup+Shift+3 move container to workspace $ws3
 bindsym $sup+Shift+4 move container to workspace $ws4
 bindsym $sup+Shift+5 move container to workspace $ws5
+bindsym $sup+Shift+6 move container to workspace $ws6
+bindsym $sup+Shift+7 move container to workspace $ws7
+bindsym $sup+Shift+8 move container to workspace $ws8
+bindsym $sup+Shift+9 move container to workspace $ws9
+bindsym $sup+Shift+10 move container to workspace $ws10
 # =====================================================================
 
 # Bind workspaces to specific screens =================================
@@ -147,7 +162,12 @@ workspace 1 output $cm
 workspace 2 output $cm
 workspace 3 output $cm
 workspace 4 output $cm
-workspace 5 output $bm
+workspace 5 output $cm
+workspace 6 output $cm
+workspace 7 output $cm
+workspace 8 output $cm
+workspace 9 output $cm
+workspace 10 output $bm
 # =====================================================================
 
 # reload, restart and exit bind keys ==================================
@@ -183,33 +203,47 @@ for_window [title="^.*wip.*$"] move container to workspace $ws2, workspace $ws2,
 for_window [title="^.*wip.*$"] floating enable, resize set 802 402, move position 6869 668
 
 # Workspace 1 =================================================================
-assign [class="Code"] $ws1
-assign [class="VSCodium"] $ws1
-assign [title="^Friends List$"] $ws1
-assign [title="^Steam$"] $ws1
-assign [class="code-oss-dev"] $ws1
-
-assign [title="^Path of Exile"] $ws1
-assign [class="steam_app_1337520"] $ws1
+# assign [class="Code"] $ws1
+# assign [class="VSCodium"] $ws1
+# assign [class="code-oss-dev"] $ws1
 # =============================================================================
 
 # Workspace 2 =================================================================
 # =============================================================================
 
 # Workspace 3 =================================================================
-assign [class="RaySession"] $ws3
-assign [class="Ardour"] $ws3
-assign [class="obs"]  $ws3
-assign [class="discord"] $ws3
-assign [class="firefox"] $ws3
-assign [class="Slack"] $ws3
-assign [class="TelegramDesktop"] $ws3
 # =============================================================================
 
 # Workspace 4 =================================================================
 # =============================================================================
 
 # Workspace 5 =================================================================
+# =============================================================================
+
+# Workspace 6 =================================================================
+assign [title="^Friends List$"] $ws6
+assign [title="^Steam$"] $ws6
+assign [title="^Path of Exile"] $ws6
+assign [class="steam_app_1337520"] $ws6
+# =============================================================================
+
+# Workspace 7 =================================================================
+assign [class="RaySession"] $ws7
+assign [class="Ardour"] $ws7
+# =============================================================================
+
+# Workspace 8 =================================================================
+assign [class="obs"] $ws8
+assign [class="discord"] $ws8
+# =============================================================================
+
+# Workspace 9 =================================================================
+assign [class="firefox"] $ws9
+assign [class="Slack"] $ws9
+assign [class="TelegramDesktop"] $ws9
+# =============================================================================
+
+# Workspace 0 =================================================================
 # =============================================================================
 
 # Switch window/workspace with mod+scroll and mod+shift scroll
@@ -241,7 +275,7 @@ exec --no-startup-id flatpak run com.discordapp.Discord
 # exec --no-startup-id screenkey --start-disabled
 # exec --no-startup-id ~/ZDotfiles/dotconfig/polybar/launch.sh
 
-bindsym $sup+equal exec --no-startup-id urblind 2
+bindsym $sup+equal exec --no-startup-id ~/ZDotfiles/bin/urblind 1
 
 bindsym Print exec --no-startup-id xfce4-screenshooter
 # bindsym --release $sup+x exec --no-startup-id import /tmp/latest-screenshot.png
