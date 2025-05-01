@@ -84,7 +84,7 @@ install_dev_libs() {
     libftgl-dev libfreeimage-dev liblua5.4-dev libwxgtk-webview3.2-dev
     libadwaita-1-dev libwireplumber-0.4-dev libdmapsharing-4.0-dev libswresample-dev
     python3-qtpy python3-pyqt5 pyqt5-dev-tools qttools5-dev-tools python3-pyqt6
-    pyqt6-dev-tools qtchooser pyliblo-utils libepoxy-dev
+    pyqt6-dev-tools qtchooser pyliblo-utils libepoxy-dev libvpx-dev libbz2-dev
   )
 
   print_info "Installing dev libs ..."
@@ -249,6 +249,7 @@ install_flatpak_packages() {
   local flatpak_apps_to_install=(
     com.discordapp.Discord
     com.obsproject.Studio
+    com.obsproject.Studio.Plugin.InputOverlay
     org.gimp.GIMP
     com.valvesoftware.Steam
     net.davidotek.pupgui2
