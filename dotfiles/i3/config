@@ -273,7 +273,7 @@ exec --no-startup-id xrandr \
 exec --no-startup-id feh --bg-scale --no-xinerama ~/ZDotfiles/dotfiles/wallpaper/32x9_trees_dual_mon.jpg
 
 exec --no-startup-id nm-applet
-exec --no-startup-id raysession
+exec --no-startup-id raysession --start-session LIVE
 exec --no-startup-id flatpak run com.obsproject.Studio
 exec --no-startup-id flatpak run com.discordapp.Discord
 exec --no-startup-id flatpak run org.telegram.desktop
