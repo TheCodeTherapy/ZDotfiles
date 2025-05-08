@@ -35,10 +35,11 @@ install_basic_packages() {
     python3-babel python3-dbus python3-pynvim python3-sphinx python3-packaging
     python3-venv python3-gi python3-gi-cairo python3-cairo python3-setuptools
     p7zip-full conky-all zsh-autosuggestions zsh-syntax-highlighting xdotool
-    python3-xcbgen pipx xutils-dev xwayland valac vlc transmission bear
-    fakeroot pavucontrol zeal thunar lxappearance btop lnav multitail
-    ccze libopencv-dev gource blueprint-compiler xdg-desktop-portal
-    xdg-desktop-portal-kde
+    python3-xcbgen pipx xutils-dev xwayland valac vlc transmission bear zeal
+    fakeroot pavucontrol thunar lxappearance btop lnav multitail gource ccze
+    libopencv-dev blueprint-compiler xdg-desktop-portal xss-lock i3lock
+    xdg-desktop-portal-kde xscreensaver xscreensaver-data-extra fortune
+    xscreensaver-gl-extra
   )
 
   print_info "Installing basic packages ..."
