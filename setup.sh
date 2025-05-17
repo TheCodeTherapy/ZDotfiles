@@ -280,6 +280,7 @@ link_launchers() {
   print_info "Linking launchers ..."
   local launchers_list=(
     "${DOTDOT}/launchers/alacritty.desktop"
+    "${DOTDOT}/launchers/chrome-webgl.desktop"
     "${DOTDOT}/launchers/chrome-webgpu.desktop"
   )
 

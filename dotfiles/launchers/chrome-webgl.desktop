@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Chrome Canary (WebGL)
+Comment=Launch Chrome Canary
+Exec=/opt/google/chrome-canary/chrome %U
+Icon=google-chrome-canary
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;
+StartupNotify=true
