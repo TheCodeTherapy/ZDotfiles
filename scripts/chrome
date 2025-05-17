@@ -1,2 +1,3 @@
 #!/bin/bash
-google-chrome --disable-field-trial-config --enable-features=Vulkan,VulkanFromANGLE,DefaultANGLEVulkan --enable-unsafe-webgpu
+#google-chrome --disable-field-trial-config --enable-features=Vulkan,VulkanFromANGLE,DefaultANGLEVulkan --enable-unsafe-webgpu
+google-chrome-canary --disable-field-trial-config --enable-features=Vulkan,VulkanFromANGLE,DefaultANGLEVulkan --enable-unsafe-webgpu

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Chrome Canary (WebGPU)
+Comment=Launch Chrome Canary with WebGPU + Vulkan enabled
+Exec=/opt/google/chrome-canary/chrome --disable-field-trial-config --enable-features=Vulkan,VulkanFromANGLE,DefaultANGLEVulkan --enable-unsafe-webgpu %U
+Icon=google-chrome-canary
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;
+StartupNotify=true

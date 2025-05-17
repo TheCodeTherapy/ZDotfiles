@@ -278,8 +278,17 @@ install_flatpak_packages() {
 
 link_launchers() {
   print_info "Linking launchers ..."
-  mkdir -p "$ME"/.local/share/applications
-  link_file "${DOTDOT}/launchers/alacritty.desktop" "${HOME}/.local/share/applications/alacritty.desktop"
+  local launchers_list=(
+    "${DOTDOT}/launchers/alacritty.desktop"
+    "${DOTDOT}/launchers/chrome-webgpu.desktop"
+  )
+
+  for launcher in "${launchers_list[@]}"; do
+    local target="${HOME}/.local/share/applications/$(basename "$launcher")"
+    rm -f "$target"
+    link_file "$launcher" "$target"
+    print_info "Linked $launcher to $target"
+  done
   update-desktop-database "$ME"/.local/share/applications
 }
 
