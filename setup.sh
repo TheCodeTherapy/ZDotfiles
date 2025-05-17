@@ -33,11 +33,11 @@ install_basic_packages() {
     gnome-shell-extension-manager policykit-1 policykit-1-gnome usbview hwdata
     v4l-utils flatpak python-is-python3 ipython3 python3-pip python3-dev qt6ct
     python3-babel python3-dbus python3-pynvim python3-sphinx python3-packaging
+    libopencv-dev blueprint-compiler xdg-desktop-portal xss-lock i3lock qt5ct
     python3-venv python3-gi python3-gi-cairo python3-cairo python3-setuptools
     p7zip-full conky-all zsh-autosuggestions zsh-syntax-highlighting xdotool
     python3-xcbgen pipx xutils-dev xwayland valac vlc transmission bear zeal
     fakeroot pavucontrol thunar lxappearance btop lnav multitail gource ccze
-    libopencv-dev blueprint-compiler xdg-desktop-portal xss-lock i3lock
     xdg-desktop-portal-kde xscreensaver xscreensaver-data-extra fortune
     xscreensaver-gl-extra
   )
