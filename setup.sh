@@ -181,6 +181,9 @@ link_dotfiles() {
   mkdir -p "$target_config/gtk-2.0"
   mkdir -p "$target_config/gtk-3.0"
   mkdir -p "$target_config/gtk-4.0"
+
+  mkdir -p "$target_config/systemd/user"
+
   declare -A files_to_link=(
     ["${DOTDOT}/profile/profile"]="$target_home/.profile"
     ["${DOTDOT}/bash/bashrc"]="$target_home/.bashrc"
@@ -225,6 +228,7 @@ link_dotfiles() {
     ["${DOTDOT}/themes/Nordic/gtk/Nordic/gtk-4.0/gtk-dark.css"]="$target_config/gtk-4.0/colors.css"
     ["${DOTDOT}/fonts"]="$target_home/.fonts"
     ["${DOTDOT}/wezterm/wezterm.lua"]="$target_home/.wezterm.lua"
+    ["${DOTDOT}/systemd/user/virtual-mic.service"]="$target_config/systemd/user/virtual-mic.service"
   )
 
   for source_file in "${!files_to_link[@]}"; do
@@ -301,6 +305,10 @@ update_cache() {
 
 post_install() {
   sudo usermod -a -G audio $USER
+  systemctl --user daemon-reexec
+  systemctl --user daemon-reload
+  systemctl --user enable --now virtual-mic.service
+  sudo loginctl enable-linger $USER
 }
 
 update_system
