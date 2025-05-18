@@ -259,7 +259,7 @@ for_window [title="^Friends List$"] floating enable
 for_window [title="^Volume Control$"] floating enable
 for_window [class="spectacle"] floating enable
 
-exec picom
+# exec picom
 
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
