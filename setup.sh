@@ -198,6 +198,7 @@ link_dotfiles() {
     ["${DOTDOT}/lutris"]="$target_home/.local/share/lutris"
     ["${DOTDOT}/attract"]="$target_home/.attract"
     ["${DOTDOT}/vst3"]="$target_home/.vst3"
+    ["${DOTDOT}/mime/mimeapps.list"]="$target_config/mimeapps.list"
     ["${DOTDOT}/pipewire"]="$target_config/pipewire"
     ["${DOTDOT}/wireplumber"]="$target_config/wireplumber"
     ["${DOTDOT}/yabridgectl"]="$target_config/yabridgectl"

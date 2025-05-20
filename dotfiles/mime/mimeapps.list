@@ -1,0 +1,9 @@
+
+[Default Applications]
+text/html=google-chrome-canary.desktop
+x-scheme-handler/http=google-chrome-canary.desktop
+x-scheme-handler/https=google-chrome-canary.desktop
+x-scheme-handler/about=google-chrome-canary.desktop
+x-scheme-handler/unknown=google-chrome-canary.desktop
+inode/directory=org.kde.dolphin.desktop
+x-scheme-handler/file=org.kde.dolphin.desktop
